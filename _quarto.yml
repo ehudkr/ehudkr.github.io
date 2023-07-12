@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs  # TODO: use GitHub Actions instead?
+  # TODO: use GitHub Actions?
 
 website:
   title: "ehudkr.github.io"
