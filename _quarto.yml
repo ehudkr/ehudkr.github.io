@@ -3,7 +3,7 @@ project:
   # TODO: use GitHub Actions?
 
 website:
-  title: "ehudkr.github.io"
+  title: "Ehud Karavani"
   navbar:
     left:
       - href: index.qmd
