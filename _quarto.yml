@@ -23,38 +23,47 @@ website:
         aria-label: linkedin
         href: https://www.linkedin.com/in/ehudk
         rel: me 
+        target: "_new"
       - text: "{{< iconify simple-icons googlescholar size=lg >}}"  # https://icon-sets.iconify.design/
         aria-label: google-scholar
         href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
         rel: me 
+        target: "_new"
       - icon: github
         aria-label: github
         href: https://github.com/ehudkr
         rel: me  
+        target: "_new"
       - icon: medium
         aria-label: medium
         href: https://medium.com/@ehudkr
         rel: me  
+        target: "_new"
       - icon: twitter
         aria-label: twitter
         href: https://twitter.com/ehudkar
         rel: me 
+        target: "_new"
       - icon: mastodon
         aria-label: mastodon
         href: https://mastodon.social/@ehudk
         rel: me  # For verification: https://github.com/quarto-dev/quarto-cli/pull/3333
+        target: "_new"
       - icon: stack-overflow
         aria-label: stack-overflow
         href: https://stackoverflow.com/users/7708413/ehudk
         rel: me  
+        target: "_new"
       # - text: "{{< iconify cib stackexchange >}}"
       #   aria-label: cross-validated
       #   href: https://stackoverflow.com/users/7708413/ehudk
       #   rel: me 
+      #   target: "_new"
       - text: "{{< iconify simple-icons discourse >}}"
         aria-label: datamethods
         href: https://discourse.datamethods.org/u/ehudk/summary
         rel: me  
+        target: "_new"
       
 format:
   html:
@@ -64,7 +73,4 @@ format:
     css: styles.css
     toc: true
     link-external-newwindow: true
-    # link-external-filter: '^(?:http:|https:)\/\/ehudkr\.github\.io'
-
-
 
