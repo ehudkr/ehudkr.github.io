@@ -21,7 +21,7 @@ website:
       # icons from https://icons.getbootstrap.com/
       - icon: linkedin
         aria-label: linkedin
-        href: www.linkedin.com/in/ehudk
+        href: https://www.linkedin.com/in/ehudk
         rel: me 
       - text: "{{< iconify simple-icons googlescholar size=lg >}}"  # https://icon-sets.iconify.design/
         aria-label: google-scholar
