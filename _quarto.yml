@@ -59,7 +59,7 @@ website:
 format:
   html:
     theme: 
-      light: [cosmo, light-theme.scss]
+      light: cosmo
       dark: [darkly, dark-theme.scss]
     css: styles.css
     toc: true
