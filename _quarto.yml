@@ -5,10 +5,18 @@ project:
 website:
   title: "Ehud Karavani"
   navbar:
+    # pinned: true
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: About
+        href: index.qmd
+      - text: CV
+        href: cv/index.qmd
+      - text: Publications
+        href: publications/index.qmd
+      - text: Materials
+        href: materials/index.qmd
+      - text: Blog
+        href: blog/index.qmd
 
 format:
   html:
