@@ -1,0 +1,8 @@
+/*-- scss:defaults --*/
+// Navbar
+// Make `darkly` navigation bar compatible with `cosmo`:
+$navbar-padding-y: 0.5rem;
+$font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+// Alternatively, you can create a different scss file, say `light-theme.scss` and have there:
+// $font-family-sans-serif: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+// which is the default fonts for the `darkly` theme, if you prefer that font set. 

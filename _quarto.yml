@@ -62,7 +62,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: [cosmo, light-theme.scss]
+      dark: [darkly, dark-theme.scss]
     css: styles.css
     toc: true
 
