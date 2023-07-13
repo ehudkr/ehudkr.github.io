@@ -20,8 +20,8 @@ website:
     right:
       # icons from https://icons.getbootstrap.com/
       - icon: linkedin
-        aria-label: stack-overflow
-        href: https://stackoverflow.com/users/7708413/ehudk
+        aria-label: linkedin
+        href: www.linkedin.com/in/ehudk
         rel: me 
       - text: "{{< iconify simple-icons googlescholar size=lg >}}"  # https://icon-sets.iconify.design/
         aria-label: google-scholar
