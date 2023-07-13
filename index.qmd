@@ -1,7 +1,36 @@
 ---
 title: "Ehud Karavani"
+about:
+  template: solana
+  image: img/profile.jpg
+  links:
+    - icon: linkedin
+      text: Linkedin
+      href: www.linkedin.com/in/ehudk
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/ehudkar
+    - icon: github
+      text: Github
+      href: https://github.com/ehudkr
+    - text: "{{< iconify simple-icons googlescholar size=lg >}} Google Scholar"  # https://icon-sets.iconify.design/
+      href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
+      # Seems like must be last on the list
+
 ---
 
-This is a Quarto website.
+Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending  time unicycling and playing with her pet iguana.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Education
+
+University of California, San Diego | San Diego, CA
+PhD in Mathematics | Sept 2011 - June 2015
+
+Macalester College | St. Paul MA
+B.A in Economics | Sept 2007 - June 2011
+
+## Experience
+
+Wengo Analytics | Head Data Scientist | April 2018 - present
+
+GeoScynce | Chief Analyst | Spet 2012 - April 2018
