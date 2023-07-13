@@ -56,10 +56,6 @@ website:
         href: https://discourse.datamethods.org/u/ehudk/summary
         rel: me  
       
-      
-        
-        
-
 format:
   html:
     theme: 
@@ -67,6 +63,7 @@ format:
       dark: [darkly, dark-theme.scss]
     css: styles.css
     toc: true
+    link-external-newwindow: true
 
 
 
