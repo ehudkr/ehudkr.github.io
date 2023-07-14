@@ -2,7 +2,7 @@
 title: "Ehud Karavani"
 about:
   template: solana
-  image: img/profile.jpg
+  image: profile.jpg
   links:
     - icon: linkedin
       text: Linkedin
