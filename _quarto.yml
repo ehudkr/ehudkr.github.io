@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Ehud Karavani"
+  favicon: bar-chart-fill.png
   navbar:
     # pinned: true
     left:
