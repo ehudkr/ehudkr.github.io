@@ -25,7 +25,8 @@ specilizing in causal inference, machine learning, (Bayesian) statistics, and da
 
 I'm currently a Research Staff Member at [IBM Research, Israel](https://research.ibm.com/labs/haifa/),
 in the [Causal Machine Learning for Healthcare & Life Sciences group](https://research.ibm.com/haifa/dept/vst/analytics.shtml).
-There, I focus on answering policy questions in healthcare 
+There, I focus on high-throughput causal inference 
+for finding new indication for existing drugs
 using electornic health records and insurance claims records.
 I'm also the creator and maintainer of [`causallib`](https://github.com/IBM/causallib),
 a one-stop shop open-source Python package for flexible causal inference modeling.
