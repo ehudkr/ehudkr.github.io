@@ -20,17 +20,12 @@ about:
 ---
 
 Hi there! \
-I'm a researcher and data scientist, 
-currently part of the [Causal Machine Learning 
-for Healthcare & Life Sciences group](https://research.ibm.com/haifa/dept/vst/analytics.shtml)
-at [IBM Research, Israel](https://research.ibm.com/labs/haifa/). \
-I speciliaze in causal inference, machine learning, (Bayesian) statistics, and data visualization.\
-My work is mainly focused on the healthcare domain analyzing electornic health records and insurance claims records.\ 
-I advocate for good software practices in research and academia, 
-from data management to version control of analyses,
-and I believe open software is key for a more reproducible, inclusive, and open science.
+I'm a researcher and data scientist,
+specilizing in causal inference, machine learning, (Bayesian) statistics, and data visualization.
 
-I'm the creator and maintainer of [`causallib`](https://github.com/IBM/causallib),
-a one-stop shop Python package for flexible causal inference modeling.
-
-
+I'm currently a Research Staff Member at [IBM Research, Israel](https://research.ibm.com/labs/haifa/),
+in the [Causal Machine Learning for Healthcare & Life Sciences group](https://research.ibm.com/haifa/dept/vst/analytics.shtml).
+There, I focus on answering policy questions in healthcare 
+using electornic health records and insurance claims records.
+I'm also the creator and maintainer of [`causallib`](https://github.com/IBM/causallib),
+a one-stop shop open-source Python package for flexible causal inference modeling.
