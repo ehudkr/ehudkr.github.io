@@ -3,7 +3,7 @@ title: "Ehud Karavani"
 from: markdown+emoji
 about:
   template: solana
-  image: profile.jpg
+  image: img/profile.jpg
   links:
     - icon: linkedin
       text: Linkedin
