@@ -38,10 +38,10 @@ from the Hebrew University.
 I did my Master's thesis with [Dr. Shai Carmi](https://scarmilab.org/) 
 studying prediction of traits using DNA and its potential effect on
 selecting embryos for implantation in IVF (aka "designer babies")
-[[:blue_book:](https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3)]. \
+[{{< iconify bi journal-text >}}](https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3). \
 Previous to that I was an undergraduate research associate in 
 [Prof. Hanah Marglit's lab](http://margalit.huji.ac.il/), 
 developing methods for finding novel protein-mRNA interactions
 using RNAseq data 
-[[:blue_book:](https://academic.oup.com/nar/article/46/19/10380/5064785)]. 
+[{{< iconify bi journal-text >}}](https://academic.oup.com/nar/article/46/19/10380/5064785). 
 
