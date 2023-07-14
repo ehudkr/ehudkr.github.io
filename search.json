@@ -4,6 +4,6 @@
     "href": "index.html",
     "title": "Ehud Karavani",
     "section": "",
-    "text": "Hi,"
+    "text": "Hi there!\nI’m a researcher and data scientist, specilizing in causal inference, machine learning, (Bayesian) statistics, and data visualization.\nI’m currently a Research Staff Member at IBM Research, Israel, in the Causal Machine Learning for Healthcare & Life Sciences group. There, I focus on high-throughput causal inference for finding new indication for existing drugs using electornic health records and insurance claims records. I’m also the creator and maintainer of causallib, a one-stop shop open-source Python package for flexible causal inference modeling.\n\nEducation\nI have a BSc and MSc in Computer Science and Computational Biology, from the Hebrew University. I did my Master’s thesis with Dr. Shai Carmi studying prediction of traits using DNA and its potential effect on selecting embryos for implantation in IVF (aka “designer babies”) .\nPrevious to that I was an undergraduate research associate in Prof. Hanah Marglit’s lab, developing methods for finding novel protein-mRNA interactions using RNAseq data ."
   }
 ]
