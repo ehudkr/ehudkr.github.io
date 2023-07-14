@@ -1,5 +1,6 @@
 ---
 title: "Ehud Karavani"
+from: markdown+emoji
 about:
   template: solana
   image: profile.jpg
@@ -30,3 +31,17 @@ for finding new indication for existing drugs
 using electornic health records and insurance claims records.
 I'm also the creator and maintainer of [`causallib`](https://github.com/IBM/causallib),
 a one-stop shop open-source Python package for flexible causal inference modeling.
+
+#### Education
+I have a BSc and MSc in Computer Science and Computational Biology, 
+from the Hebrew University. 
+I did my Master's thesis with [Dr. Shai Carmi](https://scarmilab.org/) 
+studying prediction of traits using DNA and its potential effect on
+selecting embryos for implantation in IVF (aka "designer babies")
+[[:blue_book:](https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3)]. \
+Previous to that I was an undergraduate research associate in 
+[Prof. Hanah Marglit's lab](http://margalit.huji.ac.il/), 
+developing methods for finding novel protein-mRNA interactions
+using RNAseq data 
+[[:blue_book:](https://academic.oup.com/nar/article/46/19/10380/5064785)]. 
+
