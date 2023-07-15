@@ -1,3 +1,19 @@
 ---
 title: "Blog"
+listing: 
+  contents: .
+  type: default
+  sort: "date"
+  categories: numbered
+  sort-ui: true
+  filter-ui: true
+  fields: 
+    - "title"
+    - "subtitle"
+    - "description"
+    - "date"
+    - "image"
+    - "reading-time"
+    - "categories"
 ---
+List of blog posts

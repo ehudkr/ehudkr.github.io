@@ -1,0 +1,22 @@
+---
+title: "Hello World"
+author: "Ehud Karavani"
+subtitle: "That's the subtitle"
+date: 2023/07/15
+date-modified: last-modified
+categories: 
+  - causal inference
+  - statistics
+---
+
+## Introduction
+Hello world,
+
+## Methods
+Waving hands sideways.
+
+## Results
+Proof was hand-waved and left as an excercise for the reader.
+
+## Discussion
+Good bye
