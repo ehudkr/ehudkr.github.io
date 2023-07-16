@@ -12,7 +12,7 @@ categories:
 ---
 
 ::: {#medium-og style="text-align: center"}
-[Originally published on [{{< iconify simple-icons medium >}} Medium](https://medium.com/@ehudkr/improving-genetic-prediction-using-deep-learning-ae9f999036d0).]{style="text-align: center;"}
+[Originally published on [{{< iconify simple-icons medium >}} Medium](https://medium.com/towards-data-science/solving-simpsons-paradox-with-inverse-probability-weighting-79dbb1395597).]{style="text-align: center;"}
 :::
 
 Statisticians love using the word "paradox" to describe simply unintuitive results, regardless of how much it upsets their fellow logicians. To get back at them, we'll apply causality to solve one of their most famous paradoxes --- *Simpson's Paradox*.
