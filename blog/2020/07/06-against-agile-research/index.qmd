@@ -1,0 +1,63 @@
+---
+title: "The case against Agile research"
+subtitle: >
+  Ever popular iterative development approaches can sneak in 
+  unconscious-bias that can be harmful to the scientific process.
+author: "Ehud Karavani"
+date: 2020/07/06
+date-modified: last-modified
+categories: 
+  - meta-science
+---
+
+::: {#medium-og style="text-align: center"}
+[Originally published on [{{< iconify simple-icons medium >}} Medium](https://medium.com/@ehudkr/improving-genetic-prediction-using-deep-learning-ae9f999036d0).]{style="text-align: center;"}
+:::
+
+## Agile methodologies
+
+Agile methodologies are project management approaches becoming increasingly popular in software development. At its core, Agile software development is iterative and incremental. It promises frequent product delivery that can accommodate for the fast pace demand for changes from users. The main idea is to break down the software into independent self-contained components and implement them cyclically, ever improving the product.
+
+This bottom-up approach has stemmed as a countermeasure to the more traditional top-down approach, known as Waterfall. In the Waterfall method, the entire system\'s architecture is first designed, down to the smallest components, and then coded from start to end. This has made software much slower to improve, which is the main reason why the method\'s popularity is decreasing in our fast-pace computing world.
+
+## Research and data science pipeline
+
+Agile has become so popular that it had percolated outside the realm of traditional software development. Specifically, it had trickled down to research, and more specifically, to data-driven research. The heavier the computational infrastructure of the research, the more likely it is to adapt Agile methodology.
+
+In the data-science version of Agile, results are iteratively refined. For example, data definitions are constantly refined, models are iteratively tuned, and reports are continually generated.
+
+From my personal experience, this is especially the case in industry research. As opposed to academia, companies usually subject you to a greater corporate hierarchy. You have several lines of management, each requires periodically updates on the project, usually in the form of a report or a presentation. This demand requires you to set an initial pipeline quickly, just to obtain *some* results, and then iteratively improve it (refine the data, add analyses, prettify graphs, etc.) until the next meeting or report.
+
+This article would like to argue that iteratively reporting should be avoided because it can creep in unconscious bias.
+
+## Unconscious bias
+
+Unconscious (or implicit) bias is a term used to depict one\'s preference towards prior beliefs on the expense of evidence at hand. It has been affecting science since ever and is the reason why researchers nowadays prefer methods such as blind peer reviews or randomized control experiments. In the former, reviewers aren\'t affected by the identity of the author, and in the latter, participants don\'t know whether they get treatment or placebo. Both neutralize a psychological effect that can bias one\'s response in the process.
+
+Scientists are no exception and subconscious bias can also affect the research protocol and analysis itself. Even in presumably \"pure\" tasks, like measuring physical constants, it has been observed that new measurements tend to cluster around previous measurements, rather than what we nowadays know to be the true value.
+
+We can mitigate such unconscious bias by adapting the same trickery we use for blind peer reviews and blind medical trials: ***blind analysis***.
+
+In his excellent book [*Statistics Done Wrong*](https://www.amazon.com/Statistics-Done-Wrong-Woefully-Complete/dp/1593276206), Alex Reinhart gives a beautiful example of how blind analysis was applied in experimental physics: when Frank Dunnington wanted to measure the ratio between an electron\'s charge to its mass, it required him to build a dedicated machinery. Dunnington built the entire apparatus but left the detector in a slightly off angle. As the exact measurements are worthless, Dunnington could construct the entire experimental protocol without being exposed to the value he was interested in. Thus avoiding overfitting the protocol to his prior beliefs. Only upon finalizing the analysis plan, had he corrected the off-angled detector and correctly measured the desired ratio.
+
+## Blind statistical analysis
+
+To be honest, there\'s no straightforward equivalent to a dislocated detector in the data science pipeline. One might use mock data, or a very (*very*) small random subset of the data they can later discard. The data will be used just to verify the code runs end to end, outputs are correctly saved, errors are correctly logged, graphs look as intended, etc. Only when the pipeline is finalized will one run their code on the entirety of the data, generating results.
+
+To quote Alex: \"no analysis plan survives contact with the data\", and I will add that technical issues should be debugged and solved as data blind as possible.
+
+## Avoiding Agile research
+
+In research, our product is usually some kind of a report. Therefore, in Agile-like research, we continuously generate periodic reports and therefore constantly re-estimating our estimand of interest. The more rounds we go, the greater the chances to be affected by the ever-lurking subconscious bias toward desired results.
+
+Furthermore, changing analysis plan as we go, especially when based on half-baked analyses, can wildly increase false positive discoveries. For example, if we decide to change the primary outcome we measure in the middle of the project, just because we saw (or any management reading your monthly report suggested) there\'s no effect, it will direct us into analyzing our data, rather than analyzing the phenomena the data measure.
+
+**Data are like a perishable resource**. Each time you glance at it, the quality of the story it tells deteriorates. Soon you\'ll be reading whatever you want to read, rather than what the data wants to tell.
+
+Similarly, Results are just a set of transformations applied to the data and glancing at them is like glancing at the data via proxy. Namely, that too drains out our data resource, making it less reliable.
+
+## Summary
+
+As short-cycle iterative management methodology become increasingly popular in research, so does our susceptibility to subconscious bias. This is *not* to say Agile-ish methodologies are never to be used in research or data science, only that they require some adaptations. Adaptation like more careful data management, avoiding peeping at the results just like we avoid peeking at the data, and pre-registering the analysis plan.
+
+Eventually, the scientists themselves also adapt to the evidence they work with, just like any other statistical model adapts to the data. Therefore, scientists should limit their own access to data and results, just as they do to the models they apply, to avoid overfitting their own analysis to their desires or prior beliefs
