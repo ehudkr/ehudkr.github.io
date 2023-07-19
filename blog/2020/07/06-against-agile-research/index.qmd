@@ -6,7 +6,7 @@ subtitle: >
 author: "Ehud Karavani"
 date: 2020/07/06
 date-modified: last-modified
-medium-url: https://medium.com/@ehudkr/the-case-against-agile-in-research-93d695bf047e
+medium-url: https://medium.com/ehudkr/the-case-against-agile-in-research-93d695bf047e
 categories: 
   - meta-science
 ---
