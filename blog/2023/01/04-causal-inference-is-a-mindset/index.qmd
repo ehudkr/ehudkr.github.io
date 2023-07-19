@@ -1,0 +1,32 @@
+---
+title: "Causal inference is a mindset"
+subtitle: >
+  Causal inference from observational data is a mindset, not a set of tools.
+author: "Ehud Karavani"
+date: 2023/01/04
+date-modified: last-modified
+categories: 
+  - causal inference
+---
+
+I'm a causal inference enthusiast, practitioner, and advocate (borderline missionary if we're completely honest). I believe people are causal thinkers who ask causal questions and expect causal answers; that we understand the world through causal relationships and causal mechanisms. But when people come to me for help or education, they usually end up disappointed. They come for a solution and discover more questions. They come for a code library to import and end up with a study design to implement.
+
+This is because **causal inference is first and foremost a mindset**, not a particular tool. There is no neural network architecture that will just spit out causal effects. On the contrary, if you organize your data properly, causal inference can be a mere average or a simple linear regression at most.
+
+::: {style="text-align: center; background-color:powderblue;"}
+***Excellent study designs make simple analytics.***
+:::
+
+This is why **causal inference is a bait and switch scheme**. We talk a lot about causality but then provide associational statistical tools. And once we estimate a statistical association, claiming it is causal is actually a leap of faith. Of course we have mathematical theory to ground on, but its assumptions are untestable. So at the end of the day, **causal claims from observational data are an educated leap of (rational) faith**.
+
+::: {style="text-align: center; background-color:powderblue;"}
+***Causation = Association + Logic***
+:::
+
+Causation consists of identification and estimation. Deep learning driven thinking has somewhat sidelined practitioners from thinking of identification. We rarely consider whether the question is even solvable, or is it solvable with the data we have; and if so --- what approach or tools can solve it. We easily throw it to a kitchen sink of neural networks to get an answer--- we focus exclusively on estimation, [forgetting some problems cannot be solved by a single prediction model](https://elevanth.org/blog/2021/06/29/regression-fire-and-dangerous-things-3-3/). **But estimation can get you no further than association, and without identification you can't get causation**. Causality requires embracing the beyond-the-data logic that transcends an association into causation, but it's a hard pill to swallow--- and even harder to convince others to join --- in the current Big-Data♡AI climate.
+
+People expect a magic library to import in R or to conjure up a model in PyTorch like some causal alchemists. But then I shoot up my slides and start blubbering about [causal roadmaps](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4077670/), [target trial emulation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4832051/), careful [time-zero considerations](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5124536/) and [variable selection](https://journals.sagepub.com/doi/full/10.1177/00491241221099552). People are so used to post-AlexNet machine learning approaches, they are baffled that I have so much to say about study design and DAGs.
+
+This is not to say that causal estimation models are bad, on the contrary, they are great (there's a good reason why I champion [making flexible causal models approachable with causallib](https://github.com/IBM/causallib)); they make the counterfactual prediction explicit and clear. This also doesn't mean causal estimation is easy, far from it --- I'm a strong proponent for sequeling The Book of Why with The Book of How --- causal learning suffers from the same complexities machine learning does and then some. Also, my intention is not to bash deep-learning, which I myself sometimes use for causal effect estimation. But overcoming confounding bias given observed confounders is just one stair in the staircase towards claiming causation.
+
+In the trenches, causality doesn't always stand up to its hype because it is different from machine learning. The truth is that **causal inference is more of a mindset, than a particular tool**. And this truth is a tougher sell.
