@@ -2,7 +2,15 @@
   {
     "listing": "/blog/index.html",
     "items": [
-      "/blog/2023/07/15-hello_world/index.html"
+      "/blog/2023/07/15-hello_world/index.html",
+      "/blog/2023/01/04-causal-inference-is-a-mindset/index.html",
+      "/blog/2022/11/02-continuous-treatment-causal-inference/index.html",
+      "/blog/2021/11/20-why-balance-covariates/index.html",
+      "/blog/2021/09/04-visualizing-micro-macro-averages/index.html",
+      "/blog/2020/12/28-ml-metrics-for-causal-inference/index.html",
+      "/blog/2020/07/06-against-agile-research/index.html",
+      "/blog/2020/02/22-simpsons-paradox-ipw/index.html",
+      "/blog/2018/05/05-deep-learning-genetic-prediction/index.html"
     ]
   }
 ]
