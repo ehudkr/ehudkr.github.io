@@ -5,6 +5,7 @@ subtitle: >
 author: "Ehud Karavani"
 date: 2022/11/02
 date-modified: last-modified
+medium-url: https://towardsdatascience.com/causal-inference-with-continuous-treatments-5ff691869a65
 categories: 
   - causal inference
 ---

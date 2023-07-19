@@ -5,6 +5,7 @@ subtitle: >
 author: "Ehud Karavani"
 date: 2021/11/20
 date-modified: last-modified
+medium-url: https://medium.com/@ehudkr/why-we-care-for-covariate-balancing-in-comparative-studies-75e19113ba87
 categories: 
   - causal inference
 ---

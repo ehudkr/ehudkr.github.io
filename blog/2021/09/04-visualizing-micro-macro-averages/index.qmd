@@ -5,6 +5,7 @@ subtitle: >
 author: "Ehud Karavani"
 date: 2021/09/04
 date-modified: last-modified
+medium-url: https://medium.com/@ehudkr/a-visual-way-to-think-on-macro-and-micro-averages-in-classification-metrics-190285dc927f
 categories: 
   - machine learning
   - visualization

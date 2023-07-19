@@ -6,6 +6,7 @@ subtitle: >
 author: "Ehud Karavani"
 date: 2020/12/28
 date-modified: last-modified
+medium-url: https://towardsdatascience.com/using-machine-learning-metrics-to-evaluate-causal-inference-models-d066f1bb2b7a
 categories: 
   - causal inference
   - machine learning

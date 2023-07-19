@@ -6,6 +6,7 @@ subtitle: >
 author: "Ehud Karavani"
 date: 2020/02/02
 date-modified: last-modified
+medium-url: https://towardsdatascience.com/solving-simpsons-paradox-with-inverse-probability-weighting-79dbb1395597
 categories: 
   - causal inference
   - statistics

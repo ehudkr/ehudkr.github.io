@@ -1,3 +1,6 @@
 freeze: auto
 
-
+format: 
+  html: 
+    template-partials: 
+      - title-metadata.html
