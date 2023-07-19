@@ -9,8 +9,6 @@ date-modified: last-modified
 medium-url: https://medium.com/@ehudkr/improving-genetic-prediction-using-deep-learning-ae9f999036d0
 categories: 
   - genetics
-  - GWAS
-  - PRS
   - deep learning
 ---
 
