@@ -1,3 +1,24 @@
 ---
 title: "Publications"
+date-modified: last-modified
+listing: 
+  contents: .
+  type: default
+  sort: "date"
+  categories: numbered
+  sort-ui: true
+  filter-ui: true
 ---
+
+My current research focus revolves mainly around causal inference.
+Both applications (mainly around healthcare) and methodology (including usability).
+I also dabble in information visualization and genetic-based risk models (polygenic risk scores).
+Prior to that, I worked on computational methods in molecular biology (genomics and transcriptomics).
+In addition to academic publications, I also issued several patents in the US.
+
+I will do my best to keep this listing updated,
+but in the plausible case I won't,
+please see my [Google Scholar page {{< iconify simple-icons googlescholar >}}](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en)
+for the latest version.
+
+
