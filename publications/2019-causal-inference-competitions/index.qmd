@@ -1,0 +1,60 @@
+---
+title: "Comment: causal inference competitions: where should we aim?"
+date: 2019-02-01
+# doi: https://doi.org/10.48550/arXiv.1802.05046
+author:
+  - name: Ehud Karavani 
+    affiliations:
+      - ref: ibmrisrl
+  - name: Tal El-Hay
+    affiliations:
+      - ref: ibmrisrl
+    # corresponding: true
+  - name: Yishai Shimoni
+    affiliations: 
+      - ref: ibmrisrl
+    #     organization: IBM Research
+  - name: Chen Yanover
+    affiliations:
+      - ref: ibmrisrl
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Machine Learning for Healthcare and Life Sciences
+doi: https://doi.org/10.1214/18-STS679
+categories:
+  - causal inference
+  - evaluations
+# keywords: 
+publication: "Statistical Science"
+journal: 
+  title: "Statistical Science"
+pdf: https://projecteuclid.org/journals/statistical-science/volume-34/issue-1/Comment-Causal-Inference-Competitions-Where-Should-We-Aim/10.1214/18-STS679.pdf
+abstract: >
+  Data competitions proved to be highly beneficial to the field of machine learning, 
+  and thus expected to provide similar advantages in the field of causal inference. 
+  As participants in the 2016 and 2017 Atlantic Causal Inference Conference (ACIC) data competitions and co-organizers of the 2018 competition, 
+  we discuss the strengths of simulation-based competitions and suggest potential extensions to address their limitations. 
+  These suggested augmentations aim at making the data generating processes more realistic and gradually increase in complexity, allowing thorough investigations of algorithms’ performance. 
+  We further outline a community-wide competition framework to evaluate an end-to-end causal inference pipeline, beginning with a causal question and a database, and ending with causal estimates.
+---
+
+Can causal inference methodologists use soon-to-be-published experiments
+(randomized control trials)
+to benchmark causal inference methods
+similar to how computational biologists use soon-to-be-published solved 
+protein structures to benchmark their protein folding algorithms.
+
+<!-- figures -->
+
+## Citation
+```bibtex
+@article{karavani2019comment,
+  title={Comment: causal inference competitions: where should we aim?},
+  author={Karavani, Ehud and El-Hay, Tal and Shimoni, Yishai and Yanover, Chen},
+  year={2019}
+}
+```
+
