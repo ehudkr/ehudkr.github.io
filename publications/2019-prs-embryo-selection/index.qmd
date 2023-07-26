@@ -1,0 +1,69 @@
+---
+title: "Screening human embryos for polygenic traits has limited utility"
+date: 2019-11-21
+doi: https://doi.org/10.1016/j.cell.2019.10.033
+authors:
+  - name: Ehud Karavani
+    affiliations: "The Hebrew University of Jerusalem"
+  - name: Or Zuk
+    affiliations: "The Hebrew University of Jerusalem"
+  - name: Danny Zeevi
+    affiliations: "University of California, Los Angeles"
+  - name: Nir Barzilai
+    affiliations: "Albert Einstein College of Medicine"
+  - name: Nikos C. Stefanis
+    affiliations: "University of Athens, Medical School"
+  - name: Alex Hatzimanolis
+    affiliations: "University of Athens, Medical School"
+  - name: Nikolaos Smyrnis
+    affiliations: "University of Athens, Medical School"
+  - name: Dimitrios Avramopoulos
+    affiliations: "Johns Hopkins University School of Medicine"
+  - name: Leonid Kruglyak
+    affiliations: "University of California, Los Angeles"
+  - name: Gil Atzmon
+    affiliations: "Albert Einstein College of Medicine"
+  - name: Max Lam
+    affiliations: "Broad Institute of Harvard and MIT" 
+  - name: Todd Lencz
+    affiliations: "Zucker School of Medicine at Hofstra/Northwell"
+  - name: Shai Carmi
+    affiliations: "The Hebrew University of Jerusalem"
+  categories:
+  - machine learning
+  - genetics
+# keywords: 
+publication: "Cell"
+journal: 
+  title: "Cell"
+pdf: https://www.cell.com/cell/pdf/S0092-8674(19)31210-3.pdf
+abstract: >
+  The increasing proportion of variance in human complex traits explained by polygenic scores, 
+  along with progress in preimplantation genetic diagnosis, 
+  suggests the possibility of screening embryos for traits such as height or cognitive ability. 
+  However, the expected outcomes of embryo screening are unclear, which undermines discussion of associated ethical concerns. 
+  Here, we use theory, simulations, and real data to evaluate the potential gain of embryo screening, 
+  defined as the difference in trait value between the top-scoring embryo and the average embryo. 
+  The gain increases very slowly with the number of embryos but more rapidly with the variance explained by the score. 
+  Given current technology, the average gain due to screening would be ≈2.5 cm for height and ≈2.5 IQ points for cognitive ability. 
+  These mean values are accompanied by wide prediction intervals, and indeed, in large nuclear families, the majority of children top-scoring for height are not the tallest.
+description: >
+  Choose embryos for IVF implantation according to DNA-based trait prediction models.
+---
+
+<!-- figures -->
+
+## Citation
+```bibtex
+@article{karavani2019screening,
+  title={Screening human embryos for polygenic traits has limited utility},
+  author={Karavani, Ehud and Zuk, Or and Zeevi, Danny and Barzilai, Nir and Stefanis, Nikos C and Hatzimanolis, Alex and Smyrnis, Nikolaos and Avramopoulos, Dimitrios and Kruglyak, Leonid and Atzmon, Gil and others},
+  journal={Cell},
+  volume={179},
+  number={6},
+  pages={1424--1435},
+  year={2019},
+  publisher={Elsevier}
+}
+```
+
