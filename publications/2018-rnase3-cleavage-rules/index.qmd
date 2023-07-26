@@ -46,6 +46,8 @@ abstract: >
   Intriguingly, we observed that the two stem positions between the cleavage sites are highly base-paired, usually involving at least one G-C or C-G base pair. 
   We present a clear distinction between intra-molecular stem structures that are RNase III substrates and intra-molecular stem structures randomly selected across the transcriptome, emphasizing the in vivo specificity of RNase III. 
   Our study provides a comprehensive map of the cleavage sites in both intra-molecular and inter-molecular duplex substrates, providing novel insights into the involvement of RNase III in post-transcriptional regulation in the bacterial cell.
+description: >
+  A transcriptome-wide computational approach for finding novel protein-RNA interactions.
 ---
 
 

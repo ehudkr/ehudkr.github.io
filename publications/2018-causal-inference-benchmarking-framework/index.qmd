@@ -46,7 +46,8 @@ abstract: >
   In this framework we address two questions: one of scaling, and the other of data-censoring. 
   The framework is available as open source code at 
   [this URL](https://github.com/IBM-HRL-MLHLS/IBM-Causal-Inference-Benchmarking-Framework).
-
+description: >
+  A framework for benchmarking causal inference models used in ACIC 2018 Data Challenge.
 ---
 
 

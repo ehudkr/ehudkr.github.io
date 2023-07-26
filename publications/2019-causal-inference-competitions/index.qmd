@@ -39,6 +39,10 @@ abstract: >
   we discuss the strengths of simulation-based competitions and suggest potential extensions to address their limitations. 
   These suggested augmentations aim at making the data generating processes more realistic and gradually increase in complexity, allowing thorough investigations of algorithms’ performance. 
   We further outline a community-wide competition framework to evaluate an end-to-end causal inference pipeline, beginning with a causal question and a database, and ending with causal estimates.
+description: >
+  Use soon-to-be-published RCTs to benchmark causal inference methods,
+  similar to how computational biologists use soon-to-be-published 
+  solved protein structures to benchmark their protein folding algorithms.
 ---
 
 Can causal inference methodologists use soon-to-be-published experiments

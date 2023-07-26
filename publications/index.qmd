@@ -12,7 +12,7 @@ listing:
   fields: 
     - "title"
     - "author"
-    # - "description"
+    - "description"
     - "date"
     - "image"
     - "categories"

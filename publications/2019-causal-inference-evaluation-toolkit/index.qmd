@@ -60,6 +60,8 @@ abstract: >
   and ensures that the causal question is answerable with available data. 
   Furthermore, we show how the evaluation toolkit can be used to ensure that performance is maintained when applied to subsets of the data, 
   thus allowing exploration of questions that move towards personalized medicine.
+description: >
+  A machine learning approach for evaluating causal inference models.
 ---
 
 This manuscript combines the evaluation suite with a specific use-case. 
