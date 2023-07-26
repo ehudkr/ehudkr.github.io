@@ -5,7 +5,7 @@ listing:
   id: publications
   contents: .
   type: default
-  sort: "date"
+  sort: "date desc"
   categories: numbered
   sort-ui: [date,title,author]  # TODO: add publication?
   filter-ui: true
