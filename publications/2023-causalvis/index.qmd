@@ -1,0 +1,63 @@
+---
+title: "Causalvis: Visualizations for Causal Inference"
+date: 2023-04-19
+doi: https://doi.org/10.1145/3544548.3581236
+author:
+  - name: Grace Guo
+    affiliations:
+      - name: "Georgia Institute of Technology"
+        department: School of Interactive Computing
+        state: Georgia
+        country: United States
+  - name: Ehud Karavani 
+    affiliations:
+      - name: "IBM Research, Israel"
+        department: Causal Machine Learning for Healthcare and Life Sciences
+        country: Israel
+  - name: Alex Endert
+    affiliations:
+      - name: "Georgia Institute of Technology"
+        department: School of Interactive Computing
+        state: Georgia
+        country: United States
+  - name: Bum-chul Kwon
+    affiliations: 
+      - name: "IBM Research, Cambridge"
+        state: Massachusetts 
+        country: United States
+categories:
+  - causal inference
+  - visualization
+  - evaluation
+# keywords: 
+publication: "CHI: Conference on Human Factors in Computing Systems"
+journal: 
+  title: "CHI: Conference on Human Factors in Computing Systems"
+pdf: https://dl.acm.org/doi/pdf/10.1145/3544548.3581236
+abstract: >
+  Causal inference is a statistical paradigm for quantifying causal effects using observational data. 
+  It is a complex process, requiring multiple steps, iterations, and collaborations with domain experts. 
+  Analysts often rely on visualizations to evaluate the accuracy of each step. 
+  However, existing visualization toolkits are not designed to support the entire causal inference process within computational environments familiar to analysts. 
+  In this paper, we address this gap with Causalvis, a Python visualization package for causal inference. 
+  Working closely with causal inference experts, we adopted an iterative design process to develop four interactive visualization modules to support causal inference analysis tasks. 
+  The modules are then presented back to the experts for feedback and evaluation. 
+  We found that Causalvis effectively supported the iterative causal inference process. 
+  We discuss the implications of our findings for designing visualizations for causal inference, particularly for tasks of communication and collaboration.
+description: >
+  An open-source Jupyter Notebook widget to support various steps throughout a causal inference analysis workflow.
+---
+
+
+<!-- figures -->
+
+## Citation
+```bibtex
+@inproceedings{reyes2023fairprs,
+  title={FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization},
+  author={Reyes, Diego Machado and Bose, Aritra and Karavani, Ehud and Parida, Laxmi},
+  booktitle={Pacific Symposium on Biocomputing},
+  year={2023}
+}
+```
+
