@@ -7,7 +7,7 @@
         <span class="listing-title lead"><%= item.title %></span><br />
         <span class="listing-author"><%= item.author %></span><br />
         <span class="listing-publication fst-italic "><%= item.publication %></span>
-        <span class="listing-year">(<%= item.date %>)</span><br />
+        <span class="listing-year">(<%= item.date.split(" ").slice(-1) %>)</span><br />
     </div> </a>
     <a href="<%- item.path %>" class="btn btn-primary">
       Details
