@@ -1,0 +1,58 @@
+---
+title: "Propensity score models are better when post-calibrated"
+date: 2022-11-02
+doi: https://doi.org/10.48550/arXiv.2211.01221
+author:
+  - name: Rom Gutman
+    affiliations:
+      - name: "Technion - Israel Institute of Technology"
+        country: Israel
+  - name: Ehud Karavani 
+    affiliations:
+      - ref: ibmrisrl
+  - name: Yishai Shimoni
+    affiliations: 
+      - ref: ibmrisrl
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Causal Machine Learning for Healthcare and Life Sciences
+categories:
+  - causal inference
+  - methods
+# keywords: 
+publication: "Arxiv"
+journal: 
+  title: "Arxiv"
+pdf: https://arxiv.org/pdf/2211.01221.pdf
+abstract: >
+  Theoretical guarantees for causal inference using propensity scores are partly based on the scores behaving like conditional probabilities. 
+  However, scores between zero and one, especially when outputted by flexible statistical estimators, do not necessarily behave like probabilities. 
+  We perform a simulation study to assess the error in estimating the average treatment effect 
+  before and after applying a simple and well-established post-processing method to calibrate the propensity scores. 
+  We find that post-calibration reduces the error in effect estimation for expressive uncalibrated statistical estimators, 
+  and that this improvement is not mediated by better balancing. 
+  The larger the initial lack of calibration, the larger the improvement in effect estimation, 
+  with the effect on already-calibrated estimators being very small. 
+  Given the improvement in effect estimation and that post-calibration is computationally cheap, 
+  we recommend it will be adopted when modelling propensity scores with expressive models.
+description: >
+  *PositiviTree:* A decision tree-based approach for finding easily-characterizable positivity violations.
+---
+
+
+
+<!-- figures -->
+
+## Citation
+```bibtex
+@article{gutman2022propensity,
+  title={Propensity score models are better when post-calibrated},
+  author={Gutman, Rom and Karavani, Ehud and Shimoni, Yishai},
+  journal={arXiv preprint arXiv:2211.01221},
+  year={2022}
+}
+```
+
