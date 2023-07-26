@@ -1,0 +1,87 @@
+---
+title: "Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2"
+date: 2021-03-26
+doi: https://doi.org/10.1101/2021.03.24.21251900
+author:
+  - name: Tal El-Hay
+    affiliations: 
+      - ref: ibmrisrl
+    attributes:
+      equal-contributor: true
+  - name: Ehud Karavani
+    affiliations: 
+      - ref: ibmrisrl
+    attributes:
+      equal-contributor: true
+  - name: Asaf Peretz
+    affiliations: 
+      - name: "Samson Assuta Ashdod University Hospital"
+        country: Israel
+  - name: Matan Ninio
+    affiliations: 
+      - ref: ibmrisrl
+  - name: Sivan Ravid
+    affiliations: 
+      - ref: ibmrisrl
+  - name: Michal Chorev
+    affiliations: 
+      - ref: ibmrisrl
+  - name: Michal Rosen-Zvi
+    affiliations: 
+      - ref: ibmrisrl
+  - name: Tal Patalon
+    affiliations: 
+      - name: Maccabi Healthcare Services
+        department: KSM Research and Innovation Center
+        country: Israel
+  - name: Yishai Shimoni
+    affiliations: 
+      - ref: ibmrisrl
+  - name: Anil Jain
+    affiliations: 
+      - name: IBM Watson Health
+        state: Ohio
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Machine Learning for Healthcare and Life Sciences
+categories:
+  - statistics
+  - healthcare
+# keywords: 
+publication: "MedRxiv"
+journal: 
+  title: "MedRxiv"
+pdf: https://www.medrxiv.org/content/medrxiv/early/2021/03/26/2021.03.24.21251900.full.pdf
+abstract: |
+  **Background**: The 2019 novel coronavirus (SARS-CoV-2) is reported to result in both respiratory and non-respiratory severe health outcomes, but quantitative assessment of the risk – while adjusting for underlying risk driven by comorbidities – is not yet established.
+  **Methods**: A retrospective observational study using electronic health records of 9,344,021 individuals across the U.S. with at-least 1 year of clinical history and followed up throughout 2020.
+  **Results**: 131,329 individuals were associated with SARS-CoV-2 infection by January 6, 2021 in three distinct surges. While the age and number of preexisting conditions had decreased throughout the pandemic, the characteristics of those who experienced severe health events did not. \n
+  During the second surge, between June 7 and November 18, 2020, 425,988 individuals in the base cohort were admitted to emergency rooms or hospitals. 
+  Among them, 15,486 were detected with SAR-CoV-2 within few days of admission. 
+  Significant adjusted odds ratios were observed between SARS-CoV-2 infection and the following severe health events: 
+  respiratory (4.38, 95% confidence interval 4.16– 4.62), bacterial pneumonia (3.25, 2.76–3.83), 
+  sepsis (1.71, 1.53–1.91), renal (1.69, 1.57–1.83), hematologic/immune (1.32, 1.20–1.45), 
+  neurological (1.23, 1.09–1.38).
+  **Conclusion**: SARS-CoV-2 infection among hospitalized patients is associated with non-negligible increased risk of severe events including multiple non-respiratory ones. 
+  These associations, which complement recent studies, are persistent even after accounting for sources of selection and confounding bias, increasing the confidence they are not spurious.
+description: >
+  Estimate the association of SARS-CoV-2 infection with subsequent respiratoty and non-respiratory severe outcomes.
+---
+
+<!-- figures -->
+
+## Citation
+```bibtex
+@article{el2021trends,
+  title={Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2},
+  author={El-Hay, Tal and Karavani, Ehud and Peretz, Asaf and Ninio, Matan and Ravid, Sivan and Chorev, Michal and Rosen-Zvi, Michal and Patalon, Tal and Shimoni, Yishai and Jain, Anil},
+  journal={medRxiv},
+  pages={2021--03},
+  year={2021},
+  publisher={Cold Spring Harbor Laboratory Press}
+}
+```
+
