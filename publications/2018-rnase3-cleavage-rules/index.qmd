@@ -1,0 +1,67 @@
+---
+title: "*In vivo* cleavage rules and target repertoire of RNase III in *Escherichia coli*"
+date: 2018-08-03
+doi: https://doi.org/10.1093/nar/gky816
+author:
+  - name: Yael Altuvia
+    affiliations: 
+      - ref: microgenhuji
+  - name: Amir Bar
+    affiliations:
+      - ref: microgenhuji
+  - name: Niv Reiss
+    affiliations:
+      - ref: microgenhuji
+  - name: Ehud Karavani
+    affiliations:
+      - ref: microgenhuji
+  - name: Liron Argaman
+    affiliations:
+      - ref: microgenhuji
+  - name: Hanah Margalit
+    affiliations:
+      - ref: microgenhuji
+affiliations: 
+  - id: microgenhuji
+    name: The Hebrew University of Jerusalem
+    country: Israel
+    department: >
+      Department of Microbiology and Molecular Genetics,
+      Institute for Medical Research Israel-Canada, 
+      Faculty of Medicine
+categories:
+  - computational biology
+# keywords: 
+publication: "Nucleic Acids Research"
+journal: 
+  title: "Nucleic Acids Research"
+pdf: https://academic.oup.com/nar/article-pdf/46/19/10380/26331742/gky684.pdf
+abstract: >
+  Bacterial RNase III plays important roles in the processing and degradation of RNA transcripts. 
+  A major goal is to identify the cleavage targets of this endoribonuclease at a transcriptome-wide scale and delineate its in vivo cleavage rules. 
+  Here we applied to Escherichia coli grown to either exponential or stationary phase a tailored RNA-seq-based technology, 
+  which allows transcriptome-wide mapping of RNase III cleavage sites at a nucleotide resolution. 
+  Our analysis of the large-scale in vivo cleavage data substantiated the established cleavage pattern of a double cleavage in an intra-molecular stem structure, 
+  leaving 2-nt-long 3′ overhangs, and refined the base-pairing preferences in the cleavage site vicinity. 
+  Intriguingly, we observed that the two stem positions between the cleavage sites are highly base-paired, usually involving at least one G-C or C-G base pair. 
+  We present a clear distinction between intra-molecular stem structures that are RNase III substrates and intra-molecular stem structures randomly selected across the transcriptome, emphasizing the in vivo specificity of RNase III. 
+  Our study provides a comprehensive map of the cleavage sites in both intra-molecular and inter-molecular duplex substrates, providing novel insights into the involvement of RNase III in post-transcriptional regulation in the bacterial cell.
+---
+
+
+<!-- figures -->
+
+## Citation
+```bibtex
+@article{altuvia2018vivo,
+  title={In vivo cleavage rules and target repertoire of RNase III in Escherichia coli},
+  author={Altuvia, Yael and Bar, Amir and Reiss, Niv and Karavani, Ehud and Argaman, Liron and Margalit, Hanah},
+  journal={Nucleic acids research},
+  volume={46},
+  number={19},
+  pages={10380--10394},
+  year={2018},
+  publisher={Oxford University Press}
+}
+```
+
