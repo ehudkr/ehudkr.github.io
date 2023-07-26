@@ -2,11 +2,13 @@
 ```{=html}
 <ul class="pub-list list">
 <% for (const item of items) { %>
-  <li <%= metadataAttrs(item) %>>
-    <span class="listing-title lead"><%= item.title %></span><br />
-    <span class="listing-author"><%= item.author %></span><br />
-    <span class="listing-publication fst-italic "><%= item.publication %></span>
-    <span class="listing-year">(<%= item.year %>)</span><br />
+  <li <%= metadataAttrs(item) %> style="margin-bottom: 0.5rem;">
+    <a href="<%- item.path %>" style="text-decoration:none; color:inherit;"> <div>
+        <span class="listing-title lead"><%= item.title %></span><br />
+        <span class="listing-author"><%= item.author %></span><br />
+        <span class="listing-publication fst-italic "><%= item.publication %></span>
+        <span class="listing-year">(<%= item.date %>)</span><br />
+    </div> </a>
     <a href="<%- item.path %>" class="btn btn-primary">
       Details
     </a>
