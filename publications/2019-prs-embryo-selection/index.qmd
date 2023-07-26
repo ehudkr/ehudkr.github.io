@@ -2,7 +2,7 @@
 title: "Screening human embryos for polygenic traits has limited utility"
 date: 2019-11-21
 doi: https://doi.org/10.1016/j.cell.2019.10.033
-authors:
+author:
   - name: Ehud Karavani
     affiliations: "The Hebrew University of Jerusalem"
   - name: Or Zuk
