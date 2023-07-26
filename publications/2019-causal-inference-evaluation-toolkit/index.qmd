@@ -1,0 +1,80 @@
+---
+title: "An evaluation toolkit to guide model selection and cohort definition in causal inference"
+date: 2019-06-02
+doi: https://doi.org/10.48550/arXiv.1906.00442
+author:
+  - name: Yishai Shimoni
+    affiliations: 
+      - ref: ibmrisrl
+  - name: Ehud Karavani 
+    affiliations:
+      - ref: ibmrisrl
+  - name: Sivan Ravid
+    affiliations:
+      - ref: ibmrisrl
+  - name: Peter Bak
+    affiliations:
+      - ref: ibmrisrl
+  - name: Tan Hung Ng
+    affiliations: 
+      - name: "IBM Watson Health"
+      - state: California
+  - name: Sharon Hensley Alford
+    affiliations: 
+      - name: "IBM Watson Health"
+      - state: Massachusetts
+  - name: Yaara Goldschmidt
+    affiliations:
+      - ref: ibmrisrl
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Machine Learning for Healthcare and Life Sciences
+categories:
+  - causal inference
+  - evaluations
+  - healthcare
+# keywords: 
+publication: "Arxiv"
+journal: 
+  title: "Arxiv"
+pdf: https://arxiv.org/pdf/1906.00442
+abstract: >
+  Real world observational data, together with causal inference, 
+  allow the estimation of causal effects when randomized controlled trials are not available. 
+  To be accepted into practice, such predictive models must be validated for the dataset at hand, 
+  and thus require a comprehensive evaluation toolkit, as introduced here. 
+  Since effect estimation cannot be evaluated directly, 
+  we turn to evaluating the various observable properties of causal inference, 
+  namely the observed outcome and treatment assignment. 
+  We developed a toolkit that expands established machine learning evaluation methods and adds several causal-specific ones. 
+  Evaluations can be applied in cross-validation, in a train-test scheme, or on the training data. 
+  Multiple causal inference methods are implemented within the toolkit in a way that allows modular use of the underlying machine learning models. 
+  Thus, the toolkit is agnostic to the machine learning model that is used. 
+  We showcase our approach using a rheumatoid arthritis cohort (consisting of about 120K patients) extracted from the IBM MarketScan(R) Research Database. 
+  We introduce an iterative pipeline of data definition, model definition, and model evaluation. 
+  Using this pipeline, we demonstrate how each of the evaluation components helps drive model selection 
+  and refinement of data extraction criteria in a way that provides more reproducible results 
+  and ensures that the causal question is answerable with available data. 
+  Furthermore, we show how the evaluation toolkit can be used to ensure that performance is maintained when applied to subsets of the data, 
+  thus allowing exploration of questions that move towards personalized medicine.
+---
+
+This manuscript combines the evaluation suite with a specific use-case. 
+A readers-digest version focusing on ROC curves for propensity score models
+is also [available here](../../blog/2020/12/28-ml-metrics-for-causal-inference/index.qmd)
+
+<!-- figures -->
+
+## Citation
+```bibtex
+@article{shimoni2019evaluation,
+  title={An evaluation toolkit to guide model selection and cohort definition in causal inference},
+  author={Shimoni, Yishai and Karavani, Ehud and Ravid, Sivan and Bak, Peter and Ng, Tan Hung and Alford, Sharon Hensley and Meade, Denise and Goldschmidt, Yaara},
+  journal={arXiv preprint arXiv:1906.00442},
+  year={2019}
+}
+```
+
