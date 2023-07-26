@@ -29,8 +29,9 @@ authors:
     affiliations: "Zucker School of Medicine at Hofstra/Northwell"
   - name: Shai Carmi
     affiliations: "The Hebrew University of Jerusalem"
-  categories:
+categories:
   - machine learning
+  - statistics
   - genetics
 # keywords: 
 publication: "Cell"
