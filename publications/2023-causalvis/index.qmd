@@ -28,7 +28,7 @@ author:
 categories:
   - causal inference
   - visualization
-  - evaluation
+  - evaluations
 # keywords: 
 publication: "CHI: Conference on Human Factors in Computing Systems"
 journal: 
