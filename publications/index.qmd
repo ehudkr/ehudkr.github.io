@@ -5,6 +5,7 @@ listing:
   id: publications
   contents: .
   type: default
+  template: publication_listing.ejs
   sort: "date desc"
   categories: numbered
   sort-ui: [date,title,author]  # TODO: add publication?
