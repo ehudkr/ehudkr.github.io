@@ -1,0 +1,64 @@
+---
+title: "Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis"
+date: 2018-02-14
+# doi: https://doi.org/10.48550/arXiv.1802.05046
+author:
+  - name: Yishai Shimoni
+    affiliations: 
+      - ref: ibmrisrl
+    #     organization: IBM Research
+  - name: Chen Yanover
+    affiliations:
+      - ref: ibmrisrl
+  - name: Ehud Karavani 
+    affiliations:
+      - ref: ibmrisrl
+  - name: Yaara Goldschmnidt
+    affiliations:
+      - ref: ibmrisrl
+    # corresponding: true
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Machine Learning for Healthcare and Life Sciences
+doi: https://doi.org/10.48550/arXiv.1802.05046
+categories:
+  - causal inference
+  - evaluations
+# keywords: 
+publication: "Arxiv"
+journal: 
+  title: "Arxiv"
+pdf: https://arxiv.org/pdf/1802.05046
+abstract: >
+  Causal inference analysis is the estimation of the effects of actions on outcomes. 
+  In the context of healthcare data this means estimating the outcome of counter-factual treatments 
+  (i.e. including treatments that were not observed) on a patient's outcome. 
+  Compared to classic machine learning methods, 
+  evaluation and validation of causal inference analysis is more challenging 
+  because ground truth data of counter-factual outcome can never be obtained in any real-world scenario.
+  Here, we present a comprehensive framework for benchmarking algorithms that estimate causal effect. 
+  The framework includes unlabeled data for prediction, labeled data for validation, 
+  and code for automatic evaluation of algorithm predictions using both established and novel metrics.
+  The data is based on real-world covariates, and the treatment assignments and outcomes are based on simulations, which provides the basis for validation. 
+  In this framework we address two questions: one of scaling, and the other of data-censoring. 
+  The framework is available as open source code at 
+  [this URL](https://github.com/IBM-HRL-MLHLS/IBM-Causal-Inference-Benchmarking-Framework).
+
+---
+
+
+<!-- figures -->
+
+## Citation
+```bibtex
+@article{shimoni2018benchmarking,
+  title={Benchmarking framework for performance-evaluation of causal inference analysis},
+  author={Shimoni, Yishai and Yanover, Chen and Karavani, Ehud and Goldschmnidt, Yaara},
+  journal={arXiv preprint arXiv:1802.05046},
+  year={2018}
+}
+```
+
