@@ -2,12 +2,20 @@
 title: "Publications"
 date-modified: last-modified
 listing: 
+  id: publications
   contents: .
   type: default
   sort: "date"
   categories: numbered
-  sort-ui: true
+  sort-ui: [date,title,author]  # TODO: add publication?
   filter-ui: true
+  fields: 
+    - "title"
+    - "author"
+    # - "description"
+    - "date"
+    - "image"
+    - "categories"
 ---
 
 My current research focus revolves mainly around causal inference.
@@ -21,4 +29,6 @@ but in the plausible case I won't,
 please see my [Google Scholar page {{< iconify simple-icons googlescholar >}}](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en)
 for the latest version.
 
-
+## Publications
+<!-- :::{#publications}
+::: -->
