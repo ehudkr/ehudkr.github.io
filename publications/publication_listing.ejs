@@ -11,8 +11,15 @@
         <span class="listing-author"><%= item.author %></span><br />
         <span class="listing-publication fst-italic "><%= item.publication %></span>
         <span class="listing-year">(<%= item.date.split(" ").slice(-1) %>)</span><br />
+        <!-- <% if(item.categories) { %>
+            <div class="project-categories">
+                <% for (const cat of item.categories) { %>
+                    <span class="project-category" style="color: #e07e2d;"><%= cat %></span>
+                <% } %>
+            </div>
+        <% } %> -->
     </div> </a>
-    <div>
+    <div style="margin-top: 0.15rem;">
         <a href="<%- item.path %>" class="btn btn-primary rounded" style="background-color: #567dc4;">
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
