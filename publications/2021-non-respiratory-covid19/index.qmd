@@ -71,7 +71,7 @@ description: >
   Estimate the association of SARS-CoV-2 infection with subsequent respiratoty and non-respiratory severe outcomes.
 ---
 
-<!-- figures -->
+![Association of SARS-CoV-2 infection with several severe outcomes from 425,988 admitted individuals.](figure4.png)
 
 ## Citation
 ```bibtex
