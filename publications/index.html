@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ehud Karavani - Publications</title>
+<title>Ehud Karavani - Publications </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../img/bar-chart-fill.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,12 +65,45 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-publications .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-description','listing-date','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-language","listing-title","listing-date","listing-author","listing-affiliations","listing-doi","listing-categories","listing-publication","listing-journal","listing-pdf","listing-abstract","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-publications'] = new List('listing-publications', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Ehud Karavani - Publications">
+<meta property="og:title" content="Ehud Karavani - Publications ">
+<meta property="og:description" content="">
 <meta property="og:site-name" content="Ehud Karavani">
-<meta name="twitter:title" content="Ehud Karavani - Publications">
+<meta name="twitter:title" content="Ehud Karavani - Publications ">
+<meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -162,14 +197,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    </div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#publications" id="toc-publications" class="nav-link active" data-scroll-target="#publications">Publications</a></li>
+  </ul>
+</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="causal inference">causal inference <span class="quarto-category-count">(6)</span></div><div class="category" data-category="computational biology">computational biology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="deep learning">deep learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="evaluations">evaluations <span class="quarto-category-count">(4)</span></div><div class="category" data-category="genetics">genetics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="healthcare">healthcare <span class="quarto-category-count">(3)</span></div><div class="category" data-category="machine learning">machine learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="methods">methods <span class="quarto-category-count">(2)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="visualization">visualization <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Publications</h1>
+<h1 class="title">Publications <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en"><iconify-icon inline="" icon="simple-icons:googlescholar"></iconify-icon></a></h1>
 </div>
 
 
@@ -178,16 +219,397 @@ ul.task-list li input[type="checkbox"] {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">July 27, 2023</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
+<p>My current research focus revolves mainly around causal inference. Both applications (mainly around healthcare) and methodology (including usability). I also dabble in information visualization and genetic-based risk models (polygenic risk scores). Prior to that, I worked on computational methods in molecular biology (genomics and transcriptomics). In addition to academic publications, I also issued several patents in the US.</p>
+<p>I will do my best to keep this listing updated, but in the plausible case I won’t, please see my <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en">Google Scholar page</a> for the latest version.</p>
+<section id="publications" class="level2">
+<h2 class="anchored" data-anchor-id="publications">Publications</h2>
+<!-- :::{#publications}
+::: -->
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div class="quarto-listing quarto-listing-container-custom" id="listing-publications">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-publications-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-publications'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<!-- Adjusted from https://github.com/jmgirard/affcomlab/blob/378a6e4167af5ed462e06ad4a39206e85fad9ff6/ejs/article.ejs  -->
+<!-- TODO: N`ote that Markdown formatting is not yet properly parsed: https://github.com/quarto-dev/quarto-cli/issues/3468 -->
+<ul class="pub-list list" style="list-style:none">
+  <li data-index="0" data-categories="causal inference,visualization,evaluations" data-listing-date-sort="1681851600000" data-listing-file-modified-sort="1690462969324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2023-causalvis/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-causalvis:_visualizations_for_causal_inference">
+        <span class="listing-title lead"><b>Causalvis: Visualizations for Causal Inference</b></span><br>
+        <span class="listing-author">Grace Guo, Ehud Karavani, Alex Endert, Bum-chul Kwon</span><br>
+        <span class="listing-publication fst-italic ">CHI: Conference on Human Factors in Computing Systems</span>
+        <span class="listing-year">(2023)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                    <span class="project-category" style="color: #e07e2d;">visualization</span>
+                    <span class="project-category" style="color: #e07e2d;">evaluations</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2023-causalvis/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.1145/3544548.3581236" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <i class="bi bi-file-earmark-text"></i> 
+            DOI
+        </a>
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3544548.3581236" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="1" data-categories="deep learning,genetics,statistics" data-listing-date-sort="1672696800000" data-listing-file-modified-sort="1690462969327" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2023-prs-plus-irm/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-fairprs:_adjusting_for_admixed_populations_in_polygenic_risk_scores_using_invariant_risk_minimization">
+        <span class="listing-title lead"><b>FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization</b></span><br>
+        <span class="listing-author">Diego Machado Reyes, Aritra Bose, Ehud Karavani, Laxmi Parida</span><br>
+        <span class="listing-publication fst-italic ">Pacific Symposium on Biocomputing</span>
+        <span class="listing-year">(2023)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">deep learning</span>
+                    <span class="project-category" style="color: #e07e2d;">genetics</span>
+                    <span class="project-category" style="color: #e07e2d;">statistics</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2023-prs-plus-irm/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.1142/9789811270611_0019" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <i class="bi bi-file-earmark-text"></i> 
+            DOI
+        </a>
+        <a href="https://www.worldscientific.com/doi/pdf/10.1142/9789811270611_0019" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="2" data-categories="causal inference,methods" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1690462969270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2022-propensity-score-calibration/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-propensity_score_models_are_better_when_post-calibrated">
+        <span class="listing-title lead"><b>Propensity score models are better when post-calibrated</b></span><br>
+        <span class="listing-author">Rom Gutman, Ehud Karavani, Yishai Shimoni</span><br>
+        <span class="listing-publication fst-italic ">Arxiv</span>
+        <span class="listing-year">(2022)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                    <span class="project-category" style="color: #e07e2d;">methods</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2022-propensity-score-calibration/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.48550/arXiv.2211.01221" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            DOI
+        </a>
+        <a href="https://arxiv.org/pdf/2211.01221.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="3" data-categories="statistics,healthcare" data-listing-date-sort="1616709600000" data-listing-file-modified-sort="1690462969260" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2021-non-respiratory-covid19/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-trends_in_clinical_characteristics_and_associations_of_severe_non-respiratory_events_related_to_sars-cov-2">
+        <span class="listing-title lead"><b>Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2</b></span><br>
+        <span class="listing-author">Tal El-Hay, Ehud Karavani, Asaf Peretz, Matan Ninio, Sivan Ravid, Michal Chorev, Michal Rosen-Zvi, Tal Patalon, Yishai Shimoni, Anil Jain</span><br>
+        <span class="listing-publication fst-italic ">MedRxiv</span>
+        <span class="listing-year">(2021)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">statistics</span>
+                    <span class="project-category" style="color: #e07e2d;">healthcare</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2021-non-respiratory-covid19/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.1101/2021.03.24.21251900" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            DOI
+        </a>
+        <a href="https://www.medrxiv.org/content/medrxiv/early/2021/03/26/2021.03.24.21251900.full.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="4" data-categories="machine learning,statistics,genetics" data-listing-date-sort="1574287200000" data-listing-file-modified-sort="1690462969252" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2019-prs-embryo-selection/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-screening_human_embryos_for_polygenic_traits_has_limited_utility">
+        <span class="listing-title lead"><b>Screening human embryos for polygenic traits has limited utility</b></span><br>
+        <span class="listing-author">Ehud Karavani, Or Zuk, Danny Zeevi, Nir Barzilai, Nikos C. Stefanis, Alex Hatzimanolis, Nikolaos Smyrnis, Dimitrios Avramopoulos, Leonid Kruglyak, Gil Atzmon, Max Lam, Todd Lencz, Shai Carmi</span><br>
+        <span class="listing-publication fst-italic ">Cell</span>
+        <span class="listing-year">(2019)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">machine learning</span>
+                    <span class="project-category" style="color: #e07e2d;">statistics</span>
+                    <span class="project-category" style="color: #e07e2d;">genetics</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2019-prs-embryo-selection/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.1016/j.cell.2019.10.033" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <i class="bi bi-file-earmark-text"></i> 
+            DOI
+        </a>
+        <a href="https://www.cell.com/cell/pdf/S0092-8674(19)31210-3.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="5" data-categories="causal inference,methods" data-listing-date-sort="1563397200000" data-listing-file-modified-sort="1690462969223" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2019-positivitree/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-a_discriminative_approach_for_finding_and_characterizing_positivity_violations_using_decision_trees">
+        <span class="listing-title lead"><b>A discriminative approach for finding and characterizing positivity violations using decision trees</b></span><br>
+        <span class="listing-author">Ehud Karavani, Peter Bak, Yishai Shimoni</span><br>
+        <span class="listing-publication fst-italic ">Arxiv</span>
+        <span class="listing-year">(2019)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                    <span class="project-category" style="color: #e07e2d;">methods</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2019-positivitree/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.48550/arXiv.1907.08127" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            DOI
+        </a>
+        <a href="https://arxiv.org/pdf/1907.08127.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="6" data-categories="machine learning,deep learning,healthcare" data-listing-date-sort="1560805200000" data-listing-file-modified-sort="1690462969203" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2019-mammograms-plus-ehrs/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-predicting_breast_cancer_by_applying_deep_learning_to_linked_health_records_and_mammograms">
+        <span class="listing-title lead"><b>Predicting breast cancer by applying deep learning to linked health records and mammograms</b></span><br>
+        <span class="listing-author">Ayelet Akselrod-Ballin, Michal Chorev, Yoel Shoshan, Adam Spiro, Alon Hazan, Roie Melamed, Ella Barkan, Esma Herzel, Shaked Naor, Ehud Karavani, Gideon Koren, Yaara Goldschmidt, Varda Shalev, Michal Rosen-Zvi, Michal Guindy</span><br>
+        <span class="listing-publication fst-italic ">Radiology</span>
+        <span class="listing-year">(2019)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">machine learning</span>
+                    <span class="project-category" style="color: #e07e2d;">deep learning</span>
+                    <span class="project-category" style="color: #e07e2d;">healthcare</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2019-mammograms-plus-ehrs/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.1148/radiol.2019182622" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <i class="bi bi-file-earmark-text"></i> 
+            DOI
+        </a>
+        <a href="https://pubs.rsna.org/doi/pdf/10.1148/radiol.2019182622" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="7" data-categories="causal inference,evaluations,healthcare" data-listing-date-sort="1559422800000" data-listing-file-modified-sort="1690462969202" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2019-causal-inference-evaluation-toolkit/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-an_evaluation_toolkit_to_guide_model_selection_and_cohort_definition_in_causal_inference">
+        <span class="listing-title lead"><b>An evaluation toolkit to guide model selection and cohort definition in causal inference</b></span><br>
+        <span class="listing-author">Yishai Shimoni, Ehud Karavani, Sivan Ravid, Peter Bak, Tan Hung Ng, Sharon Hensley Alford, Yaara Goldschmidt</span><br>
+        <span class="listing-publication fst-italic ">Arxiv</span>
+        <span class="listing-year">(2019)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                    <span class="project-category" style="color: #e07e2d;">evaluations</span>
+                    <span class="project-category" style="color: #e07e2d;">healthcare</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2019-causal-inference-evaluation-toolkit/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.48550/arXiv.1906.00442" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            DOI
+        </a>
+        <a href="https://arxiv.org/pdf/1906.00442" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="8" data-categories="causal inference,evaluations" data-listing-date-sort="1548972000000" data-listing-file-modified-sort="1690462969201" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2019-causal-inference-competitions/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-comment:_causal_inference_competitions:_where_should_we_aim?">
+        <span class="listing-title lead"><b>Comment: causal inference competitions: where should we aim?</b></span><br>
+        <span class="listing-author">Ehud Karavani, Tal El-Hay, Yishai Shimoni, Chen Yanover</span><br>
+        <span class="listing-publication fst-italic ">Statistical Science</span>
+        <span class="listing-year">(2019)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                    <span class="project-category" style="color: #e07e2d;">evaluations</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2019-causal-inference-competitions/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.1214/18-STS679" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <i class="bi bi-file-earmark-text"></i> 
+            DOI
+        </a>
+        <a href="https://projecteuclid.org/journals/statistical-science/volume-34/issue-1/Comment-Causal-Inference-Competitions-Where-Should-We-Aim/10.1214/18-STS679.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="9" data-categories="computational biology" data-listing-date-sort="1533243600000" data-listing-file-modified-sort="1690462969199" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2018-rnase3-cleavage-rules/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-*in_vivo*_cleavage_rules_and_target_repertoire_of_rnase_iii_in_*escherichia_coli*">
+        <span class="listing-title lead"><b>*In vivo* cleavage rules and target repertoire of RNase III in *Escherichia coli*</b></span><br>
+        <span class="listing-author">Yael Altuvia, Amir Bar, Niv Reiss, Ehud Karavani, Liron Argaman, Hanah Margalit</span><br>
+        <span class="listing-publication fst-italic ">Nucleic Acids Research</span>
+        <span class="listing-year">(2018)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">computational biology</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2018-rnase3-cleavage-rules/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.1093/nar/gky816" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <i class="bi bi-file-earmark-text"></i> 
+            DOI
+        </a>
+        <a href="https://academic.oup.com/nar/article-pdf/46/19/10380/26331742/gky684.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+  <li data-index="10" data-categories="causal inference,evaluations" data-listing-date-sort="1518559200000" data-listing-file-modified-sort="1690462969198" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+    <a href="../publications/2018-causal-inference-benchmarking-framework/index.html" style="text-decoration:none; color:inherit;"> 
+    <div id="pub-benchmarking_framework_for_performance-evaluation_of_causal_inference_analysis">
+        <span class="listing-title lead"><b>Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis</b></span><br>
+        <span class="listing-author">Yishai Shimoni, Chen Yanover, Ehud Karavani, Yaara Goldschmnidt</span><br>
+        <span class="listing-publication fst-italic ">Arxiv</span>
+        <span class="listing-year">(2018)</span><br>
+        <!-- 
+            <div class="project-categories">
+                    <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                    <span class="project-category" style="color: #e07e2d;">evaluations</span>
+            </div>
+         -->
+    </div> </a>
+    <div style="margin-top: 0.15rem;">
+        <a href="../publications/2018-causal-inference-benchmarking-framework/index.html" class="btn btn-primary rounded" style="background-color: #567dc4;">
+          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
+          Details
+        </a>
+        <a href="https://doi.org/10.48550/arXiv.1802.05046" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+                <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            DOI
+        </a>
+        <a href="https://arxiv.org/pdf/1802.05046" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+          PDF
+        </a>
+    </div>
+    <hr>
+  </li>
+</ul>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
