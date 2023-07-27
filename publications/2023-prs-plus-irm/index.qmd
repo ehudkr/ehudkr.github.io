@@ -48,9 +48,9 @@ description: >
   Applying Invariant Risk Minimization (IRM) to debias ethnically-biased polygenic risk scores.
 ---
 
-
-
-<!-- figures -->
+:::{.column-page}
+![Model overview](prsirm_model.png)
+:::
 
 ## Citation
 ```bibtex
