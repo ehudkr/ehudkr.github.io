@@ -42,9 +42,11 @@ description: >
   *PositiviTree:* A decision tree-based approach for finding easily-characterizable positivity violations.
 ---
 
+:::{.column-page layout-ncol=2}
+![](simulation_calibration_ate.jpg)
 
-
-<!-- figures -->
+![](acic_models_calibration_ate.jpg)
+:::
 
 ## Citation
 ```bibtex
