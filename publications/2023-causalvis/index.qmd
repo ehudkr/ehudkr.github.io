@@ -52,11 +52,13 @@ description: >
 <!-- figures -->
 
 ## Citation
-```bibtex
-@inproceedings{reyes2023fairprs,
-  title={FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization},
-  author={Reyes, Diego Machado and Bose, Aritra and Karavani, Ehud and Parida, Laxmi},
-  booktitle={Pacific Symposium on Biocomputing},
+
+``` bibtex
+@inproceedings{guo2023causalvis,
+  title={Causalvis: Visualizations for Causal Inference},
+  author={Guo, Grace and Karavani, Ehud and Endert, Alex and Kwon, Bum Chul},
+  booktitle={Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems},
+  pages={1--20},
   year={2023}
 }
 ```
