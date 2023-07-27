@@ -93,7 +93,7 @@ description: >
   using deep learning and boosting trees.
 ---
 
-<!-- figures -->
+![](mammogram_ehr_model_overview.jpeg)
 
 ## Citation
 ```bibtex
