@@ -52,7 +52,9 @@ description: >
   Choose embryos for IVF implantation according to DNA-based trait prediction models.
 ---
 
-<!-- figures -->
+:::{.column-page}
+![](embryo_selection-summary1.png)
+:::
 
 ## Citation
 ```bibtex
