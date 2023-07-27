@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+title: "Publications [{{< iconify simple-icons googlescholar >}}](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en)"
 date-modified: last-modified
 listing: 
   id: publications
@@ -27,7 +27,7 @@ In addition to academic publications, I also issued several patents in the US.
 
 I will do my best to keep this listing updated,
 but in the plausible case I won't,
-please see my [Google Scholar page {{< iconify simple-icons googlescholar >}}](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en)
+please see my [Google Scholar page](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en)
 for the latest version.
 
 ## Publications
