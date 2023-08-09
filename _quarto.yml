@@ -67,6 +67,8 @@ website:
         href: https://discourse.datamethods.org/u/ehudk/summary
         rel: me  
         target: "_new"
+  repo-url: https://github.com/ehudkr/ehudkr.github.io/
+  repo-actions: [source, edit, issue]
       
 format:
   html:
