@@ -86,37 +86,16 @@
   {
     "objectID": "blog/2023/07/15-hello_world/index.html",
     "href": "blog/2023/07/15-hello_world/index.html",
-    "title": "Hello World",
+    "title": "Hello Quarto!",
     "section": "",
-    "text": "Hello world,"
+    "text": "I made a personal website."
   },
   {
-    "objectID": "blog/2023/07/15-hello_world/index.html#introduction",
-    "href": "blog/2023/07/15-hello_world/index.html#introduction",
-    "title": "Hello World",
-    "section": "",
-    "text": "Hello world,"
-  },
-  {
-    "objectID": "blog/2023/07/15-hello_world/index.html#methods",
-    "href": "blog/2023/07/15-hello_world/index.html#methods",
-    "title": "Hello World",
-    "section": "Methods",
-    "text": "Methods\nWaving hands sideways."
-  },
-  {
-    "objectID": "blog/2023/07/15-hello_world/index.html#results",
-    "href": "blog/2023/07/15-hello_world/index.html#results",
-    "title": "Hello World",
-    "section": "Results",
-    "text": "Results\nProof was hand-waved and left as an excercise for the reader."
-  },
-  {
-    "objectID": "blog/2023/07/15-hello_world/index.html#discussion",
-    "href": "blog/2023/07/15-hello_world/index.html#discussion",
-    "title": "Hello World",
-    "section": "Discussion",
-    "text": "Discussion\nGood bye"
+    "objectID": "blog/2023/07/15-hello_world/index.html#footnotes",
+    "href": "blog/2023/07/15-hello_world/index.html#footnotes",
+    "title": "Hello Quarto!",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSince I already mentioned Jinja above, it seems like its template language combines both pandoc’s and EJS capabilities together?↩︎"
   },
   {
     "objectID": "blog/2022/11/02-continuous-treatment-causal-inference/index.html",
@@ -291,7 +270,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "List of blog posts\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nHello World\n\n\nThat’s the subtitle\n\n\n\n\ncausal inference\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nJul 15, 2023\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nCausal inference is a mindset\n\n\nCausal inference from observational data is a mindset, not a set of tools.\n\n\n\n\ncausal inference\n\n\n\n\n\n\n\n\n\n\n\nJan 4, 2023\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nCausal Inference with Continuous Treatments\n\n\nGeneralizing inverse probability weights for non-categorical treatments.\n\n\n\n\ncausal inference\n\n\n\n\n\n\n\n\n\n\n\nNov 2, 2022\n\n\n14 min\n\n\n\n\n\n\n  \n\n\n\n\nWhy we care for covariate balancing in comparative studies\n\n\nBalancing variables in statistical comparative analysis is a proxy, not a goal.\n\n\n\n\ncausal inference\n\n\n\n\n\n\n\n\n\n\n\nNov 20, 2021\n\n\n7 min\n\n\n\n\n\n\n  \n\n\n\n\nA visual way to think of macro and micro averages in classification metrics\n\n\nExplaining what macro-average and micro-average metrics are.\n\n\n\n\nmachine learning\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nSep 4, 2021\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nUsing machine learning metrics to evaluate causal inference models\n\n\nReinterpreting known machine learning evaluations from a causal inference perspective, focusing on ROC curves for propensity models.\n\n\n\n\ncausal inference\n\n\nmachine learning\n\n\n\n\n\n\n\n\n\n\n\nDec 28, 2020\n\n\n10 min\n\n\n\n\n\n\n  \n\n\n\n\nThe case against Agile research\n\n\nEver popular iterative development approaches can sneak in unconscious-bias that can be harmful to the scientific process.\n\n\n\n\nmeta-science\n\n\n\n\n\n\n\n\n\n\n\nJul 6, 2020\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nSolving Simpson’s Paradox with Inverse Probability Weighting\n\n\nA visual intuition on how the most popular method in causal-inference works, and how it solves one of the most popular paradoxes in statistics.\n\n\n\n\ncausal inference\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nFeb 2, 2020\n\n\n12 min\n\n\n\n\n\n\n  \n\n\n\n\nApplying Deep Learning to Genetic Prediction\n\n\nWhat classical methods for obtaining polygenic (risk) scores lack, and how deep learning might help mitigated these shortcomings.\n\n\n\n\ngenetics\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\n\n\nMay 5, 2018\n\n\n18 min\n\n\n\n\n\n\nNo matching items"
+    "text": "List of blog posts\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nHello Quarto!\n\n\nI made a personal website. With blogs and stuff.\n\n\n\n\n\n\n\n\n\nJul 15, 2023\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nCausal inference is a mindset\n\n\nCausal inference from observational data is a mindset, not a set of tools.\n\n\n\n\ncausal inference\n\n\n\n\n\n\n\n\n\n\n\nJan 4, 2023\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nCausal Inference with Continuous Treatments\n\n\nGeneralizing inverse probability weights for non-categorical treatments.\n\n\n\n\ncausal inference\n\n\n\n\n\n\n\n\n\n\n\nNov 2, 2022\n\n\n14 min\n\n\n\n\n\n\n  \n\n\n\n\nWhy we care for covariate balancing in comparative studies\n\n\nBalancing variables in statistical comparative analysis is a proxy, not a goal.\n\n\n\n\ncausal inference\n\n\n\n\n\n\n\n\n\n\n\nNov 20, 2021\n\n\n7 min\n\n\n\n\n\n\n  \n\n\n\n\nA visual way to think of macro and micro averages in classification metrics\n\n\nExplaining what macro-average and micro-average metrics are.\n\n\n\n\nmachine learning\n\n\nvisualization\n\n\n\n\n\n\n\n\n\n\n\nSep 4, 2021\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nUsing machine learning metrics to evaluate causal inference models\n\n\nReinterpreting known machine learning evaluations from a causal inference perspective, focusing on ROC curves for propensity models.\n\n\n\n\ncausal inference\n\n\nmachine learning\n\n\n\n\n\n\n\n\n\n\n\nDec 28, 2020\n\n\n10 min\n\n\n\n\n\n\n  \n\n\n\n\nThe case against Agile research\n\n\nEver popular iterative development approaches can sneak in unconscious-bias that can be harmful to the scientific process.\n\n\n\n\nmeta-science\n\n\n\n\n\n\n\n\n\n\n\nJul 6, 2020\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nSolving Simpson’s Paradox with Inverse Probability Weighting\n\n\nA visual intuition on how the most popular method in causal-inference works, and how it solves one of the most popular paradoxes in statistics.\n\n\n\n\ncausal inference\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nFeb 2, 2020\n\n\n12 min\n\n\n\n\n\n\n  \n\n\n\n\nApplying Deep Learning to Genetic Prediction\n\n\nWhat classical methods for obtaining polygenic (risk) scores lack, and how deep learning might help mitigated these shortcomings.\n\n\n\n\ngenetics\n\n\ndeep learning\n\n\n\n\n\n\n\n\n\n\n\nMay 5, 2018\n\n\n18 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
