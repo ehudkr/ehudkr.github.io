@@ -1,22 +1,67 @@
 ---
-title: "Hello World"
+title: Hello Quarto!
 author: "Ehud Karavani"
-subtitle: "That's the subtitle"
+subtitle: "I made a personal website. With blogs and stuff."
 date: 2023/07/15
 date-modified: last-modified
-categories: 
-  - causal inference
-  - statistics
+image: https://quarto.org/quarto.png
 ---
 
-## Introduction
-Hello world,
+::: {style="text-align: center;"}
+***I made a personal website.***
+:::
 
-## Methods
-Waving hands sideways.
+### Why
 
-## Results
-Proof was hand-waved and left as an excercise for the reader.
+With Twitter's descent, Substack taking over Medium (taking over Blogger/Blogspot, etc. etc.), and the pathetic death of Myspace still echoing in my memories, my confidence in Platforms is at an all-time low.
 
-## Discussion
-Good bye
+However, my primeval need for a digital presence on the Internet does not fade. I want a place to share my thoughts, at least my professional ones. And I want that place consistent.\
+They say the Internet does not forget, but honestly, *this* kind of Internet is more fragile than we want admit.
+
+### Why not
+
+I've been contemplating in creating a personal website since forever. I don't know much about website development, but it always felt cumbersome to me. I never liked the idea of maintaining HTMLs because they tangle content with form. And add the storage and servers, and ugh... I guess that's why WordPress and Wix were (still are?) such a huge success.
+
+### Why maybe
+
+So when GitHub Pages matured, my contemplation intensified. Them taking care of the CI/CD of the website through Git and GitHub is nothing less than genius. But "Jekyll" sounded too similar to "Jenkins" and I couldn't get myself to create one. I had Twitter, I had Medium, I had a job, I had very little to say anyway.
+
+### Why how
+
+But then I heard of Quarto.\
+I knew of RMarkdown for a while, and quite envied how R users got a markdown-based solution, while Pythonistas got stuck in a json-based Jupyter Notebook. (If you ever reviewed a pull request of Notebooks, you'll understand.) So when I learned Quarto was multilingual (R! Python! Julia!), text-based (markdown!), reach in features (mathjax!), and flexible (documents, websites, arbitrary pre-post scripts...), It was too tempting not to give it a try.
+
+Quarto seems flexible enough to hold anything anywhere from a business card landing page to a full-blown website.
+
+And it's quite simple, too.
+
+### Really, how
+
+I thought of making this post a howto guide, but honestly, I'm not sure how. I just hacked my way through.\
+I still don't completely understand how it works.\
+I started with the website template from VS Code, found other quarto websites, found their source-code on GitHub and "reverse engineered" it (if you call still it that, when you actually have access to the source code).
+
+I gradually tweaked, and structured, and hacked and such.\
+Therefore, it is hard for me to make a complete howto guide, but I welcome everyone to peek at this website source code as a start.\
+To separate the needles for haystacks, I will share some of the things I learned at no particular order:
+
+1.  **Cosmo-like dark mode**\
+    I love dark mode, and the [official documentation suggests the `darkly/flatly` couple](https://quarto.org/docs/output-formats/html-themes.html#dark-mode) for dark and light mode. But I honestly didn't like Flatly, the cosmo theme is much nicer, in my opinion. Problem is, the top navigation bars of cosmo and darkly don't align, and the switching between the two really irritated my inner pedantic.\
+    So I learned from the docs [you could use SCSS files to make minimal changes](https://quarto.org/docs/output-formats/html-themes.html#sass-variables) to existing CSS themes. I then spent an entire evening on Chrome's Inspect mode to figure out what changes when I switch from light to dark mode (I don't know CSS), until I was able to [extract the minimal set of configuration to align darkly onto cosmos](https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/dark-theme.scss) (fonts and navbar padding).
+2.  **Icons everywhere**\
+    I also love inline icons. Quarto comes with [Bootstrap icons](https://icons.getbootstrap.com/) built in, but that did not satisfy my hunger for fringe icons.\
+    So my first step was to add the [Iconify extension](https://github.com/mcanouil/quarto-iconify) to the project, which, to my understanding, looks like an aggregate of many different icon services into one.
+    1.  **Medium icon in blogs' title blocks**\
+        Since I re-uploaded all my original blogs, first written in [Medium](https://medium.com/ehudkr), to here too, I wanted to signify that. I didn't want to put the link at the start/end of every post - the original Medium post is a metadata to these posts, and it should be stated in the metadata yaml.\
+        Then I thought it would be aesthetically pleasing to have a Medium icon {{< iconify bi medium >}} next to the original publication date. So found at the docs how to create [custom title pages](https://quarto.org/docs/authoring/title-blocks.html#custom-title-pages) using [template partials](https://quarto.org/docs/journals/templates#template-partials).\
+        But I didn't want a custom title page, I want the existing one. So I found its definitions in [Quarto's GitHub repository](https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html), and by looking how other metadata is handled in this pandoc html template language (my first encounter with it though I did some Jinja in the past), made [a small tweak to include the Medium icon next to the original publication date](https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/blog/title-metadata.html#L51-L54).
+    2.  **About Me special icons**\
+        Just a quick note, that if you're using non Bootstrap icons in the [navigation bar](https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/_quarto.yml#L30) or [About Me page](https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/index.qmd#L17), the icons go in the `text` attribute, not in the `icon`.
+3.  **Custom publication listing**\
+    For the publication listing, I wanted to add some data like hyperlinks to the DOI and PDF (with icons, of course). Again, I didn't really want a custom template, but unlike the title block template, [Quarto's default listing template does not seem to be online](https://github.com/quarto-dev/quarto-web/discussions/89).\
+    Also, it appears to an EJS file (another template language to "learn" on top of SCSS and pandoc's partial HTMLs we already hacked[^1]).\
+    Since I didn't had Quarto's own template, I paid a visit to the [Awesome Quarto repository](https://github.com/mcanouil/awesome-quarto), where I discovered [Jeffery Girard's publication page](https://affcom.ku.edu/publications.html) (and [corresponding source code](https://github.com/jmgirard/affcomlab/blob/378a6e4167af5ed462e06ad4a39206e85fad9ff6/ejs/article.ejs)). It was simple and clean, and a great starting point [to build on top of](https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/publications/publication_listing.ejs) (I'm mostly proud how [the DOI icon changes if the work is a pre-print or peer-reviewed](https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/publications/publication_listing.ejs#L27-L36) \[of course\], or how to [make the entire thing clickable](https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/publications/publication_listing.ejs#L8-L9)). And again we see the flexibility of creating arbitrary attributes in the documents' yaml and then reference them in the template.
+4.  **Multiple listings**\
+    This is also a nice feature. I contemplated how to separate full-blown blog posts from more minimalistic ones. At first I thought of having two different pages in the navigation bar, but this is too separated in my opinion. I was happy I discovered you could [place multiple listings in a single page](https://quarto.org/docs/websites/website-listings.html#multiple-listings), this makes the distinction between the two more fluid (as it really is in reality).
+
+[^1]: Since I already mentioned Jinja above, it seems like its template language combines both pandoc's and EJS capabilities together?
