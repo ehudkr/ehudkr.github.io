@@ -1,0 +1,79 @@
+---
+title: Sequential trial design for causal inference
+subtitle: >
+  Aligning time-zero TODO
+author: "Ehud Karavani"
+date: 2023/08/27
+date-modified: last-modified
+bibliography: references.bib
+categories: 
+  - causal inference
+  - study design
+---
+
+## Introduction
+I'm not special, so I've spent a lot of time addressing confounding bias.
+I even created a maintain an open-source Python package whose main focus is flexible causal inference modeling ([`pip install causallib`](https://github.com/IBM/causallib)). 
+There's a place to discuss why confounding bias is the most popular bias,
+but this blog post is not the one.
+
+Actually, there's some compelling evidence (well, at least anecdotal) that confounding bias has less of a bias than what one would expect.
+Main example is a 2017 paper by @garcia2017value
+examining the effect of colorectal cancer screening on colorectal cancer incidence.
+It showed the same survival curves for treatment and control units
+when adjusting and not adjusting for confounding factors.
+This, in and of itself, is a poor evidence, 
+but the exact same shape of survival curves also appeared in @bretthauer2022effect.
+This suggests that confounding bias did not affect the observational study.[^1]
+
+[^1]: A similar phenomenon was also observed in @hernan2008observational,
+finding similar hazard ratios (in terms of point estimation and confidence intervals) between adjusted and unadjusted estimates, 
+suggesting the cause of discrepency between previous observational studies (even using the same data) and RCTs was not confounding bias but rather the mysterious bias which is the subject of this blog post.
+
+### I have _zero_ time for this bias
+This bias originates from improperly setting the _time-zero_.
+Time zero (or "index date") is the point in time which splits the baseline period from the follow-up period.
+History from future, retrospectively speaking.
+It usually the time in which treatment is initiated, 
+and therefore the point in time from which we look backward to obtain historical data (baseline covariates) 
+and look forward to gather follow-up data (outcomes).  
+As such, to properly set up time zero, three things must align:
+
+1. The subject must meet the eligibility criteria
+1. "Treatment" must be assigned
+1. Outcomes are beginning to be counted. 
+
+Learning causal inference, we are used to getting datasets with nice and percise binary treatment variables and covariates.
+But where did these come from?
+People's lives are not cross sectional, they are a trajectory through time.
+So there are lots of design decisions in order to squeeze all of it into a tabular form.
+Having longitudinal data makes it more possible, but not more easy.
+How do we decide how to assign a person into either treatment groups (or not at all if not eligible).
+
+However, given how I presented it, you might see why active-comparator designs are so appealing.
+It is more straightforward to compare to active treatments head-to-head,
+since we just define the first treatment initiation of each drug (the two groups) as our time zero.
+
+The trickier part is when we want to design a study to compare treatment initators with _non-users_.
+What is the index date for someone who just lived their life never getting treated?
+Non-initators have no point in time where they start treatment,
+making it harder to align this non-existing "treatment" assignment to the follow-up and eligibilty. 
+
+This often leads to comparing either persistent users
+or those who taken the drug at some time (i.e., _all_ or _any_), 
+to those who never used it.
+This study design does very little in informing physicians how to act on the patient they are currently facing.
+_"Take this drug and if you survive for the next 5 years (i.e., become a persistent user),_ 
+_then you will reduce your risk by x percent"_ 
+does not inspire much confidence 
+and is not very helpful for the patient who is living now in the present and not five years into the future.[^2]
+
+[^2]: TODO: discrepancy in how to define treatment groups, i.e., how to define the $1$ and $0$ in $Y^1$ and $Y^0$. boils down to consistency
+
+
+
+"time-related biases"
+
+treat now vs treat later
+
+
