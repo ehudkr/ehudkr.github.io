@@ -71,7 +71,10 @@ _then you will reduce your risk by x percent"_
 does not inspire much confidence 
 and is not very helpful for the patient who is living now in the present and not five years into the future.[^2]
 
-[^2]: I believe this discrepancy in how to define treatment groups, i.e., how to define the $1$ and $0$ in $Y^1$ and $Y^0$ boils down to consistency
+[^2]: Furthermore, I believe this discrepancy in how to define treatment groups, 
+namely, how to define the $1$ and $0$ in $Y^1$ and $Y^0$, 
+boils down to the causal consistency assumptions.
+Defining a poor treatment mechanism in the study design means the outcome one observes in their data ($E[Y|A=a]$) will not equal the hypothetical outcome they care about ($E[Y^a]$).
 
 
 
