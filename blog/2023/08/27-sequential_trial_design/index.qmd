@@ -76,10 +76,75 @@ namely, how to define the $1$ and $0$ in $Y^1$ and $Y^0$,
 boils down to the causal consistency assumptions.
 Defining a poor treatment mechanism in the study design means the outcome one observes in their data ($E[Y|A=a]$) will not equal the hypothetical outcome they care about ($E[Y^a]$).
 
+## Sequential trial design
+So how do we force the alignment of eligibility, treatment initiation, and follow-up into a proper time zero?
 
+### A single "sequential" trial
+
+One simple approach is to use calendar time. 
+Set the time-zero to a specific date.
+Say, for instance, January 1st, 2020.
+This will be the point in time splitting history from future.
+Keep whoever is eligibile to participate at this date, discard the rest;
+data from before it are the baseline covariates;
+data from this date forward is the follow-up;
+and whoever got treated on this date is considered in the treatment group, the rest are controls.
+
+Individuals treated before January 1st are probably ineligible 
+(most design might enforce participants to be treatment naive).
+Individuals treated after January 1st are considered controls,
+because time-zero is set at January 1st, not the future.
+Though a per-protocol analysis might decide to censor them from follow-up because they deviated from their original (control) assignment.
+This creates a design that answers a question of treat now vs. don't treat now (but possible treat later).
+
+However, this single trial is too naive and not very efficient.
+We miss all the treated individuals in the past and in the future.
+There might even not be anyone treated on January 1st. 
+We throw out a lot of information. 
+That's a big blow to statistical power.
+
+### A sequence of sequential trials
+
+Therefore, a natural extension would be to just repeat the process.
+Repeat it for January 2nd, 2020, for January 3rd, 2020, for January 4th, and so forth.
+For each time point we:
+1. Consider whoever meets the eligibility criteria and discard the rest,
+1. Set the treatment indicator based on who got treated,
+1. Extract baseline covariates prior to that time point,
+1. Extract outcome information from that time onwards. 
+
+The way I imagine this process is that we have stencil-like mold, 
+defined by our eligibility criteria,
+from which we funnel observations like a strainer.
+We go to January 1st, put the stencil-strainer, shake the database and filter only eligible individuals at the time. 
+We then go to January 2nd, filter; 
+and so on and so forth,
+rinse and repeat.
+A moving window through time, only that window is specially shaped by the eligibilty criteria. 
+
+TODO:
+person-time format (heirarchical)
+if the covariates are 1 year back (or start of data)
+covariates for the same individual may change because treatments add.
+outcome (time to event shortens)
+illustrate that with a figure showing a person timeline and a person-time table. Make sure there's 1) a covariate being included overtime, 2) a covariate being excluded over time, 3) show the time-to-event reduces at each time point
+
+
+Illustrate the process
+footnote: nested trials (because whoever considered for next time point is fromthe controls. treatment naive)
+
+
+show/illustrate it is equivalent to person-time in the immortal time example, only having a cohort-centric view (the person re-appears updated) rather than a person-centric view (assign time to groups). 
+
+
+strategies to make efficient (deduplicate)
+
+
+pool effects in meta analysis
+vs pool the data from the start
 
 "time-related biases"
 
-treat now vs treat later
+keep the trial / date feature to use in multilevel things
 
-
+cons, granularity is predefined
