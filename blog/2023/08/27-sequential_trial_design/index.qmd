@@ -19,7 +19,7 @@ but this blog post is not it.
 Maybe at some other time.
 
 Actually, there's some compelling evidence (well, at least anecdotal) that confounding bias has less of a biasing effect than what one would expect.
-Main example is a 2017 paper by @garcia2017value
+One example is @garcia2017value
 examining the effect of colorectal cancer screening on colorectal cancer incidence.
 It showed the same survival curves for treatment and control units
 when adjusting and not adjusting for confounding factors.
@@ -52,7 +52,7 @@ So there are lots of design decisions in order to squeeze all of it into tabular
 Having longitudinal data makes it more possible, but not more easy.
 How do we decide how to assign a person into either treatment groups (or not at all if not eligible).
 
-However, given how I presented it, you might see why active-comparator designs are so appealing.
+Given this presentation, you might see why active-comparator designs are so appealing.
 It is more straightforward to compare to active treatments head-to-head,
 since we just define the first treatment initiation of each drug (the two groups) as our time zero.
 
@@ -60,7 +60,7 @@ The trickier part is when we want to design a study to compare treatment initato
 This is often of interest in pragmatic trials.
 What is the index date for someone who just lived their life never getting treated?
 Non-initators have no point in time where they start treatment,
-making it harder to align this non-existing "treatment" assignment to the follow-up and eligibilty. 
+making it harder to align this non-existing "treatment assignment" to the follow-up and eligibilty. 
 
 This often leads to comparing either persistent users
 or those who taken the drug at some time (i.e., _all_ or _any_), 
@@ -77,7 +77,7 @@ boils down to the causal consistency assumptions.
 Defining a poor treatment mechanism in the study design means the outcome one observes in their data ($E[Y|A=a]$) will not equal the hypothetical outcome they care about ($E[Y^a]$).
 
 ## Sequential trial design
-So how do we force the alignment of eligibility, treatment initiation, and follow-up into a proper time zero?
+So how can we force the alignment of eligibility, treatment initiation, and follow-up into a proper time zero?
 
 ### A single "sequential" trial
 
@@ -86,12 +86,12 @@ Set the time-zero to a specific date.
 Say, for instance, January 1st, 2020.
 This will be the point in time splitting history from future.
 Keep whoever is eligibile to participate at this date, discard the rest;
-data from before it are the baseline covariates;
+data from before this date are the baseline covariates;
 data from this date forward is the follow-up;
 and whoever got treated on this date is considered in the treatment group, the rest are controls.
 
 Individuals treated before January 1st are probably ineligible 
-(most design might enforce participants to be treatment naive).
+(most study designs might enforce participants to be treatment naive).
 Individuals treated after January 1st are considered controls,
 because time-zero is set at January 1st, not the future.
 Though a per-protocol analysis might decide to censor them from follow-up because they deviated from their original (control) assignment.
@@ -100,7 +100,7 @@ This creates a design that answers a question of treat now vs. don't treat now (
 However, this single trial is too naive and not very efficient.
 We miss all the treated individuals in the past and in the future.
 There might even not be anyone treated on January 1st. 
-We throw out a lot of information. 
+We throw away a lot of information. 
 That's a big blow to statistical power.
 
 ### A sequence of sequential trials
