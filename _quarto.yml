@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Ehud Karavani"
-  favicon: img/bar-chart-fill.png
+  favicon: img/bar-chart-fill.svg
   twitter-card: true
   open-graph: true
   navbar:
