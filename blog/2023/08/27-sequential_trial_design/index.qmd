@@ -122,12 +122,29 @@ and so on and so forth,
 rinse and repeat.
 A moving window through time, only that window is specially shaped by the eligibilty criteria. 
 
-TODO:
-person-time format (heirarchical)
-if the covariates are 1 year back (or start of data)
-covariates for the same individual may change because treatments add.
-outcome (time to event shortens)
-illustrate that with a figure showing a person timeline and a person-time table. Make sure there's 1) a covariate being included overtime, 2) a covariate being excluded over time, 3) show the time-to-event reduces at each time point
+This means a single person can have multiple records (entries, or rows) in the dataset.
+One for each trial (time-zero).
+
+We can see this illustrated below with a person's timeline and its corresponding person-time tabular form.
+In this study design, baseline covariates are taken 4 time steps relative to time-zero (e.g., 2 years prior to time-zero), 
+and follow-up is taken 4 time steps starting time zero (e.g., outcome within 2 years).
+Thus, the covariate profile changes as time-zero progresses.
+At times 4-7, 🏊‍♂️ is included as it is within the baseline period dictated by the study design, but it is no longer counted in time 8.
+Similarly, the outcome 🚑 is not observed at time 4, only starting at time 5.[^3]
+To make things more explicitly, I also indicate eligibility; 
+in this example, the study design requires participant to no been treated in the last 4 time-steps (treatment-naive), 
+and so at times 7 and 8 the person is no longer eligibile as they were treated in time 6.[^4] 
+
+![An illustration of a person timeline and how its corrsponding person-time tabular form. It shows multiple time-zeros set from time 4 throughout time 8 (think Jan 1st to Jan 4th from above). Different time-zeros have different covariate (🏊‍♂️) profile, different outcome (🚑) based on the moving follow-up window, and - although that person is treated (💊) - they are not always considered as such.](single_person_time_moving_window.png)
+
+
+[^3]: In time-to-event settings, the follow-up window is often as long as can be possibly observed, avoiding explicitly stating a follow-up timeframe.
+In such scenarios, we can see the time to outcome (🚑) decreases as time-zero progresses.
+![](single_person_time_moving_window_survival.png)
+
+[^4]: First, note that they might also be inelgible because they don't have sufficient follow-up. 
+Second, that person may also be ineligible at time 10 as they are no longer outcome-naive, too.
+
 
 
 Illustrate the process
