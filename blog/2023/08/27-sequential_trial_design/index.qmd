@@ -108,11 +108,18 @@ That's a big blow to statistical power.
 Therefore, a natural extension would be to just repeat the process.
 Repeat it for January 2nd, 2020, for January 3rd, 2020, for January 4th, and so forth.
 For each time point we:
+
 1. Consider whoever meets the eligibility criteria and discard the rest,
 1. Set the treatment indicator based on who got treated,
 1. Extract baseline covariates prior to that time point,
 1. Extract outcome information from that time onwards. 
 
+![An illustration of the sequential trial process at a data-set level[^5]. At each time $t$ (starting with $t=0$, like Jan 1st), we check whoever is eligible and assign them to their appropriate treatment groups according to their treatmeent status at that time. At the next time step ($t=1$ or Jan 2nd), the pool of eligible individuals can change in several ways: 1) treated individuals from the past are probably no longer eligible, at least not before some washout period passes; 2) eligible people can become ineligible regardless of their past treatment status (e.g., they can turn 65 and no long fit the inclusion criteria). 3) Likewise, ineligible people from the past can become eligible if they suddenly fit the criteria (e.g., an individual can turn 18 at this time and become eligible). At each time we collect baseline and follow-up data according to the study design relative to this index date. This process repeates for all available time steps.](pop_level_process.png)
+
+[^5]: This also illustrates why sequential trials may be sometimes called "nested" trials. 
+This is because, in some common and simple settings, the trial at time $t$ (eligible people at time $t$) are _nested_ within the controls at time $t-1$.
+However I think "nested trials" has a different meaning in the RCT landscape, so "sequential trials" is both more general and non-taken.
+ 
 The way I imagine this process is that we have stencil-like mold, 
 defined by our eligibility criteria,
 from which we funnel observations like a strainer.
@@ -147,8 +154,6 @@ Second, that person may also be ineligible at time 10 as they are no longer outc
 
 
 
-Illustrate the process
-footnote: nested trials (because whoever considered for next time point is fromthe controls. treatment naive)
 
 
 show/illustrate it is equivalent to person-time in the immortal time example, only having a cohort-centric view (the person re-appears updated) rather than a person-centric view (assign time to groups). 
