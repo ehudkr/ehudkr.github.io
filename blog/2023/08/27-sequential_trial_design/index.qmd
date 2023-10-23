@@ -153,7 +153,90 @@ In such scenarios, we can see the time to outcome (🚑) decreases as time-zero 
 Second, that person may also be ineligible at time 10 as they are no longer outcome-naive, too.
 
 
+### A control explosion
+Often, getting treatment is rarer than not getting treated. 
+This imbalance is not inherently important, but can lead to some difficulties in practice.
+Looking at the resulting dataset above, we see that sequential trials exacerbate this even further since even the treated individuals contribute (even more) non-treated rows, 
+all the while never-treated individuals just multiply throughout time.
 
+This control group inflation can be undesireable in practice.
+It increases demand of computate resources, both in terms of memory and runtime. 
+While not necessarily contributing enough information to justify it.
+Statistical power is determined by the smallest group, anyway; 
+and, while I don't know how to formally extend this argument into a repetaed-measurement setting,
+I have an intuition that dozens and dozens of duplicate (and near-duplicate) records hit the diminishing returns curve somewhat quickly.
+
+There are several valid strategies to deal with settings where eligibility criteria is met multiple times per person, resulting in cambrian-like explosion of controls records. 
+
+First, we can just randomly subsample a fixed sample (e.g., 10%) from all the controls records from our dataset (@dickerman2019avoidable).
+Since this blindly regards person and time information, it can have some unintended consequences like discarding entire time steps or individuals by some unfortunate random chance.
+This can reduce variability in the dataset and hurt the infromation content of it.  
+Fortunately, this can be easily solvable by forcing some structure on the discarding, like stratified sampling by time-steps and/or person IDs.
+
+We can take this structural subsampling a step forward and force a single entry per-person, i.e., reduce it to a single eligibile record per person. 
+When doing so, it is important to reduce it without taking strict advantage of "future infromation", namely by the treatment and outcome status of people's timeline. 
+Two common ways are taking the first eligibility record per-person, or take one randomly (@hernan2016using).
+Both are valid, non-biasing approaches, but they suffer from similar disadvantages presented above when randomly subsampling controls.
+Namely, they can discard more useful infromation and keep more redundant infromation instead.
+Specifically, they can blindly discard treatment records, which can be very precious. 
+In reasonable cases where a treated person-time is not at treated at first eligibile time, 
+or in cases where it simply bee been randomly discarded. 
+As said above, treated person-time records are few to begin with, and reducing them the size of the treatment group even further reduces important statistical power unnecessarily. 
+
+A forth option that maximizes the size of the (smaller) treatment group is a combined approach:
+first, gather all the treated person-time records; 
+and second, take first (or random) eligibility time per-person (@garcia2017value).
+This is basically a different view of the first approach.
+Both first fix (or take) all the treated person-times and then subsample just the control person-times.
+Only here, the subsampling is further structured to keep one record per person (including individuals who are at some point treated) 
+by determinstic subsampling (taking records at first eligibilty time)
+or random subsampling (taking a random record from all eligible times of an individual).
+
+![Illustration of the four strategies for dealing with the inflation of control person-times in multiple eligibility settings. It describes 3 people: A, B, and C and their treatment status over 5 time steps. First, using all person-times[^6] from which we can derive the rest. Second, first eligibilty only, where B1, A1, and C2 participate (note C1 is ineligible in this example). Third, a random eligibility time per person. Note that in both cases we lose A3 as a treated unit.  Forth, a mixed approach where we take all treated person-times _and_ 1st eligibilty time. Lastly, a fifth strategy taking all treated person-times and randomly sampling a fixed proportions from the controls is not showed.](multiple_eligibility.png)
+
+[^6]: Note time 2 (Jan 2nd) may be redundant as it containd only control units. 
+If time has some effect --- i.e., people at time $t$ might not be fully exchangeable with people at time $t^*$ --- then not having any comparable treated units at time 2 might violate a positiity (overlap) requirement. 
+Thus time steps with all-controls may be further discarded in the preprocess step (drop the rows) or in the analytic step (e.g., apply exact matching on the trial ID [time step] and consequently discard such records).
+
+In the mixed approaches, it is important to choose control person-times while ignoring treatment indication in a person's timeline.
+For instance, in the example above, it might be tempting to discard control trials of person A, because person A is eventually treated.
+Or, put differently, after selecting all the treated person-times, select a subsample of person-times controls while excluding people chosen in the treated person-times.
+However, this can bias the analysis as it will create a control group that is, by construction, never-treated;
+and never-treated might not be a comparable control for incidence users we care about (@garcia2017value).
+
+#### Contemporary controls vs. self controls
+As mention above, using all person-times can create computational strains and inefficiencies. 
+All while in single-eligibility designs we might discard precious information.
+Mixed approaches where we first select all treated person-times is a good middle ground solution, but there is no free lunch.
+
+We originally perform a trial at each time step.
+Looking at each trial independently, we adjust for time confounding as each treated person at that time has corresponding contemporary controls. 
+However, when we dillute the controls (and the mixed approach of all-treated plus 1st eligibilty time is the most extreme approach), 
+we reduce the weight of those contemporary controls.
+
+Instead, vieweing the dataset as a whole, we increase the weight of self controls.
+This is because for each person treated not at first eligibilty time we will have, by construction, two instances - one as treated and one as control.
+When we discard records of other people from that time step, because this is not their first eligibility time, we reduce the relative weight (number) of contemporary controls and, by definition, increase the relative weight of the first eligible control person-times of those later treated. 
+
+To simplify with the example above, in the all person-time approach, A3 is controlled by both its past self (A1) and a contemporary record (C3). 
+When we go to the mixed approach, we drop C3, making A1 the sole control for A3.
+Therefore, we reduced the relative weight of contemrporary controls (at time 3) and increased the relative weight of self-controls.
+
+This can create bias if person $i$ at time $t$ is not exchangeable with itself (person $i$) at time $t^*$.  \\
+This is quite reasonably hold, as people might have trend overtime, like disease progression status.
+Furthermore, if this progression is not captured by the covariates, it can create confounding bias (time confounding).
+Therefore, another cosideration should be to check for such cases, and, following footnote [^6], keep trial ID in mind when adjusting and make sure every time-step can act as a quasi-dependent trial.
+
+
+## Discussion
+
+### Immortal (bias) Combat
+
+
+### Pooling estimates vs. pooling records
+
+## Summary
+Pros and cons
 
 
 show/illustrate it is equivalent to person-time in the immortal time example, only having a cohort-centric view (the person re-appears updated) rather than a person-centric view (assign time to groups). 
