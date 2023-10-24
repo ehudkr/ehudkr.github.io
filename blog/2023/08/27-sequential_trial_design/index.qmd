@@ -275,9 +275,24 @@ The individual-level analysis should respect the person-time structure of the co
 They might apply a multilevel (hierarchical) models, partially pooling estimates across time. 
 They should defintely use robust variance estimation, either by sandwhich (HC) estimates or bootstrap, to estimate stnadard errors since the records in the consolidated dataset are no longer independent but are repeated measures of the same pool of individuals.
 
+
+### Limitations
+I have already mentioned the additional computational strain caused by the inflation of the dataset moving from person to person-time format.
+I also mentioned further considerations are required in computing standard errors as the rows of this dataset are no longer independent. 
+
+However, in my opinion the biggest limitation of this method is that it requires the analysts to discretize time from the get go. 
+The granularity of the time-steps is not just predefined, but is baked into the earliest point in the analytic pipeline.
+This means that every sensitivity analysis on this the size of this time step parameter requires to apply the entire pipeline from data extraction from the database. 
+
+This is problematic as the time granularity has both computational and practicical implications. 
+Ideally, the time-step size should not be small enough to avoid creating too redundant repeatitions.
+Too small and the size of the expanded person-time dataset will be too large and incur heavy computational cost (but may also cause floating-point issues as some survival models multiply probabilities over time-steps, so too many time-steps may become numerically unstable).
+On the other hand, too large time-steps can bunch together too much information (like treatment assignment and outcome) and reduce information content of real treatment-outcome associations.
+The size of the time-step should be clinically (or practically) meaningful, but it's ok to find a more proper value around it that also optimizes computational aspects.
+This is computationally harder in sequential trials since the size of the time-steps is baked deep into the construction of the datasets.
+
+
 ### Summary
-Pros and cons
-
-"time-related biases"
-
-cons, granularity is predefined
+Sequential trials design is a generic approach that can solve many time-related biases (@hernan2016specifying). 
+This was a high-level introduction, which I think is missing from the methodological literature, 
+but I also hope it entails some interesting point of views.
