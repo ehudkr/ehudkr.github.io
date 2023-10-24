@@ -241,7 +241,7 @@ So if one _cannot_ experience death for a period of time, they are basically imm
 
 One approach to overcome immortal time bias is to do a time-dependent analysis.
 Namely, we need to somehow associate the time between eligibility and treatment to the control group, and only the time between treatment and outcome (or end of follow-up) to the treatment group.
-It can be done in several ways, depending on the analytical approach, like using an offset in Poisson risk-rate regression.
+It can be done in several ways, depending on the analytical approach, like using an offset in a Poisson risk-rate regression.
 But one generic solution is to work in person-time data.
 Basically, allow the person-time records between eligibility and treatment to be classified to the control group, and the person-time records between treatment onwards to hte treatment group.
 
@@ -255,24 +255,29 @@ This ensures the outcome contributed to the control group is solely for the peri
 This censor-at-change is also known as a _per-protocol analysis_, where we censor individuals who deviate from their originally assigned protocol (controls who start to get teated).
 
 
+### Meta-analysis: pooling estimates vs. pooling records
+In the sequential trial approach we essentially create multiple studies.
+Meta-analysis is the science of synthesizing evidence across multiple similar studies.
+There are two main approaches for meta analysis.
+The classic approach would use aggregate summaries from different studies, like the estimated effect and confidence interval, and combine them into a single estimate.
+However, advances in data management and digital communication made it increasingly feasible to share the original data on individual participants and give rise to a second type of meta analysis: one that consolidates individual-level data, basically consolidating datasets (@riley2010meta, @lin2010relative).
 
-### Pooling estimates vs. pooling records
+Consequently, these two approaches are applicable to sequential trials analysis.
+Either estimate the effect from each trial separately and then synthesize the estimated effects.
+Or just consolidate the extracted person-time records over the separate trials to obtain one big dataset.
 
-## Summary
+There seems to be some benefits for doing individual-level meta-analysis (@riley2010meta), but I'm not expert enough to judge.
+However, since we extract all the trials from the same database, using the same study design with the same covariates, treatment and outcomes, it seems even more appropriate to consolidate the raw data.
+This post even hinted to that, and this, to the best of my knowledge, the only way sequential trials have been analyzied in the epidemiological literature.
+However, it is also worth putting the finger on the fact that this is essentially becomes a meta-analysis, and as such, other approaches are applicable.
+
+The individual-level analysis should respect the person-time structure of the combined trials.
+They might apply a multilevel (hierarchical) models, partially pooling estimates across time. 
+They should defintely use robust variance estimation, either by sandwhich (HC) estimates or bootstrap, to estimate stnadard errors since the records in the consolidated dataset are no longer independent but are repeated measures of the same pool of individuals.
+
+### Summary
 Pros and cons
 
-
-show/illustrate it is equivalent to person-time in the immortal time example, only having a cohort-centric view (the person re-appears updated) rather than a person-centric view (assign time to groups). 
-
-
-strategies to make efficient (deduplicate)
-
-
-pool effects in meta analysis
-vs pool the data from the start
-
 "time-related biases"
-
-keep the trial / date feature to use in multilevel things
 
 cons, granularity is predefined
