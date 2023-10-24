@@ -10,7 +10,7 @@ listing:
   fields: 
     - "title"
     - "subtitle"
-    - "description"
+    # - "description"
     - "date"
     - "image"
     - "reading-time"
