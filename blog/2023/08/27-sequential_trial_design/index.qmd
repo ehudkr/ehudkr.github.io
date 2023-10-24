@@ -1,9 +1,9 @@
 ---
 title: Sequential trial design for causal inference
 subtitle: >
-  Aligning time-zero TODO
+  Aligning time-zero to reduce time-related biases by taking simplest solution possible and awkwardly repeating it until it's great.
 author: "Ehud Karavani"
-date: 2023/08/27
+date: 2023/10/24
 date-modified: last-modified
 bibliography: references.bib
 categories: 
