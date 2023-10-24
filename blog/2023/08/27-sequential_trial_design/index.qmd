@@ -222,7 +222,7 @@ To simplify with the example above, in the all person-time approach, A3 is contr
 When we go to the mixed approach, we drop C3, making A1 the sole control for A3.
 Therefore, we reduced the relative weight of contemrporary controls (at time 3) and increased the relative weight of self-controls.
 
-This can create bias if person $i$ at time $t$ is not exchangeable with itself (person $i$) at time $t^*$.  \\
+This can create bias if person $i$ at time $t$ is not exchangeable with itself (person $i$) at time $t^*$.  \
 This is quite reasonably hold, as people might have trend overtime, like disease progression status.
 Furthermore, if this progression is not captured by the covariates, it can create confounding bias (time confounding).
 Therefore, another cosideration should be to check for such cases, and, following footnote [^6], keep trial ID in mind when adjusting and make sure every time-step can act as a quasi-dependent trial.
@@ -231,6 +231,29 @@ Therefore, another cosideration should be to check for such cases, and, followin
 ## Discussion
 
 ### Immortal (bias) Combat
+Immortal time bias is when participants of a cohort cannot, by construction, experience the outcome during some period of the follow-up time[^7].
+It usually happens when the researcher fails to align the cohort entry time (eligibility time) with the time of getting the treatment (time zero). 
+If theresearcher classifies that individual as treated, and start counting the outcome from cohort entry - even though they are not treated at the start of eligibility - it necessarily means that that person did not (and couldn't have) experience the outcome in the time period between eligibility and time of actual being treated.
+If you're very infamiliar with immortal time bias, I suggest going over its [entry in the Catalog of Bias website](https://catalogofbias.org/biases/immortal-time-bias).
+
+[^7]: It is called "immortal" since often that outcome is death. 
+So if one _cannot_ experience death for a period of time, they are basically immortal.
+
+One approach to overcome immortal time bias is to do a time-dependent analysis.
+Namely, we need to somehow associate the time between eligibility and treatment to the control group, and only the time between treatment and outcome (or end of follow-up) to the treatment group.
+It can be done in several ways, depending on the analytical approach, like using an offset in Poisson risk-rate regression.
+But one generic solution is to work in person-time data.
+Basically, allow the person-time records between eligibility and treatment to be classified to the control group, and the person-time records between treatment onwards to hte treatment group.
+
+This general solution is essentially what happens in the sequential trials.
+Although the proposed solution is person-centric -- assigning the person's time to separate treatment groups -- and sequential trial is cohort-centric -- assigning a person to its appropriate group at each time step.
+However, the resulting view is basically the same, as the end product is a table where that same person is classified to the control group in the period starting with its eligibility until they are assigned a treatement and move to the treatment group.
+
+The only nuance is in how we construct the outcome in the follow-up time. 
+For sequential trials to be absolutely equivalent to the person-time analysis, the control person-times should be censored at the time that person receive treatment. 
+This ensures the outcome contributed to the control group is solely for the period that person is considered untreated. 
+This censor-at-change is also known as a _per-protocol analysis_, where we censor individuals who deviate from their originally assigned protocol (controls who start to get teated).
+
 
 
 ### Pooling estimates vs. pooling records
