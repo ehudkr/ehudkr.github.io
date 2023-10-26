@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ehud Karavani">
+<meta name="dcterms.date" content="2023-07-15">
+
+<title>Ehud Karavani - Hello Quarto!</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Ehud Karavani - Hello Quarto!">
+<meta property="og:description" content="I made a personal website. With blogs and stuff.">
+<meta property="og:image" content="https://quarto.org/quarto.png">
+<meta property="og:site-name" content="Ehud Karavani">
+<meta name="twitter:title" content="Ehud Karavani - Hello Quarto!">
+<meta name="twitter:description" content="I made a personal website. With blogs and stuff.">
+<meta name="twitter:image" content="https://quarto.org/quarto.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Ehud Karavani</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/index.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../publications/index.html" rel="" target="">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../materials/index.html" rel="" target="">
+ <span class="menu-text">Materials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"><i class="bi bi-linkedin" role="img" aria-label="linkedin">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new">
+ <span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"><i class="bi bi-github" role="img" aria-label="github">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://medium.com/@ehudkr" rel="me" target="_new"><i class="bi bi-medium" role="img" aria-label="medium">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ehudkar" rel="me" target="_new"><i class="bi bi-twitter" role="img" aria-label="twitter">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.social/@ehudk" rel="me" target="_new"><i class="bi bi-mastodon" role="img" aria-label="mastodon">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://stackoverflow.com/users/7708413/ehudk" rel="me" target="_new"><i class="bi bi-stack-overflow" role="img" aria-label="stack-overflow">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://discourse.datamethods.org/u/ehudk/summary" rel="me" target="_new">
+ <span class="menu-text"><iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why" id="toc-why" class="nav-link active" data-scroll-target="#why">Why</a></li>
+  <li><a href="#why-not" id="toc-why-not" class="nav-link" data-scroll-target="#why-not">Why not</a></li>
+  <li><a href="#why-maybe" id="toc-why-maybe" class="nav-link" data-scroll-target="#why-maybe">Why maybe</a></li>
+  <li><a href="#why-how" id="toc-why-how" class="nav-link" data-scroll-target="#why-how">Why how</a></li>
+  <li><a href="#really-how" id="toc-really-how" class="nav-link" data-scroll-target="#really-how">Really, how</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/2023/02-hello_world/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/2023/02-hello_world/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hello Quarto!</h1>
+<p class="subtitle lead">I made a personal website. With blogs and stuff.</p>
+</div>
+
+
+<!-- Adjusted from: https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html -->
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ehud Karavani </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <!-- <div class="quarto-title-meta-heading" style="display: inline;">Published</div> -->
+      <!-- <p style="display:inline"><a href=><i class="bi bi-medium"></i></a></p> -->
+    <div class="quarto-title-meta-contents">
+      <p class="date" style="display:inline">July 15, 2023</p> 
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">October 26, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+<div style="text-align: center;">
+<p><strong><em>I made a personal website.</em></strong></p>
+</div>
+<section id="why" class="level3">
+<h3 class="anchored" data-anchor-id="why">Why</h3>
+<p>With Twitter’s descent, Substack taking over Medium (taking over Blogger/Blogspot, etc. etc.), and the pathetic death of Myspace still echoing in my memories, my confidence in Platforms is at an all-time low.</p>
+<p>However, my primeval need for a digital presence on the Internet does not fade. I want a place to share my thoughts, at least my professional ones. And I want that place consistent.<br>
+They say the Internet does not forget, but honestly, <em>this</em> kind of Internet is more fragile than we want admit.</p>
+</section>
+<section id="why-not" class="level3">
+<h3 class="anchored" data-anchor-id="why-not">Why not</h3>
+<p>I’ve been contemplating in creating a personal website since forever. I don’t know much about website development, but it always felt cumbersome to me. I never liked the idea of maintaining HTMLs because they tangle content with form. And add the storage and servers, and ugh… I guess that’s why WordPress and Wix were (still are?) such a huge success.</p>
+</section>
+<section id="why-maybe" class="level3">
+<h3 class="anchored" data-anchor-id="why-maybe">Why maybe</h3>
+<p>So when GitHub Pages matured, my contemplation intensified. Them taking care of the CI/CD of the website through Git and GitHub is nothing less than genius. But “Jekyll” sounded too similar to “Jenkins” and I couldn’t get myself to create one. I had Twitter, I had Medium, I had a job, I had very little to say anyway.</p>
+</section>
+<section id="why-how" class="level3">
+<h3 class="anchored" data-anchor-id="why-how">Why how</h3>
+<p>But then I heard of Quarto.<br>
+I knew of RMarkdown for a while, and quite envied how R users got a markdown-based solution, while Pythonistas got stuck in a json-based Jupyter Notebook. (If you ever reviewed a pull request of Notebooks, you’ll understand.) So when I learned Quarto was multilingual (R! Python! Julia!), text-based (markdown!), reach in features (mathjax!), and flexible (documents, websites, arbitrary pre-post scripts…), It was too tempting not to give it a try.</p>
+<p>Quarto seems flexible enough to hold anything anywhere from a business card landing page to a full-blown website.</p>
+<p>And it’s quite simple, too.</p>
+</section>
+<section id="really-how" class="level3">
+<h3 class="anchored" data-anchor-id="really-how">Really, how</h3>
+<p>I thought of making this post a howto guide, but honestly, I’m not sure how. I just hacked my way through.<br>
+I still don’t completely understand how it works.<br>
+I started with the website template from VS Code, found other quarto websites, found their source-code on GitHub and “reverse engineered” it (if you call still it that, when you actually have access to the source code).</p>
+<p>I gradually tweaked, and structured, and hacked and such.<br>
+Therefore, it is hard for me to make a complete howto guide, but I welcome everyone to peek at this website source code as a start.<br>
+To separate the needles for haystacks, I will share some of the things I learned at no particular order:</p>
+<ol type="1">
+<li><strong>Cosmo-like dark mode</strong><br>
+I love dark mode, and the <a href="https://quarto.org/docs/output-formats/html-themes.html#dark-mode">official documentation suggests the <code>darkly/flatly</code> couple</a> for dark and light mode. But I honestly didn’t like Flatly, the cosmo theme is much nicer, in my opinion. Problem is, the top navigation bars of cosmo and darkly don’t align, and the switching between the two really irritated my inner pedantic.<br>
+So I learned from the docs <a href="https://quarto.org/docs/output-formats/html-themes.html#sass-variables">you could use SCSS files to make minimal changes</a> to existing CSS themes. I then spent an entire evening on Chrome’s Inspect mode to figure out what changes when I switch from light to dark mode (I don’t know CSS), until I was able to <a href="https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/dark-theme.scss">extract the minimal set of configuration to align darkly onto cosmos</a> (fonts and navbar padding).</li>
+<li><strong>Icons everywhere</strong><br>
+I also love inline icons. Quarto comes with <a href="https://icons.getbootstrap.com/">Bootstrap icons</a> built in, but that did not satisfy my hunger for fringe icons.<br>
+So my first step was to add the <a href="https://github.com/mcanouil/quarto-iconify">Iconify extension</a> to the project, which, to my understanding, looks like an aggregate of many different icon services into one.
+<ol type="1">
+<li><strong>Medium icon in blogs’ title blocks</strong><br>
+Since I re-uploaded all my original blogs, first written in <a href="https://medium.com/ehudkr">Medium</a>, to here too, I wanted to signify that. I didn’t want to put the link at the start/end of every post - the original Medium post is a metadata to these posts, and it should be stated in the metadata yaml.<br>
+Then I thought it would be aesthetically pleasing to have a Medium icon <iconify-icon inline="" icon="bi:medium"></iconify-icon> next to the original publication date. So found at the docs how to create <a href="https://quarto.org/docs/authoring/title-blocks.html#custom-title-pages">custom title pages</a> using <a href="https://quarto.org/docs/journals/templates#template-partials">template partials</a>.<br>
+But I didn’t want a custom title page, I want the existing one. So I found its definitions in <a href="https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html">Quarto’s GitHub repository</a>, and by looking how other metadata is handled in this pandoc html template language (my first encounter with it though I did some Jinja in the past), made <a href="https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/blog/title-metadata.html#L51-L54">a small tweak to include the Medium icon next to the original publication date</a>.</li>
+<li><strong>About Me special icons</strong><br>
+Just a quick note, that if you’re using non Bootstrap icons in the <a href="https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/_quarto.yml#L30">navigation bar</a> or <a href="https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/index.qmd#L17">About Me page</a>, the icons go in the <code>text</code> attribute, not in the <code>icon</code>.</li>
+</ol></li>
+<li><strong>Custom publication listing</strong><br>
+For the publication listing, I wanted to add some data like hyperlinks to the DOI and PDF (with icons, of course). Again, I didn’t really want a custom template, but unlike the title block template, <a href="https://github.com/quarto-dev/quarto-web/discussions/89">Quarto’s default listing template does not seem to be online</a>.<br>
+Also, it appears to an EJS file (another template language to “learn” on top of SCSS and pandoc’s partial HTMLs we already hacked<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>).<br>
+Since I didn’t had Quarto’s own template, I paid a visit to the <a href="https://github.com/mcanouil/awesome-quarto">Awesome Quarto repository</a>, where I discovered <a href="https://affcom.ku.edu/publications.html">Jeffery Girard’s publication page</a> (and <a href="https://github.com/jmgirard/affcomlab/blob/378a6e4167af5ed462e06ad4a39206e85fad9ff6/ejs/article.ejs">corresponding source code</a>). It was simple and clean, and a great starting point <a href="https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/publications/publication_listing.ejs">to build on top of</a> (I’m mostly proud how <a href="https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/publications/publication_listing.ejs#L27-L36">the DOI icon changes if the work is a pre-print or peer-reviewed</a> [of course], or how to <a href="https://github.com/ehudkr/ehudkr.github.io/blob/bf0d3901cbacb92ca24b30a051ff0556e7dd4c13/publications/publication_listing.ejs#L8-L9">make the entire thing clickable</a>). And again we see the flexibility of creating arbitrary attributes in the documents’ yaml and then reference them in the template.</li>
+<li><strong>Multiple listings</strong><br>
+This is also a nice feature. I contemplated how to separate full-blown blog posts from more minimalistic ones. At first I thought of having two different pages in the navigation bar, but this is too separated in my opinion. I was happy I discovered you could <a href="https://quarto.org/docs/websites/website-listings.html#multiple-listings">place multiple listings in a single page</a>, this makes the distinction between the two more fluid (as it really is in reality).</li>
+</ol>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Since I already mentioned Jinja above, it seems like its template language combines both pandoc’s and EJS capabilities together?<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/ehudkr\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

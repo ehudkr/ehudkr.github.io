@@ -2,94 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ehudkr.github.io/publications/index.html</loc>
-    <lastmod>2023-08-09T21:08:18.187Z</lastmod>
+    <lastmod>2023-10-26T07:20:22.465Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2023-causalvis/index.html</loc>
-    <lastmod>2023-08-09T21:08:15.512Z</lastmod>
+    <lastmod>2023-10-26T07:20:20.924Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2021-non-respiratory-covid19/index.html</loc>
-    <lastmod>2023-08-09T21:08:12.948Z</lastmod>
+    <lastmod>2023-10-26T07:20:19.626Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2019-positivitree/index.html</loc>
-    <lastmod>2023-08-09T21:08:10.153Z</lastmod>
+    <lastmod>2023-10-26T07:20:17.596Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2019-causal-inference-evaluation-toolkit/index.html</loc>
-    <lastmod>2023-08-09T21:08:07.171Z</lastmod>
+    <lastmod>2023-10-26T07:20:14.816Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2018-rnase3-cleavage-rules/index.html</loc>
-    <lastmod>2023-08-09T21:08:04.398Z</lastmod>
+    <lastmod>2023-10-26T07:20:12.141Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2023/07/15-hello_world/index.html</loc>
-    <lastmod>2023-08-09T21:07:55.511Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2023/03-sequential_trial_design/index.html</loc>
+    <lastmod>2023-10-26T07:20:06.099Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2022/11/02-continuous-treatment-causal-inference/index.html</loc>
-    <lastmod>2023-08-09T21:07:52.348Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2023/01-causal-inference-is-a-mindset/index.html</loc>
+    <lastmod>2023-10-26T07:20:03.965Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2021/09/04-visualizing-micro-macro-averages/index.html</loc>
-    <lastmod>2023-08-09T21:07:47.957Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2021/02-why-balance-covariates/index.html</loc>
+    <lastmod>2023-10-26T07:20:02.334Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2020/07/06-against-agile-research/index.html</loc>
-    <lastmod>2023-08-09T21:07:44.924Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2020/03-ml-metrics-for-causal-inference/index.html</loc>
+    <lastmod>2023-10-26T07:20:00.930Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2018/05/05-deep-learning-genetic-prediction/index.html</loc>
-    <lastmod>2023-08-09T21:07:41.057Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2020/01-simpsons-paradox-ipw/index.html</loc>
+    <lastmod>2023-10-26T07:19:59.239Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2020/02/22-simpsons-paradox-ipw/index.html</loc>
-    <lastmod>2023-08-09T21:07:43.248Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2018/01-deep-learning-genetic-prediction/index.html</loc>
+    <lastmod>2023-10-26T07:19:58.214Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2020/12/28-ml-metrics-for-causal-inference/index.html</loc>
-    <lastmod>2023-08-09T21:07:46.675Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2020/02-against-agile-research/index.html</loc>
+    <lastmod>2023-10-26T07:20:00.001Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2021/11/20-why-balance-covariates/index.html</loc>
-    <lastmod>2023-08-09T21:07:49.626Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2021/01-visualizing-micro-macro-averages/index.html</loc>
+    <lastmod>2023-10-26T07:20:01.580Z</lastmod>
   </url>
   <url>
-    <loc>https://ehudkr.github.io/blog/2023/01/04-causal-inference-is-a-mindset/index.html</loc>
-    <lastmod>2023-08-09T21:07:53.920Z</lastmod>
+    <loc>https://ehudkr.github.io/blog/2022/01-continuous-treatment-causal-inference/index.html</loc>
+    <lastmod>2023-10-26T07:20:03.349Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehudkr.github.io/blog/2023/02-hello_world/index.html</loc>
+    <lastmod>2023-10-26T07:20:04.714Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/blog/index.html</loc>
-    <lastmod>2023-08-09T21:07:57.926Z</lastmod>
+    <lastmod>2023-10-26T07:20:07.706Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/index.html</loc>
-    <lastmod>2023-08-09T21:08:00.493Z</lastmod>
+    <lastmod>2023-10-26T07:20:09.019Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2018-causal-inference-benchmarking-framework/index.html</loc>
-    <lastmod>2023-08-09T21:08:03.050Z</lastmod>
+    <lastmod>2023-10-26T07:20:10.840Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2019-causal-inference-competitions/index.html</loc>
-    <lastmod>2023-08-09T21:08:05.606Z</lastmod>
+    <lastmod>2023-10-26T07:20:13.214Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2019-mammograms-plus-ehrs/index.html</loc>
-    <lastmod>2023-08-09T21:08:08.844Z</lastmod>
+    <lastmod>2023-10-26T07:20:16.502Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2019-prs-embryo-selection/index.html</loc>
-    <lastmod>2023-08-09T21:08:11.614Z</lastmod>
+    <lastmod>2023-10-26T07:20:18.726Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2022-propensity-score-calibration/index.html</loc>
-    <lastmod>2023-08-09T21:08:14.061Z</lastmod>
+    <lastmod>2023-10-26T07:20:20.269Z</lastmod>
   </url>
   <url>
     <loc>https://ehudkr.github.io/publications/2023-prs-plus-irm/index.html</loc>
-    <lastmod>2023-08-09T21:08:16.926Z</lastmod>
+    <lastmod>2023-10-26T07:20:21.672Z</lastmod>
   </url>
 </urlset>

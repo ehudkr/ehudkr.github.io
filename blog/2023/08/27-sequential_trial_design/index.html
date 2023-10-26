@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ehud Karavani">
+<meta name="dcterms.date" content="2023-10-24">
+
+<title>Ehud Karavani - Sequential trial design for causal inference</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../../../styles.css">
+<meta property="og:title" content="Ehud Karavani - Sequential trial design for causal inference">
+<meta property="og:description" content="Aligning time-zero to reduce time-related biases by taking simplest solution possible and awkwardly repeating it until it’s great.">
+<meta property="og:image" content="pop_level_process.png">
+<meta property="og:site-name" content="Ehud Karavani">
+<meta name="twitter:title" content="Ehud Karavani - Sequential trial design for causal inference">
+<meta name="twitter:description" content="Aligning time-zero to reduce time-related biases by taking simplest solution possible and awkwardly repeating it until it’s great.">
+<meta name="twitter:image" content="pop_level_process.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">Ehud Karavani</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../cv/index.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../publications/index.html" rel="" target="">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../materials/index.html" rel="" target="">
+ <span class="menu-text">Materials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../blog/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"><i class="bi bi-linkedin" role="img" aria-label="linkedin">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new">
+ <span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"><i class="bi bi-github" role="img" aria-label="github">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://medium.com/(ehudkr?)" rel="me" target="_new"><i class="bi bi-medium" role="img" aria-label="medium">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ehudkar" rel="me" target="_new"><i class="bi bi-twitter" role="img" aria-label="twitter">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.social/(ehudk?)" rel="me" target="_new"><i class="bi bi-mastodon" role="img" aria-label="mastodon">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://stackoverflow.com/users/7708413/ehudk" rel="me" target="_new"><i class="bi bi-stack-overflow" role="img" aria-label="stack-overflow">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://discourse.datamethods.org/u/ehudk/summary" rel="me" target="_new">
+ <span class="menu-text"><iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#i-have-zero-time-for-this-bias" id="toc-i-have-zero-time-for-this-bias" class="nav-link" data-scroll-target="#i-have-zero-time-for-this-bias">I have <em>zero</em> time for this bias</a></li>
+  </ul></li>
+  <li><a href="#sequential-trial-design" id="toc-sequential-trial-design" class="nav-link" data-scroll-target="#sequential-trial-design">Sequential trial design</a>
+  <ul class="collapse">
+  <li><a href="#a-single-sequential-trial" id="toc-a-single-sequential-trial" class="nav-link" data-scroll-target="#a-single-sequential-trial">A single “sequential” trial</a></li>
+  <li><a href="#a-sequence-of-sequential-trials" id="toc-a-sequence-of-sequential-trials" class="nav-link" data-scroll-target="#a-sequence-of-sequential-trials">A sequence of sequential trials</a></li>
+  <li><a href="#an-uncontrolled-control-explosion" id="toc-an-uncontrolled-control-explosion" class="nav-link" data-scroll-target="#an-uncontrolled-control-explosion">An uncontrolled control explosion</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
+  <ul class="collapse">
+  <li><a href="#immortal-bias-combat" id="toc-immortal-bias-combat" class="nav-link" data-scroll-target="#immortal-bias-combat">Immortal (bias) Combat</a></li>
+  <li><a href="#meta-analysis-pooling-estimates-vs.-pooling-records" id="toc-meta-analysis-pooling-estimates-vs.-pooling-records" class="nav-link" data-scroll-target="#meta-analysis-pooling-estimates-vs.-pooling-records">Meta-analysis: pooling estimates vs.&nbsp;pooling records</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/2023/08/27-sequential_trial_design/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/2023/08/27-sequential_trial_design/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sequential trial design for causal inference</h1>
+<p class="subtitle lead"></p><p>Aligning time-zero to reduce time-related biases by taking simplest solution possible and awkwardly repeating it until it’s great.</p><p></p>
+  <div class="quarto-categories">
+    <div class="quarto-category">causal inference</div>
+    <div class="quarto-category">study design</div>
+  </div>
+  </div>
+
+
+<!-- Adjusted from: https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html -->
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ehud Karavani </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <!-- <div class="quarto-title-meta-heading" style="display: inline;">Published</div> -->
+      <!-- <p style="display:inline"><a href=><i class="bi bi-medium"></i></a></p> -->
+    <div class="quarto-title-meta-contents">
+      <p class="date" style="display:inline">October 24, 2023</p> 
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">October 24, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>I’m not special, so I’ve spent a lot of time addressing confounding bias in causal inference. I even created and still maintain an open-source Python package whose main focus is flexible causal inference modeling (<a href="https://github.com/IBM/causallib"><code>pip install causallib</code></a>). There’s a place to discuss why confounding bias is the most popular bias, but this blog post is not it. <!-- Maybe at some other time. --> I have a different bias I want to focus on.</p>
+<p>There’s actually some compelling evidence (well, at least anecdotal) that confounding bias has less of a biasing effect than what one would expect. One example is <span class="citation" data-cites="garcia2017value">Garcı́a-Albéniz, Hsu, and Hernán (<a href="#ref-garcia2017value" role="doc-biblioref">2017</a>)</span> examining the effect of colorectal cancer screening on colorectal cancer incidence. It showed the same survival curves for treatment and control units when adjusting and not adjusting for confounding factors. This, in and of itself, is a poor evidence, but the exact same shape of survival curves also appeared in <span class="citation" data-cites="bretthauer2022effect">Bretthauer et al. (<a href="#ref-bretthauer2022effect" role="doc-biblioref">2022</a>)</span>, an RCT examing the exact same question. This suggests that confounding bias did not affect the observational study.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<section id="i-have-zero-time-for-this-bias" class="level3">
+<h3 class="anchored" data-anchor-id="i-have-zero-time-for-this-bias">I have <em>zero</em> time for this bias</h3>
+<p>This bias originates from improperly setting the <em>time-zero</em>. Time zero (or “index date”) is the point in time which splits the baseline period from the follow-up period. History from future, retrospectively speaking. It usually the time in which treatment is initiated, and therefore the point in time from which we look backwards to obtain historical data (baseline covariates) and look forward to gather follow-up data (outcomes).<br>
+As such, to properly set up time zero, three things must align:</p>
+<ol type="1">
+<li>The subject must meet the eligibility criteria</li>
+<li>“Treatment” must be assigned</li>
+<li>Outcomes are beginning to be counted.</li>
+</ol>
+<p>Learning causal inference, we are used to getting datasets with nice and precise binary treatment variables and covariates. But where did these come from? People’s lives are not cross sectional, they are a trajectory through time. So there are lots of design decisions to be made in order to squeeze all of it into tabular form. Having longitudinal data makes it more possible, but not more easy. How do we decide how to assign a person into either treatment groups (or not at all if not eligible).</p>
+<p>Given this presentation, you might see why active-comparator designs are so appealing. It is more straightforward to compare to active treatments, head-to-head, since we just define the first treatment initiation of each drug (the two groups) as our time zero.</p>
+<p>The trickier part is when we want to design a study to compare treatment initators with <em>non-users</em>. This is often of interest in pragmatic trials. What is the index date for someone who just lived their life never getting treated? Non-initators have no point in time where they start treatment, making it harder to align this non-existing “treatment assignment” to the follow-up and eligibilty.</p>
+<p>This often leads to comparing either persistent users or those who taken the drug at some time (i.e., <em>all</em> or <em>any</em>), to those who never used it. This study design does very little to inform physicians how to act on the patient they are currently facing. <em>“Take this drug and if you survive the next 5 years (i.e., become a persistent user),</em> <em>then you will reduce your risk by x percent”</em> does not inspire much confidence and is not very helpful for the patient who is living now in the present and not five years into the future.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+</section>
+<section id="sequential-trial-design" class="level2">
+<h2 class="anchored" data-anchor-id="sequential-trial-design">Sequential trial design</h2>
+<p>So how can we force the alignment of eligibility, treatment initiation, and follow-up into a proper time zero?</p>
+<section id="a-single-sequential-trial" class="level3">
+<h3 class="anchored" data-anchor-id="a-single-sequential-trial">A single “sequential” trial</h3>
+<p>One simple approach is to use calendar time. Set the time-zero to a specific date. Say, for instance, January 1st, 2020. This will be the point in time splitting history from future. Keep whoever is eligibile to participate at this date, discard the rest; data from before this date are the baseline covariates; data from this date forward is the follow-up; and whoever got treated on this date is considered in the treatment group, the rest are controls.</p>
+<p>Individuals treated before January 1st are probably ineligible (most study designs might enforce participants to be treatment naive). Individuals treated after January 1st are considered controls, because time-zero is set at January 1st, not in the future. Though a per-protocol analysis might decide to censor them from follow-up because they deviated from their original (control) assignment. This creates a design that answers a question of treat now vs.&nbsp;don’t treat now (but possible treat later).</p>
+<p>However, this single trial is too naive and not very efficient. We miss all the treated individuals in the past and in the future. There might even not be anyone treated on January 1st. We throw away a lot of information. That’s a big blow to statistical power.</p>
+</section>
+<section id="a-sequence-of-sequential-trials" class="level3">
+<h3 class="anchored" data-anchor-id="a-sequence-of-sequential-trials">A sequence of sequential trials</h3>
+<p>Therefore, a natural extension would be to just repeat the process. Repeat it for January 2nd, 2020, for January 3rd, 2020, for January 4th, and so forth. For each time point we:</p>
+<ol type="1">
+<li>Consider whoever meets the eligibility criteria and discard the rest,</li>
+<li>Set the treatment indicator based on who got treated,</li>
+<li>Extract baseline covariates prior to that time point,</li>
+<li>Extract outcome information from that time onwards.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pop_level_process.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">An illustration of the sequential trial process at a data-set level<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. At each time <span class="math inline">\(t\)</span> (starting with <span class="math inline">\(t=0\)</span>, like Jan 1st), we check whoever is eligible and assign them to their appropriate treatment group according to their treatmeent status at that time. At the next time step (<span class="math inline">\(t=1\)</span> or Jan 2nd), the pool of eligible individuals can change in several ways: 1) treated individuals from the past are probably no longer eligible, at least not before some washout period passes; 2) eligible people can become ineligible regardless of their past treatment status (e.g., they can turn 65 and no longer fit the inclusion criteria). 3) Likewise, ineligible people from the past can become eligible if they suddenly fit the criteria (e.g., an individual can turn 18 at this time and become eligible). At each time we collect baseline and follow-up data according to the study design relative to this index date. This process repeates for all available time steps.</figcaption>
+</figure>
+</div>
+<p>The way I imagine this process is that we have stencil-like mold, defined by our eligibility criteria, from which we funnel observations like a strainer. We go to January 1st, put the stencil-strainer, shake the database and filter only eligible individuals at the time. We then go to January 2nd, filter; and so on and so forth, rinse and repeat. A moving window through time, only that window is specially shaped by the eligibilty criteria.</p>
+<p>This means a single person can have multiple records (entries, or rows) in the dataset. One for each trial (time-zero).</p>
+<p>We can see this illustrated below with a person’s timeline and its corresponding person-time tabular form. In this study design, baseline covariates are taken 4 time-steps relative to time-zero (e.g., 2 years prior to time-zero), and follow-up is taken 4 time steps starting time-zero (e.g., outcome within 2 years). Thus, the covariate profile changes as time-zero progresses. At times 4-7, 🏊‍♂️ is included as it is within the baseline period dictated by the study design, but it is no longer counted in time 8. Similarly, the outcome 🚑 is not observed at time 4, only starting at time 5.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> To make things more explicitly, I also indicate eligibility; in this example, the study design requires participant to no been treated in the last 4 time-steps (treatment-naive), and so at times 7 and 8 the person is no longer eligibile as they were treated in time 6.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="single_person_time_moving_window.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">An illustration of a person timeline and how its corrsponding person-time tabular form. It shows multiple time-zeros set from time 4 throughout time 8 (think Jan 1st to Jan 4th from above). Different time-zeros have different covariate (🏊‍♂️) profile, different outcome (🚑) based on the moving follow-up window, and - although that person is treated (💊) - they are not always considered as such.</figcaption>
+</figure>
+</div>
+</section>
+<section id="an-uncontrolled-control-explosion" class="level3">
+<h3 class="anchored" data-anchor-id="an-uncontrolled-control-explosion">An uncontrolled control explosion</h3>
+<p>Often, getting treatment is rarer than not getting treated. This imbalance is not inherently important, but can lead to some difficulties in practice. Looking at the resulting dataset above, we see that sequential trials exacerbate this even further since even treated individuals contribute (at-least more) non-treated rows, all the while never-treated individuals just multiply throughout time.</p>
+<p>This control group inflation can be undesireable in practice. It increases demand of compute resources, both in terms of memory and runtime, while not necessarily contributing enough information to justify it. Statistical power is determined by the smallest group, anyway; and, while I don’t know how to formally extend this argument into a repetaed-measurement setting, I have an intuition that dozens and dozens of duplicate (and near-duplicate) records hit the diminishing returns curve somewhat quickly.</p>
+<p>There are several valid strategies to deal with settings where eligibility criteria is met multiple times per person and lead to this cambrian-like explosion of controls records.</p>
+<p>First, we can just randomly subsample a fixed sample (e.g., 10%) from all the controls records from our dataset (<span class="citation" data-cites="dickerman2019avoidable">Dickerman et al. (<a href="#ref-dickerman2019avoidable" role="doc-biblioref">2019</a>)</span>). Since this blindly regards person and time information, it can have some unintended consequences like discarding entire time steps or individuals by some unfortunate random chance. This can reduce variability in the dataset and hurt the infromation content of it.<br>
+Fortunately, this can be easily solvable by forcing some structure on the discarding, like stratified sampling by time-steps and/or person IDs.</p>
+<p>We can take this structural subsampling a step forward and force a single entry per-person, i.e., reduce it to a single eligibile record per person. When doing so, it is important to reduce it without taking strict advantage of “future infromation”, namely by the treatment and outcome status of people’s timeline. Two common ways are taking the first eligibility record per-person, or taking one randomly (<span class="citation" data-cites="hernan2016using">Hernán and Robins (<a href="#ref-hernan2016using" role="doc-biblioref">2016</a>)</span>). Both are valid, non-biasing approaches, but they suffer from similar disadvantages presented above when randomly subsampling controls. Namely, they can discard more useful infromation and keep more redundant infromation instead. Specifically, they can blindly discard treatment records, which can be very precious. In reasonable cases where a treated person-time is not treated at first eligibile time, or in cases where it simply been randomly discarded. As said above, treated person-time records are few to begin with, and discarding them reduces the size of the treatment group, which decrease precious statistical power unnecessarily.</p>
+<p>A forth option that maximizes the size of the (smaller) treatment group is a combined approach: first, gather all the treated person-time records; and second, take first (or random) eligibility time per-person (<span class="citation" data-cites="garcia2017value">Garcı́a-Albéniz, Hsu, and Hernán (<a href="#ref-garcia2017value" role="doc-biblioref">2017</a>)</span>). This is basically a different view on the first approach. Both first fix (or take) all the treated person-times and then subsample just the control person-times. Only here, the subsampling is further structured to keep one record per person (including individuals who are at some point treated) by determinstic subsampling (taking records at first eligibilty time) or random subsampling (taking a random record from all eligible times of an individual).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="multiple_eligibility.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of the four strategies for dealing with the inflation of control person-times in multiple eligibility settings. It describes 3 people: A, B, and C and their treatment status over 5 time steps. First, using all person-times<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> from which we can derive the rest. Second, first eligibilty only, where B1, A1, and C2 participate (note C1 is ineligible in this example). Third, a random eligibility time per person. Note that in both cases we lose A3 as a treated unit. Forth, a mixed approach where we take all treated person-times <em>and</em> 1st eligibilty time. Lastly, a fifth strategy taking all treated person-times and randomly sampling a fixed proportions from the controls is not showed.</figcaption>
+</figure>
+</div>
+<p>In the mixed approaches, it is important to choose control person-times while ignoring treatment indication in a person’s timeline. For instance, in the example above, it might be tempting to discard control trials of person A, because person A is eventually treated. Or, put differently, after selecting all the treated person-times, select a subsample of person-times controls while excluding people chosen in the treated person-times. However, this can bias the analysis as it will create a control group that is, by construction, never-treated; and never-treated might not be a comparable control for incidence users we care about (<span class="citation" data-cites="garcia2017value">Garcı́a-Albéniz, Hsu, and Hernán (<a href="#ref-garcia2017value" role="doc-biblioref">2017</a>)</span>).</p>
+<section id="contemporary-controls-vs.-self-controls" class="level4">
+<h4 class="anchored" data-anchor-id="contemporary-controls-vs.-self-controls">Contemporary controls vs.&nbsp;self controls</h4>
+<p>As mention above, using all person-times can create computational strains and inefficiencies. All while in single-eligibility designs we might discard precious information. Mixed approaches where we first select all treated person-times is a good middle ground solution, but there is no free lunch.</p>
+<p>We originally perform a trial at each time step. Looking at each trial independently, we adjust for time confounding as each treated person at that time has corresponding contemporary controls. However, when we dillute the controls (and the mixed approach of all-treated plus 1st eligibilty time is the most extreme approach), we reduce the weight of those contemporary controls.</p>
+<p>Instead, vieweing the dataset as a whole, we increase the weight of self controls. This is because for each person treated not at first eligibilty time we will have, by construction, two instances - one as treated and one as a control. When we discard records of other people from that time step, because this is not their first eligibility time, we reduce the relative weight (number) of contemporary controls and, by definition, increase the relative weight of the first eligible control person-times of those later treated.</p>
+<p>To simplify with the example above, in the all-person-time approach, A3 is controlled by both its past self (A1) and a contemporary record (C3). When we go to the mixed approach, we drop C3, making A1 the sole control for A3. Therefore, we reduced the relative weight of contemrporary controls (at time 3) and increased the relative weight of self-controls.</p>
+<p>This can create bias if person <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span> is not exchangeable with itself (person <span class="math inline">\(i\)</span>) at time <span class="math inline">\(t^*\)</span>.<br>
+This is quite reasonable to assume, as people’s condition might trend over time, like disease progression status. Furthermore, if this progression is not captured by the covariates, it can create confounding bias (time confounding). Therefore, another cosideration should be to check for such cases, and, following footnote <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, keep trial ID in mind when adjusting and make sure every time-step can act as a quasi-independent trial.</p>
+</section>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<section id="immortal-bias-combat" class="level3">
+<h3 class="anchored" data-anchor-id="immortal-bias-combat">Immortal (bias) Combat</h3>
+<p>Immortal time bias is when participants of a cohort cannot, by construction, experience the outcome during some period of the follow-up time<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. It usually happens when the researcher fails to align the cohort entry time (eligibility time) with the time of getting the treatment (time zero). If the researcher classifies that individual as treated, and start counting the outcome from cohort entry - even though they are not treated at the start of eligibility - it necessarily means that that person did not (and couldn’t have) experience the outcome in the time period between eligibility and time of actual being treated. If you are not familiar with immortal time bias, I suggest going over its <a href="https://catalogofbias.org/biases/immortal-time-bias">entry in the Catalog of Bias website</a>.</p>
+<p>One approach to overcome immortal time bias is to do a time-dependent analysis. Namely, we need to somehow associate the time between eligibility and treatment with the control group, and only the time between treatment and outcome (or end of follow-up) with the treatment group. It can be done in several ways, depending on the analytical approach, like using an offset in a Poisson risk-rate regression. But one generic solution is to work in person-time data. Basically, allow the person-time records between eligibility and treatment to be classified to the control group, and the person-time records between treatment onwards to hte treatment group.</p>
+<p>This general solution is essentially what happens in the sequential trials design. Although the proposed solution is person-centric – assigning the person’s time to separate treatment groups – and sequential trial is cohort-centric – assigning a person to its appropriate group at each time-step. However, the resulting view is basically the same, as the end product is a table where that same person is classified to the control group in the period starting at its eligibility time until they are assigned a treatement and move to the treatment group.</p>
+<p>The only nuance is in how we construct the outcome in the follow-up time. For sequential trials to be absolutely equivalent to the person-time analysis, the control person-times should be censored at the time that person receive treatment. This ensures the outcome contributed to the control group is solely for the period that person is considered untreated. This censor-at-change is also known as a <em>per-protocol analysis</em>, where we censor individuals who deviate from their originally assigned protocol (controls who eventually get teated).</p>
+</section>
+<section id="meta-analysis-pooling-estimates-vs.-pooling-records" class="level3">
+<h3 class="anchored" data-anchor-id="meta-analysis-pooling-estimates-vs.-pooling-records">Meta-analysis: pooling estimates vs.&nbsp;pooling records</h3>
+<p>In the sequential trial approach we essentially create multiple studies. Meta-analysis is the science of synthesizing evidence across multiple similar studies. There are two main approaches for doing meta analyses. The classic approach would use aggregate summaries from different studies, like the estimated effect and confidence interval, and combine them into a single estimate. However, advances in data management and digital communication made it increasingly feasible to share the original data on individual participants and give rise to a second type of meta analysis: one that combines individual-level data, basically consolidating datasets (<span class="citation" data-cites="riley2010meta">Riley, Lambert, and Abo-Zaid (<a href="#ref-riley2010meta" role="doc-biblioref">2010</a>)</span>, <span class="citation" data-cites="lin2010relative">Lin and Zeng (<a href="#ref-lin2010relative" role="doc-biblioref">2010</a>)</span>).</p>
+<p>Sequential trial design results in a bunch of trials, and, therefore, these two approaches are applicable to analyzing sequential trials. Either estimate the effect from each trial separately and then synthesize the estimated effects. Or just consolidate the extracted person-time records over the separate trials to obtain one big dataset.</p>
+<p>There seems to be some benefits for doing individual-level meta-analysis (<span class="citation" data-cites="riley2010meta">Riley, Lambert, and Abo-Zaid (<a href="#ref-riley2010meta" role="doc-biblioref">2010</a>)</span>), but I’m not expert enough to judge. However, since we extract all the trials from the same database, using the same study design with the same covariates, treatment and outcome defintions, it seems even more appropriate (or natural) to consolidate the raw data. This post even hints to this approach, as this, to the best of my knowledge, the only way sequential trials have been analyzied in the epidemiological literature. However, it is also worth putting the finger on the fact that this is essentially becomes a meta-analysis, and as such, other approaches are applicable.</p>
+<p>The individual-level analysis should respect the person-time structure of the combined trials. They might apply a multilevel (hierarchical) model, partially pooling estimates across time (trials). They should defintely use robust variance estimation, either by sandwich (HC) estimates or bootstrap, to estimate standard errors since the records in the consolidated dataset are no longer independent but are repeated measures of the same pool of individuals.</p>
+</section>
+<section id="limitations" class="level3">
+<h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
+<p>I have already mentioned the additional computational strain caused by the inflation of the dataset moving from person to person-time format; how control-dilution can hurt exchangeability; and the additional considerations that are required in computing standard errors as the rows of this dataset are no longer independent.</p>
+<p>However, in my opinion the biggest limitation of this method is that it requires the analysts to discretize time from the get go. The granularity of the time-steps is not just predefined, but is baked into the earliest point in the analytic pipeline - the data extraction from the database. As such, it means a sensitivity analysis on this time-step parameter is laborious as it requires applying the entire pipeline from data extraction to effect estimation.</p>
+<p>This is problematic as the time granularity has both computational and practicical implications. Ideally, the time-step size should not be too small to avoid creating too redundant repeatitions. Too small and the size of the expanded person-time dataset will be too large and incur heavy computational costs (but may also cause floating-point issues as some survival models multiply probabilities [fractions] over time-steps, so too many time-steps may become numerically unstable). On the other hand, too large time-steps can bunch together too much information (like treatment assignment and outcome) and reduce information content of real treatment-outcome associations. The size of the time-step should be clinically (or practically) meaningful, but it’s ok to find a more proper value around it that also optimizes computational aspects. This is computationally harder in sequential trials since the size of the time-steps is baked deep into the construction of the analytical datasets.</p>
+</section>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>Sequential trials design is a generic approach that can solve many time-related biases (<span class="citation" data-cites="hernan2016specifying">Hernán et al. (<a href="#ref-hernan2016specifying" role="doc-biblioref">2016</a>)</span>). This was a high-level introduction, which I think is missing from the methodological literature, but I also hope it entails some interesting point of views.</p>
+
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-bretthauer2022effect" class="csl-entry" role="listitem">
+Bretthauer, Michael, Magnus Løberg, Paulina Wieszczy, Mette Kalager, Louise Emilsson, Kjetil Garborg, Maciej Rupinski, et al. 2022. <span>“Effect of Colonoscopy Screening on Risks of Colorectal Cancer and Related Death.”</span> <em>New England Journal of Medicine</em> 387 (17): 1547–56.
+</div>
+<div id="ref-dickerman2019avoidable" class="csl-entry" role="listitem">
+Dickerman, Barbra A, Xabier Garcı́a-Albéniz, Roger W Logan, Spiros Denaxas, and Miguel A Hernán. 2019. <span>“Avoidable Flaws in Observational Analyses: An Application to Statins and Cancer.”</span> <em>Nature Medicine</em> 25 (10): 1601–6.
+</div>
+<div id="ref-garcia2017value" class="csl-entry" role="listitem">
+Garcı́a-Albéniz, Xabier, John Hsu, and Miguel A Hernán. 2017. <span>“The Value of Explicitly Emulating a Target Trial When Using Real World Evidence: An Application to Colorectal Cancer Screening.”</span> <em>European Journal of Epidemiology</em> 32: 495–500.
+</div>
+<div id="ref-hernan2008observational" class="csl-entry" role="listitem">
+Hernán, Miguel A, Alvaro Alonso, Roger Logan, Francine Grodstein, Karin B Michels, Meir J Stampfer, Walter C Willett, JoAnn E Manson, and James M Robins. 2008. <span>“Observational Studies Analyzed Like Randomized Experiments: An Application to Postmenopausal Hormone Therapy and Coronary Heart Disease.”</span> <em>Epidemiology (Cambridge, Mass.)</em> 19 (6): 766.
+</div>
+<div id="ref-hernan2016using" class="csl-entry" role="listitem">
+Hernán, Miguel A, and James M Robins. 2016. <span>“Using Big Data to Emulate a Target Trial When a Randomized Trial Is Not Available.”</span> <em>American Journal of Epidemiology</em> 183 (8): 758–64.
+</div>
+<div id="ref-hernan2016specifying" class="csl-entry" role="listitem">
+Hernán, Miguel A, Brian C Sauer, Sonia Hernández-Dı́az, Robert Platt, and Ian Shrier. 2016. <span>“Specifying a Target Trial Prevents Immortal Time Bias and Other Self-Inflicted Injuries in Observational Analyses.”</span> <em>Journal of Clinical Epidemiology</em> 79: 70–75.
+</div>
+<div id="ref-lin2010relative" class="csl-entry" role="listitem">
+Lin, Dan-Yu, and Daniel Zeng. 2010. <span>“On the Relative Efficiency of Using Summary Statistics Versus Individual-Level Data in Meta-Analysis.”</span> <em>Biometrika</em> 97 (2): 321–32.
+</div>
+<div id="ref-riley2010meta" class="csl-entry" role="listitem">
+Riley, Richard D, Paul C Lambert, and Ghada Abo-Zaid. 2010. <span>“Meta-Analysis of Individual Participant Data: Rationale, Conduct, and Reporting.”</span> <em>Bmj</em> 340.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>A similar phenomenon was also observed in <span class="citation" data-cites="hernan2008observational">Hernán et al. (<a href="#ref-hernan2008observational" role="doc-biblioref">2008</a>)</span>, finding similar hazard ratios (in terms of point estimation and confidence intervals) between adjusted and unadjusted estimates, suggesting the cause of discrepency between previous observational studies (even using the same data as they did) and RCTs was not confounding bias but rather the time-zero-related biases that are the subject of this blog post.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Furthermore, I believe this discrepancy in how to define treatment groups, namely, how to define the <span class="math inline">\(1\)</span> and <span class="math inline">\(0\)</span> in <span class="math inline">\(Y^1\)</span> and <span class="math inline">\(Y^0\)</span>, boils down to the causal consistency assumptions. Defining a poor treatment mechanism in the study design means the outcome one observes in their data (<span class="math inline">\(E[Y|A=a]\)</span>) will not equal the hypothetical outcome they care about (<span class="math inline">\(E[Y^a]\)</span>).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This also illustrates why sequential trials may be sometimes called “nested” trials. This is because, in some common and simple settings, the trial at time <span class="math inline">\(t\)</span> (eligible people at time <span class="math inline">\(t\)</span>) are <em>nested</em> within the controls of time <span class="math inline">\(t-1\)</span>. However I think “nested trials” has a different meaning in the RCT landscape, so “sequential trials” is both more general and non-taken.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>In time-to-event settings, the follow-up window is often as long as can be possibly observed, avoiding explicitly stating a follow-up timeframe. In such scenarios, we can see the time to outcome (🚑) decreases as time-zero progresses. <img src="single_person_time_moving_window_survival.png" class="img-fluid"><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>First, note that they might also be inelgible because they don’t have sufficient follow-up. Second, that person may also be ineligible at time 10 as they are no longer outcome-naive, too.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Note time 2 (Jan 2nd) may be redundant as it containd only control units. If time has some effect — i.e., people at time <span class="math inline">\(t\)</span> might not be fully exchangeable with people at time <span class="math inline">\(t^*\)</span> — then not having any comparable treated units at time 2 might violate a positiity (overlap) requirement. Thus time steps with all-controls may be further discarded in the preprocess step (drop the rows) or in the analytic step (e.g., apply exact matching on the trial ID [time step] and consequently discard such records).<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Note time 2 (Jan 2nd) may be redundant as it containd only control units. If time has some effect — i.e., people at time <span class="math inline">\(t\)</span> might not be fully exchangeable with people at time <span class="math inline">\(t^*\)</span> — then not having any comparable treated units at time 2 might violate a positiity (overlap) requirement. Thus time steps with all-controls may be further discarded in the preprocess step (drop the rows) or in the analytic step (e.g., apply exact matching on the trial ID [time step] and consequently discard such records).<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>It is called “immortal” since often that outcome is death. So if one <em>cannot</em> experience death for a period of time, they are basically immortal.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
