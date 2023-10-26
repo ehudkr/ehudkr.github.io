@@ -1,8 +1,6 @@
 project:
   type: website
   # TODO: use GitHub Actions?
-  pre-render: 
-    - scripts/blog_remove_date_url.py
 
 website:
   title: "Ehud Karavani"
