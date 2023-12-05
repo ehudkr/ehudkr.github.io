@@ -1,0 +1,14 @@
+---
+title: "CausaliTea"
+subtitle: A casual reading club on causality.
+description: A casual reading club on causality.
+author: "Ehud Karavani"
+date: 2023/12/05
+date-modified: last-modified
+categories: 
+  - causal inference
+---
+
+CausaliTea is a reading club on causality
+
+![CausaliTea's logo](causalitea.png){width="575"}
