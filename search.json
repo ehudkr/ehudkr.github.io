@@ -84,6 +84,55 @@
     "text": "@article{altuvia2018vivo,\n  title={In vivo cleavage rules and target repertoire of RNase III in Escherichia coli},\n  author={Altuvia, Yael and Bar, Amir and Reiss, Niv and Karavani, Ehud and Argaman, Liron and Margalit, Hanah},\n  journal={Nucleic acids research},\n  volume={46},\n  number={19},\n  pages={10380--10394},\n  year={2018},\n  publisher={Oxford University Press}\n}"
   },
   {
+    "objectID": "materials/index.html",
+    "href": "materials/index.html",
+    "title": "Materials",
+    "section": "",
+    "text": "Please properly attribute if using.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nCausaliTea\n\n\nA casual reading club on causality.\n\n\n\n\ncausal inference\n\n\n\n\nA casual reading club on causality.\n\n\n\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCausal Inference - Motivation\n\n\n\n\n\n\n\ncausal inference\n\n\n\n\nMotivating causal inference\n\n\n\n\n\n\nMay 16, 2021\n\n\n\n\n\n\n  \n\n\n\n\nCausal Inference - Concepts\n\n\n\n\n\n\n\ncausal inference\n\n\n\n\nBroad overview of causal inference concepts\n\n\n\n\n\n\nFeb 20, 2020\n\n\n\n\n\n\n  \n\n\n\n\nCausal Inference - Methods\n\n\n\n\n\n\n\ncausal inference\n\n\n\n\nStatistical methods for causal inference\n\n\n\n\n\n\nNov 18, 2018\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html",
+    "href": "materials/causal-inference/methods/index.html",
+    "title": "Causal Inference - Methods",
+    "section": "",
+    "text": "An overview of many causal inference methods."
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html#zoo-of-causal-methods-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/methods/index.html#zoo-of-causal-methods-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Methods",
+    "section": "",
+    "text": "An overview of many causal inference methods."
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html#the-simpsons-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/methods/index.html#the-simpsons-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Methods",
+    "section": "The Simpsons ",
+    "text": "The Simpsons \n Matching and Inverse Probability Weighting with The Simpsons.\n(This is before the time of Powerpoint morph; this was painstaking.)"
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html#causal-inference-with-deep-learning-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/methods/index.html#causal-inference-with-deep-learning-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Methods",
+    "section": "Causal inference with deep learning ",
+    "text": "Causal inference with deep learning \nRelevant up to ~2020"
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html#interrupted-time-series-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/methods/index.html#interrupted-time-series-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Methods",
+    "section": "Interrupted time series ",
+    "text": "Interrupted time series \nFrom difference-in-differences to synthetic controls."
+  },
+  {
+    "objectID": "materials/causal-inference/causalitea/index.html",
+    "href": "materials/causal-inference/causalitea/index.html",
+    "title": "CausaliTea",
+    "section": "",
+    "text": "CausaliTea is a reading club on causality [source ]\n\n\n\nCausaliTea’s logo"
+  },
+  {
     "objectID": "blog/2023/03-sequential_trial_design/index.html",
     "href": "blog/2023/03-sequential_trial_design/index.html",
     "title": "Sequential trial design for causal inference",
@@ -313,6 +362,62 @@
     "title": "Ehud Karavani",
     "section": "",
     "text": "Hi there!\nI’m a researcher and data scientist, specilizing in causal inference, machine learning, (Bayesian) statistics, and data visualization.\nI’m currently a Research Staff Member at IBM Research, Israel in the Causal Machine Learning for Healthcare & Life Sciences group. There, I focus on high-throughput causal inference for finding new indications for existing drugs using electornic health records and insurance claims data. I’m also the creator and maintainer of causallib, a one-stop shop open-source Python package for flexible causal inference modeling.\n\nEducation\nI have a BSc and MSc in Computer Science and Computational Biology from the Hebrew University. I did my Master’s thesis with Dr. Shai Carmi studying prediction of traits using DNA and its potential effect on selecting embryos for implantation in IVF (aka “designer babies”) .\nPrevious to that I was an undergraduate research associate in Prof. Hanah Marglit’s lab, developing methods for finding novel protein-RNA interactions using RNAseq data ."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html",
+    "href": "materials/causal-inference/concepts/index.html",
+    "title": "Causal Inference - Concepts",
+    "section": "",
+    "text": "With an emphasis on counterfactual prediction differing from risk prediction."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#the-basis-of-causal-inference-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/concepts/index.html#the-basis-of-causal-inference-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Concepts",
+    "section": "",
+    "text": "With an emphasis on counterfactual prediction differing from risk prediction."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#observational-studies-and-rcts-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/concepts/index.html#observational-studies-and-rcts-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Concepts",
+    "section": "Observational studies and RCTs ",
+    "text": "Observational studies and RCTs"
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#the-goldilocks-principle-of-covariate-adjustment-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/concepts/index.html#the-goldilocks-principle-of-covariate-adjustment-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Concepts",
+    "section": "The Goldilocks principle of covariate adjustment ",
+    "text": "The Goldilocks principle of covariate adjustment \nThe Goldilocks principle of covariate adjustment in causal inference."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#how-causation-causes-correlations-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/concepts/index.html#how-causation-causes-correlations-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Concepts",
+    "section": "How causation causes correlations ",
+    "text": "How causation causes correlations \nStructural causal view of statistical associations."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#a-tour-of-causal-assumptions-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/concepts/index.html#a-tour-of-causal-assumptions-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Concepts",
+    "section": "A tour of causal assumptions ",
+    "text": "A tour of causal assumptions \nCausal inference is a mindset. Therefore, it takes thought, not data, to translate data-based associations into causal claims."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#my-first-ever-lecture-on-causal-inference-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/concepts/index.html#my-first-ever-lecture-on-causal-inference-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Concepts",
+    "section": "My first ever lecture on causal inference ",
+    "text": "My first ever lecture on causal inference \nAn introduction to causal inference talk gave at a student seminar on November 18, 2018, named Causal Inference 101."
+  },
+  {
+    "objectID": "materials/causal-inference/motivation/index.html#predicting-risk-is-not-enough-iconify-bi-filetype-pptx",
+    "href": "materials/causal-inference/motivation/index.html#predicting-risk-is-not-enough-iconify-bi-filetype-pptx",
+    "title": "Causal Inference - Motivation",
+    "section": "Predicting risk is not enough ",
+    "text": "Predicting risk is not enough"
   },
   {
     "objectID": "publications/2018-causal-inference-benchmarking-framework/index.html",

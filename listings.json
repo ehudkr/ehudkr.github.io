@@ -16,6 +16,15 @@
     ]
   },
   {
+    "listing": "/materials/index.html",
+    "items": [
+      "/materials/causal-inference/causalitea/index.html",
+      "/materials/causal-inference/motivation/index.html",
+      "/materials/causal-inference/concepts/index.html",
+      "/materials/causal-inference/methods/index.html"
+    ]
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2023/03-sequential_trial_design/index.html",
