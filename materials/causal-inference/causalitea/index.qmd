@@ -9,6 +9,6 @@ categories:
   - causal inference
 ---
 
-CausaliTea is a reading club on causality
+CausaliTea is a reading club on causality [[source {{< iconify bi filetype-pptx >}}](causalitea.pptx.pptx)]
 
 ![CausaliTea's logo](causalitea.png){width="575"}
