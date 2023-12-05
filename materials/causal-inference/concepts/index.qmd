@@ -1,0 +1,29 @@
+---
+title: "Causal Inference - Concepts"
+# subtitle: A casual reading club on causality.
+description: Broad overview of causal inference concepts
+author: "Ehud Karavani"
+date: 2020/02/20
+date-modified: last-modified
+categories: 
+  - causal inference
+---
+
+## The basis of causal inference [{{< iconify bi filetype-pptx >}}](counterfactual-prediction.pptx)
+With an emphasis on counterfactual prediction differing from risk prediction.
+![](counterfactual-prediction.png)
+
+## Observational studies and RCTs [{{< iconify bi filetype-pptx >}}](os-vs-rct.pptx)
+![](os-vs-rct.png)
+
+## The Goldilocks principle of covariate adjustment [{{< iconify bi filetype-pptx >}}](goldilocks-covariate-adjustment.pptx)
+The Goldilocks principle of covariate adjustment in causal inference.
+![](goldilocks-covariate-adjustment.png)
+
+## How causation causes correlations [{{< iconify bi filetype-pptx >}}](causal-based-correlations.pptx)
+Structural causal view of statistical associations.
+![](causal-based-correlations.png)
+
+## A tour of causal assumptions [{{< iconify bi filetype-pptx >}}](causal-assumptions.pptx)
+[Causal inference is a mindset](../../../blog/2023/01-causal-inference-is-a-mindset/index.qmd).
+Therefore, it takes thought, not data, to translate data-based associations into causal claims.
