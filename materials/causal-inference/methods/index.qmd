@@ -1,0 +1,26 @@
+---
+title: "Causal Inference - Methods"
+# subtitle: A casual reading club on causality.
+description: Statistical methods for causal inference
+author: "Ehud Karavani"
+date: 2018/11/18
+date-modified: last-modified
+categories: 
+  - causal inference
+---
+
+## Zoo of causal methods [{{< iconify bi filetype-pptx >}}](goldilocks-covariate-adjustment.pptx)
+An overview of many causal inference methods.
+
+## The Simpsons [{{< iconify bi filetype-pptx >}}](simpsons.pptx)
+![](simpsons-matching.gif)
+Matching and Inverse Probability Weighting with The Simpsons.  
+(This is before the time of Powerpoint morph; this was painstaking.)
+
+## Causal inference with deep learning [{{< iconify bi filetype-pptx >}}](deep-learning-causal-inference.pptx)
+Relevant up to ~2020
+![](deep-learning-causal-inference.png)
+
+## Interrupted time series [{{< iconify bi filetype-pptx >}}](did-to-sc.pptx)
+From difference-in-differences to synthetic controls.
+![](did-to-sc.gif)
