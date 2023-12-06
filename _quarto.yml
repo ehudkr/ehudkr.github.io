@@ -47,6 +47,10 @@ website:
         href: https://twitter.com/ehudkar
         rel: me 
         target: "_new"
+      - text: "{{< iconify fluent-emoji blue-square >}}"
+        href: https://bsky.app/profile/ehudk.bsky.social
+        rel: me  
+        target: "_new"
       - icon: mastodon
         aria-label: mastodon
         href: https://mastodon.social/@ehudk
