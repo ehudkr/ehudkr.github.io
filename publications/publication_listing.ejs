@@ -33,12 +33,6 @@
             <% } %>
             DOI
         </a>
-        <!-- Citation badge. Requires DOI without the doi.org URL prefix -->  
-        <span class="__dimensions_badge_embed__" 
-              style="display: inline-block;"
-              data-doi="<%- item.doi.replace('https://doi.org/','') %>" 
-              data-style="small_circle">  <!-- large_rectangle -->
-        </span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
         <% } %>
         <% if (item.pdf) { %>
         <a href="<%- item.pdf %>" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
@@ -46,6 +40,14 @@
           PDF
         </a>
         <% } %>
+        <% if (item.doi) { %>
+        <!-- Citation badge. Requires DOI without the doi.org URL prefix -->  
+        <span class="__dimensions_badge_embed__" 
+              style="display: inline-block;"
+              data-doi="<%- item.doi.replace('https://doi.org/','') %>" 
+              data-style="small_circle">  <!-- large_rectangle -->
+        </span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+        <%  } %>
     </div>
     <hr>
   </li>
