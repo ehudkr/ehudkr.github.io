@@ -235,7 +235,7 @@
     "href": "blog/2018/01-deep-learning-genetic-prediction/index.html#footnotes",
     "title": "Applying Deep Learning to Genetic Prediction",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nstill looking at this cute little ImageNet feature space.↩︎\nWhat is science if not baby-stepping all the way to the moon.↩︎\nP-value-based variable selection strategies are bad, see Sun, Shook, and Kay.↩︎\nIt may be interesting to evaluate the model’s performance when different chromosomes will share some of the deeper convolutions. Namely, replacing the DNN box in the next figure with another CNN.↩︎"
+    "text": "Footnotes\n\n\nstill looking at this cute little ImageNet feature space.↩︎\nWhat is science if not baby-stepping all the way to the moon.↩︎\nP-value-based variable selection strategies are bad, see Sun, Shook, and Kay.↩︎\n*It may be interesting to evaluate the model’s performance when different chromosomes will share some of the deeper convolutions. Namely, replacing the DNN box in the next figure with another CNN.↩︎"
   },
   {
     "objectID": "blog/2020/02-against-agile-research/index.html",
