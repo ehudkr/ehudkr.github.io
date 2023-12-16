@@ -264,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 26, 2023</p>
+      <p class="date-modified">December 16, 2023</p>
     </div>
   </div>
     
@@ -277,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Causal inference, the science of estimating causal effects from non-randomized observational data, is usually presented using binary treatment; we either treat or don’t treat; we give drug A or drug B. There’s a good reason for that, as causality is already complex as it is. However, not all interventions are binary (or discrete).</p>
 <p>Sometimes, the interventions we care about are continuous. “Taking a drug”, for example, is fairly vague — drugs have active ingredients and those can come in different dosages. Too little and the drug might not seem effective, too much and the drug might be harmful. Therefore, we might be interested in the effect of different dosages of the same drug. This is often called dose-response modeling.</p>
 <p>Continuous exposures are all around us. From drug dosages to number of daily cigarettes smoked or air pollution levels, from how much time you watched an ad before skipping it to how much red a the “unsubscribe” button is on a newsletter, from the interest rate increased by the central bank to the amount of money in a lottery winning. We can’t limit ourselves to studying binary exposures just because the introduction book didn’t cover the other ones.</p>
-<p>In this post I will introduce a generalized version of inverse probability weighting for continuous treatment. I’ll show different estimation methods and discuss the required assumptions and its limitations. I will assume you are familiar with causal inference and IPW for binary treatment, but if you are not — I got you covered in this <a href="../../../2020/02/22-simpsons-paradox-ipw/index.qmd">IPW explainer</a>.</p>
+<p>In this post I will introduce a generalized version of inverse probability weighting for continuous treatment. I’ll show different estimation methods and discuss the required assumptions and its limitations. I will assume you are familiar with causal inference and IPW for binary treatment, but if you are not — I got you covered in this <a href="../../../blog/2020/01-simpsons-paradox-ipw/index.html">IPW explainer</a>.</p>
 <section id="from-binary-to-continuous-treatment" class="level2">
 <h2 class="anchored" data-anchor-id="from-binary-to-continuous-treatment">From binary to continuous treatment</h2>
 <p>Recall that in the binary treatment setting, a common way to estimate causal effects is by using <a href="https://towardsdatascience.com/solving-simpsons-paradox-with-inverse-probability-weighting-79dbb1395597">inverse probability weighting</a> (sometimes called inverse propensity weighting, but I’ll just use IPW). Given individual <span class="math inline">\(i\)</span> with treatment assignment <span class="math inline">\(a_i\)</span> and characteristics <span class="math inline">\(x_i\)</span>, its inverse propensity weight is defined as: <span class="math inline">\(w_i=1/\Pr[A=a_i|X=x_i]\)</span>. Namely, the inverse probability of <span class="math inline">\(i\)</span> to be assigned to their treatment, given their characteristics.</p>
