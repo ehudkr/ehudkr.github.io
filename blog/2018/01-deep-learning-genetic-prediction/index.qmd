@@ -10,6 +10,7 @@ medium-url: https://medium.com/ehudkr/improving-genetic-prediction-using-deep-le
 categories: 
   - genetics
   - deep learning
+image: images/paste7.png
 ---
 
 ::: {#medium-og style="text-align: center"}

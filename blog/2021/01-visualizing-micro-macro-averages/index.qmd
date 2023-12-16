@@ -9,6 +9,7 @@ medium-url: https://medium.com/ehudkr/a-visual-way-to-think-on-macro-and-micro-a
 categories: 
   - machine learning
   - visualization
+image: images/macro_averaging_sensitivity.png
 ---
 
 For completeness, this article spends most its words explaining what a confusion matrix is. If you already familiar, you can probably understand the article by just scrolling down through the pretty pictures.
