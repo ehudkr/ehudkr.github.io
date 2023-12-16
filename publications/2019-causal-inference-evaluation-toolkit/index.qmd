@@ -66,7 +66,7 @@ description: >
 
 This manuscript combines the evaluation suite with a specific use-case. 
 A readers-digest version focusing on ROC curves for propensity score models
-is also [available here](../../blog/2020/12/28-ml-metrics-for-causal-inference/index.qmd)
+is also [available here](../../blog/2020/03-ml-metrics-for-causal-inference/index.qmd)
 
 <!-- figures -->
 

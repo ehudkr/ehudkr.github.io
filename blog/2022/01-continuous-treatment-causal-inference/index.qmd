@@ -16,7 +16,7 @@ Sometimes, the interventions we care about are continuous. "Taking a drug", for 
 
 Continuous exposures are all around us. From drug dosages to number of daily cigarettes smoked or air pollution levels, from how much time you watched an ad before skipping it to how much red a the "unsubscribe" button is on a newsletter, from the interest rate increased by the central bank to the amount of money in a lottery winning. We can't limit ourselves to studying binary exposures just because the introduction book didn't cover the other ones.
 
-In this post I will introduce a generalized version of inverse probability weighting for continuous treatment. I'll show different estimation methods and discuss the required assumptions and its limitations. I will assume you are familiar with causal inference and IPW for binary treatment, but if you are not --- I got you covered in this [IPW explainer](../../../2020/02/22-simpsons-paradox-ipw/index.qmd).
+In this post I will introduce a generalized version of inverse probability weighting for continuous treatment. I'll show different estimation methods and discuss the required assumptions and its limitations. I will assume you are familiar with causal inference and IPW for binary treatment, but if you are not --- I got you covered in this [IPW explainer](../../2020/01-simpsons-paradox-ipw/index.qmd).
 
 ## From binary to continuous treatment
 
@@ -70,8 +70,6 @@ $$ -->
 ![Marginal Structural Model - regress the outcome on the treatment weighted by the generalized IP-weights. As proposed by [Robins, Hernan, and Brumback](https://pubmed.ncbi.nlm.nih.gov/10955408/)[^1].](images/paste-1.png)
 
 [^1]: ![Marginal Structural Model - regress the outcome on the treatment weighted by the generalized IP-weights. As proposed by Robins, Hernan, and Brumback.](images/paste-1.png)
-
-[^2]: ![Marginal Structural Model - regress the outcome on the treatment weighted by the generalized IP-weights. As proposed by Robins, Hernan, and Brumback.](images/paste-1.png)
 
 ### Code
 
