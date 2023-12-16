@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ehud Karavani">
-<meta name="dcterms.date" content="2021-09-04">
 
-<title>Ehud Karavani - A visual way to think of macro and micro averages in classification metrics</title>
+<title>Ehud Karavani – postamble.ejs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,18 +66,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Ehud Karavani - A visual way to think of macro and micro averages in classification metrics">
-<meta property="og:description" content="Explaining what macro-average and micro-average metrics&nbsp;are.">
-<meta property="og:image" content="https://ehudkr.github.io/blog/2021/01-visualizing-micro-macro-averages/images/macro_averaging_sensitivity.png">
-<meta property="og:site-name" content="Ehud Karavani">
-<meta property="og:image:height" content="640">
-<meta property="og:image:width" content="1138">
-<meta name="twitter:title" content="Ehud Karavani - A visual way to think of macro and micro averages in classification metrics">
-<meta name="twitter:description" content="Explaining what macro-average and micro-average metrics&nbsp;are.">
-<meta name="twitter:image" content="https://ehudkr.github.io/blog/2021/01-visualizing-micro-macro-averages/images/macro_averaging_sensitivity.png">
-<meta name="twitter:image-height" content="640">
-<meta name="twitter:image-width" content="1138">
-<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -176,125 +162,16 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link active" data-scroll-target="#confusion-matrix">Confusion matrix</a></li>
-  <li><a href="#multiclass-confusion-matrix" id="toc-multiclass-confusion-matrix" class="nav-link" data-scroll-target="#multiclass-confusion-matrix">Multiclass confusion matrix</a></li>
-  <li><a href="#macro-averaging" id="toc-macro-averaging" class="nav-link" data-scroll-target="#macro-averaging">Macro-averaging</a></li>
-  <li><a href="#micro-averaging" id="toc-micro-averaging" class="nav-link" data-scroll-target="#micro-averaging">Micro-averaging</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/2021/01-visualizing-micro-macro-averages/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/2021/01-visualizing-micro-macro-averages/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">A visual way to think of macro and micro averages in classification metrics</h1>
-<p class="subtitle lead"></p><p>Explaining what macro-average and micro-average metrics&nbsp;are.</p><p></p>
-  <div class="quarto-categories">
-    <div class="quarto-category">machine learning</div>
-    <div class="quarto-category">visualization</div>
-  </div>
-  </div>
 
 
-<!-- Adjusted from: https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html -->
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ehud Karavani </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <!-- <div class="quarto-title-meta-heading" style="display: inline;">Published</div> -->
-      <!-- <p style="display:inline"><a href=https://medium.com/ehudkr/a-visual-way-to-think-on-macro-and-micro-averages-in-classification-metrics-190285dc927f><i class="bi bi-medium"></i></a></p> -->
-    <div class="quarto-title-meta-contents">
-      <p class="date" style="display:inline">September 4, 2021</p> 
-            <!-- Add medium icon if attribute exists -->
-      <p style="display:inline"><a href="https://medium.com/ehudkr/a-visual-way-to-think-on-macro-and-micro-averages-in-classification-metrics-190285dc927f"><i class="bi bi-medium"></i></a></p>
-          </div>
-  </div>
-  
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">December 16, 2023</p>
-    </div>
-  </div>
-    
-  </div>
-  
+<p> </p>
 
 
-</header>
-
-<p>For completeness, this article spends most its words explaining what a confusion matrix is. If you already familiar, you can probably understand the article by just scrolling down through the pretty pictures.</p>
-<section id="confusion-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="confusion-matrix">Confusion matrix</h3>
-<p>Almost every classification metric can be defined by a confusion matrix. Those that cannot — can be defined by several. This makes the confusion matrix the most basic way to evaluate classification models.</p>
-<p>Evaluating a binary classification, we can either be right or wrong. But we can cross-tabulate the four possible combinations of predicted labels and true labels into a <a href="https://en.wikipedia.org/wiki/Contingency_table">contingency table</a>. On the diagonal, we count the correct predictions, and off the diagonal we count our mistakes.</p>
-<p>First, we can be correct on the positive label, these predictions are truly positive (TP). Second, we can be correct on the negative label, making these predictions truly negative (TN). <em>But correct predictions are all alike; every wrong prediction is wrong in its own way</em>. The first type of error is type-1 error — positive predictions that actually belong to the negative class — these are falsely positive predictions. Lastly, the fourth combination and the second type of error, we can wrongly predict the positive label to be negative — these predictions are falsely negative.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/confusion_matrix_binary.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Confusion matrix is a contingency table enumerating the combinations of predictions and true labels. It defines four important building blocks for most classification metrics: TPs, FPs, FNs, TNs.</figcaption>
-</figure>
-</div>
-<p>This four-cell matrix can define a plethora of metrics. For example, accuracy can be defined by summing the TP and TN and dividing by the sum of the matrix; sensitivity is the TP divided by actual positive observations; specificity is similar for the negatives: dividing TN by the actual negative observations; and <a href="https://en.wikipedia.org/wiki/Confusion_matrix">there are much, much more</a>. Especially when we can also use the metrics themselves to create compound metrics, the sky is the limit.</p>
-</section>
-<section id="multiclass-confusion-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="multiclass-confusion-matrix">Multiclass confusion matrix</h3>
-<p>Confusion matrices can be naturally expended into multi-class classification. Instead of a 2-by-2 table, we'll have a <em>k</em>-by-<em>k</em> table enumerating the different combinations of predictions and labels. However, the metrics in this multi-class setting are not always well defined. This is because we no longer have a single false positive or false negative count, but rather several ones — one for each pair of misclassified classes.</p>
-<p>To redefine these metrics for multiple classes, we must first convert our single <em>k</em>-by-<em>k</em> table to <em>k</em> 2-by-2 tables. We simply aggregate the multiple false-positives, false negatives, and true negatives into one of each. This is the same as thinking of our multiclass classifier as multiple one-vs.-rest binary classifiers.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/confusion_matrix_multi2ovr.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Multiclass confusion matrix can be reformulated as multiple one-vs-rest 2-by-2 matrices. This will help us redefine what false positives and false negatives are in a multiple</figcaption>
-</figure>
-</div>
-<p>We now have a bunch of 2-by-2 confusion matrices, let's stack them up. Think of it as a volume, or a 3D tensor. In each simple confusion matrix, the metrics — like precision, specificity, or recall — are well defined. However, we need to extract a single metric from them. This is when averaging — micro and macro — come into play.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/confusion_matrix_stacking.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">We’ll benefit from thinking of these multiple one-vs-rest confusion matrices as a 3D stack volume of confusion matrices. Then macro- and micro-averages are just the order of axes reduced.</figcaption>
-</figure>
-</div>
-</section>
-<section id="macro-averaging" class="level3">
-<h3 class="anchored" data-anchor-id="macro-averaging">Macro-averaging</h3>
-<p>In macro-averaging, we first reduce each of the <em>k</em> confusion matrices into a desired metric, and then average out the <em>k</em> scores into a single score.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/macro_averaging_sensitivity.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">In macro-average, we first calculate a metric from each confusion matrix, and then average out the scores of these metrics.</figcaption>
-</figure>
-</div>
-</section>
-<section id="micro-averaging" class="level3">
-<h3 class="anchored" data-anchor-id="micro-averaging">Micro-averaging</h3>
-<p>In micro-averaging, we will first sum the TPs, TNs, FPs, and FNs across the different confusion matrices, say we denote them as ΣTP, ΣTN, ΣFP, and ΣFN. We then use these aggregated measures as if they form a confusion matrix of their own and use them to calculate the desired metrics.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/micro_averaging_sensitivity.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">In micro-average, we first reduce the confusion matrices into one summed up confusion matrix, and then calculate the metric from aggregated table.</figcaption>
-</figure>
-</div>
-</section>
-<section id="summary" class="level3">
-<h3 class="anchored" data-anchor-id="summary">Summary</h3>
-<p>Multiclass confusion matrices can be expanded to stacked one-vs.-rest confusion matrix. Under this formulation, micro- and macro-averages differ by which axis is reduced first. Macro-average first reduces the confusion matrices into scores and then averages the scores. Micro-average first reduces the multiple confusion matrices into a single confusion matrix, and then calculates the score.</p>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -644,7 +521,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/ehudkr\.github\.io\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
@@ -663,4 +540,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/listing-style/feed/postamble.ejs.md" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/listing-style/feed/postamble.ejs.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
