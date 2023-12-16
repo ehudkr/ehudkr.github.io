@@ -10,6 +10,7 @@ medium-url: https://towardsdatascience.com/solving-simpsons-paradox-with-inverse
 categories: 
   - causal inference
   - statistics
+image: images/figure_2-2.png
 ---
 
 ::: {#medium-og style="text-align: center"}

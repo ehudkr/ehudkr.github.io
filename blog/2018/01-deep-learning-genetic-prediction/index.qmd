@@ -10,7 +10,7 @@ medium-url: https://medium.com/ehudkr/improving-genetic-prediction-using-deep-le
 categories: 
   - genetics
   - deep learning
-image: images/paste7.png
+image: images/paste-7.png
 ---
 
 ::: {#medium-og style="text-align: center"}
@@ -181,9 +181,8 @@ Not to mention that we can go full bananas and build an Inception-like architect
 
 ![A diagram depicting the suggested model [^4].](images/paste-7.png)
 
-[^4]: *It may be interesting to evaluate the model's performance when different chromosomes will share some of the deeper convolutions. Namely, replacing the DNN box in the next figure with another CNN.*
+[^4]: *It may be interesting to evaluate the model's performance when different chromosomes will share some of the deeper convolutions. Namely, replacing the DNN box in the next figure with another CNN.
 
-[^5]: *It may be interesting to evaluate the model's performance when different chromosomes will share some of the deeper convolutions. Namely, replacing the DNN box in the next figure with another CNN.*
 
 #### Discussion
 
