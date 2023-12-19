@@ -7,7 +7,7 @@ about:
   links:
     - icon: linkedin
       text: Linkedin
-      href: www.linkedin.com/in/ehudk
+      href: https://linkedin.com/in/ehudk
     - icon: twitter
       text: Twitter
       href: https://twitter.com/ehudkar
@@ -24,12 +24,12 @@ Hi there! \
 I'm a researcher and data scientist,
 specilizing in causal inference, machine learning, (Bayesian) statistics, and data visualization.
 
-I'm currently a Research Staff Member at [IBM Research, Israel](https://research.ibm.com/labs/haifa/)
+I'm currently a **Research Staff Member** at **IBM Research**, Israel
 in the [Causal Machine Learning for Healthcare & Life Sciences group](https://research.ibm.com/haifa/dept/vst/analytics.shtml).
 There, I focus on high-throughput causal inference 
 for finding new indications for existing drugs
 using electornic health records and insurance claims data.
-I'm also the creator and maintainer of [`causallib`](https://github.com/IBM/causallib),
+I'm also the creator and maintainer of **[`causallib`](https://github.com/IBM/causallib)**,
 a one-stop shop open-source Python package for flexible causal inference modeling.
 
 #### Education
