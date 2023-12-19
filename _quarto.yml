@@ -82,4 +82,7 @@ format:
     css: styles.css
     toc: true
     link-external-newwindow: true
+  
+resources: 
+  - CNAME.txt  # https://github.com/quarto-dev/quarto-cli/discussions/3249
 
