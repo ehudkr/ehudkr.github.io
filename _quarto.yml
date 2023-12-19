@@ -84,5 +84,5 @@ format:
     link-external-newwindow: true
   
 resources: 
-  - CNAME.txt  # https://github.com/quarto-dev/quarto-cli/discussions/3249
+  - CNAME  # https://github.com/quarto-dev/quarto-cli/discussions/3249
 
