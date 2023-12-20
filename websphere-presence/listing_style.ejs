@@ -1,0 +1,43 @@
+```{=html}
+<div class="about-links">
+<ul>
+    <% for (const item of items) { %>
+        <a href="<%- item.href %>" class="about-link" 
+           rel="<%- item.rel %>" target="<%- item.target %>">
+            <% if (item.icon) {%>
+                <i class="bi bi-<%- item.icon %>"></i>
+            <% } else if (item.text) {%>
+                <!-- <%- item.text %>
+                <iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon> 
+                -->
+                <!-- TODO: might need `iconify.lua` to convert {{}} syntax to html tag -->
+            <% } %>
+            <span class="about-link-text">
+                <%- item.aria-label %>
+            </span>
+        </a>
+    <% } %>
+    <!-- <a href="https://github.com/ehudkr" class="about-link" rel="" target="">
+      <i class="bi bi-github"></i>
+       <span class="about-link-text">Github</span>
+    </a>
+    <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" class="about-link" rel="" target="">
+       <span class="about-link-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon> Google Scholar</span>
+    </a> -->
+</ul>
+</div>
+
+```
+
+
+<!-- 
+```{=html}
+<ul>
+    <% for (const item of items) { %>
+      <li>
+        <a href="google.com">aaa</a>
+    </li>
+    <% } %>
+</ul>
+``` -->
+
