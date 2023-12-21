@@ -1,0 +1,11 @@
+---
+listing: 
+  - id: websphere-presence
+    contents: websphere-presence/index.yml
+    type: table
+    # template: listing_style.ejs
+    filter-ui: false
+    sort-ui: false
+---
+:::{#websphere-presence}
+:::

@@ -17,14 +17,6 @@ about:
     - text: "{{< iconify simple-icons googlescholar size=lg >}} Google Scholar"  # https://icon-sets.iconify.design/
       href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
       # Seems like must be last on the list
-listing: 
-  - id: websphere-presence
-    contents: websphere-presence/index.yml
-    template: websphere-presence/listing_style.ejs 
-    # type: table
-    filter-ui: false
-    sort-ui: false
-
 ---
 
 Hi there! \
@@ -52,7 +44,7 @@ developing methods for finding novel protein-RNA interactions
 using RNAseq data 
 [{{< iconify bi journal-text >}}](https://academic.oup.com/nar/article/46/19/10380/5064785). 
 
-### Elsewhere on the websphere
+#### Elsewhere on the websphere
 
-:::{#websphere-presence}
-:::
+{{< include websphere-presence/index.qmd >}}
+
