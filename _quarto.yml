@@ -90,3 +90,5 @@ format:
 resources: 
   - CNAME  # https://github.com/quarto-dev/quarto-cli/discussions/3249
 
+pagetitle: "{{< meta title >}} | Ehud Karavani"
+author-meta: "Ehud Karavani"
