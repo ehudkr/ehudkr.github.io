@@ -25,6 +25,7 @@ website:
     card-style: summary
   open-graph: 
     image: img/profile.jpg
+pagetitle: "{{< meta title >}}"  # Undo from _quarto.yml to avoid "Ehud | Ehud"
 ---
 
 Hi there! \
