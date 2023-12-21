@@ -20,7 +20,9 @@ about:
 
 website: 
   twitter-card: 
+    # Explicit settings for About page only
     image: img/profile.jpg
+    card-style: summary
   open-graph: 
     image: img/profile.jpg
 ---
