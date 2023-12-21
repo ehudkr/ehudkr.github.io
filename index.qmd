@@ -18,6 +18,11 @@ about:
       href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
       # Seems like must be last on the list
 
+website: 
+  twitter-card: 
+    image: img/profile.jpg
+  open-graph: 
+    image: img/profile.jpg
 ---
 
 Hi there! \
