@@ -1,0 +1,8 @@
+website: 
+  # Define here so quarto knows to automatically pull 
+  # preview images throughout the site, and only explicitly
+  # specify images for main (about) page
+  twitter-card: 
+    image: img/profile.jpg
+  open-graph: 
+    image: img/profile.jpg
