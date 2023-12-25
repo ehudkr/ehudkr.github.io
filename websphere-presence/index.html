@@ -75,9 +75,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-icon','listing-aria-label','listing-href','listing-rel','listing-target','listing-text',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-icon","listing-aria-label","listing-href","listing-rel","listing-target","listing-text"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -207,9 +207,207 @@ ul.task-list li input[type="checkbox"] {
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+<th>
+icon
+</th>
+<th>
+aria-label
+</th>
+<th>
+href
+</th>
+<th>
+rel
+</th>
+<th>
+target
+</th>
+<th>
+text
+</th>
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0">
+<td>
+<span class="listing-icon">linkedin</span>
+</td>
+<td>
+<span class="listing-aria-label">linkedin</span>
+</td>
+<td>
+<span class="listing-href">https://www.linkedin.com/in/ehudk</span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text">undefined</span>
+</td>
+</tr>
+<tr data-index="1">
+<td>
+<span class="listing-icon">undefined</span>
+</td>
+<td>
+<span class="listing-aria-label">google-scholar</span>
+</td>
+<td>
+<span class="listing-href">https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en</span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span>
+</td>
+</tr>
+<tr data-index="2">
+<td>
+<span class="listing-icon">github</span>
+</td>
+<td>
+<span class="listing-aria-label">github</span>
+</td>
+<td>
+<span class="listing-href">https://github.com/ehudkr</span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text">undefined</span>
+</td>
+</tr>
+<tr data-index="3">
+<td>
+<span class="listing-icon">medium</span>
+</td>
+<td>
+<span class="listing-aria-label">medium</span>
+</td>
+<td>
+<span class="listing-href">https://medium.com/<span class="citation" data-cites="ehudkr">@ehudkr</span></span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text">undefined</span>
+</td>
+</tr>
+<tr data-index="4">
+<td>
+<span class="listing-icon">twitter</span>
+</td>
+<td>
+<span class="listing-aria-label">twitter</span>
+</td>
+<td>
+<span class="listing-href">https://twitter.com/ehudkar</span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text">undefined</span>
+</td>
+</tr>
+<tr data-index="5">
+<td>
+<span class="listing-icon">undefined</span>
+</td>
+<td>
+<span class="listing-aria-label">bluesky</span>
+</td>
+<td>
+<span class="listing-href">https://bsky.app/profile/ehudk.bsky.social</span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text"><iconify-icon inline="" icon="fluent-emoji:blue-square"></iconify-icon></span>
+</td>
+</tr>
+<tr data-index="6">
+<td>
+<span class="listing-icon">mastodon</span>
+</td>
+<td>
+<span class="listing-aria-label">mastodon</span>
+</td>
+<td>
+<span class="listing-href">https://mastodon.social/<span class="citation" data-cites="ehudk">@ehudk</span></span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text">undefined</span>
+</td>
+</tr>
+<tr data-index="7">
+<td>
+<span class="listing-icon">stack-overflow</span>
+</td>
+<td>
+<span class="listing-aria-label">stack-overflow</span>
+</td>
+<td>
+<span class="listing-href">https://stackoverflow.com/users/7708413/ehudk</span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text">undefined</span>
+</td>
+</tr>
+<tr data-index="8">
+<td>
+<span class="listing-icon">undefined</span>
+</td>
+<td>
+<span class="listing-aria-label">datamethods</span>
+</td>
+<td>
+<span class="listing-href">https://discourse.datamethods.org/u/ehudk/summary</span>
+</td>
+<td>
+<span class="listing-rel">me</span>
+</td>
+<td>
+<span class="listing-target">_new</span>
+</td>
+<td>
+<span class="listing-text"><iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon></span>
+</td>
+</tr>
 </tbody>
 
 </table>
@@ -217,6 +415,7 @@ ul.task-list li input[type="checkbox"] {
 No matching items
 </div>
 </div>
+<p>ghgj</p>
 
 
 
