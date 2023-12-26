@@ -1,3 +1,10 @@
 ---
-title: "CV"
+title: "Ehud Karavani"
 ---
+
+[{{< iconify bi envelope-fill >}} Email](mailto:ehudkaravani@gmail.com){.btn .btn-primary .btn-sm .rounded}
+[{{< iconify bi linkedin >}} LinkedIn](https://linkedin.com/in/ehudk){.btn .btn-primary .btn-sm .rounded}
+[{{< iconify simple-icons googlescholar >}} Scholar](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en){.btn .btn-primary .btn-sm .rounded}
+[{{< iconify bi medium >}} Medium](https://medium.com/@ehudkr){.btn .btn-primary .btn-sm .rounded}
+[{{< iconify bi github >}} GitHub](https://github.com/ehudkr){.btn .btn-primary .btn-sm .rounded}
+
