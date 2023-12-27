@@ -6,7 +6,7 @@ website:
   title: "Ehud Karavani"
   description: >
     a researcher and data scientist, 
-    specilizing in causal inference, machine learning, 
+    specializing in causal inference, machine learning, 
     (Bayesian) statistics, and data visualization.
   favicon: img/bar-chart-fill.svg
   twitter-card: true
