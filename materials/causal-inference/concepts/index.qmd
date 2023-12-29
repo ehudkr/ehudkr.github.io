@@ -1,6 +1,5 @@
 ---
 title: "Causal Inference - Concepts"
-# subtitle: A casual reading club on causality.
 description: Broad overview of causal inference concepts
 author: "Ehud Karavani"
 date: 2020/02/20

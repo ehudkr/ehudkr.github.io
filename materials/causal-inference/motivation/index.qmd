@@ -1,6 +1,5 @@
 ---
 title: "Causal Inference - Motivation"
-# subtitle: A casual reading club on causality.
 description: Motivating causal inference
 author: "Ehud Karavani"
 date: 2021/05/16

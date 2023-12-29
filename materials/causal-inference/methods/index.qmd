@@ -1,6 +1,5 @@
 ---
 title: "Causal Inference - Methods"
-# subtitle: A casual reading club on causality.
 description: Statistical methods for causal inference
 author: "Ehud Karavani"
 date: 2018/11/18
