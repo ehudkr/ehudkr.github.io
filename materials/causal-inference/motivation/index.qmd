@@ -10,8 +10,27 @@ categories:
 ---
 
 ## Hierarchy of data-driven tasks [{{< iconify bi filetype-pptx >}}](task-hierarchy.pptx)
-
 ![](task-hierarchy.png)
+
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/motivation/task-hierarchy.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
+
 
 ## Predicting risk is not enough [{{< iconify bi filetype-pptx >}}](predicting-risk-is-not-enough.pptx)
 ![](predicting-risk-is-not-enough.png)
+
+::: {.column-margin}
+```{=html}
+<iframe
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/motivation/predicting-risk-is-not-enough.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
+

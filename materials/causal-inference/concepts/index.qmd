@@ -13,21 +13,76 @@ categories:
 With an emphasis on counterfactual prediction differing from risk prediction.
 ![](counterfactual-prediction.png)
 
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/counterfactual-prediction.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
+
 ## Observational studies and RCTs [{{< iconify bi filetype-pptx >}}](os-vs-rct.pptx)
 ![](os-vs-rct.png)
+
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/os-vs-rct.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
 
 ## The Goldilocks principle of covariate adjustment [{{< iconify bi filetype-pptx >}}](goldilocks-covariate-adjustment.pptx)
 The Goldilocks principle of covariate adjustment in causal inference.
 ![](goldilocks-covariate-adjustment.png)
 
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/goldilocks-covariate-adjustment.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
+
 ## How causation causes correlations [{{< iconify bi filetype-pptx >}}](causal-based-correlations.pptx)
 Structural causal view of statistical associations.
 ![](causal-based-correlations.png)
+
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/causal-based-correlations.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
 
 ## A tour of causal assumptions [{{< iconify bi filetype-pptx >}}](causal-assumptions.pptx)
 [Causal inference is a mindset](../../../blog/2023/01-causal-inference-is-a-mindset/index.qmd).
 Therefore, it takes thought, not data, to translate data-based associations into causal claims.
 
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/causal-assumptions.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
+
+
 ## My first ever lecture on causal inference [{{< iconify bi filetype-pptx >}}](causal-inference-101.pptx)
 An introduction to causal inference talk gave at a student seminar on November 18, 2018, named Causal Inference 101.
 ![](causal-inference-101.png)
+
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/causal-inference-101.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::

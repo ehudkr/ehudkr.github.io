@@ -9,18 +9,57 @@ categories:
   - causal inference
 ---
 
-## Zoo of causal methods [{{< iconify bi filetype-pptx >}}](goldilocks-covariate-adjustment.pptx)
+## Zoo of causal methods [{{< iconify bi filetype-pptx >}}](causal-zoo.pptx)
 An overview of many causal inference methods.
+
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/methods/causal-zoo.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
 
 ## The Simpsons [{{< iconify bi filetype-pptx >}}](simpsons.pptx)
 ![](simpsons-matching.gif)
 Matching and Inverse Probability Weighting with The Simpsons.  
 (This is before the time of Powerpoint morph; this was painstaking.)
 
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/methods/simpsons.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
+
+
 ## Causal inference with deep learning [{{< iconify bi filetype-pptx >}}](deep-learning-causal-inference.pptx)
 Relevant up to ~2020
 ![](deep-learning-causal-inference.png)
 
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/methods/deep-learning-causal-inference.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
+
+
 ## Interrupted time series [{{< iconify bi filetype-pptx >}}](did-to-sc.pptx)
 From difference-in-differences to synthetic controls.
 ![](did-to-sc.gif)
+
+::: {.column-margin}
+```{=html}
+<iframe 
+ src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/methods/did-to-sc.pptx'
+ width='300em' height='200em' frameborder='0'>
+ </iframe>
+```
+:::
+
