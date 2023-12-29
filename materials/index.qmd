@@ -13,6 +13,14 @@ listing:
     - "date"
     - "image"
     - "categories"
+format: 
+  html: 
+    grid: 
+      # Default grid overridden by _metadata.yml
+      # https://quarto.org/docs/output-formats/page-layout.html#customizing-component-widths
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
 ---
 
 Please properly attribute if using.
