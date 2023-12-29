@@ -1,5 +1,6 @@
 ---
 title: "Publications [{{< iconify simple-icons googlescholar >}}](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en)"
+pagetitle: "Publications | Ehud Karavani"  # Remove iconify icon as it is rendered as the actual text
 date-modified: last-modified
 listing: 
   id: publications

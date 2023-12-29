@@ -17,17 +17,26 @@ about:
     - text: "{{< iconify simple-icons googlescholar size=lg >}} Google Scholar"  # https://icon-sets.iconify.design/
       href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
       # Seems like must be last on the list
+
+website: 
+  twitter-card: 
+    # Explicit settings for About page only
+    image: img/profile.jpg
+    card-style: summary
+  open-graph: 
+    image: img/profile.jpg
+pagetitle: "{{< meta title >}}"  # Undo from _quarto.yml to avoid "Ehud | Ehud"
 ---
 
 Hi there! \
 I'm a researcher and data scientist,
-specilizing in causal inference, machine learning, (Bayesian) statistics, and data visualization.
+specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.
 
 I'm currently a **Research Staff Member** at **IBM Research**, Israel
 in the [Causal Machine Learning for Healthcare & Life Sciences group](https://research.ibm.com/haifa/dept/vst/analytics.shtml).
 There, I focus on high-throughput causal inference 
 for finding new indications for existing drugs
-using electornic health records and insurance claims data.
+using electronic health records and insurance claims data.
 I'm also the creator and maintainer of **[`causallib`](https://github.com/IBM/causallib)**,
 a one-stop shop open-source Python package for flexible causal inference modeling.
 

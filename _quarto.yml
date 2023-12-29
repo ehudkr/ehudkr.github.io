@@ -4,6 +4,10 @@ project:
 
 website:
   title: "Ehud Karavani"
+  description: >
+    a researcher and data scientist, 
+    specializing in causal inference, machine learning, 
+    (Bayesian) statistics, and data visualization.
   favicon: img/bar-chart-fill.svg
   twitter-card: true
   open-graph: true
@@ -73,6 +77,7 @@ website:
         target: "_new"
   repo-url: https://github.com/ehudkr/ehudkr.github.io/
   repo-actions: [source, edit, issue]
+  google-analytics: "G-66TLP1EVBH"
       
 format:
   html:
@@ -86,3 +91,5 @@ format:
 resources: 
   - CNAME  # https://github.com/quarto-dev/quarto-cli/discussions/3249
 
+pagetitle: "{{< meta title >}} | Ehud Karavani"
+author-meta: "Ehud Karavani"
