@@ -64,14 +64,13 @@ Structural causal view of statistical associations.
 [Causal inference is a mindset](../../../blog/2023/01-causal-inference-is-a-mindset/index.qmd).
 Therefore, it takes thought, not data, to translate data-based associations into causal claims.
 
-::: {.column-margin}
 ```{=html}
 <iframe 
  src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/causal-assumptions.pptx'
  width='300em' height='200em' frameborder='0'>
  </iframe>
 ```
-:::
+
 
 
 ## My first ever lecture on causal inference [{{< iconify bi filetype-pptx >}}](causal-inference-101.pptx)

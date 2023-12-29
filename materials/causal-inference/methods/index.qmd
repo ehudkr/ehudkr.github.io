@@ -12,14 +12,12 @@ categories:
 ## Zoo of causal methods [{{< iconify bi filetype-pptx >}}](causal-zoo.pptx)
 An overview of many causal inference methods.
 
-::: {.column-margin}
 ```{=html}
 <iframe 
  src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/methods/causal-zoo.pptx'
  width='300em' height='200em' frameborder='0'>
  </iframe>
 ```
-:::
 
 ## The Simpsons [{{< iconify bi filetype-pptx >}}](simpsons.pptx)
 ![](simpsons-matching.gif)
