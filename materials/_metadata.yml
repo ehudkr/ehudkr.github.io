@@ -1,0 +1,5 @@
+format: 
+  html: 
+    grid: 
+      # So that the embedding of the PPTX slides at the margins is fully seen
+      margin-width: 350px
