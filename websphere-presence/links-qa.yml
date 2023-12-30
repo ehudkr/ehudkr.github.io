@@ -1,0 +1,15 @@
+- name: Stack Overflow
+  icon_name: stack-overflow
+  icon_family: bi
+  aria-label: stack-overflow
+  href: https://stackoverflow.com/users/7708413/ehudk
+- name: Cross Validated
+  icon_name: stackexchange
+  icon_family: cib
+  aria-label: cross-validated
+  href: https://stats.stackexchange.com/users/153005/ehudk
+- name: Datamethods
+  icon_name: discourse
+  icon_family: simple-icons
+  aria-label: datamethods
+  href: https://discourse.datamethods.org/u/ehudk/summary

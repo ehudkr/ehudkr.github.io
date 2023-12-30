@@ -1,0 +1,15 @@
+- name: X/Twitter  # TODO: why icon disappears when "Twitter"?
+  icon_name: twitter
+  icon_family: bi
+  aria-label: twitter
+  href: https://twitter.com/ehudkar
+- name: Bluesky
+  icon_name: blue-square
+  icon_family: fluent-emoji
+  aria-label: bluesky
+  href: https://bsky.app/profile/ehudk.bsky.social
+- name: Mastodon
+  icon_name: mastodon
+  icon_family: bi
+  aria-label: mastodon
+  href: https://mastodon.social/@ehudk

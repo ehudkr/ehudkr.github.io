@@ -19,12 +19,15 @@ about:
       # Seems like must be last on the list
 
 listing: 
-  - id: websphere-presence
-    contents: websphere-presence/index.yml
-    # type: grid
+  - id: online-professional
+    contents: websphere-presence/links-professional.yml
     template: websphere-presence/listing_style.ejs
-    filter-ui: false
-    sort-ui: false
+  - id: online-QA
+    contents: websphere-presence/links-qa.yml
+    template: websphere-presence/listing_style.ejs
+  - id: online-social
+    contents: websphere-presence/links-social.yml
+    template: websphere-presence/listing_style.ejs
 
 website: 
   twitter-card: 
@@ -64,8 +67,17 @@ using RNAseq data
 
 #### Elsewhere on the websphere
 
-:::{#websphere-presence}
+:::{#online-professional}
 :::
 
-<!-- {{< include websphere-presence/index.qmd >}} -->
+##### Social
+
+:::{#online-social}
+:::
+
+##### Professional Q&A
+
+:::{#online-qa}
+:::
+
 

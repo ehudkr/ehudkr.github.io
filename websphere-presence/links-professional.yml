@@ -1,0 +1,20 @@
+- name: LinkedIn
+  icon_name: linkedin
+  icon_family: bi
+  aria-label: linkedin
+  href: https://www.linkedin.com/in/ehudk
+- name: "Google Scholar"
+  icon_name: googlescholar
+  icon_family: simple-icons
+  aria-label: google-scholar
+  href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
+- name: GitHub
+  icon_name: github
+  icon_family: bi
+  aria-label: github
+  href: https://github.com/ehudkr
+- name: Medium
+  icon_name: medium
+  icon_family: bi
+  aria-label: medium
+  href: https://medium.com/@ehudkr
