@@ -1,4 +1,4 @@
-- name: X/Twitter  # TODO: why icon disappears when "Twitter"?
+- name: Twitter  # TODO: why icon disappears when "Twitter"?
   icon_name: twitter
   icon_family: bi
   aria-label: twitter

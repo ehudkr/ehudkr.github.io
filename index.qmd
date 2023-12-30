@@ -8,9 +8,6 @@ about:
     - icon: linkedin
       text: Linkedin
       href: https://linkedin.com/in/ehudk
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/ehudkar
     - icon: github
       text: Github
       href: https://github.com/ehudkr
