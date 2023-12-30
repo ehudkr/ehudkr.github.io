@@ -17,14 +17,14 @@ about:
 
 listing: 
   - id: online-professional
-    contents: websphere-presence/links-professional.yml
-    template: websphere-presence/listing_style.ejs
+    contents: online-presence/links-professional.yml
+    template: online-presence/listing_style.ejs
   - id: online-QA
-    contents: websphere-presence/links-qa.yml
-    template: websphere-presence/listing_style.ejs
+    contents: online-presence/links-qa.yml
+    template: online-presence/listing_style.ejs
   - id: online-social
-    contents: websphere-presence/links-social.yml
-    template: websphere-presence/listing_style.ejs
+    contents: online-presence/links-social.yml
+    template: online-presence/listing_style.ejs
 
 website: 
   twitter-card: 
@@ -62,7 +62,7 @@ using RNAseq data
 [{{< iconify bi journal-text >}}](https://academic.oup.com/nar/article/46/19/10380/5064785). 
 
 
-#### Elsewhere on the websphere
+#### Elsewhere on the Internet
 
 :::{#online-professional style="padding-bottom: 0.4em;"}
 :::
