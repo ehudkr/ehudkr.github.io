@@ -1,50 +1,50 @@
-- icon: linkedin
+- name: LinkedIn
+  icon_name: linkedin
+  icon_family: bi
   aria-label: linkedin
   href: https://www.linkedin.com/in/ehudk
-  rel: me 
-  target: "_new"
-- text: "{{< iconify simple-icons googlescholar size=lg >}}"  # https://icon-sets.iconify.design/
+- name: "Google Scholar"
+  icon_name: googlescholar
+  icon_family: simple-icons
   aria-label: google-scholar
   href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
-  rel: me 
-  target: "_new"
-- icon: github
+- name: GitHub
+  icon_name: github
+  icon_family: bi
   aria-label: github
   href: https://github.com/ehudkr
-  rel: me  
-  target: "_new"
-- icon: medium
+- name: Medium
+  icon_name: medium
+  icon_family: bi
   aria-label: medium
   href: https://medium.com/@ehudkr
-  rel: me  
-  target: "_new"
-- icon: twitter
+- name: X/Twitter  # TODO: why icon disappears when "Twitter"?
+  icon_name: twitter
+  icon_family: bi
   aria-label: twitter
   href: https://twitter.com/ehudkar
-  rel: me 
-  target: "_new"
-- text: "{{< iconify fluent-emoji blue-square >}}"
+- name: Bluesky
+  icon_name: blue-square
+  icon_family: fluent-emoji
   aria-label: bluesky
   href: https://bsky.app/profile/ehudk.bsky.social
-  rel: me  
-  target: "_new"
-- icon: mastodon
+- name: Mastodon
+  icon_name: mastodon
+  icon_family: bi
   aria-label: mastodon
   href: https://mastodon.social/@ehudk
-  rel: me  # For verification: https://github.com/quarto-dev/quarto-cli/pull/3333
-  target: "_new"
-- icon: stack-overflow
+- name: Stack Overflow
+  icon_name: stack-overflow
+  icon_family: bi
   aria-label: stack-overflow
   href: https://stackoverflow.com/users/7708413/ehudk
-  rel: me  
-  target: "_new"
-# - text: "{{< iconify cib stackexchange >}}"
-#   aria-label: cross-validated
-#   href: https://stackoverflow.com/users/7708413/ehudk
-#   rel: me 
-#   target: "_new"
-- text: "{{< iconify simple-icons discourse >}}"
+- name: Cross Validated
+  icon_name: stackexchange
+  icon_family: cib
+  aria-label: cross-validated
+  href: https://stats.stackexchange.com/users/153005/ehudk
+- name: Datamethods
+  icon_name: discourse
+  icon_family: simple-icons
   aria-label: datamethods
   href: https://discourse.datamethods.org/u/ehudk/summary
-  rel: me  
-  target: "_new"
