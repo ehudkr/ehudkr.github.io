@@ -1,0 +1,12 @@
+```{=html}
+<div class="about-links" style="padding-bottom: 0.4em;">
+<% for (const item of items) { %>
+    <a href="<%= item.href %>" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="<%= item.icon_family %>:<%= item.icon_name %>"></iconify-icon>
+            <%= item.name %>
+        </span>
+    </a>
+<% } %>
+</div>
+```

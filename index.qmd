@@ -8,15 +8,23 @@ about:
     - icon: linkedin
       text: Linkedin
       href: https://linkedin.com/in/ehudk
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/ehudkar
     - icon: github
       text: Github
       href: https://github.com/ehudkr
     - text: "{{< iconify simple-icons googlescholar size=lg >}} Google Scholar"  # https://icon-sets.iconify.design/
       href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
       # Seems like must be last on the list
+
+listing: 
+  - id: online-professional
+    contents: online-presence/links-professional.yml
+    template: online-presence/listing_style.ejs
+  - id: online-QA
+    contents: online-presence/links-qa.yml
+    template: online-presence/listing_style.ejs
+  - id: online-social
+    contents: online-presence/links-social.yml
+    template: online-presence/listing_style.ejs
 
 website: 
   twitter-card: 
@@ -52,4 +60,22 @@ Previous to that I was an undergraduate research associate in
 developing methods for finding novel protein-RNA interactions
 using RNAseq data 
 [{{< iconify bi journal-text >}}](https://academic.oup.com/nar/article/46/19/10380/5064785). 
+
+
+#### Elsewhere on the Internet
+
+:::{#online-professional style="padding-bottom: 0.4em;"}
+:::
+
+###### Social
+
+:::{#online-social style="padding-bottom: 0.4em;"}
+:::
+
+###### Professional Q&A
+<!-- TODO: why these buttons are always at the bottom? -->
+
+:::{#online-qa}
+:::
+
 
