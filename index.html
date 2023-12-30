@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,6 +65,91 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-online-professional .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-name','listing-icon_name','listing-icon_family','listing-aria-label','listing-href',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-name","listing-icon_name","listing-icon_family","listing-aria-label","listing-href"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-online-professional'] = new List('listing-online-professional', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-online-QA .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-name','listing-icon_name','listing-icon_family','listing-href',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-name","listing-icon_name","listing-icon_family","listing-href"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-online-QA'] = new List('listing-online-QA', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-online-social .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-name','listing-icon_name','listing-icon_family','listing-href',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-name","listing-icon_name","listing-icon_family","listing-href"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-online-social'] = new List('listing-online-social', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-66TLP1EVBH"></script>
 
 <script type="text/javascript">
@@ -73,6 +160,8 @@ gtag('js', new Date());
 gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Ehud Karavani">
@@ -138,34 +227,43 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </i> 
  <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://medium.com/@ehudkr" rel="me" target="_new"><i class="bi bi-medium" role="img" aria-label="medium">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-people-fill" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-people-fill" role="img">
 </i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/ehudkar" rel="me" target="_new"><i class="bi bi-twitter" role="img" aria-label="twitter">
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-people-fill">    
+        <li>
+    <a class="dropdown-item" href="https://medium.com/@ehudkr" rel="me" target="_new"><i class="bi bi-medium" role="img" aria-label="medium">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="dropdown-text">Medium</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://bsky.app/profile/ehudk.bsky.social" rel="me" target="_new">
- <span class="menu-text"><iconify-icon inline="" icon="fluent-emoji:blue-square"></iconify-icon></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://mastodon.social/@ehudk" rel="me" target="_new"><i class="bi bi-mastodon" role="img" aria-label="mastodon">
+        <li>
+    <a class="dropdown-item" href="https://twitter.com/ehudkar" rel="me" target="_new"><i class="bi bi-twitter" role="img" aria-label="twitter">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="dropdown-text">Twitter</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://stackoverflow.com/users/7708413/ehudk" rel="me" target="_new"><i class="bi bi-stack-overflow" role="img" aria-label="stack-overflow">
+        <li>
+    <a class="dropdown-item" href="https://bsky.app/profile/ehudk.bsky.social" rel="me" target="_new">
+ <span class="dropdown-text"><span style="margin-left:.1rem;margin-right:.25em;padding-right:1px;"><iconify-icon inline="" icon="fluent-emoji:blue-square"></iconify-icon></span> Bluesky</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://mastodon.social/@ehudk" rel="me" target="_new"><i class="bi bi-mastodon" role="img" aria-label="mastodon">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="dropdown-text">Mastodon</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://discourse.datamethods.org/u/ehudk/summary" rel="me" target="_new">
- <span class="menu-text"><iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon></span></a>
+        <li>
+    <a class="dropdown-item" href="https://stackoverflow.com/users/7708413/ehudk" rel="me" target="_new"><i class="bi bi-stack-overflow" role="img" aria-label="stack-overflow">
+</i> 
+ <span class="dropdown-text">Stack Overflow</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://discourse.datamethods.org/u/ehudk/summary" rel="me" target="_new">
+ <span class="dropdown-text"><span style="margin-left:.1rem;margin-right:.25em;padding-right:1px;"><iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon></span> Datamethods</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -194,10 +292,6 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <i class="bi bi-linkedin"></i>
      <span class="about-link-text">Linkedin</span>
   </a>
-  <a href="https://twitter.com/ehudkar" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
   <a href="https://github.com/ehudkr" class="about-link" rel="" target="">
     <i class="bi bi-github"></i>
      <span class="about-link-text">Github</span>
@@ -214,10 +308,102 @@ I’m a researcher and data scientist, specializing in causal inference, machine
 <h4 data-anchor-id="education">Education</h4>
 <p>I have a BSc and MSc in Computer Science and Computational Biology from the Hebrew University. I did my Master’s thesis with <a href="https://scarmilab.org/">Dr.&nbsp;Shai Carmi</a> studying prediction of traits using DNA and its potential effect on selecting embryos for implantation in IVF (aka “designer babies”) <a href="https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3"><iconify-icon inline="" icon="bi:journal-text"></iconify-icon></a>.<br>
 Previous to that I was an undergraduate research associate in <a href="http://margalit.huji.ac.il/">Prof.&nbsp;Hanah Marglit’s lab</a>, developing methods for finding novel protein-RNA interactions using RNAseq data <a href="https://academic.oup.com/nar/article/46/19/10380/5064785"><iconify-icon inline="" icon="bi:journal-text"></iconify-icon></a>.</p>
+</section>
+<section id="elsewhere-on-the-internet" class="level4">
+<h4 data-anchor-id="elsewhere-on-the-internet">Elsewhere on the Internet</h4>
+<div id="listing-online-professional" style="padding-bottom: 0.4em;" class="quarto-listing quarto-listing-container-custom">
+<div class="about-links" style="padding-bottom: 0.4em;">
+    <a href="https://www.linkedin.com/in/ehudk" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="bi:linkedin"></iconify-icon>
+            LinkedIn
+        </span>
+    </a>
+    <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="simple-icons:googlescholar"></iconify-icon>
+            Google Scholar
+        </span>
+    </a>
+    <a href="https://github.com/ehudkr" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="bi:github"></iconify-icon>
+            GitHub
+        </span>
+    </a>
+    <a href="https://medium.com/@ehudkr" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="bi:medium"></iconify-icon>
+            Medium
+        </span>
+    </a>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<section id="social" class="level6">
+<h6 data-anchor-id="social">Social</h6>
+<div id="listing-online-social" style="padding-bottom: 0.4em;" class="quarto-listing quarto-listing-container-custom">
+<div class="about-links" style="padding-bottom: 0.4em;">
+    <a href="https://twitter.com/ehudkar" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="bi:twitter"></iconify-icon>
+            Twitter
+        </span>
+    </a>
+    <a href="https://bsky.app/profile/ehudk.bsky.social" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="fluent-emoji:blue-square"></iconify-icon>
+            Bluesky
+        </span>
+    </a>
+    <a href="https://mastodon.social/@ehudk" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="bi:mastodon"></iconify-icon>
+            Mastodon
+        </span>
+    </a>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="professional-qa" class="level6">
+<h6 data-anchor-id="professional-qa">Professional Q&amp;A</h6>
+<!-- TODO: why these buttons are always at the bottom? -->
+<div id="online-qa">
+</div>
 
 
 </section>
-</main></div>
+</section>
+<div class="quarto-listing quarto-listing-container-custom" id="listing-online-QA">
+<div class="about-links" style="padding-bottom: 0.4em;">
+    <a href="https://stackoverflow.com/users/7708413/ehudk" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="bi:stack-overflow"></iconify-icon>
+            Stack Overflow
+        </span>
+    </a>
+    <a href="https://stats.stackexchange.com/users/153005/ehudk" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="cib:stackexchange"></iconify-icon>
+            Cross Validated
+        </span>
+    </a>
+    <a href="https://discourse.datamethods.org/u/ehudk/summary" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon>
+            Datamethods
+        </span>
+    </a>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main></div>
     </div>
     <img src="img/profile.jpg" class="about-image
   rounded " style="width: 15em;">
