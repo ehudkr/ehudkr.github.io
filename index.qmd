@@ -2,7 +2,6 @@
 title: "Ehud Karavani"
 from: markdown+emoji
 about:
-  id: "about-me"
   template: solana
   image: img/profile.jpg
   links:
@@ -22,8 +21,8 @@ about:
 listing: 
   - id: websphere-presence
     contents: websphere-presence/index.yml
-    type: table
-    # template: websphere-presence/listing_style.ejs
+    # type: grid
+    template: websphere-presence/listing_style.ejs
     filter-ui: false
     sort-ui: false
 
@@ -37,7 +36,6 @@ website:
 pagetitle: "{{< meta title >}}"  # Undo from _quarto.yml to avoid "Ehud | Ehud"
 ---
 
-:::{#about-me}
 Hi there! \
 I'm a researcher and data scientist,
 specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.
@@ -63,7 +61,6 @@ developing methods for finding novel protein-RNA interactions
 using RNAseq data 
 [{{< iconify bi journal-text >}}](https://academic.oup.com/nar/article/46/19/10380/5064785). 
 
-:::
 
 #### Elsewhere on the websphere
 
