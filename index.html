@@ -159,6 +159,15 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </script>
+<style>
+  .desktop-only {display: none;} /* Hide by default */
+  /* Media query for when Quarto decides to move between long and wide view */
+  @media (min-width: 992px) {
+      .desktop-only {
+          display: block; /* Show on laptops and larger devices */
+      }
+  }
+</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -309,7 +318,7 @@ I’m a researcher and data scientist, specializing in causal inference, machine
 <p>I have a BSc and MSc in Computer Science and Computational Biology from the Hebrew University. I did my Master’s thesis with <a href="https://scarmilab.org/">Dr.&nbsp;Shai Carmi</a> studying prediction of traits using DNA and its potential effect on selecting embryos for implantation in IVF (aka “designer babies”) <a href="https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3"><iconify-icon inline="" icon="bi:journal-text"></iconify-icon></a>.<br>
 Previous to that I was an undergraduate research associate in <a href="http://margalit.huji.ac.il/">Prof.&nbsp;Hanah Marglit’s lab</a>, developing methods for finding novel protein-RNA interactions using RNAseq data <a href="https://academic.oup.com/nar/article/46/19/10380/5064785"><iconify-icon inline="" icon="bi:journal-text"></iconify-icon></a>.</p>
 </section>
-<section id="elsewhere-on-the-internet" class="level4">
+<section id="elsewhere-on-the-internet" class="level4 desktop-only">
 <h4 data-anchor-id="elsewhere-on-the-internet">Elsewhere on the Internet</h4>
 <div id="listing-online-professional" style="padding-bottom: 0.4em;" class="quarto-listing quarto-listing-container-custom">
 <div class="about-links" style="padding-bottom: 0.4em;">
@@ -342,9 +351,37 @@ Previous to that I was an undergraduate research associate in <a href="http://ma
 No matching items
 </div>
 </div>
+<section id="qa" class="level6">
+<h6 data-anchor-id="qa">Q&amp;A</h6>
+<div id="listing-online-QA" style="padding-bottom: 0.4em;" class="quarto-listing quarto-listing-container-custom">
+<div class="about-links" style="padding-bottom: 0.4em;">
+    <a href="https://stackoverflow.com/users/7708413/ehudk" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="bi:stack-overflow"></iconify-icon>
+            Stack Overflow
+        </span>
+    </a>
+    <a href="https://stats.stackexchange.com/users/153005/ehudk" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="cib:stackexchange"></iconify-icon>
+            Cross Validated
+        </span>
+    </a>
+    <a href="https://discourse.datamethods.org/u/ehudk/summary" class="about-link" rel="me" target="_new">
+        <span class="about-link-text">
+            <iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon>
+            Datamethods
+        </span>
+    </a>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
 <section id="social" class="level6">
 <h6 data-anchor-id="social">Social</h6>
-<div id="listing-online-social" style="padding-bottom: 0.4em;" class="quarto-listing quarto-listing-container-custom">
+<div id="listing-online-social" class="quarto-listing quarto-listing-container-custom">
 <div class="about-links" style="padding-bottom: 0.4em;">
     <a href="https://twitter.com/ehudkar" class="about-link" rel="me" target="_new">
         <span class="about-link-text">
@@ -370,40 +407,10 @@ No matching items
 </div>
 </div>
 </section>
-<section id="professional-qa" class="level6">
-<h6 data-anchor-id="professional-qa">Professional Q&amp;A</h6>
-<!-- TODO: why these buttons are always at the bottom? -->
-<div id="online-qa">
-</div>
+</section>
 
 
-</section>
-</section>
-<div class="quarto-listing quarto-listing-container-custom" id="listing-online-QA">
-<div class="about-links" style="padding-bottom: 0.4em;">
-    <a href="https://stackoverflow.com/users/7708413/ehudk" class="about-link" rel="me" target="_new">
-        <span class="about-link-text">
-            <iconify-icon inline="" icon="bi:stack-overflow"></iconify-icon>
-            Stack Overflow
-        </span>
-    </a>
-    <a href="https://stats.stackexchange.com/users/153005/ehudk" class="about-link" rel="me" target="_new">
-        <span class="about-link-text">
-            <iconify-icon inline="" icon="cib:stackexchange"></iconify-icon>
-            Cross Validated
-        </span>
-    </a>
-    <a href="https://discourse.datamethods.org/u/ehudk/summary" class="about-link" rel="me" target="_new">
-        <span class="about-link-text">
-            <iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon>
-            Datamethods
-        </span>
-    </a>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main></div>
+</main></div>
     </div>
     <img src="img/profile.jpg" class="about-image
   rounded " style="width: 15em;">
