@@ -67,15 +67,12 @@ using RNAseq data
 :::{#online-professional style="padding-bottom: 0.4em;"}
 :::
 
+###### Q&A
+
+:::{#online-QA style="padding-bottom: 0.4em;"}
+:::
+
 ###### Social
 
-:::{#online-social style="padding-bottom: 0.4em;"}
+:::{#online-social}
 :::
-
-###### Professional Q&A
-<!-- TODO: why these buttons are always at the bottom? -->
-
-:::{#online-qa}
-:::
-
-
