@@ -26,6 +26,20 @@ listing:
     contents: online-presence/links-social.yml
     template: online-presence/listing_style.ejs
 
+format:
+  html:
+    include-in-header:
+      - text: |
+          <style>
+            .desktop-only {display: none;} /* Hide by default */
+            /* Media query for when Quarto decides to move between long and wide view */
+            @media (min-width: 992px) {
+                .desktop-only {
+                    display: block; /* Show on laptops and larger devices */
+                }
+            }
+          </style>
+
 website: 
   twitter-card: 
     # Explicit settings for About page only
@@ -62,6 +76,8 @@ using RNAseq data
 [{{< iconify bi journal-text >}}](https://academic.oup.com/nar/article/46/19/10380/5064785). 
 
 
+:::{class="desktop-only"}
+
 #### Elsewhere on the Internet
 
 :::{#online-professional style="padding-bottom: 0.4em;"}
@@ -75,4 +91,6 @@ using RNAseq data
 ###### Social
 
 :::{#online-social}
+:::
+
 :::
