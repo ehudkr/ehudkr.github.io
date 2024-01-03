@@ -122,30 +122,30 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | General            | -   Data enthusiast: past [DataHack](https://www.datahack.org.il/) mentor and judge                                                |
 |                    |                                                                                                                                    |
-|                    | -   Musician 🎸 , hiker / backpacker 🏔️                                                                                            |
+|                    | -   Musician 🎸, hiker / backpacker 🏔️                                                                                             |
 |                    |                                                                                                                                    |
 |                    | -   Friendly 🙂                                                                                                                    |
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 ## {{< iconify bi trophy-fill >}} Awards
 
-+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| 2023     | IBM-Research Accomplishment                                                                                                        |
-|          |                                                                                                                                    |
-|          | For my work on causallib and research engagement with Cleveland Clinic Foundation.                                                 |
-+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| 2019     | Best of RSNA                                                                                                                       |
-|          |                                                                                                                                    |
-|          | For the paper *Predicting Breast Cancer by Applying Deep Learning to Linked Health Records nd Mammograms*, published in Radiology. |
-+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| 2019     | Best Talk: Israeli Population Genetics Meeting                                                                                     |
-|          |                                                                                                                                    |
-|          | For the paper *Screening Human Embryos for Polygenic Traits has Limited Utility*.                                                  |
-+----------+------------------------------------------------------------------------------------------------------------------------------------+
-| 2019     | Featured Theory of the issue (Cell)                                                                                                |
-|          |                                                                                                                                    |
-|          | For the paper *Screening Human Embryos for Polygenic Traits has Limited Utility*.                                                  |
-+----------+------------------------------------------------------------------------------------------------------------------------------------+
++----------+-------------------------------------------------------------------------------------------------------------------------------------+
+| 2023     | IBM-Research Accomplishment                                                                                                         |
+|          |                                                                                                                                     |
+|          | For my work on causallib and research engagement with the Cleveland Clinic Foundation.                                              |
++----------+-------------------------------------------------------------------------------------------------------------------------------------+
+| 2019     | Best of RSNA                                                                                                                        |
+|          |                                                                                                                                     |
+|          | For the paper *Predicting Breast Cancer by Applying Deep Learning to Linked Health Records and Mammograms*, published in Radiology. |
++----------+-------------------------------------------------------------------------------------------------------------------------------------+
+| 2019     | Best Talk: Israeli Population Genetics Meeting                                                                                      |
+|          |                                                                                                                                     |
+|          | For the paper *Screening Human Embryos for Polygenic Traits has Limited Utility*.                                                   |
++----------+-------------------------------------------------------------------------------------------------------------------------------------+
+| 2019     | Featured Theory of the issue (Cell)                                                                                                 |
+|          |                                                                                                                                     |
+|          | For the paper *Screening Human Embryos for Polygenic Traits has Limited Utility*.                                                   |
++----------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 ## {{< iconify bi file-earmark-text-fill >}} Publications
 
