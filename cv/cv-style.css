@@ -8,6 +8,9 @@ li {
 main ul ul {
     margin-bottom: 0.3em;
 }
+ul {
+    margin-bottom: 0.3em;
+}
 /* But space out the first `p` block. e.g., "title and place" */
 .cell_title {
     margin-bottom: 0.8rem;  
