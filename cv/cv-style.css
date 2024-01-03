@@ -1,0 +1,23 @@
+/* Reduce vertical space between bullets */
+p {
+    margin-bottom: 0.3em;
+}
+li {
+    margin-bottom: 0.2em;
+}
+main ul ul {
+    margin-bottom: 0.3em;
+}
+/* But space out the first `p` block. e.g., "title and place" */
+.cell_title {
+    margin-bottom: 0.8rem;  
+}
+
+/* Colors!  */
+h2  {
+  color: rgb(205, 67, 67);
+}
+.btn-primary {
+    background-color: #426ea0 !important;
+    border-color: #385E88 !important;
+}
