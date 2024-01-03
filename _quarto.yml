@@ -6,11 +6,14 @@ website:
   title: "Ehud Karavani"
   description: >
     a researcher and data scientist, 
-    specilizing in causal inference, machine learning, 
+    specializing in causal inference, machine learning, 
     (Bayesian) statistics, and data visualization.
   favicon: img/bar-chart-fill.svg
   twitter-card: true
   open-graph: true
+  repo-url: https://github.com/ehudkr/ehudkr.github.io/
+  repo-actions: [source, edit, issue]
+  google-analytics: "G-66TLP1EVBH"
   navbar:
     # pinned: true
     left:
@@ -26,12 +29,13 @@ website:
         href: blog/index.qmd
     right:
       # icons from https://icons.getbootstrap.com/
+      # Non-bootstrap icons from https://icon-sets.iconify.design/
       - icon: linkedin
         aria-label: linkedin
         href: https://www.linkedin.com/in/ehudk
         rel: me 
         target: "_new"
-      - text: "{{< iconify simple-icons googlescholar size=lg >}}"  # https://icon-sets.iconify.design/
+      - text: "{{< iconify simple-icons googlescholar size=lg >}}"  
         aria-label: google-scholar
         href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
         rel: me 
@@ -41,43 +45,46 @@ website:
         href: https://github.com/ehudkr
         rel: me  
         target: "_new"
-      - icon: medium
-        aria-label: medium
-        href: https://medium.com/@ehudkr
-        rel: me  
-        target: "_new"
-      - icon: twitter
-        aria-label: twitter
-        href: https://twitter.com/ehudkar
-        rel: me 
-        target: "_new"
-      - text: "{{< iconify fluent-emoji blue-square >}}"
-        href: https://bsky.app/profile/ehudk.bsky.social
-        rel: me  
-        target: "_new"
-      - icon: mastodon
-        aria-label: mastodon
-        href: https://mastodon.social/@ehudk
-        rel: me  # For verification: https://github.com/quarto-dev/quarto-cli/pull/3333
-        target: "_new"
-      - icon: stack-overflow
-        aria-label: stack-overflow
-        href: https://stackoverflow.com/users/7708413/ehudk
-        rel: me  
-        target: "_new"
-      # - text: "{{< iconify cib stackexchange >}}"
-      #   aria-label: cross-validated
-      #   href: https://stackoverflow.com/users/7708413/ehudk
-      #   rel: me 
-      #   target: "_new"
-      - text: "{{< iconify simple-icons discourse >}}"
-        aria-label: datamethods
-        href: https://discourse.datamethods.org/u/ehudk/summary
-        rel: me  
-        target: "_new"
-  repo-url: https://github.com/ehudkr/ehudkr.github.io/
-  repo-actions: [source, edit, issue]
-  google-analytics: "G-66TLP1EVBH"
+      - icon: people-fill
+        menu:
+        - icon: medium
+          aria-label: medium
+          text: Medium
+          href: https://medium.com/@ehudkr
+          rel: me  
+          target: "_new"
+        - icon: twitter
+          text: Twitter
+          aria-label: twitter
+          href: https://twitter.com/ehudkar
+          rel: me 
+          target: "_new"
+        - text: "[{{< iconify fluent-emoji blue-square >}}]{style='margin-left:.1rem;margin-right:.25em;padding-right:1px;'} Bluesky"
+          href: https://bsky.app/profile/ehudk.bsky.social
+          rel: me  
+          target: "_new"
+        - icon: mastodon
+          text: Mastodon
+          aria-label: mastodon
+          href: https://mastodon.social/@ehudk
+          rel: me  # For verification: https://github.com/quarto-dev/quarto-cli/pull/3333
+          target: "_new"
+        - icon: stack-overflow
+          text: Stack Overflow
+          aria-label: stack-overflow
+          href: https://stackoverflow.com/users/7708413/ehudk
+          rel: me  
+          target: "_new"
+        # - text: "{{< iconify cib stackexchange >}}"
+        #   aria-label: cross-validated
+        #   href: https://stats.stackexchange.com/users/153005/ehudk
+        #   rel: me 
+        #   target: "_new"
+        - text: "[{{< iconify simple-icons discourse >}}]{style='margin-left:.1rem;margin-right:.25em;padding-right:1px;'} Datamethods"
+          aria-label: datamethods
+          href: https://discourse.datamethods.org/u/ehudk/summary
+          rel: me  
+          target: "_new"
       
 format:
   html:

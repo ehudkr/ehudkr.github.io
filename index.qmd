@@ -8,15 +8,37 @@ about:
     - icon: linkedin
       text: Linkedin
       href: https://linkedin.com/in/ehudk
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/ehudkar
     - icon: github
       text: Github
       href: https://github.com/ehudkr
     - text: "{{< iconify simple-icons googlescholar size=lg >}} Google Scholar"  # https://icon-sets.iconify.design/
       href: https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en
       # Seems like must be last on the list
+
+listing: 
+  - id: online-professional
+    contents: online-presence/links-professional.yml
+    template: online-presence/listing_style.ejs
+  - id: online-QA
+    contents: online-presence/links-qa.yml
+    template: online-presence/listing_style.ejs
+  - id: online-social
+    contents: online-presence/links-social.yml
+    template: online-presence/listing_style.ejs
+
+format:
+  html:
+    include-in-header:
+      - text: |
+          <style>
+            .desktop-only {display: none;} /* Hide by default */
+            /* Media query for when Quarto decides to move between long and wide view */
+            @media (min-width: 992px) {
+                .desktop-only {
+                    display: block; /* Show on laptops and larger devices */
+                }
+            }
+          </style>
 
 website: 
   twitter-card: 
@@ -30,13 +52,13 @@ pagetitle: "{{< meta title >}}"  # Undo from _quarto.yml to avoid "Ehud | Ehud"
 
 Hi there! \
 I'm a researcher and data scientist,
-specilizing in causal inference, machine learning, (Bayesian) statistics, and data visualization.
+specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.
 
 I'm currently a **Research Staff Member** at **IBM Research**, Israel
 in the [Causal Machine Learning for Healthcare & Life Sciences group](https://research.ibm.com/haifa/dept/vst/analytics.shtml).
 There, I focus on high-throughput causal inference 
 for finding new indications for existing drugs
-using electornic health records and insurance claims data.
+using electronic health records and insurance claims data.
 I'm also the creator and maintainer of **[`causallib`](https://github.com/IBM/causallib)**,
 a one-stop shop open-source Python package for flexible causal inference modeling.
 
@@ -53,3 +75,22 @@ developing methods for finding novel protein-RNA interactions
 using RNAseq data 
 [{{< iconify bi journal-text >}}](https://academic.oup.com/nar/article/46/19/10380/5064785). 
 
+
+:::{class="desktop-only"}
+
+#### Elsewhere on the Internet
+
+:::{#online-professional style="padding-bottom: 0.4em;"}
+:::
+
+###### Q&A
+
+:::{#online-QA style="padding-bottom: 0.4em;"}
+:::
+
+###### Social
+
+:::{#online-social}
+:::
+
+:::
