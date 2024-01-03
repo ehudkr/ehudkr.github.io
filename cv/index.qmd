@@ -1,5 +1,6 @@
 ---
 title: "Ehud Karavani"
+date-modified: last-modified
 
 format: 
   html: 
