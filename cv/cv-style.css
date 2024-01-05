@@ -19,6 +19,8 @@ ul {
 /* Colors!  */
 h2  {
   color: rgb(205, 67, 67);
+  border-bottom-color: #385E88;
+  border-bottom-width: 4px;
 }
 .btn-primary {
     background-color: #426ea0 !important;
