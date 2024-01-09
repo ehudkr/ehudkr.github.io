@@ -24,7 +24,7 @@ listing:
 
 ## {{< iconify bi person-fill >}} About me
 
-Highly skilled in causal inference, machine learning, (Bayesian) statistics, and data visualization. An applied researcher and data scientist, I spend my time between building reusable tools for research and putting them into use. Advocating Clean Code for research code. Strong preference for collaborative environments.
+Highly skilled in causal inference, machine learning, (Bayesian) statistics, and data visualization. An applied researcher and data scientist, I spend my time between building reusable tools for research and putting them into use. Advocating Clean Code for research code. Strong preference for eclectic, collaborative environments.
 
 ## {{< iconify bi briefcase-fill >}} Experience
 
@@ -58,7 +58,7 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 |                | -   Published papers and issued patents                                                                                                                 |
 +----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2022           | ::: cell_title                                                                                                                                          |
-|                | **Applied Statistician** \                                                                                                                              |
+|                | **Applied Statistician**\                                                                                                                               |
 |                | *Laboratory for Gait & Neurodynamics, Ichilov Hospital*                                                                                                 |
 |                | :::                                                                                                                                                     |
 |                |                                                                                                                                                         |
@@ -89,7 +89,7 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 |             | *Faculty of Science, the Hebrew University of Jerusalem, Israel*                                                  |
 |             | :::                                                                                                               |
 |             |                                                                                                                   |
-|             | Thesis: *quantifying the utility of embryo selection using genomic prediction of traits* \                        |
+|             | Thesis: *quantifying the utility of embryo selection using genomic prediction of traits*\                         |
 |             | [published in Cell](https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3)                                     |
 +-------------+-------------------------------------------------------------------------------------------------------------------+
 | 2013 – 2016 | ::: cell_title                                                                                                    |
@@ -152,3 +152,5 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 
 ::: {#publication-list}
 :::
+
+[*May go out of date. Please see my [Google Scholar page](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en) for the most up-to-date information.* ]{style="color: gray;"}
