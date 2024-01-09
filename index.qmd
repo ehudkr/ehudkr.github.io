@@ -28,17 +28,7 @@ listing:
 
 format:
   html:
-    include-in-header:
-      - text: |
-          <style>
-            .desktop-only {display: none;} /* Hide by default */
-            /* Media query for when Quarto decides to move between long and wide view */
-            @media (min-width: 992px) {
-                .desktop-only {
-                    display: block; /* Show on laptops and larger devices */
-                }
-            }
-          </style>
+    css: online-presence/op-style.css
 
 website: 
   twitter-card: 
