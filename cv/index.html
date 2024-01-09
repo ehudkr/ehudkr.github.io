@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ehud Karavani">
 
-<title>CV | Ehud Karavani</title>
+<title>Ehud Karavani | Ehud Karavani</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -64,6 +66,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-publication-list .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-publication','listing-doi',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-publication-list'] = new List('listing-publication-list', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-66TLP1EVBH"></script>
 
 <script type="text/javascript">
@@ -74,11 +105,16 @@ gtag('js', new Date());
 gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="CV | Ehud Karavani">
+<link rel="stylesheet" href="cv-style.css">
+<meta property="og:title" content="Ehud Karavani | Ehud Karavani">
+<meta property="og:description" content="">
 <meta property="og:site-name" content="Ehud Karavani">
-<meta name="twitter:title" content="CV | Ehud Karavani">
+<meta name="twitter:title" content="Ehud Karavani | Ehud Karavani">
+<meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -185,14 +221,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#iconify-bi-person-fill-about-me" id="toc-iconify-bi-person-fill-about-me" class="nav-link active" data-scroll-target="#iconify-bi-person-fill-about-me"><iconify-icon inline="" icon="bi:person-fill"></iconify-icon> About me</a></li>
+  <li><a href="#iconify-bi-briefcase-fill-experience" id="toc-iconify-bi-briefcase-fill-experience" class="nav-link" data-scroll-target="#iconify-bi-briefcase-fill-experience"><iconify-icon inline="" icon="bi:briefcase-fill"></iconify-icon> Experience</a></li>
+  <li><a href="#iconify-bi-mortarboard-fill-education" id="toc-iconify-bi-mortarboard-fill-education" class="nav-link" data-scroll-target="#iconify-bi-mortarboard-fill-education"><iconify-icon inline="" icon="bi:mortarboard-fill"></iconify-icon> Education</a></li>
+  <li><a href="#iconify-bi-code-slash-skills" id="toc-iconify-bi-code-slash-skills" class="nav-link" data-scroll-target="#iconify-bi-code-slash-skills"><iconify-icon inline="" icon="bi:code-slash"></iconify-icon> Skills</a></li>
+  <li><a href="#iconify-bi-trophy-fill-awards" id="toc-iconify-bi-trophy-fill-awards" class="nav-link" data-scroll-target="#iconify-bi-trophy-fill-awards"><iconify-icon inline="" icon="bi:trophy-fill"></iconify-icon> Awards</a></li>
+  <li><a href="#iconify-bi-file-earmark-text-fill-publications" id="toc-iconify-bi-file-earmark-text-fill-publications" class="nav-link" data-scroll-target="#iconify-bi-file-earmark-text-fill-publications"><iconify-icon inline="" icon="bi:file-earmark-text-fill"></iconify-icon> Publications</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/cv/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/cv/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CV</h1>
+<h1 class="title">Ehud Karavani</h1>
 </div>
 
 
@@ -201,14 +248,368 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 9, 2024</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
+<p><a href="mailto:ehudkaravani@gmail.com" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="bi:envelope-fill"></iconify-icon> Email</a> <a href="https://linkedin.com/in/ehudk" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="bi:linkedin"></iconify-icon> LinkedIn</a> <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="simple-icons:googlescholar"></iconify-icon> Scholar</a> <a href="https://medium.com/@ehudkr" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="bi:medium"></iconify-icon> Medium</a> <a href="https://github.com/ehudkr" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="bi:github"></iconify-icon> GitHub</a></p>
+<section id="iconify-bi-person-fill-about-me" class="level2">
+<h2 class="anchored" data-anchor-id="iconify-bi-person-fill-about-me"><iconify-icon inline="" icon="bi:person-fill"></iconify-icon> About me</h2>
+<p>Highly skilled in causal inference, machine learning, (Bayesian) statistics, and data visualization. An applied researcher and data scientist, I spend my time between building reusable tools for research and putting them into use. Advocating Clean Code for research code. Strong preference for eclectic, collaborative environments.</p>
+</section>
+<section id="iconify-bi-briefcase-fill-experience" class="level2">
+<h2 class="anchored" data-anchor-id="iconify-bi-briefcase-fill-experience"><iconify-icon inline="" icon="bi:briefcase-fill"></iconify-icon> Experience</h2>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>2017 – present</td>
+<td><div class="cell_title">
+<p><strong>Research Staff Member</strong><br>
+<em>Causal Machine Learning for Healthcare and Life Science, IBM-Research, Israel</em></p>
+</div>
+<ul>
+<li><p>Creator of <a href="https://github.com/IBM/causallib"><strong><code>causallib</code></strong></a> – a one-stop-shop open-source Python package for flexible causal inference modeling.</p>
+<ul>
+<li><em>Received an IBM Research Accomplishment award (2023)</em></li>
+</ul></li>
+<li><p>Individual Contributor (IC)<br>
+Causal inference consultant for Research labs globally</p></li>
+<li><p>Project leader: drug repurposing by applying high-throughput causal inference to observational healthcare data</p>
+<ul>
+<li><p>Managing a team of researchers.<br>
+Leading the scientific pipeline, system design, and visualization app</p></li>
+<li><p>Generating 100s of hypotheses in minutes</p></li>
+<li><p>Served 3 external engagements with pharma clients, bringing millions in revenue</p></li>
+</ul></li>
+<li><p>Organized the <a href="https://www.cmu.edu/acic2018/data-challenge/index.html">2018 Atlantic Causal Inference Conference Data Challenge</a></p></li>
+<li><p>Mentored interns and students.<br>
+Onboarding lead</p></li>
+<li><p>Published papers and issued patents</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>2022</td>
+<td><div class="cell_title">
+<p><strong>Applied Statistician</strong><br>
+<em>Laboratory for Gait &amp; Neurodynamics, Ichilov Hospital</em></p>
+</div>
+<ul>
+<li>Bayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>2016 – 2017</td>
+<td><div class="cell_title">
+<p><strong>Teaching Assitant</strong><br>
+<em>The School of Computer Science, Hebrew University</em></p>
+</div>
+<ul>
+<li><p>Introduction to Data Science</p></li>
+<li><p>Workshop in Computational Bioskills</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>2015 – 2016</td>
+<td><div class="cell_title">
+<p><strong>Research Associate / Computational Biologist<br>
+</strong><em>Institue for Medical Research Israel-Canada, Hebrew University, Faculty of Medicine</em></p>
+</div>
+<ul>
+<li>Large-scale RNA analysis for finding high-resolution protein-RNA interactions</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="iconify-bi-mortarboard-fill-education" class="level2">
+<h2 class="anchored" data-anchor-id="iconify-bi-mortarboard-fill-education"><iconify-icon inline="" icon="bi:mortarboard-fill"></iconify-icon> Education</h2>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>2016 – 2019</td>
+<td><div class="cell_title">
+<p><strong>M.Sc. in Computer Science and Computational Biology</strong><br>
+<em>Faculty of Science, the Hebrew University of Jerusalem, Israel</em></p>
+</div>
+<p>Thesis: <em>quantifying the utility of embryo selection using genomic prediction of traits</em><br>
+<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3">published in Cell</a></p></td>
+</tr>
+<tr class="even">
+<td>2013 – 2016</td>
+<td><div class="cell_title">
+<p><strong>B.Sc. in Computer Science and Computational Biology</strong><br>
+<em>Faculty of Science, the Hebrew University of Jerusalem, Israel</em></p>
+</div>
+<ul>
+<li><em>Dean’s List of Academic Excellence (2016)</em></li>
+</ul>
+<p>Bachelor’s thesis published in <a href="https://academic.oup.com/nar/article/46/19/10380/5064785">Nucleic Acids Research</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="iconify-bi-code-slash-skills" class="level2">
+<h2 class="anchored" data-anchor-id="iconify-bi-code-slash-skills"><iconify-icon inline="" icon="bi:code-slash"></iconify-icon> Skills</h2>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>Programming skills</td>
+<td><ul>
+<li><p>Python scientific stack (fluent)</p>
+<ul>
+<li>Scikit-Learn, Pandas, Statsmodels, Seaborn (objects), Matplotlib, Altair, Streamlit, Pytorch, Keras, cvxpy, PyMC, Arviz…</li>
+</ul></li>
+<li><p>R (when needed)</p></li>
+<li><p>Git + GitHub</p></li>
+<li><p>Continuous integration (Travis, GitHub Actions)</p></li>
+<li><p>Linux and remote development (Cloud/AWS + Jupyter lab / VS Code)</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Languages</td>
+<td><ul>
+<li><p>Fluent English</p></li>
+<li><p>Native Hebrew</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>General</td>
+<td><ul>
+<li><p>Data enthusiast: past <a href="https://www.datahack.org.il/">DataHack</a> mentor and judge</p></li>
+<li><p>Musician 🎸, hiker / backpacker 🏔️ |</p></li>
+<li><p>Friendly 🙂</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="iconify-bi-trophy-fill-awards" class="level2">
+<h2 class="anchored" data-anchor-id="iconify-bi-trophy-fill-awards"><iconify-icon inline="" icon="bi:trophy-fill"></iconify-icon> Awards</h2>
+<table class="table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>2023</td>
+<td><p>IBM-Research Accomplishment</p>
+<p>For my work on causallib and research engagement with the Cleveland Clinic Foundation.</p></td>
+</tr>
+<tr class="even">
+<td>2019</td>
+<td><p>Best of RSNA</p>
+<p>For the paper <em>Predicting Breast Cancer by Applying Deep Learning to Linked Health Records and Mammograms</em>, published in Radiology.</p></td>
+</tr>
+<tr class="odd">
+<td>2019</td>
+<td><p>Best Talk: Israeli Population Genetics Meeting</p>
+<p>For the paper <em>Screening Human Embryos for Polygenic Traits has Limited Utility</em>.</p></td>
+</tr>
+<tr class="even">
+<td>2019</td>
+<td><p>Featured Theory of the issue (Cell)</p>
+<p>For the paper <em>Screening Human Embryos for Polygenic Traits has Limited Utility</em>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="iconify-bi-file-earmark-text-fill-publications" class="level2">
+<h2 class="anchored" data-anchor-id="iconify-bi-file-earmark-text-fill-publications"><iconify-icon inline="" icon="bi:file-earmark-text-fill"></iconify-icon> Publications</h2>
+<div id="listing-publication-list" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Date
+</th>
+<th>
+Title
+</th>
+<th>
+Venue
+</th>
+<th>
+DOI
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="causal inference,visualization,evaluations" data-listing-date-sort="1681851600000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Causalvis: Visualizations for Causal Inference" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2023</span>
+</td>
+<td>
+<a href="../publications/2023-causalvis/index.html" class="title listing-title">Causalvis: Visualizations for Causal Inference</a>
+</td>
+<td>
+<span class="listing-publication">CHI: Conference on Human Factors in Computing Systems</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.1145/3544548.3581236</span>
+</td>
+</tr>
+<tr data-index="1" data-categories="deep learning,genetics,statistics" data-listing-date-sort="1672696800000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2023</span>
+</td>
+<td>
+<a href="../publications/2023-prs-plus-irm/index.html" class="title listing-title">FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization</a>
+</td>
+<td>
+<span class="listing-publication">Pacific Symposium on Biocomputing</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.1142/9789811270611_0019</span>
+</td>
+</tr>
+<tr data-index="2" data-categories="causal inference,methods" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1695362370513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Propensity score models are better when post-calibrated" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2022</span>
+</td>
+<td>
+<a href="../publications/2022-propensity-score-calibration/index.html" class="title listing-title">Propensity score models are better when post-calibrated</a>
+</td>
+<td>
+<span class="listing-publication">Arxiv</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.48550/arXiv.2211.01221</span>
+</td>
+</tr>
+<tr data-index="3" data-categories="statistics,healthcare" data-listing-date-sort="1616709600000" data-listing-file-modified-sort="1695362370497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2021</span>
+</td>
+<td>
+<a href="../publications/2021-non-respiratory-covid19/index.html" class="title listing-title">Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2</a>
+</td>
+<td>
+<span class="listing-publication">MedRxiv</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.1101/2021.03.24.21251900</span>
+</td>
+</tr>
+<tr data-index="4" data-categories="machine learning,statistics,genetics" data-listing-date-sort="1574287200000" data-listing-file-modified-sort="1695362370481" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Screening human embryos for polygenic traits has limited utility" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2019</span>
+</td>
+<td>
+<a href="../publications/2019-prs-embryo-selection/index.html" class="title listing-title">Screening human embryos for polygenic traits has limited utility</a>
+</td>
+<td>
+<span class="listing-publication">Cell</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.1016/j.cell.2019.10.033</span>
+</td>
+</tr>
+<tr data-index="5" data-categories="causal inference,methods" data-listing-date-sort="1563397200000" data-listing-file-modified-sort="1695362370446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="A discriminative approach for finding and characterizing positivity violations using decision trees" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2019</span>
+</td>
+<td>
+<a href="../publications/2019-positivitree/index.html" class="title listing-title">A discriminative approach for finding and characterizing positivity violations using decision trees</a>
+</td>
+<td>
+<span class="listing-publication">Arxiv</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.48550/arXiv.1907.08127</span>
+</td>
+</tr>
+<tr data-index="6" data-categories="machine learning,deep learning,healthcare" data-listing-date-sort="1560805200000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Predicting breast cancer by applying deep learning to linked health records and mammograms" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2019</span>
+</td>
+<td>
+<a href="../publications/2019-mammograms-plus-ehrs/index.html" class="title listing-title">Predicting breast cancer by applying deep learning to linked health records and mammograms</a>
+</td>
+<td>
+<span class="listing-publication">Radiology</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.1148/radiol.2019182622</span>
+</td>
+</tr>
+<tr data-index="7" data-categories="causal inference,evaluations,healthcare" data-listing-date-sort="1559422800000" data-listing-file-modified-sort="1704222706597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="An evaluation toolkit to guide model selection and cohort definition in causal inference" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2019</span>
+</td>
+<td>
+<a href="../publications/2019-causal-inference-evaluation-toolkit/index.html" class="title listing-title">An evaluation toolkit to guide model selection and cohort definition in causal inference</a>
+</td>
+<td>
+<span class="listing-publication">Arxiv</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.48550/arXiv.1906.00442</span>
+</td>
+</tr>
+<tr data-index="8" data-categories="causal inference,evaluations" data-listing-date-sort="1548972000000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Comment: causal inference competitions: where should we aim?" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2019</span>
+</td>
+<td>
+<a href="../publications/2019-causal-inference-competitions/index.html" class="title listing-title">Comment: causal inference competitions: where should we aim?</a>
+</td>
+<td>
+<span class="listing-publication">Statistical Science</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.1214/18-STS679</span>
+</td>
+</tr>
+<tr data-index="9" data-categories="computational biology" data-listing-date-sort="1533243600000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="*In vivo* cleavage rules and target repertoire of RNase III in *Escherichia coli*" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2018</span>
+</td>
+<td>
+<a href="../publications/2018-rnase3-cleavage-rules/index.html" class="title listing-title"><em>In vivo</em> cleavage rules and target repertoire of RNase III in <em>Escherichia coli</em></a>
+</td>
+<td>
+<span class="listing-publication">Nucleic Acids Research</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.1093/nar/gky816</span>
+</td>
+</tr>
+<tr data-index="10" data-categories="causal inference,evaluations" data-listing-date-sort="1518559200000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">2018</span>
+</td>
+<td>
+<a href="../publications/2018-causal-inference-benchmarking-framework/index.html" class="title listing-title">Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis</a>
+</td>
+<td>
+<span class="listing-publication">Arxiv</span>
+</td>
+<td>
+<span class="listing-doi">https://doi.org/10.48550/arXiv.1802.05046</span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<p><span style="color: gray;"><em>May go out of date. Please see my <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en">Google Scholar page</a> for the most up-to-date information.</em></span></p>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -577,4 +978,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/cv/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/cv/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+</body></html>

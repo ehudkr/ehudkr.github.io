@@ -25,6 +25,22 @@
     ]
   },
   {
+    "listing": "/cv/index.html",
+    "items": [
+      "/publications/2023-causalvis/index.html",
+      "/publications/2023-prs-plus-irm/index.html",
+      "/publications/2022-propensity-score-calibration/index.html",
+      "/publications/2021-non-respiratory-covid19/index.html",
+      "/publications/2019-prs-embryo-selection/index.html",
+      "/publications/2019-positivitree/index.html",
+      "/publications/2019-mammograms-plus-ehrs/index.html",
+      "/publications/2019-causal-inference-evaluation-toolkit/index.html",
+      "/publications/2019-causal-inference-competitions/index.html",
+      "/publications/2018-rnase3-cleavage-rules/index.html",
+      "/publications/2018-causal-inference-benchmarking-framework/index.html"
+    ]
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2023/03-sequential_trial_design/index.html",

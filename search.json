@@ -133,6 +133,55 @@
     "text": "CausaliTea is a reading club on causality [source ]\n\n\n\nCausaliTea’s logo"
   },
   {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Ehud Karavani",
+    "section": "",
+    "text": "Email  LinkedIn  Scholar  Medium  GitHub"
+  },
+  {
+    "objectID": "cv/index.html#iconify-bi-person-fill-about-me",
+    "href": "cv/index.html#iconify-bi-person-fill-about-me",
+    "title": "Ehud Karavani",
+    "section": " About me",
+    "text": "About me\nHighly skilled in causal inference, machine learning, (Bayesian) statistics, and data visualization. An applied researcher and data scientist, I spend my time between building reusable tools for research and putting them into use. Advocating Clean Code for research code. Strong preference for eclectic, collaborative environments."
+  },
+  {
+    "objectID": "cv/index.html#iconify-bi-briefcase-fill-experience",
+    "href": "cv/index.html#iconify-bi-briefcase-fill-experience",
+    "title": "Ehud Karavani",
+    "section": " Experience",
+    "text": "Experience\n\n\n\n2017 – present\n\nResearch Staff Member\nCausal Machine Learning for Healthcare and Life Science, IBM-Research, Israel\n\n\nCreator of causallib – a one-stop-shop open-source Python package for flexible causal inference modeling.\n\nReceived an IBM Research Accomplishment award (2023)\n\nIndividual Contributor (IC)\nCausal inference consultant for Research labs globally\nProject leader: drug repurposing by applying high-throughput causal inference to observational healthcare data\n\nManaging a team of researchers.\nLeading the scientific pipeline, system design, and visualization app\nGenerating 100s of hypotheses in minutes\nServed 3 external engagements with pharma clients, bringing millions in revenue\n\nOrganized the 2018 Atlantic Causal Inference Conference Data Challenge\nMentored interns and students.\nOnboarding lead\nPublished papers and issued patents\n\n\n\n2022\n\nApplied Statistician\nLaboratory for Gait & Neurodynamics, Ichilov Hospital\n\n\nBayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients\n\n\n\n2016 – 2017\n\nTeaching Assitant\nThe School of Computer Science, Hebrew University\n\n\nIntroduction to Data Science\nWorkshop in Computational Bioskills\n\n\n\n2015 – 2016\n\nResearch Associate / Computational Biologist\nInstitue for Medical Research Israel-Canada, Hebrew University, Faculty of Medicine\n\n\nLarge-scale RNA analysis for finding high-resolution protein-RNA interactions"
+  },
+  {
+    "objectID": "cv/index.html#iconify-bi-mortarboard-fill-education",
+    "href": "cv/index.html#iconify-bi-mortarboard-fill-education",
+    "title": "Ehud Karavani",
+    "section": " Education",
+    "text": "Education\n\n\n\n2016 – 2019\n\nM.Sc. in Computer Science and Computational Biology\nFaculty of Science, the Hebrew University of Jerusalem, Israel\n\nThesis: quantifying the utility of embryo selection using genomic prediction of traits\npublished in Cell\n\n\n2013 – 2016\n\nB.Sc. in Computer Science and Computational Biology\nFaculty of Science, the Hebrew University of Jerusalem, Israel\n\n\nDean’s List of Academic Excellence (2016)\n\nBachelor’s thesis published in Nucleic Acids Research"
+  },
+  {
+    "objectID": "cv/index.html#iconify-bi-code-slash-skills",
+    "href": "cv/index.html#iconify-bi-code-slash-skills",
+    "title": "Ehud Karavani",
+    "section": " Skills",
+    "text": "Skills\n\n\n\nProgramming skills\n\nPython scientific stack (fluent)\n\nScikit-Learn, Pandas, Statsmodels, Seaborn (objects), Matplotlib, Altair, Streamlit, Pytorch, Keras, cvxpy, PyMC, Arviz…\n\nR (when needed)\nGit + GitHub\nContinuous integration (Travis, GitHub Actions)\nLinux and remote development (Cloud/AWS + Jupyter lab / VS Code)\n\n\n\nLanguages\n\nFluent English\nNative Hebrew\n\n\n\nGeneral\n\nData enthusiast: past DataHack mentor and judge\nMusician 🎸, hiker / backpacker 🏔️ |\nFriendly 🙂"
+  },
+  {
+    "objectID": "cv/index.html#iconify-bi-trophy-fill-awards",
+    "href": "cv/index.html#iconify-bi-trophy-fill-awards",
+    "title": "Ehud Karavani",
+    "section": " Awards",
+    "text": "Awards\n\n\n\n\n\n\n\n2023\nIBM-Research Accomplishment\nFor my work on causallib and research engagement with the Cleveland Clinic Foundation.\n\n\n2019\nBest of RSNA\nFor the paper Predicting Breast Cancer by Applying Deep Learning to Linked Health Records and Mammograms, published in Radiology.\n\n\n2019\nBest Talk: Israeli Population Genetics Meeting\nFor the paper Screening Human Embryos for Polygenic Traits has Limited Utility.\n\n\n2019\nFeatured Theory of the issue (Cell)\nFor the paper Screening Human Embryos for Polygenic Traits has Limited Utility."
+  },
+  {
+    "objectID": "cv/index.html#iconify-bi-file-earmark-text-fill-publications",
+    "href": "cv/index.html#iconify-bi-file-earmark-text-fill-publications",
+    "title": "Ehud Karavani",
+    "section": " Publications",
+    "text": "Publications\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nVenue\n\n\nDOI\n\n\n\n\n\n\n2023\n\n\nCausalvis: Visualizations for Causal Inference\n\n\nCHI: Conference on Human Factors in Computing Systems\n\n\nhttps://doi.org/10.1145/3544548.3581236\n\n\n\n\n2023\n\n\nFairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization\n\n\nPacific Symposium on Biocomputing\n\n\nhttps://doi.org/10.1142/9789811270611_0019\n\n\n\n\n2022\n\n\nPropensity score models are better when post-calibrated\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.2211.01221\n\n\n\n\n2021\n\n\nTrends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2\n\n\nMedRxiv\n\n\nhttps://doi.org/10.1101/2021.03.24.21251900\n\n\n\n\n2019\n\n\nScreening human embryos for polygenic traits has limited utility\n\n\nCell\n\n\nhttps://doi.org/10.1016/j.cell.2019.10.033\n\n\n\n\n2019\n\n\nA discriminative approach for finding and characterizing positivity violations using decision trees\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1907.08127\n\n\n\n\n2019\n\n\nPredicting breast cancer by applying deep learning to linked health records and mammograms\n\n\nRadiology\n\n\nhttps://doi.org/10.1148/radiol.2019182622\n\n\n\n\n2019\n\n\nAn evaluation toolkit to guide model selection and cohort definition in causal inference\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1906.00442\n\n\n\n\n2019\n\n\nComment: causal inference competitions: where should we aim?\n\n\nStatistical Science\n\n\nhttps://doi.org/10.1214/18-STS679\n\n\n\n\n2018\n\n\nIn vivo cleavage rules and target repertoire of RNase III in Escherichia coli\n\n\nNucleic Acids Research\n\n\nhttps://doi.org/10.1093/nar/gky816\n\n\n\n\n2018\n\n\nBenchmarking Framework for Performance-Evaluation of Causal Inference Analysis\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1802.05046\n\n\n\n\n\n\nNo matching items\n\n\nMay go out of date. Please see my Google Scholar page for the most up-to-date information."
+  },
+  {
     "objectID": "blog/2023/03-sequential_trial_design/index.html",
     "href": "blog/2023/03-sequential_trial_design/index.html",
     "title": "Sequential trial design for causal inference",

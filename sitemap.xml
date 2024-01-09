@@ -2,118 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ehud.co/publications/index.html</loc>
-    <lastmod>2023-12-31T19:55:26.134Z</lastmod>
+    <lastmod>2024-01-09T13:18:52.081Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2023-causalvis/index.html</loc>
-    <lastmod>2023-12-31T19:55:22.691Z</lastmod>
+    <lastmod>2024-01-09T13:18:50.209Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2021-non-respiratory-covid19/index.html</loc>
-    <lastmod>2023-12-31T19:55:19.681Z</lastmod>
+    <lastmod>2024-01-09T13:18:48.353Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2019-positivitree/index.html</loc>
-    <lastmod>2023-12-31T19:55:15.882Z</lastmod>
+    <lastmod>2024-01-09T13:18:46.228Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2019-causal-inference-evaluation-toolkit/index.html</loc>
-    <lastmod>2023-12-31T19:55:12.533Z</lastmod>
+    <lastmod>2024-01-09T13:18:43.906Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2018-rnase3-cleavage-rules/index.html</loc>
-    <lastmod>2023-12-31T19:55:09.517Z</lastmod>
+    <lastmod>2024-01-09T13:18:41.290Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/materials/index.html</loc>
-    <lastmod>2023-12-31T19:55:04.514Z</lastmod>
+    <lastmod>2024-01-09T13:18:37.815Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/materials/causal-inference/methods/index.html</loc>
-    <lastmod>2023-12-31T19:54:58.297Z</lastmod>
+    <lastmod>2024-01-09T13:18:34.224Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/materials/causal-inference/causalitea/index.html</loc>
-    <lastmod>2023-12-31T19:54:54.900Z</lastmod>
+    <lastmod>2024-01-09T13:18:32.458Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/cv/index.html</loc>
+    <lastmod>2024-01-09T13:18:27.785Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2023/03-sequential_trial_design/index.html</loc>
-    <lastmod>2023-12-31T19:54:41.829Z</lastmod>
+    <lastmod>2024-01-09T13:18:23.935Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2023/01-causal-inference-is-a-mindset/index.html</loc>
-    <lastmod>2023-12-31T19:54:36.609Z</lastmod>
+    <lastmod>2024-01-09T13:18:20.621Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2021/02-why-balance-covariates/index.html</loc>
-    <lastmod>2023-12-31T19:54:32.234Z</lastmod>
+    <lastmod>2024-01-09T13:18:17.902Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2020/03-ml-metrics-for-causal-inference/index.html</loc>
-    <lastmod>2023-12-31T19:54:28.076Z</lastmod>
+    <lastmod>2024-01-09T13:18:15.137Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2020/01-simpsons-paradox-ipw/index.html</loc>
-    <lastmod>2023-12-31T19:54:23.733Z</lastmod>
+    <lastmod>2024-01-09T13:18:12.141Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2018/01-deep-learning-genetic-prediction/index.html</loc>
-    <lastmod>2023-12-31T19:54:21.008Z</lastmod>
+    <lastmod>2024-01-09T13:18:10.134Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2020/02-against-agile-research/index.html</loc>
-    <lastmod>2023-12-31T19:54:25.974Z</lastmod>
+    <lastmod>2024-01-09T13:18:13.643Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2021/01-visualizing-micro-macro-averages/index.html</loc>
-    <lastmod>2023-12-31T19:54:30.432Z</lastmod>
+    <lastmod>2024-01-09T13:18:16.419Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2022/01-continuous-treatment-causal-inference/index.html</loc>
-    <lastmod>2023-12-31T19:54:35.166Z</lastmod>
+    <lastmod>2024-01-09T13:18:19.631Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2023/02-hello_world/index.html</loc>
-    <lastmod>2023-12-31T19:54:38.201Z</lastmod>
+    <lastmod>2024-01-09T13:18:21.791Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/index.html</loc>
-    <lastmod>2023-12-31T19:54:45.170Z</lastmod>
+    <lastmod>2024-01-09T13:18:25.949Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/index.html</loc>
-    <lastmod>2023-12-31T19:54:48.788Z</lastmod>
+    <lastmod>2024-01-09T13:18:28.963Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/materials/causal-inference/concepts/index.html</loc>
-    <lastmod>2023-12-31T19:54:56.772Z</lastmod>
+    <lastmod>2024-01-09T13:18:33.338Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/materials/causal-inference/motivation/index.html</loc>
-    <lastmod>2023-12-31T19:54:59.667Z</lastmod>
+    <lastmod>2024-01-09T13:18:35.073Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2018-causal-inference-benchmarking-framework/index.html</loc>
-    <lastmod>2023-12-31T19:55:08.075Z</lastmod>
+    <lastmod>2024-01-09T13:18:40.237Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2019-causal-inference-competitions/index.html</loc>
-    <lastmod>2023-12-31T19:55:10.917Z</lastmod>
+    <lastmod>2024-01-09T13:18:42.230Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2019-mammograms-plus-ehrs/index.html</loc>
-    <lastmod>2023-12-31T19:55:14.360Z</lastmod>
+    <lastmod>2024-01-09T13:18:45.297Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2019-prs-embryo-selection/index.html</loc>
-    <lastmod>2023-12-31T19:55:17.892Z</lastmod>
+    <lastmod>2024-01-09T13:18:47.202Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2022-propensity-score-calibration/index.html</loc>
-    <lastmod>2023-12-31T19:55:21.266Z</lastmod>
+    <lastmod>2024-01-09T13:18:49.275Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2023-prs-plus-irm/index.html</loc>
-    <lastmod>2023-12-31T19:55:24.509Z</lastmod>
+    <lastmod>2024-01-09T13:18:51.113Z</lastmod>
   </url>
 </urlset>
