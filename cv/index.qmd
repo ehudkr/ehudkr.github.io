@@ -48,9 +48,9 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 |                |                                                                                                                                                         |
 |                |     -   Generating 100s of hypotheses in minutes                                                                                                        |
 |                |                                                                                                                                                         |
-|                |     -   Served 3 external engagements with pharma clients, bringing millions in revenue                                                                 |
+|                |     -   Served several external engagements with pharma clients, bringing millions in revenue                                                           |
 |                |                                                                                                                                                         |
-|                | -   Organized the [2018 Atlantic Causal Inference Conference Data Challenge](https://www.cmu.edu/acic2018/data-challenge/index.html)                    |
+|                | -   Organized the 2018 Atlantic Causal Inference Conference Data Challenge                                                                              |
 |                |                                                                                                                                                         |
 |                | -   Mentored interns and students.\                                                                                                                     |
 |                |     Onboarding lead                                                                                                                                     |
@@ -104,29 +104,29 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 
 ## {{< iconify bi code-slash >}} Skills
 
-+--------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| Programming skills | -   Python scientific stack (fluent)                                                                                               |
-|                    |                                                                                                                                    |
-|                    |     -   Scikit-Learn, Pandas, Statsmodels, Seaborn (objects), Matplotlib, Altair, Streamlit, Pytorch, Keras, cvxpy, PyMC, Arviz... |
-|                    |                                                                                                                                    |
-|                    | -   R (when needed)                                                                                                                |
-|                    |                                                                                                                                    |
-|                    | -   Git + GitHub                                                                                                                   |
-|                    |                                                                                                                                    |
-|                    | -   Continuous integration (Travis, GitHub Actions)                                                                                |
-|                    |                                                                                                                                    |
-|                    | -   Linux and remote development (Cloud/AWS + Jupyter lab / VS Code)                                                               |
-+--------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| Languages          | -   Fluent English                                                                                                                 |
-|                    |                                                                                                                                    |
-|                    | -   Native Hebrew                                                                                                                  |
-+--------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| General            | -   Data enthusiast: past [DataHack](https://www.datahack.org.il/) mentor and judge                                                |
-|                    |                                                                                                                                    |
-|                    | -   Musician 🎸, hiker / backpacker 🏔️                                                                                             |
-|                    |                                                                                                                                    |
-|                    | -   Friendly 🙂                                                                                                                    |
-+--------------------+------------------------------------------------------------------------------------------------------------------------------------+
++--------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| Programming skills | -   Python scientific stack (fluent)                                                                                                      |
+|                    |                                                                                                                                           |
+|                    |     -   Scikit-Learn, Pandas, Statsmodels, Seaborn (objects), Matplotlib, Altair, Streamlit, Pytorch, Keras, cvxpy, PyMC, Bambi, Arviz... |
+|                    |                                                                                                                                           |
+|                    | -   R (when needed)                                                                                                                       |
+|                    |                                                                                                                                           |
+|                    | -   Git + GitHub                                                                                                                          |
+|                    |                                                                                                                                           |
+|                    | -   Continuous integration (Travis, GitHub Actions)                                                                                       |
+|                    |                                                                                                                                           |
+|                    | -   Linux and remote development (Cloud/AWS + Jupyter lab / VS Code)                                                                      |
++--------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| Languages          | -   Fluent English                                                                                                                        |
+|                    |                                                                                                                                           |
+|                    | -   Native Hebrew                                                                                                                         |
++--------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| General            | -   Data enthusiast: past [DataHack](https://www.datahack.org.il/) mentor and judge                                                       |
+|                    |                                                                                                                                           |
+|                    | -   Musician 🎸, hiker / backpacker 🏔️ \| \|                                                                                              |
+|                    |                                                                                                                                           |
+|                    | -   Friendly 🙂                                                                                                                           |
++--------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## {{< iconify bi trophy-fill >}} Awards
 
@@ -150,7 +150,7 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 
 ## {{< iconify bi file-earmark-text-fill >}} Publications
 
-::: {#publication-list}
+::: {#publication-list style="padding-bottom:0em;"}
 :::
 
-[*May go out of date. Please see my [Google Scholar page](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en) for the most up-to-date information.* ]{style="color: gray;"}
+[*May go out of date. Please see my [Google Scholar page](https://scholar.google.com/citations?user=KAzt_pYAAAAJ&hl=en) for the most up-to-date information.*]{style="color: gray;"}
