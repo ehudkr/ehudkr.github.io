@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,7 +52,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -61,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -78,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-author','listing-description','listing-date','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-resources","listing-pagetitle","listing-author-meta","listing-language","listing-title","listing-date","listing-author","listing-affiliations","listing-doi","listing-categories","listing-publication","listing-journal","listing-pdf","listing-abstract","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-resources","listing-pagetitle","listing-author-meta","listing-language","listing-title","listing-date","listing-author","listing-affiliations","listing-doi","listing-categories","listing-publication","listing-journal","listing-pdf","listing-abstract","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -108,12 +115,39 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Publications | Ehud Karavani">
-<meta property="og:description" content="">
-<meta property="og:site-name" content="Ehud Karavani">
+<meta property="og:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
+<meta property="og:site_name" content="Ehud Karavani">
 <meta name="twitter:title" content="Publications | Ehud Karavani">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -121,9 +155,9 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Ehud Karavani</span>
     </a>
@@ -135,43 +169,43 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="../cv/index.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../publications/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link active" href="../publications/index.html" aria-current="page"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../materials/index.html" rel="" target="">
- <span class="menu-text">Materials</span></a>
+    <a class="nav-link" href="../materials/index.html"> 
+<span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog/index.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"><i class="bi bi-linkedin" role="img" aria-label="linkedin">
+    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"> <i class="bi bi-linkedin" role="img" aria-label="linkedin">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new">
- <span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new"> 
+<span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"><i class="bi bi-github" role="img" aria-label="github">
+    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"> <i class="bi bi-github" role="img" aria-label="github">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-people-fill" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-people-fill" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-people-fill" role="img">
 </i> 
  <span class="menu-text"></span>
@@ -208,10 +242,10 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -226,7 +260,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <ul>
   <li><a href="#publications" id="toc-publications" class="nav-link active" data-scroll-target="#publications">Publications</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="causal inference">causal inference <span class="quarto-category-count">(6)</span></div><div class="category" data-category="computational biology">computational biology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="deep learning">deep learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="evaluations">evaluations <span class="quarto-category-count">(4)</span></div><div class="category" data-category="genetics">genetics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="healthcare">healthcare <span class="quarto-category-count">(3)</span></div><div class="category" data-category="machine learning">machine learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="methods">methods <span class="quarto-category-count">(2)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="visualization">visualization <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -252,7 +286,9 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
+
 
 <p>My current research focus revolves mainly around causal inference. Both applications (mainly around healthcare) and methodology (including usability). I also dabble in information visualization and genetic-based risk models (polygenic risk scores). Prior to that, I worked on computational methods in molecular biology (genomics and transcriptomics). In addition to academic publications, I also issued several patents in the US.</p>
 <p>I will do my best to keep this listing updated, but in the plausible case I won’t, please see my <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en">Google Scholar page</a> for the latest version.</p>
@@ -294,7 +330,8 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 <!-- Adjusted from https://github.com/jmgirard/affcomlab/blob/378a6e4167af5ed462e06ad4a39206e85fad9ff6/ejs/article.ejs  -->
 <!-- TODO: N`ote that Markdown formatting is not yet properly parsed: https://github.com/quarto-dev/quarto-cli/issues/3468 -->
 <ul class="pub-list list" style="list-style:none">
-  <li data-index="0" data-categories="causal inference,visualization,evaluations" data-listing-date-sort="1681851600000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="0" data-categories="causal inference,visualization,evaluations" data-listing-date-sort="1681851600000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39">
     <a href="../publications/2023-causalvis/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-causalvis:_visualizations_for_causal_inference">
         <span class="listing-title lead"><b>Causalvis: Visualizations for Causal Inference</b></span><br>
@@ -303,9 +340,13 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2023)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                
                     <span class="project-category" style="color: #e07e2d;">visualization</span>
+                
                     <span class="project-category" style="color: #e07e2d;">evaluations</span>
+                
             </div>
          -->
     </div> </a>
@@ -314,18 +355,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.1145/3544548.3581236" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <i class="bi bi-file-earmark-text"></i> 
+            
             DOI
         </a>
+        
+        
         <a href="https://dl.acm.org/doi/pdf/10.1145/3544548.3581236" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="1" data-categories="deep learning,genetics,statistics" data-listing-date-sort="1672696800000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="1" data-categories="deep learning,genetics,statistics" data-listing-date-sort="1672696800000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
     <a href="../publications/2023-prs-plus-irm/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-fairprs:_adjusting_for_admixed_populations_in_polygenic_risk_scores_using_invariant_risk_minimization">
         <span class="listing-title lead"><b>FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization</b></span><br>
@@ -334,9 +382,13 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2023)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">deep learning</span>
+                
                     <span class="project-category" style="color: #e07e2d;">genetics</span>
+                
                     <span class="project-category" style="color: #e07e2d;">statistics</span>
+                
             </div>
          -->
     </div> </a>
@@ -345,18 +397,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.1142/9789811270611_0019" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <i class="bi bi-file-earmark-text"></i> 
+            
             DOI
         </a>
+        
+        
         <a href="https://www.worldscientific.com/doi/pdf/10.1142/9789811270611_0019" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="2" data-categories="causal inference,methods" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1695362370513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="2" data-categories="causal inference,methods" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1695362370513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
     <a href="../publications/2022-propensity-score-calibration/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-propensity_score_models_are_better_when_post-calibrated">
         <span class="listing-title lead"><b>Propensity score models are better when post-calibrated</b></span><br>
@@ -365,8 +424,11 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2022)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                
                     <span class="project-category" style="color: #e07e2d;">methods</span>
+                
             </div>
          -->
     </div> </a>
@@ -375,18 +437,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.48550/arXiv.2211.01221" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            
             DOI
         </a>
+        
+        
         <a href="https://arxiv.org/pdf/2211.01221.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="3" data-categories="statistics,healthcare" data-listing-date-sort="1616709600000" data-listing-file-modified-sort="1695362370497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="3" data-categories="statistics,healthcare" data-listing-date-sort="1616709600000" data-listing-file-modified-sort="1695362370497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="68">
     <a href="../publications/2021-non-respiratory-covid19/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-trends_in_clinical_characteristics_and_associations_of_severe_non-respiratory_events_related_to_sars-cov-2">
         <span class="listing-title lead"><b>Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2</b></span><br>
@@ -395,8 +464,11 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2021)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">statistics</span>
+                
                     <span class="project-category" style="color: #e07e2d;">healthcare</span>
+                
             </div>
          -->
     </div> </a>
@@ -405,18 +477,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.1101/2021.03.24.21251900" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            
             DOI
         </a>
+        
+        
         <a href="https://www.medrxiv.org/content/medrxiv/early/2021/03/26/2021.03.24.21251900.full.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="4" data-categories="machine learning,statistics,genetics" data-listing-date-sort="1574287200000" data-listing-file-modified-sort="1695362370481" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="4" data-categories="machine learning,statistics,genetics" data-listing-date-sort="1574287200000" data-listing-file-modified-sort="1695362370481" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="56">
     <a href="../publications/2019-prs-embryo-selection/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-screening_human_embryos_for_polygenic_traits_has_limited_utility">
         <span class="listing-title lead"><b>Screening human embryos for polygenic traits has limited utility</b></span><br>
@@ -425,9 +504,13 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2019)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">machine learning</span>
+                
                     <span class="project-category" style="color: #e07e2d;">statistics</span>
+                
                     <span class="project-category" style="color: #e07e2d;">genetics</span>
+                
             </div>
          -->
     </div> </a>
@@ -436,18 +519,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.1016/j.cell.2019.10.033" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <i class="bi bi-file-earmark-text"></i> 
+            
             DOI
         </a>
+        
+        
         <a href="https://www.cell.com/cell/pdf/S0092-8674(19)31210-3.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="5" data-categories="causal inference,methods" data-listing-date-sort="1563397200000" data-listing-file-modified-sort="1695362370446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="5" data-categories="causal inference,methods" data-listing-date-sort="1563397200000" data-listing-file-modified-sort="1695362370446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42">
     <a href="../publications/2019-positivitree/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-a_discriminative_approach_for_finding_and_characterizing_positivity_violations_using_decision_trees">
         <span class="listing-title lead"><b>A discriminative approach for finding and characterizing positivity violations using decision trees</b></span><br>
@@ -456,8 +546,11 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2019)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                
                     <span class="project-category" style="color: #e07e2d;">methods</span>
+                
             </div>
          -->
     </div> </a>
@@ -466,18 +559,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.48550/arXiv.1907.08127" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            
             DOI
         </a>
+        
+        
         <a href="https://arxiv.org/pdf/1907.08127.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="6" data-categories="machine learning,deep learning,healthcare" data-listing-date-sort="1560805200000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="6" data-categories="machine learning,deep learning,healthcare" data-listing-date-sort="1560805200000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63">
     <a href="../publications/2019-mammograms-plus-ehrs/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-predicting_breast_cancer_by_applying_deep_learning_to_linked_health_records_and_mammograms">
         <span class="listing-title lead"><b>Predicting breast cancer by applying deep learning to linked health records and mammograms</b></span><br>
@@ -486,9 +586,13 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2019)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">machine learning</span>
+                
                     <span class="project-category" style="color: #e07e2d;">deep learning</span>
+                
                     <span class="project-category" style="color: #e07e2d;">healthcare</span>
+                
             </div>
          -->
     </div> </a>
@@ -497,18 +601,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.1148/radiol.2019182622" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <i class="bi bi-file-earmark-text"></i> 
+            
             DOI
         </a>
+        
+        
         <a href="https://pubs.rsna.org/doi/pdf/10.1148/radiol.2019182622" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="7" data-categories="causal inference,evaluations,healthcare" data-listing-date-sort="1559422800000" data-listing-file-modified-sort="1704222706597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="7" data-categories="causal inference,evaluations,healthcare" data-listing-date-sort="1559422800000" data-listing-file-modified-sort="1704222706597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
     <a href="../publications/2019-causal-inference-evaluation-toolkit/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-an_evaluation_toolkit_to_guide_model_selection_and_cohort_definition_in_causal_inference">
         <span class="listing-title lead"><b>An evaluation toolkit to guide model selection and cohort definition in causal inference</b></span><br>
@@ -517,9 +628,13 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2019)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                
                     <span class="project-category" style="color: #e07e2d;">evaluations</span>
+                
                     <span class="project-category" style="color: #e07e2d;">healthcare</span>
+                
             </div>
          -->
     </div> </a>
@@ -528,18 +643,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.48550/arXiv.1906.00442" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            
             DOI
         </a>
+        
+        
         <a href="https://arxiv.org/pdf/1906.00442" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="8" data-categories="causal inference,evaluations" data-listing-date-sort="1548972000000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="8" data-categories="causal inference,evaluations" data-listing-date-sort="1548972000000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="53">
     <a href="../publications/2019-causal-inference-competitions/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-comment:_causal_inference_competitions:_where_should_we_aim?">
         <span class="listing-title lead"><b>Comment: causal inference competitions: where should we aim?</b></span><br>
@@ -548,8 +670,11 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2019)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                
                     <span class="project-category" style="color: #e07e2d;">evaluations</span>
+                
             </div>
          -->
     </div> </a>
@@ -558,18 +683,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.1214/18-STS679" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <i class="bi bi-file-earmark-text"></i> 
+            
             DOI
         </a>
+        
+        
         <a href="https://projecteuclid.org/journals/statistical-science/volume-34/issue-1/Comment-Causal-Inference-Competitions-Where-Should-We-Aim/10.1214/18-STS679.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="9" data-categories="computational biology" data-listing-date-sort="1533243600000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="9" data-categories="computational biology" data-listing-date-sort="1533243600000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="51">
     <a href="../publications/2018-rnase3-cleavage-rules/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-*in_vivo*_cleavage_rules_and_target_repertoire_of_rnase_iii_in_*escherichia_coli*">
         <span class="listing-title lead"><b>*In vivo* cleavage rules and target repertoire of RNase III in *Escherichia coli*</b></span><br>
@@ -578,7 +710,9 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2018)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">computational biology</span>
+                
             </div>
          -->
     </div> </a>
@@ -587,18 +721,25 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.1093/nar/gky816" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <i class="bi bi-file-earmark-text"></i> 
+            
             DOI
         </a>
+        
+        
         <a href="https://academic.oup.com/nar/article-pdf/46/19/10380/26331742/gky684.pdf" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
-  <li data-index="10" data-categories="causal inference,evaluations" data-listing-date-sort="1518559200000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+
+  <li data-index="10" data-categories="causal inference,evaluations" data-listing-date-sort="1518559200000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
     <a href="../publications/2018-causal-inference-benchmarking-framework/index.html" style="text-decoration:none; color:inherit;"> 
     <div id="pub-benchmarking_framework_for_performance-evaluation_of_causal_inference_analysis">
         <span class="listing-title lead"><b>Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis</b></span><br>
@@ -607,8 +748,11 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <span class="listing-year">(2018)</span><br>
         <!-- 
             <div class="project-categories">
+                
                     <span class="project-category" style="color: #e07e2d;">causal inference</span>
+                
                     <span class="project-category" style="color: #e07e2d;">evaluations</span>
+                
             </div>
          -->
     </div> </a>
@@ -617,18 +761,26 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
           Details
         </a>
+        
         <a href="https://doi.org/10.48550/arXiv.1802.05046" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
+            
                 <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
+            
             DOI
         </a>
+        
+        
         <a href="https://arxiv.org/pdf/1802.05046" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
             <i class="bi bi-file-earmark-pdf-fill"></i>
           PDF
         </a>
+        
     </div>
     <hr>
   </li>
+
 </ul>
+
 <div class="listing-no-matching d-none">
 No matching items
 </div>
@@ -674,6 +826,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -742,13 +921,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -827,10 +1008,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ehud\.co");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -840,8 +1043,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -853,7 +1065,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -897,6 +1232,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -922,6 +1258,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -979,24 +1341,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/ehud\.co");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 </div> <!-- /content -->
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

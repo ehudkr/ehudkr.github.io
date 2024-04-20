@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,7 +52,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -61,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -108,13 +115,40 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="cv-style.css">
 <meta property="og:title" content="Ehud Karavani | Ehud Karavani">
-<meta property="og:description" content="">
-<meta property="og:site-name" content="Ehud Karavani">
+<meta property="og:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
+<meta property="og:site_name" content="Ehud Karavani">
 <meta name="twitter:title" content="Ehud Karavani | Ehud Karavani">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -122,9 +156,9 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Ehud Karavani</span>
     </a>
@@ -136,43 +170,43 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../cv/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link active" href="../cv/index.html" aria-current="page"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../materials/index.html" rel="" target="">
- <span class="menu-text">Materials</span></a>
+    <a class="nav-link" href="../materials/index.html"> 
+<span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog/index.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"><i class="bi bi-linkedin" role="img" aria-label="linkedin">
+    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"> <i class="bi bi-linkedin" role="img" aria-label="linkedin">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new">
- <span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new"> 
+<span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"><i class="bi bi-github" role="img" aria-label="github">
+    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"> <i class="bi bi-github" role="img" aria-label="github">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-people-fill" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-people-fill" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-people-fill" role="img">
 </i> 
  <span class="menu-text"></span>
@@ -209,10 +243,10 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -225,14 +259,14 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#iconify-bi-person-fill-about-me" id="toc-iconify-bi-person-fill-about-me" class="nav-link active" data-scroll-target="#iconify-bi-person-fill-about-me"><iconify-icon inline="" icon="bi:person-fill"></iconify-icon> About me</a></li>
-  <li><a href="#iconify-bi-briefcase-fill-experience" id="toc-iconify-bi-briefcase-fill-experience" class="nav-link" data-scroll-target="#iconify-bi-briefcase-fill-experience"><iconify-icon inline="" icon="bi:briefcase-fill"></iconify-icon> Experience</a></li>
-  <li><a href="#iconify-bi-mortarboard-fill-education" id="toc-iconify-bi-mortarboard-fill-education" class="nav-link" data-scroll-target="#iconify-bi-mortarboard-fill-education"><iconify-icon inline="" icon="bi:mortarboard-fill"></iconify-icon> Education</a></li>
-  <li><a href="#iconify-bi-code-slash-skills" id="toc-iconify-bi-code-slash-skills" class="nav-link" data-scroll-target="#iconify-bi-code-slash-skills"><iconify-icon inline="" icon="bi:code-slash"></iconify-icon> Skills</a></li>
-  <li><a href="#iconify-bi-trophy-fill-awards" id="toc-iconify-bi-trophy-fill-awards" class="nav-link" data-scroll-target="#iconify-bi-trophy-fill-awards"><iconify-icon inline="" icon="bi:trophy-fill"></iconify-icon> Awards</a></li>
-  <li><a href="#iconify-bi-file-earmark-text-fill-publications" id="toc-iconify-bi-file-earmark-text-fill-publications" class="nav-link" data-scroll-target="#iconify-bi-file-earmark-text-fill-publications"><iconify-icon inline="" icon="bi:file-earmark-text-fill"></iconify-icon> Publications</a></li>
+  <li><a href="#about-me" id="toc-about-me" class="nav-link active" data-scroll-target="#about-me"><iconify-icon inline="" icon="bi:person-fill"></iconify-icon> About me</a></li>
+  <li><a href="#experience" id="toc-experience" class="nav-link" data-scroll-target="#experience"><iconify-icon inline="" icon="bi:briefcase-fill"></iconify-icon> Experience</a></li>
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education"><iconify-icon inline="" icon="bi:mortarboard-fill"></iconify-icon> Education</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><iconify-icon inline="" icon="bi:code-slash"></iconify-icon> Skills</a></li>
+  <li><a href="#awards" id="toc-awards" class="nav-link" data-scroll-target="#awards"><iconify-icon inline="" icon="bi:trophy-fill"></iconify-icon> Awards</a></li>
+  <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications"><iconify-icon inline="" icon="bi:file-earmark-text-fill"></iconify-icon> Publications</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/cv/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/cv/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/cv/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/cv/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -251,22 +285,24 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 18, 2024</p>
+      <p class="date-modified">February 12, 2024</p>
     </div>
   </div>
     
   </div>
   
 
+
 </header>
 
+
 <p><a href="mailto:ehudkaravani@gmail.com" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="bi:envelope-fill"></iconify-icon> Email</a> <a href="https://linkedin.com/in/ehudk" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="bi:linkedin"></iconify-icon> LinkedIn</a> <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="simple-icons:googlescholar"></iconify-icon> Scholar</a> <a href="https://medium.com/@ehudkr" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="bi:medium"></iconify-icon> Medium</a> <a href="https://github.com/ehudkr" class="btn btn-primary btn-sm rounded"><iconify-icon inline="" icon="bi:github"></iconify-icon> GitHub</a></p>
-<section id="iconify-bi-person-fill-about-me" class="level2">
-<h2 class="anchored" data-anchor-id="iconify-bi-person-fill-about-me"><iconify-icon inline="" icon="bi:person-fill"></iconify-icon> About me</h2>
+<section id="about-me" class="level2">
+<h2 class="anchored" data-anchor-id="about-me"><iconify-icon inline="" icon="bi:person-fill"></iconify-icon> About me</h2>
 <p>Highly skilled in causal inference, machine learning, (Bayesian) statistics, and data visualization. An applied researcher and data scientist, I spend my time between building reusable tools for research and putting them into use. Advocating Clean Code for research code. Strong preference for eclectic, collaborative environments.</p>
 </section>
-<section id="iconify-bi-briefcase-fill-experience" class="level2">
-<h2 class="anchored" data-anchor-id="iconify-bi-briefcase-fill-experience"><iconify-icon inline="" icon="bi:briefcase-fill"></iconify-icon> Experience</h2>
+<section id="experience" class="level2">
+<h2 class="anchored" data-anchor-id="experience"><iconify-icon inline="" icon="bi:briefcase-fill"></iconify-icon> Experience</h2>
 <table class="table">
 <tbody>
 <tr class="odd">
@@ -329,8 +365,8 @@ Onboarding lead</p></li>
 </tbody>
 </table>
 </section>
-<section id="iconify-bi-mortarboard-fill-education" class="level2">
-<h2 class="anchored" data-anchor-id="iconify-bi-mortarboard-fill-education"><iconify-icon inline="" icon="bi:mortarboard-fill"></iconify-icon> Education</h2>
+<section id="education" class="level2">
+<h2 class="anchored" data-anchor-id="education"><iconify-icon inline="" icon="bi:mortarboard-fill"></iconify-icon> Education</h2>
 <table class="table">
 <tbody>
 <tr class="odd">
@@ -356,8 +392,8 @@ Onboarding lead</p></li>
 </tbody>
 </table>
 </section>
-<section id="iconify-bi-code-slash-skills" class="level2">
-<h2 class="anchored" data-anchor-id="iconify-bi-code-slash-skills"><iconify-icon inline="" icon="bi:code-slash"></iconify-icon> Skills</h2>
+<section id="skills" class="level2">
+<h2 class="anchored" data-anchor-id="skills"><iconify-icon inline="" icon="bi:code-slash"></iconify-icon> Skills</h2>
 <table class="table">
 <tbody>
 <tr class="odd">
@@ -391,8 +427,8 @@ Onboarding lead</p></li>
 </tbody>
 </table>
 </section>
-<section id="iconify-bi-trophy-fill-awards" class="level2">
-<h2 class="anchored" data-anchor-id="iconify-bi-trophy-fill-awards"><iconify-icon inline="" icon="bi:trophy-fill"></iconify-icon> Awards</h2>
+<section id="awards" class="level2">
+<h2 class="anchored" data-anchor-id="awards"><iconify-icon inline="" icon="bi:trophy-fill"></iconify-icon> Awards</h2>
 <table class="table">
 <colgroup>
 <col style="width: 7%">
@@ -422,10 +458,9 @@ Onboarding lead</p></li>
 </tbody>
 </table>
 </section>
-<section id="iconify-bi-file-earmark-text-fill-publications" class="level2">
-<h2 class="anchored" data-anchor-id="iconify-bi-file-earmark-text-fill-publications"><iconify-icon inline="" icon="bi:file-earmark-text-fill"></iconify-icon> Publications</h2>
+<section id="publications" class="level2">
+<h2 class="anchored" data-anchor-id="publications"><iconify-icon inline="" icon="bi:file-earmark-text-fill"></iconify-icon> Publications</h2>
 <div id="listing-publication-list" style="padding-bottom:0em;" class="quarto-listing quarto-listing-container-table">
-
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -444,7 +479,7 @@ DOI
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="causal inference,visualization,evaluations" data-listing-date-sort="1681851600000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Causalvis: Visualizations for Causal Inference" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-categories="causal inference,visualization,evaluations" data-listing-date-sort="1681851600000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Causalvis: Visualizations for Causal Inference" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2023</span>
 </td>
@@ -458,7 +493,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.1145/3544548.3581236</span>
 </td>
 </tr>
-<tr data-index="1" data-categories="deep learning,genetics,statistics" data-listing-date-sort="1672696800000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization" data-listing-filename-sort="index.qmd">
+<tr data-index="1" data-categories="deep learning,genetics,statistics" data-listing-date-sort="1672696800000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2023</span>
 </td>
@@ -472,7 +507,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.1142/9789811270611_0019</span>
 </td>
 </tr>
-<tr data-index="2" data-categories="causal inference,methods" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1695362370513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Propensity score models are better when post-calibrated" data-listing-filename-sort="index.qmd">
+<tr data-index="2" data-categories="causal inference,methods" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1695362370513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25" data-listing-title-sort="Propensity score models are better when post-calibrated" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2022</span>
 </td>
@@ -486,7 +521,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.48550/arXiv.2211.01221</span>
 </td>
 </tr>
-<tr data-index="3" data-categories="statistics,healthcare" data-listing-date-sort="1616709600000" data-listing-file-modified-sort="1695362370497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2" data-listing-filename-sort="index.qmd">
+<tr data-index="3" data-categories="statistics,healthcare" data-listing-date-sort="1616709600000" data-listing-file-modified-sort="1695362370497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="68" data-listing-title-sort="Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2021</span>
 </td>
@@ -500,7 +535,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.1101/2021.03.24.21251900</span>
 </td>
 </tr>
-<tr data-index="4" data-categories="machine learning,statistics,genetics" data-listing-date-sort="1574287200000" data-listing-file-modified-sort="1695362370481" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Screening human embryos for polygenic traits has limited utility" data-listing-filename-sort="index.qmd">
+<tr data-index="4" data-categories="machine learning,statistics,genetics" data-listing-date-sort="1574287200000" data-listing-file-modified-sort="1695362370481" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="56" data-listing-title-sort="Screening human embryos for polygenic traits has limited utility" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -514,7 +549,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.1016/j.cell.2019.10.033</span>
 </td>
 </tr>
-<tr data-index="5" data-categories="causal inference,methods" data-listing-date-sort="1563397200000" data-listing-file-modified-sort="1695362370446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="A discriminative approach for finding and characterizing positivity violations using decision trees" data-listing-filename-sort="index.qmd">
+<tr data-index="5" data-categories="causal inference,methods" data-listing-date-sort="1563397200000" data-listing-file-modified-sort="1695362370446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="A discriminative approach for finding and characterizing positivity violations using decision trees" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -528,7 +563,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.48550/arXiv.1907.08127</span>
 </td>
 </tr>
-<tr data-index="6" data-categories="machine learning,deep learning,healthcare" data-listing-date-sort="1560805200000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Predicting breast cancer by applying deep learning to linked health records and mammograms" data-listing-filename-sort="index.qmd">
+<tr data-index="6" data-categories="machine learning,deep learning,healthcare" data-listing-date-sort="1560805200000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63" data-listing-title-sort="Predicting breast cancer by applying deep learning to linked health records and mammograms" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -542,7 +577,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.1148/radiol.2019182622</span>
 </td>
 </tr>
-<tr data-index="7" data-categories="causal inference,evaluations,healthcare" data-listing-date-sort="1559422800000" data-listing-file-modified-sort="1704222706597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="An evaluation toolkit to guide model selection and cohort definition in causal inference" data-listing-filename-sort="index.qmd">
+<tr data-index="7" data-categories="causal inference,evaluations,healthcare" data-listing-date-sort="1559422800000" data-listing-file-modified-sort="1704222706597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72" data-listing-title-sort="An evaluation toolkit to guide model selection and cohort definition in causal inference" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -556,7 +591,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.48550/arXiv.1906.00442</span>
 </td>
 </tr>
-<tr data-index="8" data-categories="causal inference,evaluations" data-listing-date-sort="1548972000000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Comment: causal inference competitions: where should we aim?" data-listing-filename-sort="index.qmd">
+<tr data-index="8" data-categories="causal inference,evaluations" data-listing-date-sort="1548972000000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="53" data-listing-title-sort="Comment: causal inference competitions: where should we aim?" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -570,7 +605,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.1214/18-STS679</span>
 </td>
 </tr>
-<tr data-index="9" data-categories="computational biology" data-listing-date-sort="1533243600000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="*In vivo* cleavage rules and target repertoire of RNase III in *Escherichia coli*" data-listing-filename-sort="index.qmd">
+<tr data-index="9" data-categories="computational biology" data-listing-date-sort="1533243600000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="51" data-listing-title-sort="*In vivo* cleavage rules and target repertoire of RNase III in *Escherichia coli*" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2018</span>
 </td>
@@ -584,7 +619,7 @@ DOI
 <span class="listing-doi">https://doi.org/10.1093/nar/gky816</span>
 </td>
 </tr>
-<tr data-index="10" data-categories="causal inference,evaluations" data-listing-date-sort="1518559200000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis" data-listing-filename-sort="index.qmd">
+<tr data-index="10" data-categories="causal inference,evaluations" data-listing-date-sort="1518559200000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2018</span>
 </td>
@@ -599,7 +634,6 @@ DOI
 </td>
 </tr>
 </tbody>
-
 </table>
 <div class="listing-no-matching d-none">
 No matching items
@@ -653,6 +687,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -721,13 +782,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -806,10 +869,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ehud\.co");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -819,8 +904,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -832,7 +926,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -876,6 +1093,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -901,6 +1119,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -958,24 +1202,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/ehud\.co");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 </div> <!-- /content -->
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/cv/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/cv/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

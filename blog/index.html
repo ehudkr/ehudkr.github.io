@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,7 +52,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -61,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -108,24 +115,49 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Blog | Ehud Karavani">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://quarto.org/quarto.png">
-<meta property="og:site-name" content="Ehud Karavani">
+<meta property="og:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
+<meta property="og:site_name" content="Ehud Karavani">
 <meta name="twitter:title" content="Blog | Ehud Karavani">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://quarto.org/quarto.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Ehud Karavani</span>
     </a>
@@ -137,43 +169,43 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="../cv/index.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../materials/index.html" rel="" target="">
- <span class="menu-text">Materials</span></a>
+    <a class="nav-link" href="../materials/index.html"> 
+<span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"><i class="bi bi-linkedin" role="img" aria-label="linkedin">
+    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"> <i class="bi bi-linkedin" role="img" aria-label="linkedin">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new">
- <span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new"> 
+<span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"><i class="bi bi-github" role="img" aria-label="github">
+    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"> <i class="bi bi-github" role="img" aria-label="github">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-people-fill" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-people-fill" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-people-fill" role="img">
 </i> 
  <span class="menu-text"></span>
@@ -210,10 +242,10 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -246,6 +278,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>List of blog posts</p>
 
 
@@ -275,19 +308,19 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="causal inference,study design" data-listing-date-sort="1698094800000" data-listing-file-modified-sort="1702759692987" data-listing-date-modified-sort="1702759692000" data-listing-reading-time-sort="19">
+<div class="quarto-post image-right" data-index="0" data-categories="causal inference,study design" data-listing-date-sort="1698094800000" data-listing-file-modified-sort="1702759692987" data-listing-date-modified-sort="1702759692000" data-listing-reading-time-sort="19" data-listing-word-count-sort="3634">
 <div class="thumbnail">
-<p><a href="../blog/2023/03-sequential_trial_design/index.html"> <p class="card-img-top"><img src="2023\03-sequential_trial_design\pop_level_process.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external"></a></p><a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external">
+<p class="card-img-top"><img src="2023\03-sequential_trial_design\pop_level_process.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2023/03-sequential_trial_design/index.html">
 <h3 class="no-anchor listing-title">
-Sequential trial design for causal inference
+<a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external">Sequential trial design for causal inference</a>
 </h3>
 <div class="listing-subtitle">
-<p>Aligning time-zero to reduce time-related biases by taking simplest solution possible and awkwardly repeating it until it’s great.</p>
+<a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external">Aligning time-zero to reduce time-related biases by taking simplest solution possible and awkwardly repeating it until it’s great. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
 causal inference
@@ -296,10 +329,9 @@ causal inference
 study design
 </div>
 </div>
-<a href="../blog/2023/03-sequential_trial_design/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2023/03-sequential_trial_design/index.html">
+<a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external">
 <div class="listing-date">
 Oct 24, 2023
 </div>
@@ -309,22 +341,22 @@ Oct 24, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1689368400000" data-listing-file-modified-sort="1698304418077" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1689368400000" data-listing-file-modified-sort="1698304418077" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1107">
 <div class="thumbnail">
-<p><a href="../blog/2023/02-hello_world/index.html"> <img src="https://quarto.org/quarto.png" class="thumbnail-image"> </a></p>
+<p><a href="../blog/2023/02-hello_world/index.html" class="no-external"></a></p><a href="../blog/2023/02-hello_world/index.html" class="no-external">
+<p><img src="https://quarto.org/quarto.png" class="thumbnail-image"></p>
+</a><p><a href="../blog/2023/02-hello_world/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2023/02-hello_world/index.html">
 <h3 class="no-anchor listing-title">
-Hello Quarto!
+<a href="../blog/2023/02-hello_world/index.html" class="no-external">Hello Quarto!</a>
 </h3>
 <div class="listing-subtitle">
-I made a personal website. With blogs and stuff.
+<a href="../blog/2023/02-hello_world/index.html" class="no-external">I made a personal website. With blogs and stuff.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../blog/2023/02-hello_world/index.html">
+<a href="../blog/2023/02-hello_world/index.html" class="no-external">
 <div class="listing-date">
 Jul 15, 2023
 </div>
@@ -334,28 +366,27 @@ Jul 15, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="causal inference" data-listing-date-sort="1672783200000" data-listing-file-modified-sort="1698304418076" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="2" data-categories="causal inference" data-listing-date-sort="1672783200000" data-listing-file-modified-sort="1698304418076" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="3" data-listing-word-count-sort="553">
 <div class="thumbnail">
-<p><a href="../blog/2023/01-causal-inference-is-a-mindset/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external"></a></p><a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html">
 <h3 class="no-anchor listing-title">
-Causal inference is a&nbsp;mindset
+<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external">Causal inference is a&nbsp;mindset</a>
 </h3>
 <div class="listing-subtitle">
-<p>Causal inference from observational data is a mindset, not a set of&nbsp;tools.</p>
+<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external">Causal inference from observational data is a mindset, not a set of&nbsp;tools. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
 causal inference
 </div>
 </div>
-<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html">
+<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external">
 <div class="listing-date">
 Jan 4, 2023
 </div>
@@ -365,28 +396,27 @@ Jan 4, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="causal inference" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1704222706498" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="14">
+<div class="quarto-post image-right" data-index="3" data-categories="causal inference" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1704222706498" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="14" data-listing-word-count-sort="2672">
 <div class="thumbnail">
-<p><a href="../blog/2022/01-continuous-treatment-causal-inference/index.html"> <p class="card-img-top"><img src="2022\01-continuous-treatment-causal-inference\images\binomial_to_normal.gif"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external"></a></p><a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external">
+<p class="card-img-top"><img src="2022\01-continuous-treatment-causal-inference\images\binomial_to_normal.gif"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html">
 <h3 class="no-anchor listing-title">
-Causal Inference with Continuous Treatments
+<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external">Causal Inference with Continuous Treatments</a>
 </h3>
 <div class="listing-subtitle">
-<p>Generalizing inverse probability weights for non-categorical treatments.</p>
+<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external">Generalizing inverse probability weights for non-categorical treatments. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
 causal inference
 </div>
 </div>
-<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html">
+<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external">
 <div class="listing-date">
 Nov 2, 2022
 </div>
@@ -396,28 +426,27 @@ Nov 2, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="causal inference" data-listing-date-sort="1637359200000" data-listing-file-modified-sort="1698304418069" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="4" data-categories="causal inference" data-listing-date-sort="1637359200000" data-listing-file-modified-sort="1698304418069" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1214">
 <div class="thumbnail">
-<p><a href="../blog/2021/02-why-balance-covariates/index.html"> <p class="card-img-top"><img src="2021\02-why-balance-covariates\figure1.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external"></a></p><a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external">
+<p class="card-img-top"><img src="2021\02-why-balance-covariates\figure1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2021/02-why-balance-covariates/index.html">
 <h3 class="no-anchor listing-title">
-Why we care for covariate balancing in comparative studies
+<a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external">Why we care for covariate balancing in comparative studies</a>
 </h3>
 <div class="listing-subtitle">
-<p>Balancing variables in statistical comparative analysis is a proxy, not a&nbsp;goal.</p>
+<a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external">Balancing variables in statistical comparative analysis is a proxy, not a&nbsp;goal. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
 causal inference
 </div>
 </div>
-<a href="../blog/2021/02-why-balance-covariates/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2021/02-why-balance-covariates/index.html">
+<a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external">
 <div class="listing-date">
 Nov 20, 2021
 </div>
@@ -427,19 +456,19 @@ Nov 20, 2021
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="machine learning,visualization" data-listing-date-sort="1630702800000" data-listing-file-modified-sort="1704222706482" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="5" data-categories="machine learning,visualization" data-listing-date-sort="1630702800000" data-listing-file-modified-sort="1704222706482" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="4" data-listing-word-count-sort="686">
 <div class="thumbnail">
-<p><a href="../blog/2021/01-visualizing-micro-macro-averages/index.html"> <img src="../blog/2021/01-visualizing-micro-macro-averages/images/macro_averaging_sensitivity.png" class="thumbnail-image"> </a></p>
+<p><a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external"></a></p><a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external">
+<p><img src="../blog/2021/01-visualizing-micro-macro-averages/images/macro_averaging_sensitivity.png" class="thumbnail-image"></p>
+</a><p><a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html">
 <h3 class="no-anchor listing-title">
-A visual way to think of macro and micro averages in classification metrics
+<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external">A visual way to think of macro and micro averages in classification metrics</a>
 </h3>
 <div class="listing-subtitle">
-<p>Explaining what macro-average and micro-average metrics&nbsp;are.</p>
+<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external">Explaining what macro-average and micro-average metrics&nbsp;are. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('machine learning'); return false;">
 machine learning
@@ -448,10 +477,9 @@ machine learning
 visualization
 </div>
 </div>
-<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html">
+<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external">
 <div class="listing-date">
 Sep 4, 2021
 </div>
@@ -461,19 +489,19 @@ Sep 4, 2021
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="causal inference,machine learning" data-listing-date-sort="1609106400000" data-listing-file-modified-sort="1698304418058" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="6" data-categories="causal inference,machine learning" data-listing-date-sort="1609106400000" data-listing-file-modified-sort="1698304418058" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="10" data-listing-word-count-sort="1908">
 <div class="thumbnail">
-<p><a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html"> <p class="card-img-top"><img src="2020\03-ml-metrics-for-causal-inference\images\roc_methods_combined.gif"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external"></a></p><a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external">
+<p class="card-img-top"><img src="2020\03-ml-metrics-for-causal-inference\images\roc_methods_combined.gif"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html">
 <h3 class="no-anchor listing-title">
-Using machine learning metrics to evaluate causal inference models
+<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external">Using machine learning metrics to evaluate causal inference models</a>
 </h3>
 <div class="listing-subtitle">
-<p>Reinterpreting known machine learning evaluations from a causal inference perspective, focusing on ROC curves for propensity models.</p>
+<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external">Reinterpreting known machine learning evaluations from a causal inference perspective, focusing on ROC curves for propensity models. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
 causal inference
@@ -482,10 +510,9 @@ causal inference
 machine learning
 </div>
 </div>
-<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html">
+<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external">
 <div class="listing-date">
 Dec 28, 2020
 </div>
@@ -495,28 +522,27 @@ Dec 28, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="meta-science" data-listing-date-sort="1593982800000" data-listing-file-modified-sort="1698304417986" data-listing-date-modified-sort="1698304417000" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="7" data-categories="meta-science" data-listing-date-sort="1593982800000" data-listing-file-modified-sort="1698304417986" data-listing-date-modified-sort="1698304417000" data-listing-reading-time-sort="5" data-listing-word-count-sort="988">
 <div class="thumbnail">
-<p><a href="../blog/2020/02-against-agile-research/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../blog/2020/02-against-agile-research/index.html" class="no-external"></a></p><a href="../blog/2020/02-against-agile-research/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../blog/2020/02-against-agile-research/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2020/02-against-agile-research/index.html">
 <h3 class="no-anchor listing-title">
-The case against Agile research
+<a href="../blog/2020/02-against-agile-research/index.html" class="no-external">The case against Agile research</a>
 </h3>
 <div class="listing-subtitle">
-<p>Ever popular iterative development approaches can sneak in unconscious-bias that can be harmful to the scientific process.</p>
+<a href="../blog/2020/02-against-agile-research/index.html" class="no-external">Ever popular iterative development approaches can sneak in unconscious-bias that can be harmful to the scientific process. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('meta-science'); return false;">
 meta-science
 </div>
 </div>
-<a href="../blog/2020/02-against-agile-research/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2020/02-against-agile-research/index.html">
+<a href="../blog/2020/02-against-agile-research/index.html" class="no-external">
 <div class="listing-date">
 Jul 6, 2020
 </div>
@@ -526,19 +552,19 @@ Jul 6, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="causal inference,statistics" data-listing-date-sort="1580594400000" data-listing-file-modified-sort="1704222706474" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="8" data-categories="causal inference,statistics" data-listing-date-sort="1580594400000" data-listing-file-modified-sort="1704222706474" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="12" data-listing-word-count-sort="2316">
 <div class="thumbnail">
-<p><a href="../blog/2020/01-simpsons-paradox-ipw/index.html"> <img src="../blog/2020/01-simpsons-paradox-ipw/images/figure_2-2.png" class="thumbnail-image"> </a></p>
+<p><a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external"></a></p><a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external">
+<p><img src="../blog/2020/01-simpsons-paradox-ipw/images/figure_2-2.png" class="thumbnail-image"></p>
+</a><p><a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2020/01-simpsons-paradox-ipw/index.html">
 <h3 class="no-anchor listing-title">
-Solving Simpson’s Paradox with Inverse Probability Weighting
+<a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external">Solving Simpson’s Paradox with Inverse Probability Weighting</a>
 </h3>
 <div class="listing-subtitle">
-<p>A visual intuition on how the most popular method in causal-inference works, and how it solves one of the most popular paradoxes in statistics.</p>
+<a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external">A visual intuition on how the most popular method in causal-inference works, and how it solves one of the most popular paradoxes in statistics. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
 causal inference
@@ -547,10 +573,9 @@ causal inference
 statistics
 </div>
 </div>
-<a href="../blog/2020/01-simpsons-paradox-ipw/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2020/01-simpsons-paradox-ipw/index.html">
+<a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external">
 <div class="listing-date">
 Feb 2, 2020
 </div>
@@ -560,19 +585,19 @@ Feb 2, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="genetics,deep learning" data-listing-date-sort="1525467600000" data-listing-file-modified-sort="1704222706464" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="18">
+<div class="quarto-post image-right" data-index="9" data-categories="genetics,deep learning" data-listing-date-sort="1525467600000" data-listing-file-modified-sort="1704222706464" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="18" data-listing-word-count-sort="3462">
 <div class="thumbnail">
-<p><a href="../blog/2018/01-deep-learning-genetic-prediction/index.html"> <img src="../blog/2018/01-deep-learning-genetic-prediction/images/paste-7.png" class="thumbnail-image"> </a></p>
+<p><a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external"></a></p><a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external">
+<p><img src="../blog/2018/01-deep-learning-genetic-prediction/images/paste-7.png" class="thumbnail-image"></p>
+</a><p><a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html">
 <h3 class="no-anchor listing-title">
-Applying Deep Learning to Genetic Prediction
+<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external">Applying Deep Learning to Genetic Prediction</a>
 </h3>
 <div class="listing-subtitle">
-<p>What classical methods for obtaining polygenic (risk) scores lack, and how deep learning might help mitigated these shortcomings.</p>
+<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external">What classical methods for obtaining polygenic (risk) scores lack, and how deep learning might help mitigated these shortcomings. </a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('genetics'); return false;">
 genetics
@@ -581,10 +606,9 @@ genetics
 deep learning
 </div>
 </div>
-<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html"> </a>
 </div>
 <div class="metadata">
-<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html">
+<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external">
 <div class="listing-date">
 May 5, 2018
 </div>
@@ -640,6 +664,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -708,13 +759,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -793,10 +846,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ehud\.co");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -806,8 +881,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -819,7 +903,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -863,6 +1070,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -888,6 +1096,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -945,24 +1179,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/ehud\.co");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 </div> <!-- /content -->
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
