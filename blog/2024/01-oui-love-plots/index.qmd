@@ -8,4 +8,11 @@ categories:
   - visualization
 ---
 
+An augmentation to the known Love plot, incorporating covariate-outcome importance measures.
+
+:::{style="text-align: center"}
+Manuscript at: [https://ehud.co/oui-love-plots/](https://ehud.co/oui-love-plots/)  <br>
+User survey at: [https://forms.gle/cb8AqGWjbBZqbjbSA](https://forms.gle/cb8AqGWjbBZqbjbSA)
+:::
+
 <!-- {{< include https://raw.githubusercontent.com/ehudkr/oui-love-plots/main/index.qmd >}} -->
