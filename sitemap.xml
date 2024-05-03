@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ehud.co/publications/index.html</loc>
-    <lastmod>2024-01-03T07:05:38.226Z</lastmod>
+    <lastmod>2024-05-03T07:36:15.778Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/publications/2023-causalvis/index.html</loc>
+    <loc>https://ehud.co/publications/2023-prs-plus-irm/index.html</loc>
     <lastmod>2023-09-22T05:59:30.564Z</lastmod>
   </url>
   <url>
@@ -41,44 +41,48 @@
     <lastmod>2024-02-12T10:39:33.827Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/blog/2023/03-sequential_trial_design/index.html</loc>
-    <lastmod>2023-12-16T20:48:12.987Z</lastmod>
+    <loc>https://ehud.co/blog/2024/01-oui-love-plots/index.html</loc>
+    <lastmod>2024-05-03T07:46:36.417Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/blog/2023/01-causal-inference-is-a-mindset/index.html</loc>
-    <lastmod>2023-10-26T07:13:38.076Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ehud.co/blog/2021/02-why-balance-covariates/index.html</loc>
-    <lastmod>2023-10-26T07:13:38.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ehud.co/blog/2020/03-ml-metrics-for-causal-inference/index.html</loc>
-    <lastmod>2023-10-26T07:13:38.058Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ehud.co/blog/2020/01-simpsons-paradox-ipw/index.html</loc>
-    <lastmod>2024-01-02T19:11:46.474Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ehud.co/blog/2018/01-deep-learning-genetic-prediction/index.html</loc>
-    <lastmod>2024-01-02T19:11:46.464Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ehud.co/blog/2020/02-against-agile-research/index.html</loc>
-    <lastmod>2023-10-26T07:13:37.986Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ehud.co/blog/2021/01-visualizing-micro-macro-averages/index.html</loc>
-    <lastmod>2024-01-02T19:11:46.482Z</lastmod>
+    <loc>https://ehud.co/blog/2023/02-hello_world/index.html</loc>
+    <lastmod>2023-10-26T07:13:38.077Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/2022/01-continuous-treatment-causal-inference/index.html</loc>
     <lastmod>2024-01-02T19:11:46.498Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/blog/2023/02-hello_world/index.html</loc>
-    <lastmod>2023-10-26T07:13:38.077Z</lastmod>
+    <loc>https://ehud.co/blog/2021/01-visualizing-micro-macro-averages/index.html</loc>
+    <lastmod>2024-01-02T19:11:46.482Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/blog/2020/02-against-agile-research/index.html</loc>
+    <lastmod>2023-10-26T07:13:37.986Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/blog/2018/01-deep-learning-genetic-prediction/index.html</loc>
+    <lastmod>2024-01-02T19:11:46.464Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/blog/2020/01-simpsons-paradox-ipw/index.html</loc>
+    <lastmod>2024-01-02T19:11:46.474Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/blog/2020/03-ml-metrics-for-causal-inference/index.html</loc>
+    <lastmod>2023-10-26T07:13:38.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/blog/2021/02-why-balance-covariates/index.html</loc>
+    <lastmod>2023-10-26T07:13:38.069Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/blog/2023/01-causal-inference-is-a-mindset/index.html</loc>
+    <lastmod>2023-10-26T07:13:38.076Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/blog/2023/03-sequential_trial_design/index.html</loc>
+    <lastmod>2023-12-16T20:48:12.987Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/blog/index.html</loc>
@@ -113,11 +117,11 @@
     <lastmod>2023-09-22T05:59:30.481Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/publications/2022-propensity-score-calibration/index.html</loc>
-    <lastmod>2023-09-22T05:59:30.513Z</lastmod>
+    <loc>https://ehud.co/publications/2023-causalvis/index.html</loc>
+    <lastmod>2023-09-22T05:59:30.564Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/publications/2023-prs-plus-irm/index.html</loc>
-    <lastmod>2023-09-22T05:59:30.564Z</lastmod>
+    <loc>https://ehud.co/publications/2024-propensity-score-calibration/index.html</loc>
+    <lastmod>2024-05-03T07:33:49.109Z</lastmod>
   </url>
 </urlset>

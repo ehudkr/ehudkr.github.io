@@ -7,8 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ehud Karavani">
+<meta name="dcterms.date" content="2024-04-15">
+<meta name="description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
 
-<title>Blog | Ehud Karavani</title>
+<title>Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,31 +23,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,35 +107,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date','listing-image','listing-reading-time','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-66TLP1EVBH"></script>
 
 <script type="text/javascript">
@@ -112,42 +117,13 @@ gtag('js', new Date());
 gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Blog | Ehud Karavani">
-<meta property="og:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani">
+<meta property="og:description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
 <meta property="og:site_name" content="Ehud Karavani">
-<meta name="twitter:title" content="Blog | Ehud Karavani">
-<meta name="twitter:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
+<meta name="twitter:title" content="Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani">
+<meta name="twitter:description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -158,7 +134,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ehud Karavani</span>
     </a>
   </div>
@@ -169,23 +145,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html"> 
+    <a class="nav-link" href="../../cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html"> 
+    <a class="nav-link" href="../../publications/index.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../materials/index.html"> 
+    <a class="nav-link" href="../../materials/index.html"> 
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -254,408 +230,113 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="causal inference">causal inference <span class="quarto-category-count">(7)</span></div><div class="category" data-category="deep learning">deep learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="genetics">genetics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="machine learning">machine learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="meta-science">meta-science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="study design">study design <span class="quarto-category-count">(1)</span></div><div class="category" data-category="visualization">visualization <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#citation" id="toc-citation" class="nav-link active" data-scroll-target="#citation">Citation</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2024-propensity-score-calibration/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2024-propensity-score-calibration/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">causal inference</div>
+    <div class="quarto-category">methods</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.</p>
+  </div>
 </div>
 
-
-<!-- Adjusted from: https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html -->
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Rom Gutman </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Technion - Israel Institute of Technology
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Ehud Karavani </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            IBM Research
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Yishai Shimoni </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            IBM Research
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
-  
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 15, 2024</p>
+    </div>
   </div>
   
+    
+    <div>
+    <div class="quarto-title-meta-heading">Doi</div>
+    <div class="quarto-title-meta-contents">
+      <p class="doi">
+        <a href="https://doi.org/https://doi.org/10.1097/ede.0000000000001733">https://doi.org/10.1097/ede.0000000000001733</a>
+      </p>
+    </div>
+  </div>
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>Theoretical guarantees for causal inference using propensity scores are partially based on the scores behaving like conditional probabilities. However, scores between zero and one do not necessarily behave like probabilities, especially when output by flexible statistical estimators. We perform a simulation study to assess the error in estimating the average treatment effect before and after applying a simple and well-established postprocessing method to calibrate the propensity scores. We observe that post-calibration reduces the error in effect estimation and that larger improvements in calibration result in larger improvements in effect estimation. Specifically, we find that expressive tree-based estimators, which are often less calibrated than logistic regression-based models initially, tend to show larger improvements relative to logistic regression-based models. Given the improvement in effect estimation and that post-calibration is computationally cheap, we recommend its adoption when modeling propensity scores with expressive models.</p>
+  </div>
+</div>
 
 
 </header>
 
 
-<p>List of blog posts</p>
+<div class="column-page">
+<p><img src="figure1.svg" class="img-fluid"></p>
+</div>
+<p>Honorable mention: <a href="https://ngreifer.github.io/blog/what-s-new-in-weightit-version-1-0-0/#other-updates">post-calibration procedures are now available in the renowned R package <code>WeightIt</code> v.1.0.0</a>.</p>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">gutman2024improving</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Gutman, Rom and Karavani, Ehud and Shimoni, Yishai},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span>={Epidemiology},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span>={10--1097},</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2024},</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span>={LWW}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="causal inference,visualization" data-listing-date-sort="1713560400000" data-listing-file-modified-sort="1714722396417" data-listing-date-modified-sort="1714722396000" data-listing-reading-time-sort="1" data-listing-word-count-sort="24">
-<div class="thumbnail">
-<p><a href="../blog/2024/01-oui-love-plots/index.html" class="no-external"></a></p><a href="../blog/2024/01-oui-love-plots/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../blog/2024/01-oui-love-plots/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2024/01-oui-love-plots/index.html" class="no-external">Oui-Love Plots: Outcome-informed Love plots for covariate balance in causal inference</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2024/01-oui-love-plots/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
-causal inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('visualization'); return false;">
-visualization
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2024/01-oui-love-plots/index.html" class="no-external">
-<div class="listing-date">
-Apr 20, 2024
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="causal inference,study design" data-listing-date-sort="1698094800000" data-listing-file-modified-sort="1702759692987" data-listing-date-modified-sort="1702759692000" data-listing-reading-time-sort="19" data-listing-word-count-sort="3634">
-<div class="thumbnail">
-<p><a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external"></a></p><a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external">
-<p class="card-img-top"><img src="2023\03-sequential_trial_design\pop_level_process.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external">Sequential trial design for causal inference</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external">Aligning time-zero to reduce time-related biases by taking simplest solution possible and awkwardly repeating it until it’s great. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
-causal inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('study design'); return false;">
-study design
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2023/03-sequential_trial_design/index.html" class="no-external">
-<div class="listing-date">
-Oct 24, 2023
-</div>
-<div class="listing-reading-time">
-19 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1689368400000" data-listing-file-modified-sort="1698304418077" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1107">
-<div class="thumbnail">
-<p><a href="../blog/2023/02-hello_world/index.html" class="no-external"></a></p><a href="../blog/2023/02-hello_world/index.html" class="no-external">
-<p><img src="https://quarto.org/quarto.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/2023/02-hello_world/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2023/02-hello_world/index.html" class="no-external">Hello Quarto!</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2023/02-hello_world/index.html" class="no-external">I made a personal website. With blogs and stuff.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2023/02-hello_world/index.html" class="no-external">
-<div class="listing-date">
-Jul 15, 2023
-</div>
-<div class="listing-reading-time">
-6 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="causal inference" data-listing-date-sort="1672783200000" data-listing-file-modified-sort="1698304418076" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="3" data-listing-word-count-sort="553">
-<div class="thumbnail">
-<p><a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external"></a></p><a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external">Causal inference is a&nbsp;mindset</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external">Causal inference from observational data is a mindset, not a set of&nbsp;tools. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
-causal inference
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2023/01-causal-inference-is-a-mindset/index.html" class="no-external">
-<div class="listing-date">
-Jan 4, 2023
-</div>
-<div class="listing-reading-time">
-3 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="causal inference" data-listing-date-sort="1667340000000" data-listing-file-modified-sort="1704222706498" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="14" data-listing-word-count-sort="2672">
-<div class="thumbnail">
-<p><a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external"></a></p><a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external">
-<p class="card-img-top"><img src="2022\01-continuous-treatment-causal-inference\images\binomial_to_normal.gif"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external">Causal Inference with Continuous Treatments</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external">Generalizing inverse probability weights for non-categorical treatments. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
-causal inference
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2022/01-continuous-treatment-causal-inference/index.html" class="no-external">
-<div class="listing-date">
-Nov 2, 2022
-</div>
-<div class="listing-reading-time">
-14 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="causal inference" data-listing-date-sort="1637359200000" data-listing-file-modified-sort="1698304418069" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1214">
-<div class="thumbnail">
-<p><a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external"></a></p><a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external">
-<p class="card-img-top"><img src="2021\02-why-balance-covariates\figure1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external">Why we care for covariate balancing in comparative studies</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external">Balancing variables in statistical comparative analysis is a proxy, not a&nbsp;goal. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
-causal inference
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2021/02-why-balance-covariates/index.html" class="no-external">
-<div class="listing-date">
-Nov 20, 2021
-</div>
-<div class="listing-reading-time">
-7 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="machine learning,visualization" data-listing-date-sort="1630702800000" data-listing-file-modified-sort="1704222706482" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="4" data-listing-word-count-sort="686">
-<div class="thumbnail">
-<p><a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external"></a></p><a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external">
-<p><img src="../blog/2021/01-visualizing-micro-macro-averages/images/macro_averaging_sensitivity.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external">A visual way to think of macro and micro averages in classification metrics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external">Explaining what macro-average and micro-average metrics&nbsp;are. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('machine learning'); return false;">
-machine learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('visualization'); return false;">
-visualization
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2021/01-visualizing-micro-macro-averages/index.html" class="no-external">
-<div class="listing-date">
-Sep 4, 2021
-</div>
-<div class="listing-reading-time">
-4 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="causal inference,machine learning" data-listing-date-sort="1609106400000" data-listing-file-modified-sort="1698304418058" data-listing-date-modified-sort="1698304418000" data-listing-reading-time-sort="10" data-listing-word-count-sort="1908">
-<div class="thumbnail">
-<p><a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external"></a></p><a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external">
-<p class="card-img-top"><img src="2020\03-ml-metrics-for-causal-inference\images\roc_methods_combined.gif"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external">Using machine learning metrics to evaluate causal inference models</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external">Reinterpreting known machine learning evaluations from a causal inference perspective, focusing on ROC curves for propensity models. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
-causal inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine learning'); return false;">
-machine learning
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2020/03-ml-metrics-for-causal-inference/index.html" class="no-external">
-<div class="listing-date">
-Dec 28, 2020
-</div>
-<div class="listing-reading-time">
-10 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="meta-science" data-listing-date-sort="1593982800000" data-listing-file-modified-sort="1698304417986" data-listing-date-modified-sort="1698304417000" data-listing-reading-time-sort="5" data-listing-word-count-sort="988">
-<div class="thumbnail">
-<p><a href="../blog/2020/02-against-agile-research/index.html" class="no-external"></a></p><a href="../blog/2020/02-against-agile-research/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../blog/2020/02-against-agile-research/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2020/02-against-agile-research/index.html" class="no-external">The case against Agile research</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2020/02-against-agile-research/index.html" class="no-external">Ever popular iterative development approaches can sneak in unconscious-bias that can be harmful to the scientific process. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('meta-science'); return false;">
-meta-science
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2020/02-against-agile-research/index.html" class="no-external">
-<div class="listing-date">
-Jul 6, 2020
-</div>
-<div class="listing-reading-time">
-5 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="causal inference,statistics" data-listing-date-sort="1580594400000" data-listing-file-modified-sort="1704222706474" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="12" data-listing-word-count-sort="2316">
-<div class="thumbnail">
-<p><a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external"></a></p><a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external">
-<p><img src="../blog/2020/01-simpsons-paradox-ipw/images/figure_2-2.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external">Solving Simpson’s Paradox with Inverse Probability Weighting</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external">A visual intuition on how the most popular method in causal-inference works, and how it solves one of the most popular paradoxes in statistics. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('causal inference'); return false;">
-causal inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
-statistics
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2020/01-simpsons-paradox-ipw/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2020
-</div>
-<div class="listing-reading-time">
-12 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="genetics,deep learning" data-listing-date-sort="1525467600000" data-listing-file-modified-sort="1704222706464" data-listing-date-modified-sort="1704222706000" data-listing-reading-time-sort="18" data-listing-word-count-sort="3462">
-<div class="thumbnail">
-<p><a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external"></a></p><a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external">
-<p><img src="../blog/2018/01-deep-learning-genetic-prediction/images/paste-7.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external">Applying Deep Learning to Genetic Prediction</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external">What classical methods for obtaining polygenic (risk) scores lack, and how deep learning might help mitigated these shortcomings. </a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('genetics'); return false;">
-genetics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('deep learning'); return false;">
-deep learning
-</div>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2018/01-deep-learning-genetic-prediction/index.html" class="no-external">
-<div class="listing-date">
-May 5, 2018
-</div>
-<div class="listing-reading-time">
-18 min
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1219,4 +900,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2024-propensity-score-calibration/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2024-propensity-score-calibration/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

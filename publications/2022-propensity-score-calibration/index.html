@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ehud Karavani">
-<meta name="dcterms.date" content="2022-11-02">
-<meta name="description" content="PositiviTree: A decision tree-based approach for finding easily-characterizable positivity violations.">
+<meta name="dcterms.date" content="2024-04-15">
+<meta name="description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
 
-<title>Propensity score models are better when post-calibrated | Ehud Karavani</title>
+<title>Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,11 +119,11 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Propensity score models are better when post-calibrated | Ehud Karavani">
-<meta property="og:description" content="PositiviTree: A decision tree-based approach for finding easily-characterizable positivity violations.">
+<meta property="og:title" content="Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani">
+<meta property="og:description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
 <meta property="og:site_name" content="Ehud Karavani">
-<meta name="twitter:title" content="Propensity score models are better when post-calibrated | Ehud Karavani">
-<meta name="twitter:description" content="PositiviTree: A decision tree-based approach for finding easily-characterizable positivity violations.">
+<meta name="twitter:title" content="Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani">
+<meta name="twitter:description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -243,7 +243,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Propensity score models are better when post-calibrated</h1>
+<h1 class="title">Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores</h1>
   <div class="quarto-categories">
     <div class="quarto-category">causal inference</div>
     <div class="quarto-category">methods</div>
@@ -252,7 +252,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    <p><em>PositiviTree:</em> A decision tree-based approach for finding easily-characterizable positivity violations.</p>
+    <p>Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.</p>
   </div>
 </div>
 
@@ -292,7 +292,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 2, 2022</p>
+      <p class="date">April 15, 2024</p>
     </div>
   </div>
   
@@ -301,7 +301,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <div class="quarto-title-meta-heading">Doi</div>
     <div class="quarto-title-meta-contents">
       <p class="doi">
-        <a href="https://doi.org/https://doi.org/10.48550/arXiv.2211.01221">https://doi.org/10.48550/arXiv.2211.01221</a>
+        <a href="https://doi.org/https://doi.org/10.1097/ede.0000000000001733">https://doi.org/10.1097/ede.0000000000001733</a>
       </p>
     </div>
   </div>
@@ -310,7 +310,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    <p>Theoretical guarantees for causal inference using propensity scores are partly based on the scores behaving like conditional probabilities. However, scores between zero and one, especially when outputted by flexible statistical estimators, do not necessarily behave like probabilities. We perform a simulation study to assess the error in estimating the average treatment effect before and after applying a simple and well-established post-processing method to calibrate the propensity scores. We find that post-calibration reduces the error in effect estimation for expressive uncalibrated statistical estimators, and that this improvement is not mediated by better balancing. The larger the initial lack of calibration, the larger the improvement in effect estimation, with the effect on already-calibrated estimators being very small. Given the improvement in effect estimation and that post-calibration is computationally cheap, we recommend it will be adopted when modelling propensity scores with expressive models.</p>
+    <p>Theoretical guarantees for causal inference using propensity scores are partially based on the scores behaving like conditional probabilities. However, scores between zero and one do not necessarily behave like probabilities, especially when output by flexible statistical estimators. We perform a simulation study to assess the error in estimating the average treatment effect before and after applying a simple and well-established postprocessing method to calibrate the propensity scores. We observe that post-calibration reduces the error in effect estimation and that larger improvements in calibration result in larger improvements in effect estimation. Specifically, we find that expressive tree-based estimators, which are often less calibrated than logistic regression-based models initially, tend to show larger improvements relative to logistic regression-based models. Given the improvement in effect estimation and that post-calibration is computationally cheap, we recommend its adoption when modeling propensity scores with expressive models.</p>
   </div>
 </div>
 
@@ -318,19 +318,10 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </header>
 
 
-<div>
-
+<div class="column-page">
+<p><img src="figure1.svg" class="img-fluid"></p>
 </div>
-<div class="column-page quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="simulation_calibration_ate.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="acic_models_calibration_ate.jpg" class="img-fluid"></p>
-</div>
-</div>
-</div>
+<p>Honorable mention: <a href="https://ngreifer.github.io/blog/what-s-new-in-weightit-version-1-0-0/#other-updates">post-calibration procedures are now available in <code>WeightIt</code> v.1.0.0</a></p>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">gutman2022propensity</span>,</span>
@@ -569,7 +560,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/ehud\.co");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
