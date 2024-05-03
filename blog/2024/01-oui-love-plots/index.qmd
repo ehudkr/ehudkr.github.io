@@ -1,18 +1,114 @@
 ---
 title: "Oui-Love Plots: Outcome-informed Love plots for covariate balance in causal inference"
+subtitle: > 
+  Augmenting the good old Love plot by incorporating covariate-outcome importance measures.
 author: "Ehud Karavani"
 date: 2024/04/20
 date-modified: last-modified
+image: images/ouilove_plot.png
 categories: 
   - causal inference
   - visualization
 ---
 
-An augmentation to the known Love plot, incorporating covariate-outcome importance measures.
+<!-- TODO: consider writing a script that will download the raw files from published version on github
+https://github.com/ehudkr/oui-love-plots/tree/gh-pages
+and will use some {{ includes }} shortcode to automatically update this page. -->
 
 :::{style="text-align: center"}
-Manuscript at: [https://ehud.co/oui-love-plots/](https://ehud.co/oui-love-plots/)  <br>
+<span style=" background-color: yellow;">
+Complete manuscript at: [https://ehud.co/oui-love-plots/](https://ehud.co/oui-love-plots/)
+<br>
 User survey at: [https://forms.gle/cb8AqGWjbBZqbjbSA](https://forms.gle/cb8AqGWjbBZqbjbSA)
+</span>
 :::
 
-<!-- {{< include https://raw.githubusercontent.com/ehudkr/oui-love-plots/main/index.qmd >}} -->
+## Motivation
+Assessing balance between exposure groups by visualizing the absolute standardized mean differences (ASMD) in a Love plot is a common approach to diagnose models like propensity score weighting or matching.
+However, the ASMD only captures covariate-exposure associations and neglects to integrate information about the covariate-outcome associations.
+This can mislead researchers, especially in fields like epidemiology where adjustment sets are determined based on domain experts before looking at the data.
+In such analysis approach, researchers will prefer to err on including a variable rather than excluding it.
+This strategy can sneak in non-confounding variables that the researcher will treat as confounders and therefore try to balance their distributions across exposure groups. 
+But since non-confounding variables should not be adjusted for (instruments can amplify z-bias) and balanced (prognostic should capture heterogeneity), 
+they can lead astray researchers that will try to force them to be balanced.
+
+In other cases, *structural confounders* selected a-priori may not necessarily be *statistical confounders*.
+Namely, they may not be associated with both the exposure and the outcome and therefore not necessarily bias treatment effect estimation in the data at hand.
+
+To overcome this issue, I developed the Oui-Love plot: an OUtcome-Informed Love plot.
+I will first introduce a new score combining the known standardized difference with covariate-outcome importance measures ("variable importance").
+Second, since we love plots (wink wink), this additional score will be visualized through several graphical channels to augment the standard Love plot and help researchers focus on actual statistical confounders in the data. 
+
+## Outcome-informed ASMD score
+The standardized mean difference is a commonly used metric to diagnose treatment-first causal inference models (like matching or propensity score weighting).
+It is defined as the difference in covariate averages between two exposure groups divided by the pooled standard errors.
+Since it is only dependent on covariates and exposure, it measures covariate-exposure association alone.
+This can be an insufficient metric for diagnosing models because inability to balance instruments or prognostic variables is not an issue.
+
+Covariate-outcome importance metrics measure how each covariate contributes to the prediction accuracy of the outcome.
+There are many approaches to calculate importance,
+but the model-agnostic ones often work through covariate "exclusion",
+where a covariate is either excluded or have its values shuffled between observations.
+Then we can measure the prediction error of the full model (including all covariates) against the model missing that covariate (and including all the rest, as well as the exposure). 
+Importance is then a non-negative score where low scores correspond to small increase in prediction error and high scores correspond to large increase in prediction error, relative to the full model.
+
+Give an ASMD score and an covariate-outcome importance score for each covariate, 
+the natural way to combine them is simply to multiply them.
+These are two orthogonal measures, so they can either cancel out each other or amplify each other.
+@Fig-oui-asmd-score shows the instrument $X_A$ with high ASMD (panel A) together with low covariate-outcome importance (panel B) is ultimately canceled out by the multiplication (panel C). 
+Similarly, the prognostic factor $X_Y$ that has very high outcome importance (higher than confounder $X_{AY}$) and small ASMD is dimished in the combined measure. 
+Only the true confounder $X_{AY}$ is is kept at relatively high importance throughout.
+ 
+![](images/oui-asmd-score.svg){#fig-oui-asmd-score}
+
+
+## Outcome-informed Love plot
+
+Once we have an additional covariate-outcome importance score, 
+we can visualize it. 
+When we visualize data we essentially map between dimensions oh the data to different graphical channels.
+
+A traditional Love plot map the covariates to the y-axis, 
+the ASMD to the x-axis,
+and the types of the model (e.g., weighted/unweighted) to the color of the marker
+All in all, we mapped three data dimensions: covariates, their ASMD, and adjustment model, to three graphical channels: y-axis, x-axis, and color (and possibly a fourth channel of marker shape for emphasis).
+
+In an outcome-informed Love plot, we have an additional data dimension that is the outcome-informed ASMD. 
+In the manuscript, I suggest to map to (up to) three different graphical channels [@fig-oui-encoding] that can be combined arbitrarily [@fig-love-oui-love]:
+
+ 1. The opacity channel. Marks corresponding to more important covariates are more opaque, while less important marks are more transparent. 
+  2. The size channel. Marks corresponding to more important covariate are larger, while less important marks are smaller.
+  3. The order of the y-axis. Covariates are ranked by their importance with more important covariates appearing on top. 
+
+:::{.column-body-outset}
+![](images/oui-encoding.svg){#fig-oui-encoding}
+:::
+
+The common property for options (1) and (2) is that less important covariates appear less prominent, 
+either being smaller or more transparent. 
+The argument being that if they do not influence the outcome, they will not bias the estimation, and therefore are not important and less interesting to examine.
+If they are less interesting to examine, there is less need for them to stand out and can therefore be salient. 
+This will reduce clutter and allow the viewer to focus on the more important (and thus visually prominent) covariates.
+Meanwhile, option (3) clusters more important covariates to specific regions of the plot, 
+but breaks the standard of ordering covariates by the unadjusted ASMD that may be familiar to practitioners. 
+All options achieve a similar objective of differential attention onto more important covariates, 
+either by differential prominence (transparency and size) or by differential spatial location (order).
+
+:::{.column-screen-inset}
+![](images/love-oui-love.svg){#fig-love-oui-love}
+:::
+
+## Summary
+We have introduced an augmentation to the Love plot 
+by incorporating additional information about covariate-outcome importance.
+Love plot is a common graphical diagnostic for group balancing methods in causal inference,
+visualizing the (Absolute) Standardized Mean Difference (ASMD) for each covariate before and after adjustment.
+ASMD alone, however, can be misleading if the covariates under investigation are not true confounding variables that influence both the exposure and the outcome.
+Therefore, the outcome-informed Love plot can help paint a fuller picture, 
+teasing out covariates that are both imbalanced *and* drive change in the outcome - and therefore actually bias the estimation.
+
+This is a modular, extendable, and easy-to-implement idea that I hope causal inference practitioners will find useful. 
+
+For more details, see the full manuscript draft at: [https://ehud.co/oui-love-plots/](https://ehud.co/oui-love-plots/)
+
+
