@@ -1,0 +1,59 @@
+---
+title: "Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores"
+date: 2024-04-15
+doi: https://doi.org/10.1097/ede.0000000000001733
+author:
+  - name: Rom Gutman
+    affiliations:
+      - name: "Technion - Israel Institute of Technology"
+        country: Israel
+  - name: Ehud Karavani 
+    affiliations:
+      - ref: ibmrisrl
+  - name: Yishai Shimoni
+    affiliations: 
+      - ref: ibmrisrl
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Causal Machine Learning for Healthcare and Life Sciences
+categories:
+  - causal inference
+  - methods
+# keywords: 
+publication: "Epidemiology"
+journal: 
+  title: "Epidemiology"
+pdf: https://cdn-links.lww.com/permalink/ede/c/ede_1_1_2024_04_04_karavani_ede23-0107_sdc1.pdf
+abstract: >
+  Theoretical guarantees for causal inference using propensity scores are partially based on the scores behaving like conditional probabilities. 
+  However, scores between zero and one do not necessarily behave like probabilities, especially when output by flexible statistical estimators. 
+  We perform a simulation study to assess the error in estimating the average treatment effect before and after applying a simple and well-established postprocessing method to calibrate the propensity scores. 
+  We observe that post-calibration reduces the error in effect estimation and that larger improvements in calibration result in larger improvements in effect estimation. 
+  Specifically, we find that expressive tree-based estimators, which are often less calibrated than logistic regression-based models initially, tend to show larger improvements relative to logistic regression-based models. 
+  Given the improvement in effect estimation and that post-calibration is computationally cheap, we recommend its adoption when modeling propensity scores with expressive models.
+description: >
+  Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.
+---
+
+:::{.column-page}
+![](figure1.svg)
+:::
+
+
+Honorable mention: [post-calibration procedures are now available in the renowned R package `WeightIt` v.1.0.0](https://ngreifer.github.io/blog/what-s-new-in-weightit-version-1-0-0/#other-updates).
+
+## Citation
+```bibtex
+@article{gutman2024improving,
+  title={Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores},
+  author={Gutman, Rom and Karavani, Ehud and Shimoni, Yishai},
+  journal={Epidemiology},
+  pages={10--1097},
+  year={2024},
+  publisher={LWW}
+}
+```
+

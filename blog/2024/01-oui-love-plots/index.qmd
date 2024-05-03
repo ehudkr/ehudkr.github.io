@@ -1,0 +1,11 @@
+---
+title: "Oui-Love Plots: Outcome-informed Love plots for covariate balance in causal inference"
+author: "Ehud Karavani"
+date: 2024/04/20
+date-modified: last-modified
+categories: 
+  - causal inference
+  - visualization
+---
+
+<!-- {{< include https://raw.githubusercontent.com/ehudkr/oui-love-plots/main/index.qmd >}} -->
