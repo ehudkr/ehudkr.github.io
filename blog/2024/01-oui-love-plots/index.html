@@ -82,14 +82,49 @@ gtag('js', new Date());
 gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Oui-Love Plots: Outcome-informed Love plots for covariate balance in causal inference | Ehud Karavani">
-<meta property="og:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
+<meta property="og:description" content="Augmenting the good old Love plot by incorporating covariate-outcome importance measures.">
+<meta property="og:image" content="https://ehud.co/blog/2024/01-oui-love-plots/images/ouilove_plot.png">
 <meta property="og:site_name" content="Ehud Karavani">
+<meta property="og:image:height" content="316">
+<meta property="og:image:width" content="467">
 <meta name="twitter:title" content="Oui-Love Plots: Outcome-informed Love plots for covariate balance in causal inference | Ehud Karavani">
-<meta name="twitter:description" content="a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Augmenting the good old Love plot by incorporating covariate-outcome importance measures.">
+<meta name="twitter:image" content="https://ehud.co/blog/2024/01-oui-love-plots/images/ouilove_plot.png">
+<meta name="twitter:image-height" content="316">
+<meta name="twitter:image-width" content="467">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -195,14 +230,24 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#outcome-informed-asmd-score" id="toc-outcome-informed-asmd-score" class="nav-link" data-scroll-target="#outcome-informed-asmd-score">Outcome-informed ASMD score</a></li>
+  <li><a href="#outcome-informed-love-plot" id="toc-outcome-informed-love-plot" class="nav-link" data-scroll-target="#outcome-informed-love-plot">Outcome-informed Love plot</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/2024/01-oui-love-plots/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/2024/01-oui-love-plots/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Oui-Love Plots: Outcome-informed Love plots for covariate balance in causal inference</h1>
+<p class="subtitle lead"></p><p>Augmenting the good old Love plot by incorporating covariate-outcome importance measures.</p><p></p>
   <div class="quarto-categories">
     <div class="quarto-category">causal inference</div>
     <div class="quarto-category">visualization</div>
@@ -244,13 +289,78 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </header>
 
 
-<p>An augmentation to the known Love plot, incorporating covariate-outcome importance measures.</p>
+<!-- TODO: consider writing a script that will download the raw files from published version on github
+https://github.com/ehudkr/oui-love-plots/tree/gh-pages
+and will use some {{ includes }} shortcode to automatically update this page. -->
 <div style="text-align: center">
-<p>Manuscript at: <a href="https://ehud.co/oui-love-plots/">https://ehud.co/oui-love-plots/</a> <br> User survey at: <a href="https://forms.gle/cb8AqGWjbBZqbjbSA">https://forms.gle/cb8AqGWjbBZqbjbSA</a></p>
+<p><span style=" background-color: yellow;"> Complete manuscript at: <a href="https://ehud.co/oui-love-plots/">https://ehud.co/oui-love-plots/</a> <br> User survey at: <a href="https://forms.gle/cb8AqGWjbBZqbjbSA">https://forms.gle/cb8AqGWjbBZqbjbSA</a> </span></p>
 </div>
-<!-- {{< include https://raw.githubusercontent.com/ehudkr/oui-love-plots/main/index.qmd >}} -->
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Assessing balance between exposure groups by visualizing the absolute standardized mean differences (ASMD) in a Love plot is a common approach to diagnose models like propensity score weighting or matching. However, the ASMD only captures covariate-exposure associations and neglects to integrate information about the covariate-outcome associations. This can mislead researchers, especially in fields like epidemiology where adjustment sets are determined based on domain experts before looking at the data. In such analysis approach, researchers will prefer to err on including a variable rather than excluding it. This strategy can sneak in non-confounding variables that the researcher will treat as confounders and therefore try to balance their distributions across exposure groups. But since non-confounding variables should not be adjusted for (instruments can amplify z-bias) and balanced (prognostic should capture heterogeneity), they can lead astray researchers that will try to force them to be balanced.</p>
+<p>In other cases, <em>structural confounders</em> selected a-priori may not necessarily be <em>statistical confounders</em>. Namely, they may not be associated with both the exposure and the outcome and therefore not necessarily bias treatment effect estimation in the data at hand.</p>
+<p>To overcome this issue, I developed the Oui-Love plot: an OUtcome-Informed Love plot. I will first introduce a new score combining the known standardized difference with covariate-outcome importance measures (“variable importance”). Second, since we love plots (wink wink), this additional score will be visualized through several graphical channels to augment the standard Love plot and help researchers focus on actual statistical confounders in the data.</p>
+</section>
+<section id="outcome-informed-asmd-score" class="level2">
+<h2 class="anchored" data-anchor-id="outcome-informed-asmd-score">Outcome-informed ASMD score</h2>
+<p>The standardized mean difference is a commonly used metric to diagnose treatment-first causal inference models (like matching or propensity score weighting). It is defined as the difference in covariate averages between two exposure groups divided by the pooled standard errors. Since it is only dependent on covariates and exposure, it measures covariate-exposure association alone. This can be an insufficient metric for diagnosing models because inability to balance instruments or prognostic variables is not an issue.</p>
+<p>Covariate-outcome importance metrics measure how each covariate contributes to the prediction accuracy of the outcome. There are many approaches to calculate importance, but the model-agnostic ones often work through covariate “exclusion”, where a covariate is either excluded or have its values shuffled between observations. Then we can measure the prediction error of the full model (including all covariates) against the model missing that covariate (and including all the rest, as well as the exposure). Importance is then a non-negative score where low scores correspond to small increase in prediction error and high scores correspond to large increase in prediction error, relative to the full model.</p>
+<p>Give an ASMD score and an covariate-outcome importance score for each covariate, the natural way to combine them is simply to multiply them. These are two orthogonal measures, so they can either cancel out each other or amplify each other. <a href="#fig-oui-asmd-score" class="quarto-xref">Figure&nbsp;1</a> shows the instrument <span class="math inline">\(X_A\)</span> with high ASMD (panel A) together with low covariate-outcome importance (panel B) is ultimately canceled out by the multiplication (panel C). Similarly, the prognostic factor <span class="math inline">\(X_Y\)</span> that has very high outcome importance (higher than confounder <span class="math inline">\(X_{AY}\)</span>) and small ASMD is dimished in the combined measure. Only the true confounder <span class="math inline">\(X_{AY}\)</span> is is kept at relatively high importance throughout.</p>
+<div id="fig-oui-asmd-score" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-oui-asmd-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/oui-asmd-score.svg" id="fig-oui-asmd-score" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-oui-asmd-score-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="outcome-informed-love-plot" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="outcome-informed-love-plot">Outcome-informed Love plot</h2>
+<p>Once we have an additional covariate-outcome importance score, we can visualize it. When we visualize data we essentially map between dimensions oh the data to different graphical channels.</p>
+<p>A traditional Love plot map the covariates to the y-axis, the ASMD to the x-axis, and the types of the model (e.g., weighted/unweighted) to the color of the marker All in all, we mapped three data dimensions: covariates, their ASMD, and adjustment model, to three graphical channels: y-axis, x-axis, and color (and possibly a fourth channel of marker shape for emphasis).</p>
+<p>In an outcome-informed Love plot, we have an additional data dimension that is the outcome-informed ASMD. In the manuscript, I suggest to map to (up to) three different graphical channels <a href="#fig-oui-encoding" class="quarto-xref">Figure&nbsp;2</a> that can be combined arbitrarily <a href="#fig-love-oui-love" class="quarto-xref">Figure&nbsp;3</a>:</p>
+<ol type="1">
+<li>The opacity channel. Marks corresponding to more important covariates are more opaque, while less important marks are more transparent.</li>
+<li>The size channel. Marks corresponding to more important covariate are larger, while less important marks are smaller.</li>
+<li>The order of the y-axis. Covariates are ranked by their importance with more important covariates appearing on top.</li>
+</ol>
+<div class="page-columns page-full">
+<div id="fig-oui-encoding" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-oui-encoding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="images/oui-encoding.svg" id="fig-oui-encoding" class="img-fluid figure-img column-body-outset">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-oui-encoding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The common property for options (1) and (2) is that less important covariates appear less prominent, either being smaller or more transparent. The argument being that if they do not influence the outcome, they will not bias the estimation, and therefore are not important and less interesting to examine. If they are less interesting to examine, there is less need for them to stand out and can therefore be salient. This will reduce clutter and allow the viewer to focus on the more important (and thus visually prominent) covariates. Meanwhile, option (3) clusters more important covariates to specific regions of the plot, but breaks the standard of ordering covariates by the unadjusted ASMD that may be familiar to practitioners. All options achieve a similar objective of differential attention onto more important covariates, either by differential prominence (transparency and size) or by differential spatial location (order).</p>
+<div class="page-columns page-full">
+<div id="fig-love-oui-love" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-love-oui-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="images/love-oui-love.svg" id="fig-love-oui-love" class="img-fluid figure-img column-screen-inset">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-love-oui-love-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>We have introduced an augmentation to the Love plot by incorporating additional information about covariate-outcome importance. Love plot is a common graphical diagnostic for group balancing methods in causal inference, visualizing the (Absolute) Standardized Mean Difference (ASMD) for each covariate before and after adjustment. ASMD alone, however, can be misleading if the covariates under investigation are not true confounding variables that influence both the exposure and the outcome. Therefore, the outcome-informed Love plot can help paint a fuller picture, teasing out covariates that are both imbalanced <em>and</em> drive change in the outcome - and therefore actually bias the estimation.</p>
+<p>This is a modular, extendable, and easy-to-implement idea that I hope causal inference practitioners will find useful.</p>
+<p>For more details, see the full manuscript draft at: <a href="https://ehud.co/oui-love-plots/">https://ehud.co/oui-love-plots/</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -816,4 +926,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/2024/01-oui-love-plots/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/2024/01-oui-love-plots/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/2024/01-oui-love-plots/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/2024/01-oui-love-plots/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
