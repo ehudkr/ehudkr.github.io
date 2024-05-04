@@ -1,6 +1,7 @@
 ---
 title: "Ehud Karavani"
 date-modified: last-modified
+pagetitle: "CV | Ehud Karavani"  # Avoid "Ehud K | Ehud K" because of `title`, specify it's cv
 
 format: 
   html: 
