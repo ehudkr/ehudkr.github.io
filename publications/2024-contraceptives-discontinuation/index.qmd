@@ -1,0 +1,77 @@
+---
+title: "Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa"
+date: 2024-08-03
+doi: https://doi.org/10.24963/ijcai.2024/792 
+author:
+  - name: Victor Akinwande
+    affiliations:
+      - name: "Carnegie Mellon University"
+      - country: USA
+  - name: Megan MacGregor
+    affiliations:
+      - name: "Simon Fraser University"
+      - country: Canada
+      - department: "Faculty of Health"
+  - name: Celia Cintas
+    affiliations:
+      - name: "IBM Research"
+      - country: Kenya
+  - name: Ehud Karavani
+    affiliations:
+      - name: "IBM Research"
+      - country: Israel
+  - name: Dennis Wei
+    affiliations:
+      - name: "IBM Research"
+      - country: Yorktown
+  - name: Kush Varshney
+    affiliations:
+      - name: "IBM Research"
+      - country: Yorktown
+  - name: Pablo Nepomnaschy
+    affiliations:
+      - name: "Simon Fraser University"
+      - country: Canada
+      - department: "Faculty of Health"
+categories:
+  - causal inference
+  - healthcare
+# keywords: 
+publication: "International Joint Conference on Artificial Intelligence (IJCAI)"
+journal: 
+  title: "International Joint Conference on Artificial Intelligence (IJCAI)"
+pdf: https://www.ijcai.org/proceedings/2024/0792.pdf
+abstract: >
+  Discontinuation rates vary by family planning method and across socio-economic contexts. 
+  Understanding these variations and their causes is paramount for developing and implementing policies aimed at curbing discontinuation rates. 
+  Randomized controlled trials (RCTs) are ideal for obtaining this information, but this design can be extremely expensive and logistically complex. 
+  The ongoing collection of comprehensive data sets, such as Demographic and Health Surveys (DHS data), when combined with machine learning methods, present an alternative and relatively cost-effective means of evidence gathering for policy development. 
+  Here, we use causal inference to estimate the effect of injectable contraceptive use on discontinuation over the 12-month period that follows its adoption. 
+  To that aim, we use retrospective observational data from seven sub-Saharan African countries captured by the DHS’ Contraceptive Calendar. 
+  We use machine learning methods to characterize data regions that share common covariate support. 
+  We find that the use of injectables increased the risk of discontinuation in four of the seven countries analyzed. 
+  Consistent with existing literature, we find that concerns with the side-effects of injectables appear to be the most frequent reason for discontinuation. 
+  However, these risks decreased after adjusting for socio-economic factors. 
+  As risk estimates may not apply uniformly within populations, we characterized the sub-populations for robust estimations by their geographical region, level of unmet needs, marital status, level of education, and age of first sex. 
+description: >
+  An observational study in sub-Saharan Africa suggesting injectable contraceptives have higher discontinuation rates due to side effects compared to other non-injectable methods.
+---
+
+IJCAI 2024: Special Track on AI for Good
+
+:::{.column-page}
+![](figure1.svg)
+:::
+
+
+
+## Citation
+```bibtex
+@inproceedings{akinwande2024using,
+  title={Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa},
+  author={Akinwande, Victor and MacGregor, Megan and Cintas, Celia and Karavani, Ehud and Wei, Dennis and Varshney, Kush and Nepomnaschy, Pablo},
+  booktitle={International Joint Conference on Artificial Intelligence},
+  year={2024}
+}
+```
+
