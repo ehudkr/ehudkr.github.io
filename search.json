@@ -14,6 +14,20 @@
     "text": "Publications"
   },
   {
+    "objectID": "publications/2024-contraceptives-discontinuation/index.html",
+    "href": "publications/2024-contraceptives-discontinuation/index.html",
+    "title": "Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa",
+    "section": "",
+    "text": "IJCAI 2024: Special Track on AI for Good"
+  },
+  {
+    "objectID": "publications/2024-contraceptives-discontinuation/index.html#citation",
+    "href": "publications/2024-contraceptives-discontinuation/index.html#citation",
+    "title": "Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa",
+    "section": "Citation",
+    "text": "Citation\n@inproceedings{akinwande2024using,\n  title={Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa},\n  author={Akinwande, Victor and MacGregor, Megan and Cintas, Celia and Karavani, Ehud and Wei, Dennis and Varshney, Kush and Nepomnaschy, Pablo},\n  booktitle={International Joint Conference on Artificial Intelligence},\n  year={2024}\n}"
+  },
+  {
     "objectID": "publications/2023-prs-plus-irm/index.html",
     "href": "publications/2023-prs-plus-irm/index.html",
     "title": "FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization",
@@ -140,6 +154,13 @@
     "text": "Email  LinkedIn  Scholar  Medium  GitHub"
   },
   {
+    "objectID": "cv/index.html#highlights",
+    "href": "cv/index.html#highlights",
+    "title": "Ehud Karavani",
+    "section": " Highlights",
+    "text": "Highlights\n\nHealthcare machine learning researcher with 8+ years of experience\n1st author Cell paper, 2019\nCreator of causallib - an open-source Python package for causal inference.\n700+ stars and 100+ forks on Github.\nReceived an IBM Research Accomplishment award (2023)\nCo-inventor on 3 US patents\nPyData conference speaker and podcast interviewee\nCausal inference, machine learning, deep learning, statistics, data viz, Python"
+  },
+  {
     "objectID": "cv/index.html#about-me",
     "href": "cv/index.html#about-me",
     "title": "Ehud Karavani",
@@ -151,7 +172,7 @@
     "href": "cv/index.html#experience",
     "title": "Ehud Karavani",
     "section": " Experience",
-    "text": "Experience\n\n\n\n2017 – present\n\nResearch Staff Member\nCausal Machine Learning for Healthcare and Life Science, IBM-Research, Israel\n\n\nCreator of causallib – a one-stop-shop open-source Python package for flexible causal inference modeling.\n\nReceived an IBM Research Accomplishment award (2023)\n\nIndividual Contributor (IC)\nCausal inference consultant for Research labs globally\nProject leader: drug repurposing by applying high-throughput causal inference to observational healthcare data\n\nManaging a team of researchers.\nLeading the scientific pipeline, system design, and visualization app\nGenerating 100s of hypotheses in minutes\nServed several external engagements with pharma clients, bringing millions in revenue\n\nOrganized the 2018 Atlantic Causal Inference Conference Data Challenge\nMentored interns and students.\nOnboarding lead\nPublished papers and issued patents\n\n\n\n2022\n\nApplied Statistician\nLaboratory for Gait & Neurodynamics, Ichilov Hospital\n\n\nBayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients\n\n\n\n2016 – 2017\n\nTeaching Assitant\nThe School of Computer Science, Hebrew University\n\n\nIntroduction to Data Science\nWorkshop in Computational Bioskills\n\n\n\n2015 – 2016\n\nResearch Associate / Computational Biologist\nInstitue for Medical Research Israel-Canada, Hebrew University, Faculty of Medicine\n\n\nLarge-scale RNA analysis for finding high-resolution protein-RNA interactions"
+    "text": "Experience\n\n\n\n2017 – present\n\nResearch Staff Member\nCausal Machine Learning for Healthcare and Life Science, IBM-Research, Israel\n\n\nCreator of causallib – a one-stop-shop open-source Python package for flexible causal inference modeling.\n\nReceived an IBM Research Accomplishment award (2023)\n\nIndividual Contributor (IC)\nCausal inference consultant for Research labs globally\nProject leader: drug repurposing by applying high-throughput causal inference to observational healthcare data\n\nManaging a team of 5 researchers.\nLeading the scientific pipeline, system design, and visualization app\nGenerating 100s of hypotheses in minutes\nServed several external engagements with pharma clients, bringing millions in revenue\n\nOrganized the 2018 Atlantic Causal Inference Conference Data Challenge\nMentored 10+ students and interns\nOnboarding lead, onboarding 10+ researchers\nPublished 10+ papers and issued 3 patents\n\n\n\n2022\n\nApplied Statistician\nLaboratory for Gait & Neurodynamics, Ichilov Hospital\n\n\nBayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients\n\n\n\n2016 – 2017\n\nTeaching Assitant\nThe School of Computer Science, Hebrew University\n\n\nIntroduction to Data Science\nWorkshop in Computational Bioskills\n\n\n\n2015 – 2016\n\nResearch Associate / Computational Biologist\nInstitue for Medical Research Israel-Canada, Hebrew University, Faculty of Medicine\n\n\nLarge-scale RNA analysis for finding high-resolution protein-RNA interactions"
   },
   {
     "objectID": "cv/index.html#education",
@@ -161,25 +182,32 @@
     "text": "Education\n\n\n\n2016 – 2019\n\nM.Sc. in Computer Science and Computational Biology\nFaculty of Science, the Hebrew University of Jerusalem, Israel\n\nThesis: quantifying the utility of embryo selection using genomic prediction of traits\npublished in Cell\n\n\n2013 – 2016\n\nB.Sc. in Computer Science and Computational Biology\nFaculty of Science, the Hebrew University of Jerusalem, Israel\n\n\nDean’s List of Academic Excellence (2016)\n\nBachelor’s thesis published in Nucleic Acids Research"
   },
   {
+    "objectID": "cv/index.html#community",
+    "href": "cv/index.html#community",
+    "title": "Ehud Karavani",
+    "section": " Community",
+    "text": "Community\n\nPyData speaker\nCausal Bandits podcast interviewee\nDataNights causality series lecturer\nRecurring DataHack mentor and judge"
+  },
+  {
     "objectID": "cv/index.html#skills",
     "href": "cv/index.html#skills",
     "title": "Ehud Karavani",
     "section": " Skills",
-    "text": "Skills\n\n\n\nProgramming skills\n\nPython scientific stack (fluent)\n\nScikit-Learn, Pandas, Statsmodels, Seaborn (objects), Matplotlib, Altair, Streamlit, Pytorch, Keras, cvxpy, PyMC, Bambi, Arviz…\n\nR (when needed)\nGit + GitHub\nContinuous integration (Travis, GitHub Actions)\nLinux and remote development (Cloud/AWS + Jupyter lab / VS Code)\n\n\n\nLanguages\n\nFluent English\nNative Hebrew\n\n\n\nGeneral\n\nData enthusiast: past DataHack mentor and judge\nMusician 🎸, hiker / backpacker 🏔️ | | |\nFriendly 🙂"
+    "text": "Skills\n\n\n\n\n\n\n\nProgramming skills\n\nPython scientific stack (fluent)\n\nScikit-Learn, Pandas, Statsmodels, Seaborn (objects), Matplotlib, Altair, Streamlit, Pytorch, Keras, cvxpy, PyMC, Bambi, Arviz…\n\nR (when needed)\nGit + GitHub\nContinuous integration (Travis, GitHub Actions)\nLinux and remote development (Cloud/AWS + Jupyter lab / VS Code)\n\n\n\nLanguages\n\nFluent English\nNative Hebrew\n\n\n\nGeneral\n\nData enthusiast\nMusician 🎸, hiker / backpacker 🏔️ | | | | | |\nFriendly 🙂"
   },
   {
     "objectID": "cv/index.html#awards",
     "href": "cv/index.html#awards",
     "title": "Ehud Karavani",
     "section": " Awards",
-    "text": "Awards\n\n\n\n\n\n\n\n2023\nIBM-Research Accomplishment\nFor my work on causallib and research engagement with the Cleveland Clinic Foundation.\n\n\n2019\nBest of RSNA\nFor the paper Predicting Breast Cancer by Applying Deep Learning to Linked Health Records and Mammograms, published in Radiology.\n\n\n2019\nBest Talk: Israeli Population Genetics Meeting\nFor the paper Screening Human Embryos for Polygenic Traits has Limited Utility.\n\n\n2019\nFeatured Theory of the issue (Cell)\nFor the paper Screening Human Embryos for Polygenic Traits has Limited Utility."
+    "text": "Awards\n\n\n\n\n\n\n\n2023\nIBM-Research Accomplishment\nFor my work on causallib and research engagement with the Cleveland Clinic Foundation.\n\n\n2019\nBest of RSNA\nFor the paper Predicting Breast Cancer by Applying Deep Learning to Linked Health Records and Mammograms, published in Radiology.\n\n\n2019\nBest Talk: Israeli Population Genetics Meeting\nFor the paper Screening Human Embryos for Polygenic Traits has Limited Utility.\n\n\n2019\nFeatured Theory of the issue (Cell)\nFor the paper Screening Human Embryos for Polygenic Traits has Limited Utility.\n\n\n2016\nDean’s list of academic excellence"
   },
   {
     "objectID": "cv/index.html#publications",
     "href": "cv/index.html#publications",
     "title": "Ehud Karavani",
     "section": " Publications",
-    "text": "Publications\n\n\n\n\n\nDate\n\n\nTitle\n\n\nVenue\n\n\nDOI\n\n\n\n\n\n\n2024\n\n\nImproving Inverse Probability Weighting by Post-calibrating Its Propensity Scores\n\n\nEpidemiology\n\n\nhttps://doi.org/10.1097/ede.0000000000001733\n\n\n\n\n2023\n\n\nCausalvis: Visualizations for Causal Inference\n\n\nCHI: Conference on Human Factors in Computing Systems\n\n\nhttps://doi.org/10.1145/3544548.3581236\n\n\n\n\n2023\n\n\nFairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization\n\n\nPacific Symposium on Biocomputing\n\n\nhttps://doi.org/10.1142/9789811270611_0019\n\n\n\n\n2021\n\n\nTrends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2\n\n\nMedRxiv\n\n\nhttps://doi.org/10.1101/2021.03.24.21251900\n\n\n\n\n2019\n\n\nScreening human embryos for polygenic traits has limited utility\n\n\nCell\n\n\nhttps://doi.org/10.1016/j.cell.2019.10.033\n\n\n\n\n2019\n\n\nA discriminative approach for finding and characterizing positivity violations using decision trees\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1907.08127\n\n\n\n\n2019\n\n\nPredicting breast cancer by applying deep learning to linked health records and mammograms\n\n\nRadiology\n\n\nhttps://doi.org/10.1148/radiol.2019182622\n\n\n\n\n2019\n\n\nAn evaluation toolkit to guide model selection and cohort definition in causal inference\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1906.00442\n\n\n\n\n2019\n\n\nComment: causal inference competitions: where should we aim?\n\n\nStatistical Science\n\n\nhttps://doi.org/10.1214/18-STS679\n\n\n\n\n2018\n\n\nIn vivo cleavage rules and target repertoire of RNase III in Escherichia coli\n\n\nNucleic Acids Research\n\n\nhttps://doi.org/10.1093/nar/gky816\n\n\n\n\n2018\n\n\nBenchmarking Framework for Performance-Evaluation of Causal Inference Analysis\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1802.05046\n\n\n\n\n\nNo matching items\n\n\nMay go out of date. Please see my Google Scholar page for the most up-to-date information."
+    "text": "Publications\n\n\n\n\n\nDate\n\n\nTitle\n\n\nVenue\n\n\nDOI\n\n\n\n\n\n\n2024\n\n\nUsing Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa\n\n\nInternational Joint Conference on Artificial Intelligence (IJCAI)\n\n\nhttps://doi.org/10.24963/ijcai.2024/792\n\n\n\n\n2024\n\n\nImproving Inverse Probability Weighting by Post-calibrating Its Propensity Scores\n\n\nEpidemiology\n\n\nhttps://doi.org/10.1097/ede.0000000000001733\n\n\n\n\n2024\n\n\nHierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.2401.17737\n\n\n\n\n2023\n\n\nCausalvis: Visualizations for Causal Inference\n\n\nCHI: Conference on Human Factors in Computing Systems\n\n\nhttps://doi.org/10.1145/3544548.3581236\n\n\n\n\n2023\n\n\nFairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization\n\n\nPacific Symposium on Biocomputing\n\n\nhttps://doi.org/10.1142/9789811270611_0019\n\n\n\n\n2021\n\n\nTrends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2\n\n\nMedRxiv\n\n\nhttps://doi.org/10.1101/2021.03.24.21251900\n\n\n\n\n2019\n\n\nScreening human embryos for polygenic traits has limited utility\n\n\nCell\n\n\nhttps://doi.org/10.1016/j.cell.2019.10.033\n\n\n\n\n2019\n\n\nA discriminative approach for finding and characterizing positivity violations using decision trees\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1907.08127\n\n\n\n\n2019\n\n\nPredicting breast cancer by applying deep learning to linked health records and mammograms\n\n\nRadiology\n\n\nhttps://doi.org/10.1148/radiol.2019182622\n\n\n\n\n2019\n\n\nAn evaluation toolkit to guide model selection and cohort definition in causal inference\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1906.00442\n\n\n\n\n2019\n\n\nComment: causal inference competitions: where should we aim?\n\n\nStatistical Science\n\n\nhttps://doi.org/10.1214/18-STS679\n\n\n\n\n2018\n\n\nIn vivo cleavage rules and target repertoire of RNase III in Escherichia coli\n\n\nNucleic Acids Research\n\n\nhttps://doi.org/10.1093/nar/gky684\n\n\n\n\n2018\n\n\nBenchmarking Framework for Performance-Evaluation of Causal Inference Analysis\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1802.05046\n\n\n\n\n\nNo matching items\n\n\nMay go out of date. Please see my Google Scholar page for the most up-to-date information."
   },
   {
     "objectID": "blog/2024/01-oui-love-plots/index.html",
@@ -558,6 +586,13 @@
     "title": "Causalvis: Visualizations for Causal Inference",
     "section": "Citation",
     "text": "Citation\n@inproceedings{guo2023causalvis,\n  title={Causalvis: Visualizations for Causal Inference},\n  author={Guo, Grace and Karavani, Ehud and Endert, Alex and Kwon, Bum Chul},\n  booktitle={Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems},\n  pages={1--20},\n  year={2023}\n}"
+  },
+  {
+    "objectID": "publications/2024-bicause-trees/index.html#citation",
+    "href": "publications/2024-bicause-trees/index.html#citation",
+    "title": "Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation",
+    "section": "Citation",
+    "text": "Citation\n@article{ter2024hierarchical,\n  title={Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation},\n  author={Ter-Minassian, Lucile and Szlak, Liran and Karavani, Ehud and Holmes, Chris and Shimoni, Yishai},\n  journal={arXiv preprint arXiv:2401.17737},\n  year={2024}\n}"
   },
   {
     "objectID": "publications/2024-propensity-score-calibration/index.html",

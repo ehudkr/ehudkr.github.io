@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ehud Karavani">
-<meta name="dcterms.date" content="2024-04-15">
-<meta name="description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
+<meta name="dcterms.date" content="2024-01-31">
+<meta name="description" content="A tree-based method for stratifying data while optimizing for balancing in order to obtain interpretable effect estimation and abstention in non-overlapping regions.">
 
-<title>Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani</title>
+<title>Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation | Ehud Karavani</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,11 +119,11 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani">
-<meta property="og:description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
+<meta property="og:title" content="Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation | Ehud Karavani">
+<meta property="og:description" content="A tree-based method for stratifying data while optimizing for balancing in order to obtain interpretable effect estimation and abstention in non-overlapping regions.">
 <meta property="og:site_name" content="Ehud Karavani">
-<meta name="twitter:title" content="Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores | Ehud Karavani">
-<meta name="twitter:description" content="Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.">
+<meta name="twitter:title" content="Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation | Ehud Karavani">
+<meta name="twitter:description" content="A tree-based method for stratifying data while optimizing for balancing in order to obtain interpretable effect estimation and abstention in non-overlapping regions.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -193,13 +193,13 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
  <span class="dropdown-text">Medium</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="https://bsky.app/profile/ehudk.bsky.social" rel="me" target="_new">
+ <span class="dropdown-text"><span style="margin-left:.1rem;margin-right:.25em;padding-right:1px;"><iconify-icon inline="" icon="logos:bluesky"></iconify-icon></span> Bluesky</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="https://twitter.com/ehudkar" rel="me" target="_new"><i class="bi bi-twitter" role="img" aria-label="twitter">
 </i> 
  <span class="dropdown-text">Twitter</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://bsky.app/profile/ehudk.bsky.social" rel="me" target="_new">
- <span class="dropdown-text"><span style="margin-left:.1rem;margin-right:.25em;padding-right:1px;"><iconify-icon inline="" icon="fluent-emoji:blue-square"></iconify-icon></span> Bluesky</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://mastodon.social/@ehudk" rel="me" target="_new"><i class="bi bi-mastodon" role="img" aria-label="mastodon">
@@ -236,14 +236,14 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <ul>
   <li><a href="#citation" id="toc-citation" class="nav-link active" data-scroll-target="#citation">Citation</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2022-propensity-score-calibration/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2022-propensity-score-calibration/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2024-bicause-trees/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2024-bicause-trees/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores</h1>
+<h1 class="title">Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation</h1>
   <div class="quarto-categories">
     <div class="quarto-category">causal inference</div>
     <div class="quarto-category">methods</div>
@@ -252,7 +252,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    <p>Calibrating propensity scores can improve effect estimation for expressive. non-linear statistical estimators.</p>
+    <p>A tree-based method for stratifying data while optimizing for balancing in order to obtain interpretable effect estimation and abstention in non-overlapping regions.</p>
   </div>
 </div>
 
@@ -261,11 +261,22 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Rom Gutman </p>
+    <p class="author">Lucile Tar-Minassian </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            Technion - Israel Institute of Technology
+            IBM Research
+          </p>
+        <p class="affiliation">
+            University of Oxford
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Liran Szlak </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            IBM Research
           </p>
       </div>
     <div class="quarto-title-meta-contents">
@@ -274,6 +285,14 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
             IBM Research
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Chris Holmes </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Oxford
           </p>
       </div>
     <div class="quarto-title-meta-contents">
@@ -292,7 +311,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 15, 2024</p>
+      <p class="date">January 31, 2024</p>
     </div>
   </div>
   
@@ -301,7 +320,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <div class="quarto-title-meta-heading">Doi</div>
     <div class="quarto-title-meta-contents">
       <p class="doi">
-        <a href="https://doi.org/https://doi.org/10.1097/ede.0000000000001733">https://doi.org/10.1097/ede.0000000000001733</a>
+        <a href="https://doi.org/https://doi.org/10.48550/arXiv.2401.17737">https://doi.org/10.48550/arXiv.2401.17737</a>
       </p>
     </div>
   </div>
@@ -310,7 +329,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    <p>Theoretical guarantees for causal inference using propensity scores are partially based on the scores behaving like conditional probabilities. However, scores between zero and one do not necessarily behave like probabilities, especially when output by flexible statistical estimators. We perform a simulation study to assess the error in estimating the average treatment effect before and after applying a simple and well-established postprocessing method to calibrate the propensity scores. We observe that post-calibration reduces the error in effect estimation and that larger improvements in calibration result in larger improvements in effect estimation. Specifically, we find that expressive tree-based estimators, which are often less calibrated than logistic regression-based models initially, tend to show larger improvements relative to logistic regression-based models. Given the improvement in effect estimation and that post-calibration is computationally cheap, we recommend its adoption when modeling propensity scores with expressive models.</p>
+    <p>Interpretability and transparency are essential for incorporating causal effect models from observational data into policy decision-making. They can provide trust for the model in the absence of ground truth labels to evaluate the accuracy of such models. To date, attempts at transparent causal effect estimation consist of applying post hoc explanation methods to black-box models, which are not interpretable. Here, we present BICauseTree: an interpretable balancing method that identifies clusters where natural experiments occur locally. Our approach builds on decision trees with a customized objective function to improve balancing and reduce treatment allocation bias. Consequently, it can additionally detect subgroups presenting positivity violations, exclude them, and provide a covariate-based definition of the target population we can infer from and generalize to. We evaluate the method’s performance using synthetic and realistic datasets, explore its bias-interpretability tradeoff, and show that it is comparable with existing approaches</p>
   </div>
 </div>
 
@@ -318,17 +337,26 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </header>
 
 
-<div class="column-page">
-<p><img src="figure1.svg" class="img-fluid"></p>
+<div>
+
 </div>
-<p>Honorable mention: <a href="https://ngreifer.github.io/blog/what-s-new-in-weightit-version-1-0-0/#other-updates">post-calibration procedures are now available in <code>WeightIt</code> v.1.0.0</a></p>
+<div class="column-page quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="bias.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="depth_over_bias.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">gutman2022propensity</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={Propensity score models are better when post-calibrated},</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Gutman, Rom and Karavani, Ehud and Shimoni, Yishai},</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span>={arXiv preprint arXiv:2211.01221},</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2022}</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">ter2024hierarchical</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Ter-Minassian, Lucile and Szlak, Liran and Karavani, Ehud and Holmes, Chris and Shimoni, Yishai},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span>={arXiv preprint arXiv:2401.17737},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2024}</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
@@ -560,7 +588,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/ehud\.co");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -898,4 +926,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2022-propensity-score-calibration/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2022-propensity-score-calibration/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2024-bicause-trees/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2024-bicause-trees/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

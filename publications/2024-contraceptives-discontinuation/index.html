@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ehud Karavani">
-<meta name="dcterms.date" content="2019-06-02">
-<meta name="description" content="A machine learning approach for evaluating causal inference models.">
+<meta name="dcterms.date" content="2024-08-03">
+<meta name="description" content="An observational study in sub-Saharan Africa suggesting injectable contraceptives have higher discontinuation rates due to side effects compared to other non-injectable methods.">
 
-<title>An evaluation toolkit to guide model selection and cohort definition in causal inference | Ehud Karavani</title>
+<title>Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa | Ehud Karavani</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,11 +119,11 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="An evaluation toolkit to guide model selection and cohort definition in causal inference | Ehud Karavani">
-<meta property="og:description" content="A machine learning approach for evaluating causal inference models.">
+<meta property="og:title" content="Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa | Ehud Karavani">
+<meta property="og:description" content="An observational study in sub-Saharan Africa suggesting injectable contraceptives have higher discontinuation rates due to side effects compared to other non-injectable methods.">
 <meta property="og:site_name" content="Ehud Karavani">
-<meta name="twitter:title" content="An evaluation toolkit to guide model selection and cohort definition in causal inference | Ehud Karavani">
-<meta name="twitter:description" content="A machine learning approach for evaluating causal inference models.">
+<meta name="twitter:title" content="Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa | Ehud Karavani">
+<meta name="twitter:description" content="An observational study in sub-Saharan Africa suggesting injectable contraceptives have higher discontinuation rates due to side effects compared to other non-injectable methods.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -236,24 +236,23 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <ul>
   <li><a href="#citation" id="toc-citation" class="nav-link active" data-scroll-target="#citation">Citation</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2019-causal-inference-evaluation-toolkit/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2019-causal-inference-evaluation-toolkit/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2024-contraceptives-discontinuation/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2024-contraceptives-discontinuation/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">An evaluation toolkit to guide model selection and cohort definition in causal inference</h1>
+<h1 class="title">Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa</h1>
   <div class="quarto-categories">
     <div class="quarto-category">causal inference</div>
-    <div class="quarto-category">evaluations</div>
     <div class="quarto-category">healthcare</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    <p>A machine learning approach for evaluating causal inference models.</p>
+    <p>An observational study in sub-Saharan Africa suggesting injectable contraceptives have higher discontinuation rates due to side effects compared to other non-injectable methods.</p>
   </div>
 </div>
 
@@ -262,11 +261,39 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Yishai Shimoni </p>
+    <p class="author">Victor Akinwande </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Carnegie Mellon University
+          </p>
+        <p class="affiliation">
+            
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Megan MacGregor </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Simon Fraser University
+          </p>
+        <p class="affiliation">
+            
+          </p>
+        <p class="affiliation">
+            
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Celia Cintas </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
             IBM Research
+          </p>
+        <p class="affiliation">
+            
           </p>
       </div>
     <div class="quarto-title-meta-contents">
@@ -276,51 +303,44 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
         <p class="affiliation">
             IBM Research
           </p>
+        <p class="affiliation">
+            
+          </p>
       </div>
     <div class="quarto-title-meta-contents">
-    <p class="author">Sivan Ravid </p>
+    <p class="author">Dennis Wei </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
             IBM Research
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Peter Bak </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            IBM Research
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Tan Hung Ng </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            IBM Watson Health
           </p>
         <p class="affiliation">
             
           </p>
       </div>
     <div class="quarto-title-meta-contents">
-    <p class="author">Sharon Hensley Alford </p>
+    <p class="author">Kush Varshney </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            IBM Watson Health
+            IBM Research
           </p>
         <p class="affiliation">
             
           </p>
       </div>
     <div class="quarto-title-meta-contents">
-    <p class="author">Yaara Goldschmidt </p>
+    <p class="author">Pablo Nepomnaschy </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            IBM Research
+            Simon Fraser University
+          </p>
+        <p class="affiliation">
+            
+          </p>
+        <p class="affiliation">
+            
           </p>
       </div>
   </div>
@@ -331,7 +351,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 2, 2019</p>
+      <p class="date">August 3, 2024</p>
     </div>
   </div>
   
@@ -340,7 +360,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <div class="quarto-title-meta-heading">Doi</div>
     <div class="quarto-title-meta-contents">
       <p class="doi">
-        <a href="https://doi.org/https://doi.org/10.48550/arXiv.1906.00442">https://doi.org/10.48550/arXiv.1906.00442</a>
+        <a href="https://doi.org/https://doi.org/10.24963/ijcai.2024/792">https://doi.org/10.24963/ijcai.2024/792</a>
       </p>
     </div>
   </div>
@@ -349,7 +369,7 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    <p>Real world observational data, together with causal inference, allow the estimation of causal effects when randomized controlled trials are not available. To be accepted into practice, such predictive models must be validated for the dataset at hand, and thus require a comprehensive evaluation toolkit, as introduced here. Since effect estimation cannot be evaluated directly, we turn to evaluating the various observable properties of causal inference, namely the observed outcome and treatment assignment. We developed a toolkit that expands established machine learning evaluation methods and adds several causal-specific ones. Evaluations can be applied in cross-validation, in a train-test scheme, or on the training data. Multiple causal inference methods are implemented within the toolkit in a way that allows modular use of the underlying machine learning models. Thus, the toolkit is agnostic to the machine learning model that is used. We showcase our approach using a rheumatoid arthritis cohort (consisting of about 120K patients) extracted from the IBM MarketScan(R) Research Database. We introduce an iterative pipeline of data definition, model definition, and model evaluation. Using this pipeline, we demonstrate how each of the evaluation components helps drive model selection and refinement of data extraction criteria in a way that provides more reproducible results and ensures that the causal question is answerable with available data. Furthermore, we show how the evaluation toolkit can be used to ensure that performance is maintained when applied to subsets of the data, thus allowing exploration of questions that move towards personalized medicine.</p>
+    <p>Discontinuation rates vary by family planning method and across socio-economic contexts. Understanding these variations and their causes is paramount for developing and implementing policies aimed at curbing discontinuation rates. Randomized controlled trials (RCTs) are ideal for obtaining this information, but this design can be extremely expensive and logistically complex. The ongoing collection of comprehensive data sets, such as Demographic and Health Surveys (DHS data), when combined with machine learning methods, present an alternative and relatively cost-effective means of evidence gathering for policy development. Here, we use causal inference to estimate the effect of injectable contraceptive use on discontinuation over the 12-month period that follows its adoption. To that aim, we use retrospective observational data from seven sub-Saharan African countries captured by the DHS’ Contraceptive Calendar. We use machine learning methods to characterize data regions that share common covariate support. We find that the use of injectables increased the risk of discontinuation in four of the seven countries analyzed. Consistent with existing literature, we find that concerns with the side-effects of injectables appear to be the most frequent reason for discontinuation. However, these risks decreased after adjusting for socio-economic factors. As risk estimates may not apply uniformly within populations, we characterized the sub-populations for robust estimations by their geographical region, level of unmet needs, marital status, level of education, and age of first sex.</p>
   </div>
 </div>
 
@@ -357,15 +377,17 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </header>
 
 
-<p>This manuscript combines the evaluation suite with a specific use-case. A readers-digest version focusing on ROC curves for propensity score models is also <a href="../../blog/2020/03-ml-metrics-for-causal-inference/index.html">available here</a></p>
-<!-- figures -->
+<p>IJCAI 2024: Special Track on AI for Good</p>
+<div class="column-page">
+<p><img src="figure1.svg" class="img-fluid"></p>
+</div>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">shimoni2019evaluation</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={An evaluation toolkit to guide model selection and cohort definition in causal inference},</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Shimoni, Yishai and Karavani, Ehud and Ravid, Sivan and Bak, Peter and Ng, Tan Hung and Alford, Sharon Hensley and Meade, Denise and Goldschmidt, Yaara},</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span>={arXiv preprint arXiv:1906.00442},</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2019}</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inproceedings</span>{<span class="ot">akinwande2024using</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Akinwande, Victor and MacGregor, Megan and Cintas, Celia and Karavani, Ehud and Wei, Dennis and Varshney, Kush and Nepomnaschy, Pablo},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">booktitle</span>={International Joint Conference on Artificial Intelligence},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2024}</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
@@ -935,4 +957,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2019-causal-inference-evaluation-toolkit/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2019-causal-inference-evaluation-toolkit/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/publications/2024-contraceptives-discontinuation/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/publications/2024-contraceptives-discontinuation/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
