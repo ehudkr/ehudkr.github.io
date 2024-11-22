@@ -1,4 +1,5 @@
-freeze: auto
+execute: 
+  freeze: true
 
 format: 
   html: 
