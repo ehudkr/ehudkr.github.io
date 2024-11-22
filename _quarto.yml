@@ -53,15 +53,15 @@ website:
           href: https://medium.com/@ehudkr
           rel: me  
           target: "_new"
+        - text: "[{{< iconify logos bluesky >}}]{style='margin-left:.1rem;margin-right:.25em;padding-right:1px;'} Bluesky"
+          href: https://bsky.app/profile/ehudk.bsky.social
+          rel: me  
+          target: "_new"
         - icon: twitter
           text: Twitter
           aria-label: twitter
           href: https://twitter.com/ehudkar
           rel: me 
-          target: "_new"
-        - text: "[{{< iconify fluent-emoji blue-square >}}]{style='margin-left:.1rem;margin-right:.25em;padding-right:1px;'} Bluesky"
-          href: https://bsky.app/profile/ehudk.bsky.social
-          rel: me  
           target: "_new"
         - icon: mastodon
           text: Mastodon

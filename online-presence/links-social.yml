@@ -3,8 +3,8 @@
   icon_family: bi
   href: https://twitter.com/ehudkar
 - name: Bluesky
-  icon_name: blue-square
-  icon_family: fluent-emoji
+  icon_name: bluesky
+  icon_family: logos
   href: https://bsky.app/profile/ehudk.bsky.social
 - name: Mastodon
   icon_name: mastodon
