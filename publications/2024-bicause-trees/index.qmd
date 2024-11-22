@@ -1,0 +1,71 @@
+---
+title: "Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation"
+date: 2024-01-31
+doi: https://doi.org/10.48550/arXiv.2401.17737
+author:
+  - name: Lucile Tar-Minassian
+    affiliations:
+      - ref: ibmrisrl
+      - ref: oxfordstats
+  - name: Liran Szlak
+    affiliations:
+      - ref: ibmrisrl
+  - name: Ehud Karavani 
+    affiliations:
+      - ref: ibmrisrl
+  - name: Chris Holmes 
+    affiliations:
+      - ref: oxfordstats
+  - name: Yishai Shimoni
+    affiliations: 
+      - ref: ibmrisrl
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Causal Machine Learning for Healthcare and Life Sciences
+  - id: oxfordstats
+    name: University of Oxford
+    counter: UK
+    department: Department of Statistics
+categories:
+  - causal inference
+  - methods
+# keywords: 
+publication: "Arxiv"
+journal: 
+  title: "Arxiv"
+pdf: https://arxiv.org/pdf/2401.17737
+abstract: >
+  Interpretability and transparency are essential for incorporating causal effect models from observational data into policy decision-making. 
+  They can provide trust for the model in the absence of ground truth labels to evaluate the accuracy of such models. 
+  To date, attempts at transparent causal effect estimation consist of applying post hoc explanation methods to black-box models, which are not interpretable. 
+  Here, we present BICauseTree: an interpretable balancing method that identifies clusters where natural experiments occur locally. 
+  Our approach builds on decision trees with a customized objective function to improve balancing and reduce treatment allocation bias. 
+  Consequently, it can additionally detect subgroups presenting positivity violations, exclude them, and provide a covariate-based definition of the target population we can infer from and generalize to. 
+  We evaluate the method's performance using synthetic and realistic datasets, explore its bias-interpretability tradeoff, and show that it is comparable with existing approaches
+description: >
+  A tree-based method for stratifying data while optimizing for balancing in order to obtain interpretable effect estimation and abstention in non-overlapping regions.
+---
+
+:::{.column-page layout-ncol=2}
+
+![](bias.png)
+
+![](depth_over_bias.png)
+
+:::
+
+
+
+## Citation
+```bibtex
+@article{ter2024hierarchical,
+  title={Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation},
+  author={Ter-Minassian, Lucile and Szlak, Liran and Karavani, Ehud and Holmes, Chris and Shimoni, Yishai},
+  journal={arXiv preprint arXiv:2401.17737},
+  year={2024}
+}
+```
+
