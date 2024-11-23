@@ -1,0 +1,204 @@
+---
+title: "Uncertainty-aware model comparison"
+subtitle: > 
+  Comparing model performance rigorously and meaningfully using statistics.
+author: "Ehud Karavani"
+date: 2024/08/30
+date-modified: last-modified
+# image: images/ouilove_plot.png
+bibliography: references.bib
+categories: 
+  - machine learning
+  - deep learning
+  - statistics
+---
+
+## Motivation
+I'm under the impression that machine learning models are not benchmarked properly, making it difficult to draw meaningful conclusions.
+Too often than not, models will be evaluated using a single number, with no uncertainty around that number.
+Too often than not, the performance of different models will not be assessed directly, and again, no uncertainty around that difference in performance[^1].
+
+[^1]: and we know the standard error of the difference between means is larger than the standard error of either mean. 
+
+This creates difficulty in understanding which models are comparable and which are superior. 
+Is a point difference of 0.1% between models on the leaderboard meaningful or a fluke?
+As the monetary (and environmental) costs of training these large language models (LLMs) skyrockets, we should be able to truly tell whether size matters and are larger models really are superior to their slimmer, more economical, versions.
+
+To solve that, we'll need to know the range of errors compatible with the model; not just the average score, but the uncertainty around it. 
+Unfortunately (non-Bayesian) machine learning and deep learning models don't lend themselves to uncertainty estimation easily. 
+Oftentimes, estimating the variability in model performance is done using the bootstrap (sampling data with replacement and refitting)[^5] or cross validation. 
+But fitting just a single model can exhaust unreasonable resources, so fitting is hundreds (or even thousands) of times just to obtain variance estimation is out of the question. 
+Luckily, there are other ways to estimate the variance of model performance using the variability within the dataset or asymptotics (that may very well kick in as the datasets can be large).
+We'll see how to utilize them.
+
+
+[^5]: One variant I've also seen in some settings is that the sample is kept fixed, and just evaluate difference random initializations of the model.
+
+### What's in it for you
+In this blog post I'll explore an approach to rigorously compare the performance of two (or more!) models directly.
+It will incorporate uncertainty that will allow us to assess whether a model is truly superior or inferior (or non-inferior) to others[^2].
+It will be a generalizable framework, allowing for multiple models, multiple metrics, multiple datasets, even at once.
+Moreover, it is totally decoupled from the actual models - you'll only need predictions and ground-truth labels. No need for refitting or retrofitting, only a forward pass.
+
+
+[^2]: These are formal well-defined statistical concepts that I'll introduce later down the post. 
+
+## Setup
+To achieve all that I will utilize Statistics; which I personally feel were long overlooked as the field of machine (and then deep) learning became more and more dominated by engineers (or engineering mindset rather than by scientists more versed in the scientific method and its philosophy).
+
+However, I'm a statistics reformer kind of person. 
+I will not trouble you with the zoo of statistical tests - it appears they are mostly just linear models [@lindelov2019common]. 
+You know, "regression". 
+Sometimes called "ANOVAs", but I know this jargon might intimidate some, so let's stick with "linear models" for now[^3].
+The most important point is that I will use this machinery to compare between models.
+The benefit using this framework is that it comes with 100+ years of statistics research focusing on uncertainty estimation - that, thanks to software available today, I could just apply off-the-shelf. 
+
+[^3]: Actually, we'll need "generalized linear (mixed) models", but I will build it slowly and gradually, you won't even notice. And we will also turn Bayesian, but it will be as easy, don't worry. 
+
+To be completely honest, I don't think this approach is novel, at least not in its basic version. 
+Although I haven't encountered it exactly as I'm going to present it, it might be the case I just haven't landed on the right keyword search on google.
+So, as always, some people will find this post informative and some will just scoff. 
+
+
+### Prerequisites
+Before I start, I'll cover some of the basics first, for completeness.
+If you're comfortable with statistical inference, regression, and model evaluation, then you can skip this (or at least skim it).
+
+#### Notations
+Throughout the post I'll use $X$ (`X`) to denote a feature matrix (covariates), $y$ (`y` or `y_true`) will be the ground truth labels coupled to $X$, and $\hat{y}$ (`y_pred`) will be the predictions from an arbitrary model $f(X)$ (a linear regression or a deep neural network) aiming to be as closest to $y$ as possible.
+
+The approach I'll present will only need $y$ and $\hat{y}$, making it independent of $f$ and whatever software or hardware it is attached to. 
+
+
+#### Individual-level errors
+Performance metrics are a way to quantify the performance of a model, assessing how the model errs by comparing the ground truth labels ($y$) to the predictions ($\hat{y}$).
+Most commonly known will be the mean squared error (MSE) if $y$ is continuous or log-loss (aka cross entropy) if $y$ is categorical. 
+If you are, like me, used to Scikit-learn's metrics API `metric(y_true, y-pred)` returning a single number - the average over the dataset, you might have forgotten that these errors can be calculated on an individual level. For instance $l_i = (y_i - \hat{y}_i)^2$ is the individual level squared error (which is later averaged to obtain the _mean_ squared error).
+
+Note that not all evaluation metrics allow individual-level errors.
+For instance, the ROC AUC (and many confusion matrix-based metrics) will often require aggregating over the sample, and individual-level errors might not be well-defined[^7].
+
+[^7]: There might be workarounds, but let's ignore those for the sake of this post, and focus on easily-accessible individual-level errors.
+
+#### Regression models are fancy average machines
+Linear models (those $y_i = \alpha + \beta X_i$, for example) end up estimating $E[Y|X]$. 
+Namely, the expected value of $Y$ given some level of $X$. 
+Basically, the average value of $Y$ in some setting.
+And if there is no $X$ (there is only an intercept, so $y_i = \alpha$), then that's just the average overall, look:
+
+```{python}
+import numpy as np
+import pandas as pd
+import statsmodels.formula.api as smf
+
+rng = np.random.default_rng(seed=0)
+
+y = rng.normal(loc=3, size=1000)
+ols = smf.ols(
+    "y ~ 1", 
+    data=pd.DataFrame({"y": y})
+).fit()
+print(f"Taking the mean of `y`: {y.mean():.4f}")
+print(f"The coefficient of the regression intercept: {ols.params[0]:.4f}")
+```
+
+The nice thing about the regression framework is that we also get inferential results (standard errors, confidence intervals, p-values...) for free, off-the-shelf.
+In the frequentist (read, "standard") regression setting, this is done using analytical asymptotic properties (no resampling and refitting) 
+
+```{python}
+print(ols.summary(slim=True))
+```
+
+#### Averaging individual-level errors with regression
+Tying the two subsections above together, given a ground truth vector $y$ and predictions $\hat{y}$, we can calculate the mean squared error as an average or with a regression.
+
+```{python}
+from sklearn.metrics import mean_squared_error
+
+y = rng.normal(loc=3, size=1000)
+y_pred = y + rng.normal(loc=0, scale=0.5, size=1000)
+
+individual_errors = (y - y_pred)**2
+ols = smf.ols(
+    "li ~ 1", 
+    data=pd.DataFrame({"li": individual_errors})
+).fit()
+print(f"Taking the mean of the squared errors with sklearn: {mean_squared_error(y, y_pred):.4f}")
+print(f"The coefficient of the regression intercept: {ols.params[0]:.4f}")
+```
+
+#### Generalization and statistical inference of model performance
+Model performance is a characteristic of the model. 
+Evaluating it on a given dataset is not the core interest of the researcher.
+We often care about generalization errors - figuring out what will be the performance when the model will be deployed publicly on unseen data. 
+
+This notion of generalization carries a very similar meaning to inferential statistics, 
+where the average in a sample is of little importance relative to the mean of the entire underlying population from which the dataset was sampled from[^6].
+And since the leap from sample average to population mean comes with some uncertainty to it, we often bound these estimates with uncertainty intervals around them[^4].
+
+[^6]: In the most basic example, say we are interested in the average height of men in a certain country. We sample men from that country and measure their height, but the average height of the sample is of little interest. What's interesting is what that average tells about the average height of the people in that country, or, in reverse - what can we infer about the population from the sample.
+
+[^4]: In this setting, I allude to confidence intervals, of course. Strictly speaking, they are not really uncertainty intervals (more like [compatibility intervals](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-020-01105-9)), but because I will also introduce Bayesian credible intervals later, I don't want to be sidetracked by the lingo, so I call them all uncertainty intervals.
+
+Like inferential statistics, in generalization we would like to infer what will the average error rate will be on unknown data out there in the world, using the sample of data we do have right now. 
+We don't  really care about the error in any given dataset, even if it is a test set that was not used for training, it is still just a sample from the possible population of data available in the world.
+The leap from the average error rate in the dataset to the errors out there comes with some uncertainty to it, and we'd like to know the likely range of that average error rate in the world.
+
+## Uncertainty-aware model comparison via regression
+As alluded to above, we'll use individual-level errors in a regression framework in order to infer the uncertainty around performance measures.
+Knowing whether all errors tightly clustered around zero or if their variance high will be useful information when we will take uncertainty-aware differences of performance between models.
+
+### Settings up data
+To demonstrate the process, we will need data and we will need models.
+I'll use toy data of a regression, rather than classification, task (i.e., a continuous target) for simplicity as squared errors were already introduced, but this can work with any individual-level metric.
+I will split it train and test, so the comparison will be performed on unseen-data. 
+As for models, I'll compare a linear (regression) with a nonlinear (boosting trees) one, just so we can see the difference in performance.
+
+```{python}
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import GradientBoostingRegressor
+
+X, y = load_diabetes(return_X_y=True, as_frame=True, scaled=False)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=rng.integers(1000))
+lr = LinearRegression().fit(X_train, y_train)
+gbt = GradientBoostingRegressor().fit(X_train, y_train)
+```
+
+Now let's calculate individual-level squared errors:
+```{python}
+lr_res = (y_test - lr.predict(X_test))**2
+gbt_res = (y_test - gbt.predict(X_test))**2
+```
+
+### model comparison
+To compare the difference in performance between the models, I'll model it as a regression task setting the individual-level errors as the target and a dummy coding of the models as the feature (together with an intercept)
+
+```{python}
+sqe = pd.concat({"lr": lr_res, "gbt": gbt_res}, names=["model", "id"]).rename("li")
+sqe
+```
+And putting that data into the regression[^8]:
+```{python}
+sqe = sqe.reset_index()
+ols = smf.ols("li ~ 1 + C(model)", data=sqe).fit()
+print(ols.summary(slim=True))
+``` 
+
+[^8]: We use the factor transformation `C(model)` to convert the `model` column, which contains strings, into 0-1 coding suitable for regression
+
+TODO: find models/data that differ significantly?
+
+## Going further
+
+### goind baysian
+regular anova often requires the df for a null hypothesis , but go figure what's the degrees of  freedom for ChatGPT. 
+bayesian estimation 
+
+### non-inferiority
+
+### extensions
+regression framework is easily extendable. 
+extensions: why regression? 
+
