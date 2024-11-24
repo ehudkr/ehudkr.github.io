@@ -13,6 +13,10 @@ categories:
   - statistics
 ---
 
+
+This post is still a work in process.
+
+
 ## Motivation
 I'm under the impression that machine learning models are not benchmarked properly, making it difficult to draw meaningful conclusions.
 Too often than not, models will be evaluated using a single number, with no uncertainty around that number.
@@ -99,7 +103,7 @@ ols = smf.ols(
     data=pd.DataFrame({"y": y})
 ).fit()
 print(f"Taking the mean of `y`: {y.mean():.4f}")
-print(f"The coefficient of the regression intercept: {ols.params[0]:.4f}")
+print(f"The coefficient of the regression intercept: {ols.params['Intercept']:.4f}")
 ```
 
 The nice thing about the regression framework is that we also get inferential results (standard errors, confidence intervals, p-values...) for free, off-the-shelf.
@@ -124,7 +128,7 @@ ols = smf.ols(
     data=pd.DataFrame({"li": individual_errors})
 ).fit()
 print(f"Taking the mean of the squared errors with sklearn: {mean_squared_error(y, y_pred):.4f}")
-print(f"The coefficient of the regression intercept: {ols.params[0]:.4f}")
+print(f"The coefficient of the regression intercept: {ols.params['Intercept']:.4f}")
 ```
 
 #### Generalization and statistical inference of model performance
@@ -160,8 +164,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import GradientBoostingRegressor
 
-X, y = make_friedman1(n_samples=200, noise=1, random_state=rng.integers(100))
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=rng.integers(100))
+X, y = make_friedman1(n_samples=400, noise=1, random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=2)
 lr = LinearRegression().fit(X_train, y_train)
 gbt = GradientBoostingRegressor().fit(X_train, y_train)
 ```
@@ -180,6 +184,7 @@ This merely requires concatenating the errors and indicating which model corresp
 sqe = pd.concat({"lr": pd.Series(lr_res), "gbt": pd.Series(gbt_res)}, names=["model", "id"]).rename("li")
 sqe
 ```
+
 And putting that data into the regression[^8]:
 ```{python}
 sqe = sqe.reset_index()
@@ -190,24 +195,130 @@ print(ols.summary(slim=True))
 [^8]: We use the factor transformation `C(model)` to convert the `model` column, which contains strings, into 0-1 coding suitable for regression
 
 We can now follow a standard interpretation of a linear model.
-The `C(model)[T.gbt]` variable (i.e., setting `gbt` to be encoded as 1 while `lr` was encoded as 0) quantifies the average difference in squared errors (variance) between the boosting trees and the linear regression models (`{python} round(ols.params['C(model)[T.gbt]'], 2)`).
-This allows us to directly assess the difference in model performance, but since we get asymptotic inference too, we can further place uncertainty around that difference - enabling us to tell whether it is statistically significant or not (p-value `{python} round(ols.pvalues['C(model)[T.gbt]'], 4)`), or at least what is a likely range for that error to be in the "population" of data from which the dataset came from (95% confidence intervals `{python} round(ols.conf_int(0.05).loc['C(model)[T.gbt]', 0], 1), round(ols.conf_int(0.05).loc['C(model)[T.gbt]', 1], 1)`).
+The `C(model)[T.lr]` variable (i.e., setting `lr` to be encoded as 1 while `gbt` was encoded as 0) quantifies the average difference in squared errors (variance) between the linear regression and the boosting trees models (`{python} round(ols.params['C(model)[T.lr]'], 2)`).
+This allows us to directly assess the difference in model performance, but since we get asymptotic inference too, we can further place uncertainty around that difference - enabling us to tell whether it is statistically significant or not (p-value `{python} round(ols.pvalues['C(model)[T.lr]'], 4)`), or at least what is a likely range for that error to be in the "population" of data from which the dataset came from (95% confidence intervals `{python} round(ols.conf_int(0.05).loc['C(model)[T.lr]', 0], 1), round(ols.conf_int(0.05).loc['C(model)[T.lr]', 1], 1)`).
 
 This direct comparison is the proper way to assess difference in performance.
 When deep learning model do get confidence intervals around them, they are often around the performance metrics itself. 
 But then, translating that to confidence intervals around the difference between two models (and their own confidence intervals) is not necessarily straightforward, and can we need to be extra cautious not to misinterpret the significance [@gelman2006difference].
 
-This was relatively easy. 
+This was relatively cool. 
+If you stop reading here it's ok.
+You are now able to compare models with some notion of uncertainty. 
 
 ## Going further
 
-### goind baysian
-regular anova often requires the df for a null hypothesis , but go figure what's the degrees of  freedom for ChatGPT. 
-bayesian estimation 
+### Going Bayesian
+Now, I'm positive what I presented here is equivalent to what happens in R when you use `anova(mod1, mod2)` (ANOVA with two models). 
+In R, you often specify a `test` parameter to `anova` (like `"Chisq"` for a likelihood ratio test).
+However, this requires knowing the degrees of freedom the models have in order to properly set up the null distribution to draw p-values from. 
+Now, go figure what the degrees of freedom of ChatGPT[^9].
+I'm not sure if the Wald test used for the regression p-value (or confidence intervals) sidesteps it, but regardless, 
+adopting a Bayesian framework will save us from asymptotic requirements, as the uncertainty will be directly assessed from the data at hand.
 
-### non-inferiority
+[^9]: Or any deep learning model, to that matter. It seems the classical statistical theory does not always correspond to observed evidence from these types of models.
+
+Adopting a Bayesian framework will come with multiple strengths:
+
+* First, it will allow us to focus on magnitude of difference and estimation instead of null-hypothesis significant testing [@kruschke2013bayesian]; this will extra important once we touch on non-inferiority tests.
+* Second, it will allow us to interpret the uncertainty intervals more naturally and give probabilistic estimates to how likely it is that one model is better than the other (replacing confidence intervals with credible intervals).
+* Third, the Bayesian regression framework is more easily expandable to allow for multiple datasets (mixed/multilevel models), multiple models, and more proper modeling (generalized linear models)
+
+
+#### Regression modeling in Python with `bambi`
+`bambi` is great, our very own `brms`. 
+It's a powerful tool to specify regression formula (like above for `statsmodels`) but then it will utilize `PyMC` behind the scenes to perform MCMC-based Bayesian estimation, and do lots of good stuff under the hood like specifying priors automatically etc.
+Repeating the model comparison from above is as simple as:
+
+```{python}
+import bambi as bmb
+
+# ols = smf.ols("li ~ 1 + C(model)", data=sqe).fit()
+bols = bmb.Model("li ~ 1 + model", data=sqe).fit()
+``` 
+
+Ideally, after fitting a Bayesian model you should evaluate the fit using some diagnostics and `az.trace_plot()`, which I will skip (but I checked, it's ok).
+
+
+### Non-inferiority testing
+Noninferiority is an interesting, well-established statistical concept, that I believe might benefit the deep-learning evaluation literature.
+Think of a clinical setting where you want to test a new treatment. 
+This treatment may not reduce mortality more than the standard of care, but this doesn't mean it useless.
+Maybe it can be taken at home once a month, instead of 3 times a week at the clinic and have much fewer side effects? 
+Wouldn't that improve patients' life?
+Well, it will improve their life assuming the mortality rate of the new treatment is not that worse than the current standard of care.
+If both treatment have _similar_ or _comparable_ mortality rate, but the newer one is cheaper/easier to administer, etc. wouldn't we prefer it over the standard of care?
+
+Our statistical testing perspective has now shifted - we no longer care if the new treatment is _superior_ to the current treatment,
+only that it is _noninferior_. 
+In practical terms, it means we no longer compare our interval against 0 (for difference or 1 for ratio),
+but against some other margin which we're willing to accept as _similar_ for all practical considerations. 
+Figure @fig-noninferiority_nejm summarizes nicely what we'd like to compare against in a noninferiority setup.
+
+![Noninferiority hypothesis testing taken from @mauri2017challenges](noninferiority_nejm.jpg){#fig-noninferiority_nejm}
+
+
+We can apply the same logic translating "treatments" to "models".
+Wouldn't we want to assess whether models have comparable performance and then select the model that is simpler/cheaper to train or has a small carbon footprint?
+Is it really worth spending x100 more FLOPs for a point improvement of 0.1 in some metric, 
+that we don't even know how the variance around that 0.1 improvement looks like?
+We should compare models in a way that will show us the fuller picture and allow us to make a truly informed decision about model selection.
+
+#### Bayesian noninferiority testing
+The Bayesian inference framework, focusing on estimation and providing a full posterior distribution of the difference in performance, makes it really easy to test for noninferiority. 
+We can use the Region of Practical Equivalence (ROPE) to specify a region that is equivalent to the null, 
+meaning it has practically no effect of interest and is therefore negligible (e.g., within 1% change in performance between model is good enough [@kruschke2018rejecting]).
+
+```{python}
+import arviz as az
+
+az.plot_posterior(
+    bols, var_names="model",
+    ref_val=0, 
+    rope=[-0.1*np.std(y_test), 0.1*np.std(y_test)], 
+)
+```
+
+For example, we see the High Density Interval (HDI, the interval equivalent to a confidence interval in some sense) does not overlap with the ROPE at all, 
+although 1% of the entire posterior distribution does overlap with the ROPE, suggesting there's a 1% chance the the difference in performance is actually equivalent. 
+Additionally, 0.3% of the distribution is below 0, suggesting there's a miniscule (but existing) chance that gradient boosting trees are actually worse than linear regression on this prediction task, but that is practically negligible. 
+
 
 ### extensions
-regression framework is easily extendable. 
-extensions: why regression? 
+This regression framework for comparing models is easily extendable, especially the Bayesian one.
+Here are some examples:
+
+1. **Multiple datasets: assess overall performance over multiple datasets**.  
+   By concatenating the individual-level errors from multiple datasets, but still examine the difference between models.
+   In such case, however, the response might no longer be individual and identically distributed (IID), because they originate from the same models.
+   Ignoring these correlations in observations and assuming they are IID might make our estimates overly confident, which is the counterproductive to our main goal of assessing uncertainty properly. 
+   Luckily, we can apply multilevel modeling (mixed linear models) to regress away these dependencies simply by specifying
+   `li ~ 1 + model + (1 | dataset)`[^10] [^11]. 
+2. **Multiple models: Compare multiple models**. 
+   Extending the dummy encoding of the model to any other contrast encoding between models can be done in a straightforward way, and allow comparing multiple models simultaneously. 
+3. **Multiple metrics: simultaneously**
+   If we have several metrics that interest us than we can model the difference between models on all of them simultaneously by stacking the different errors side-by-side and making a multivariate regression model. 
+4. **Many types of metrics**
+   So far I've discussed the squared error, but this framework can support non-continuous errors (metric) too.
+   For example, a classification model can be evaluated using the log-loss in a similar way to how it was done above, 
+   but we can also use the 0-1 loss instead--which is a much more interpretable loss--and use a logistic-regression instead of a linear regression model.
+3. **Proper modeling of the errors**. 
+   I've used a linear model so far, but it assumes the response (in our case the individual-level errors) can range between $-\infty$ to $\infty$. 
+   If we want to respect that support, we should, instead, 
+   model it with a Gamma regression - a generalized linear model with a Gamma distribution (and a log-link), 
+   which operates on the $(0, \infty)$ range.[^12]
+4. **Incorporate metadata**
+   Models (and datasets) may come with plenty of metadata (e.g., number of parameters). 
+   These metadata can be incorporated into the regression as additional covariates and allow us to make even more interesting conclusions than just comparing models.
+   For example, incorporating model size will enable us to discuss about difference in performance between models *while holding model size constant*. 
+   This will make cross-player comparison (e.g., GPT vs. Gemini vs. Claude) much more juicy.
+
+
+[^10]: There are frequentist mixed models, and these correlation structures might also be accounted for used Generalized Estimating Equations (GEE), but their uncertainties are not always trustworthy. Bayesian mixed models, however, still shine. 
+[^11]: Once in the realm of multiple models multiple dataset, it may be interesting to evaluate performance in the item-response framework to also get a gist of what datasets are easier or harder.
+[^12]: Actually, since errors can be truly 0, there might be a need to extend the model to be a hurdle Gamma model.
+
+
+## Conclusions
+
 
