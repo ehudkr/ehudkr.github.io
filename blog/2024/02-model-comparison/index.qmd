@@ -320,5 +320,9 @@ Here are some examples:
 
 
 ## Conclusions
-
+I've presented a framework to make model comparison rigorously and meaningfully by incorporating uncertainty measure around performance difference.
+The framework is super easy because it builds on top of regression models, widely available in every scientific software, taking advantage of them just being fancy extendable averaging machines. 
+This opens up many possibilities of properly comparing multiple models on multiple datasets and multiple metrics.
+Most importantly, it enables us to perform noninferiority tests and understand whether two models are comparable (have similar performance) even though one of them may be much smaller / easier to train / cheaper to train / have smaller carbon footprint. 
+This may encourage researchers to come up with substantially new approaches, rather than chasing negligible improvements of fraction of a percentage in leaderboards.
 
