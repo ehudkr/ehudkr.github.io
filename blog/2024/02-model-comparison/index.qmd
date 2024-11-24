@@ -155,28 +155,29 @@ I will split it train and test, so the comparison will be performed on unseen-da
 As for models, I'll compare a linear (regression) with a nonlinear (boosting trees) one, just so we can see the difference in performance.
 
 ```{python}
-from sklearn.datasets import load_diabetes
+from sklearn.datasets import make_friedman1
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import GradientBoostingRegressor
 
-X, y = load_diabetes(return_X_y=True, as_frame=True, scaled=False)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=rng.integers(1000))
+X, y = make_friedman1(n_samples=200, noise=1, random_state=rng.integers(100))
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=rng.integers(100))
 lr = LinearRegression().fit(X_train, y_train)
-rf = RandomForestRegressor().fit(X_train, y_train)
+gbt = GradientBoostingRegressor().fit(X_train, y_train)
 ```
 
 Now let's calculate individual-level squared errors:
 ```{python}
 lr_res = (y_test - lr.predict(X_test))**2
-rf_res = (y_test - gbt.predict(X_test))**2
+gbt_res = (y_test - gbt.predict(X_test))**2
 ```
 
-### model comparison
-To compare the difference in performance between the models, I'll model it as a regression task setting the individual-level errors as the target and a dummy coding of the models as the feature (together with an intercept)
+### Comparing models
+To compare the difference in performance between the models, I'll model it as a regression task setting the individual-level errors as the target and a dummy coding of the models as the feature (together with an intercept). 
+This merely requires concatenating the errors and indicating which model corresponds to them.
 
 ```{python}
-sqe = pd.concat({"lr": lr_res, "rf": rf_res}, names=["model", "id"]).rename("li")
+sqe = pd.concat({"lr": pd.Series(lr_res), "gbt": pd.Series(gbt_res)}, names=["model", "id"]).rename("li")
 sqe
 ```
 And putting that data into the regression[^8]:
@@ -188,7 +189,15 @@ print(ols.summary(slim=True))
 
 [^8]: We use the factor transformation `C(model)` to convert the `model` column, which contains strings, into 0-1 coding suitable for regression
 
+We can now follow a standard interpretation of a linear model.
+The `C(model)[T.gbt]` variable (i.e., setting `gbt` to be encoded as 1 while `lr` was encoded as 0) quantifies the average difference in squared errors (variance) between the boosting trees and the linear regression models (`{python} round(ols.params['C(model)[T.gbt]'], 2)`).
+This allows us to directly assess the difference in model performance, but since we get asymptotic inference too, we can further place uncertainty around that difference - enabling us to tell whether it is statistically significant or not (p-value `{python} round(ols.pvalues['C(model)[T.gbt]'], 4)`), or at least what is a likely range for that error to be in the "population" of data from which the dataset came from (95% confidence intervals `{python} round(ols.conf_int(0.05).loc['C(model)[T.gbt]', 0], 1), round(ols.conf_int(0.05).loc['C(model)[T.gbt]', 1], 1)`).
 
+This direct comparison is the proper way to assess difference in performance.
+When deep learning model do get confidence intervals around them, they are often around the performance metrics itself. 
+But then, translating that to confidence intervals around the difference between two models (and their own confidence intervals) is not necessarily straightforward, and can we need to be extra cautious not to misinterpret the significance [@gelman2006difference].
+
+This was relatively easy. 
 
 ## Going further
 
