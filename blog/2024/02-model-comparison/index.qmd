@@ -158,25 +158,25 @@ As for models, I'll compare a linear (regression) with a nonlinear (boosting tre
 from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.ensemble import RandomForestRegressor
 
 X, y = load_diabetes(return_X_y=True, as_frame=True, scaled=False)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=rng.integers(1000))
 lr = LinearRegression().fit(X_train, y_train)
-gbt = GradientBoostingRegressor().fit(X_train, y_train)
+rf = RandomForestRegressor().fit(X_train, y_train)
 ```
 
 Now let's calculate individual-level squared errors:
 ```{python}
 lr_res = (y_test - lr.predict(X_test))**2
-gbt_res = (y_test - gbt.predict(X_test))**2
+rf_res = (y_test - gbt.predict(X_test))**2
 ```
 
 ### model comparison
 To compare the difference in performance between the models, I'll model it as a regression task setting the individual-level errors as the target and a dummy coding of the models as the feature (together with an intercept)
 
 ```{python}
-sqe = pd.concat({"lr": lr_res, "gbt": gbt_res}, names=["model", "id"]).rename("li")
+sqe = pd.concat({"lr": lr_res, "rf": rf_res}, names=["model", "id"]).rename("li")
 sqe
 ```
 And putting that data into the regression[^8]:
@@ -188,7 +188,7 @@ print(ols.summary(slim=True))
 
 [^8]: We use the factor transformation `C(model)` to convert the `model` column, which contains strings, into 0-1 coding suitable for regression
 
-TODO: find models/data that differ significantly?
+
 
 ## Going further
 
