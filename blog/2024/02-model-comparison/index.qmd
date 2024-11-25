@@ -5,13 +5,15 @@ subtitle: >
 author: "Ehud Karavani"
 date: 2024/08/30
 date-modified: last-modified
-# image: images/ouilove_plot.png
+image: ./noninferiority_nejm.jpg
 bibliography: references.bib
 categories: 
   - machine learning
   - deep learning
   - statistics
   - meta-science
+execute: 
+  freeze: true
 ---
 
 
@@ -267,7 +269,9 @@ Repeating the model comparison from above is as simple as:
 import bambi as bmb
 
 # ols = smf.ols("li ~ 1 + C(model)", data=sqe).fit()
-bols = bmb.Model("li ~ 1 + model", data=sqe).fit()
+bols = bmb.Model("li ~ 1 + model", data=sqe).fit(
+   cores=1,  # play nice with `quarto render` for some reason
+)
 ``` 
 
 Ideally, after fitting a Bayesian model you should evaluate the fit using some diagnostics and `az.trace_plot()`, which I will skip (but I checked, it's ok).
@@ -281,10 +285,11 @@ meaning it has practically no effect of interest and is therefore negligible (e.
 ```{python}
 import arviz as az
 
+loss_std = sqe["li"].std()
 az.plot_posterior(
     bols, var_names="model",
     ref_val=0, 
-    rope=[-0.1*sqe.loc["li"].std(), 0.1*sqe.loc["li"].std()],  
+    rope=[-0.1*loss_std, 0.1*loss_std],  
 )
 ```
 
@@ -363,6 +368,7 @@ sqe = pd.concat(
     {"friedman1": sqe, "friedman2": friedman2_sqe.reset_index()},
     names=["dataset"],
 ).reset_index().drop(columns="level_1")
+sqe
 ```
 
 Now we can fit a multilevel Gamma regression on the combined data:
@@ -377,6 +383,7 @@ bgamma = bmb.Model(
     tune=2000,
     target_accept=0.94,
     random_seed=11,
+    cores=1  # play nice with `quarto render` for some reason
 )
 ```
 
@@ -386,7 +393,7 @@ And investigate the posteriors:
 az.plot_posterior(
     bols, var_names="model",
     ref_val=0, 
-    rope=[-0.1*sqe.loc["li"].std(), 0.1*sqe.loc["li"].std()], 
+    rope=[-0.1*loss_std, 0.1*loss_std], 
 )
 
 ```
