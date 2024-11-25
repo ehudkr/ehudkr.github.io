@@ -300,8 +300,8 @@ Additionally, 0.3% of the distribution is below 0, suggesting there's a miniscul
 -->
 
 For example, we see both the High Density Interval (HDI, the interval equivalent to a confidence interval in some sense) 
-and the entire posterior distribution do overlap some with the ROPE, suggesting there's a ~3.5% chance the difference in performance is actually equivalent. 
-Additionally, ~0.2% of the distribution is below 0, suggesting there's a miniscule (but existing) chance that gradient boosting trees are actually worse than linear regression on this prediction task, but that the magnitude in which they are worse is practically negligible.
+and the entire posterior distribution do overlap some with the ROPE, suggesting there's a ~4% chance the difference in performance is actually equivalent. 
+Additionally, ~0.5% of the distribution is below 0, suggesting there's a miniscule (but existing) chance that gradient boosting trees are actually worse than linear regression on this prediction task, but that the magnitude in which they are worse is practically negligible.
 However, the lion share of the evidence suggests the linear regression prediction model has higher errors than the boosting trees.
 
 
@@ -391,7 +391,7 @@ And investigate the posteriors:
 
 ```{python}
 az.plot_posterior(
-    bols, var_names="model",
+    bgamma, var_names="model",
     ref_val=0, 
     rope=[-0.1*loss_std, 0.1*loss_std], 
 )
