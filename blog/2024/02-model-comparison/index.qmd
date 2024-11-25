@@ -335,6 +335,63 @@ Here are some examples:
 [^12]: Actually, since errors can be truly 0, there might be a need to extend the model to be a hurdle Gamma model.
 
 
+I can quickly demonstrate some of these[^13]. 
+Let's generate more data from a different dataset, by repeating the process above:
+
+[^13]: no multiple metrics because `bambi` does not support multivariate gamma models
+
+```{python}
+from sklearn.datasets import make_friedman2
+
+X, y = make_friedman2(n_samples=400, noise=1, random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=2)
+lr = LinearRegression().fit(X_train, y_train)
+gbt = GradientBoostingRegressor().fit(X_train, y_train)
+
+lr_res = (y_test - lr.predict(X_test))**2
+gbt_res = (y_test - gbt.predict(X_test))**2
+
+friedman2_sqe = pd.concat({"lr": pd.Series(lr_res), "gbt": pd.Series(gbt_res)}, names=["model", "id"]).rename("li")
+friedman2_sqe = friedman2_sqe.reset_index()
+friedman2_sqe
+```
+
+Now let's stack this dataset on top of the previous dataset
+
+```{python}
+sqe = pd.concat(
+    {"friedman1": sqe, "friedman2": friedman2_sqe.reset_index()},
+    names=["dataset"],
+).reset_index().drop(columns="level_1")
+```
+
+Now we can fit a multilevel Gamma regression on the combined data:
+
+```{python}
+bgamma = bmb.Model(
+    "li ~ 1 + model + (1 | dataset)", 
+    data=sqe,
+    family="gamma",
+    link="log",
+).fit(
+    tune=2000,
+    target_accept=0.94,
+    random_seed=11,
+)
+```
+
+And investigate the posteriors:
+
+```{python}
+az.plot_posterior(
+    bols, var_names="model",
+    ref_val=0, 
+    rope=[-0.1*sqe.loc["li"].std(), 0.1*sqe.loc["li"].std()], 
+)
+
+```
+
+
 ## Conclusions
 I've presented a framework to make model comparison rigorously and meaningfully by incorporating uncertainty measure around performance difference.
 The framework is super easy because it builds on top of regression models, widely available in every scientific software, taking advantage of them just being fancy extendable averaging machines. 
