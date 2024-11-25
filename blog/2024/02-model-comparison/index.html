@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ehud Karavani">
+<meta name="dcterms.date" content="2024-08-30">
+
+<title>Uncertainty-aware model comparison | Ehud Karavani</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-66TLP1EVBH"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Uncertainty-aware model comparison | Ehud Karavani">
+<meta property="og:description" content="Comparing model performance rigorously and meaningfully using statistics.">
+<meta property="og:image" content="https://ehud.co/blog/2024/02-model-comparison/noninferiority_nejm.jpg">
+<meta property="og:site_name" content="Ehud Karavani">
+<meta name="twitter:title" content="Uncertainty-aware model comparison | Ehud Karavani">
+<meta name="twitter:description" content="Comparing model performance rigorously and meaningfully using statistics.">
+<meta name="twitter:image" content="https://ehud.co/blog/2024/02-model-comparison/noninferiority_nejm.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Ehud Karavani</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../materials/index.html"> 
+<span class="menu-text">Materials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ehudk" rel="me" target="_new"> <i class="bi bi-linkedin" role="img" aria-label="linkedin">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en" rel="me" target="_new"> 
+<span class="menu-text"><iconify-icon inline="" icon="simple-icons:googlescholar" style="font-size: 1.25em;"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ehudkr" rel="me" target="_new"> <i class="bi bi-github" role="img" aria-label="github">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-people-fill" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-people-fill" role="img">
+</i> 
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-people-fill">    
+        <li>
+    <a class="dropdown-item" href="https://medium.com/@ehudkr" rel="me" target="_new"><i class="bi bi-medium" role="img" aria-label="medium">
+</i> 
+ <span class="dropdown-text">Medium</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://bsky.app/profile/ehudk.bsky.social" rel="me" target="_new">
+ <span class="dropdown-text"><span style="margin-left:.1rem;margin-right:.25em;padding-right:1px;"><iconify-icon inline="" icon="logos:bluesky"></iconify-icon></span> Bluesky</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://twitter.com/ehudkar" rel="me" target="_new"><i class="bi bi-twitter" role="img" aria-label="twitter">
+</i> 
+ <span class="dropdown-text">Twitter</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://mastodon.social/@ehudk" rel="me" target="_new"><i class="bi bi-mastodon" role="img" aria-label="mastodon">
+</i> 
+ <span class="dropdown-text">Mastodon</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://stackoverflow.com/users/7708413/ehudk" rel="me" target="_new"><i class="bi bi-stack-overflow" role="img" aria-label="stack-overflow">
+</i> 
+ <span class="dropdown-text">Stack Overflow</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://discourse.datamethods.org/u/ehudk/summary" rel="me" target="_new">
+ <span class="dropdown-text"><span style="margin-left:.1rem;margin-right:.25em;padding-right:1px;"><iconify-icon inline="" icon="simple-icons:discourse"></iconify-icon></span> Datamethods</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a>
+  <ul class="collapse">
+  <li><a href="#whats-in-it-for-you" id="toc-whats-in-it-for-you" class="nav-link" data-scroll-target="#whats-in-it-for-you">What’s in it for you</a></li>
+  </ul></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  </ul></li>
+  <li><a href="#uncertainty-aware-model-comparison-via-regression" id="toc-uncertainty-aware-model-comparison-via-regression" class="nav-link" data-scroll-target="#uncertainty-aware-model-comparison-via-regression">Uncertainty-aware model comparison via regression</a>
+  <ul class="collapse">
+  <li><a href="#settings-up-data" id="toc-settings-up-data" class="nav-link" data-scroll-target="#settings-up-data">Settings up data</a></li>
+  <li><a href="#comparing-models" id="toc-comparing-models" class="nav-link" data-scroll-target="#comparing-models">Comparing models</a></li>
+  </ul></li>
+  <li><a href="#going-further" id="toc-going-further" class="nav-link" data-scroll-target="#going-further">Going further</a>
+  <ul class="collapse">
+  <li><a href="#non-inferiority-testing" id="toc-non-inferiority-testing" class="nav-link" data-scroll-target="#non-inferiority-testing">Non-inferiority testing</a></li>
+  <li><a href="#going-bayesian" id="toc-going-bayesian" class="nav-link" data-scroll-target="#going-bayesian">Going Bayesian</a></li>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/2024/02-model-comparison/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/2024/02-model-comparison/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Uncertainty-aware model comparison</h1>
+<p class="subtitle lead"></p><p>Comparing model performance rigorously and meaningfully using statistics.</p><p></p>
+  <div class="quarto-categories">
+    <div class="quarto-category">machine learning</div>
+    <div class="quarto-category">deep learning</div>
+    <div class="quarto-category">statistics</div>
+    <div class="quarto-category">meta-science</div>
+  </div>
+  </div>
+
+
+<!-- Adjusted from: https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html -->
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ehud Karavani </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <!-- <div class="quarto-title-meta-heading" style="display: inline;">Published</div> -->
+      <!-- <p style="display:inline"><a href=><i class="bi bi-medium"></i></a></p> -->
+    <div class="quarto-title-meta-contents">
+      <p class="date" style="display:inline">August 30, 2024</p> 
+          </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">November 25, 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This post is still a work in process.</p>
+</div>
+</div>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>I’m under the impression that deep learning models are not benchmarked properly, making it difficult to draw meaningful conclusions. Too often than not, models will be evaluated using a single number, with no uncertainty around that number. Too often than not, the difference in performance of different models will not be assessed directly, and again, no uncertainty around that difference either<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>This creates difficulty in understanding which models are comparable and which are superior. Is a point difference of 0.1% between models on the leaderboard meaningful or a fluke? As the monetary (and environmental) costs of training these large language models (LLMs) skyrockets, we should be able to truly tell whether size matters and are larger models really are superior to their slimmer, more economical versions.</p>
+<p>To solve that, we’ll need to know the range of errors compatible with the model; not just the average score - but the uncertainty around it. Unfortunately (non-Bayesian) machine learning and deep learning models don’t lend themselves to uncertainty estimation easily. Oftentimes, estimating the variability in model performance requires the bootstrap (sampling data with replacement and refitting)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> or cross validation. But fitting just a single model can exhaust unreasonable resources, so fitting it hundreds (or even thousands) of times just to estimate its variance is out of the question. Luckily, there are other ways to estimate the variance of model performance using the variability within the dataset or asymptotics (that may very well kick in as datasets can be large). In this post I’ll show how to utilize them.</p>
+<section id="whats-in-it-for-you" class="level3">
+<h3 class="anchored" data-anchor-id="whats-in-it-for-you">What’s in it for you</h3>
+<p>In this blog post I’ll explore an approach to rigorously compare the performance of two (or more!) models directly. It will incorporate uncertainty that will allow us to assess whether a model is truly superior or inferior (or non-inferior) to others<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. It will be a generalizable framework, allowing for multiple models, multiple metrics, multiple datasets, even at once. Moreover, it is totally decoupled from the actual models - you’ll only need predictions and ground-truth labels. No need for refitting or retrofitting, only a forward pass.</p>
+</section>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>To achieve all that I will utilize Statistics; which I personally feel were long overlooked as the field of machine (and then deep) learning became more and more dominated by engineers (or engineering mindset rather than by scientists more versed in the scientific method and its philosophy). It’s not necessarily a bad thing! Engineers get things done, but the skill sets (or the mindset) may de-prioritize Research Methods.</p>
+<p>However, I’m a statistics reformer kind of person. So I will not trouble you with the zoo of statistical tests - it appears they are mostly just linear models <span class="citation" data-cites="lindelov2019common">(<a href="#ref-lindelov2019common" role="doc-biblioref">Lindeløv 2019</a>)</span>. You know, “regression”. Sometimes called “ANOVAs”, but I know this jargon might intimidate some, so let’s stick with “linear models” for now<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. The most important point is that I will use this machinery to compare between models. The benefit using this framework is that it comes with 100+ years of statistics research focusing on uncertainty estimation, that – thanks to software available today – we can just apply off-the-shelf.</p>
+<!-- [^3]: Actually, we'll need "generalized linear (mixed) models", but I will build it slowly and gradually, you won't even notice. And we will also turn Bayesian, but it will be as easy, don't worry.  -->
+<p>To be completely honest, I don’t think this approach is novel, at least not in its basic version. Although I haven’t encountered it exactly as I’m going to present it, it might be the case I just haven’t landed on the right keyword search on google. And I’ll use Python, which I hope is more convenient to those who are versed in the field of deep learning. So, as always, some people will find this post informative and some will just scoff.</p>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<p>Before I start, I’ll cover some of the basics first, for completeness. If you’re comfortable with statistical inference, regression, and model evaluation, then you can skip it (or at least skim it).</p>
+<section id="notations" class="level4">
+<h4 class="anchored" data-anchor-id="notations">Notations</h4>
+<p>Throughout the post I’ll use <span class="math inline">\(X\)</span> (<code>X</code>) to denote a feature matrix (covariates), <span class="math inline">\(y\)</span> (<code>y</code> or <code>y_true</code>) will be the ground truth labels coupled to <span class="math inline">\(X\)</span>, and <span class="math inline">\(\hat{y}\)</span> (<code>y_pred</code>) will be the predictions from an arbitrary model <span class="math inline">\(f(X)\)</span> (a linear regression or a deep neural network) aiming to be as closest to <span class="math inline">\(y\)</span> as possible.</p>
+<p>The approach I’ll present will only need <span class="math inline">\(y\)</span> and <span class="math inline">\(\hat{y}\)</span>, making it independent of <span class="math inline">\(f\)</span> and whatever software or hardware it is attached to.</p>
+</section>
+<section id="individual-level-errors" class="level4">
+<h4 class="anchored" data-anchor-id="individual-level-errors">Individual-level errors</h4>
+<p>Performance metrics are a way to quantify the performance of a model, assessing how the model errs by comparing the ground truth labels (<span class="math inline">\(y\)</span>) to the predictions (<span class="math inline">\(\hat{y}\)</span>). Most commonly known will be the mean squared error (MSE) if <span class="math inline">\(y\)</span> is continuous or log-loss (aka cross entropy) if <span class="math inline">\(y\)</span> is categorical. If you are, like me, used to Scikit-learn’s metrics API with <code>metric(y_true, y_pred)</code> returning a single number - the average over the dataset, you might have forgotten that these errors can be calculated on an individual level. For instance, <span class="math inline">\(l_i = (y_i - \hat{y}_i)^2\)</span> is the individual-level squared error of observation <span class="math inline">\(i\)</span> (which is later averaged to obtain the <em>mean</em> squared error).</p>
+<p>Note that not all evaluation metrics allow individual-level errors. For instance, the ROC AUC (and many confusion matrix-based metrics) will often require aggregating over the sample, and individual-level errors might not be well-defined<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+</section>
+<section id="regression-models-are-fancy-average-machines" class="level4">
+<h4 class="anchored" data-anchor-id="regression-models-are-fancy-average-machines">Regression models are fancy average machines</h4>
+<p>Linear models (those <span class="math inline">\(y_i = \alpha + \beta X_i\)</span>, for example) end up estimating <span class="math inline">\(E[Y|X]\)</span>. Namely, the expected value of <span class="math inline">\(Y\)</span> given some level of <span class="math inline">\(X\)</span>. Basically, the average value of <span class="math inline">\(Y\)</span> in some setting. And if there is no <span class="math inline">\(X\)</span> (i.e., there is only an intercept, so <span class="math inline">\(y_i = \alpha\)</span>), then that’s just the average overall, look:</p>
+<div id="bb7403e5" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">3</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ols <span class="op">=</span> smf.ols(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y ~ 1"</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>pd.DataFrame({<span class="st">"y"</span>: y})</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>).fit()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Taking the mean of `y`: </span><span class="sc">{</span>y<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The coefficient of the regression intercept: </span><span class="sc">{</span>ols<span class="sc">.</span>params[<span class="st">'Intercept'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Taking the mean of `y`: 2.9520
+The coefficient of the regression intercept: 2.9520</code></pre>
+</div>
+</div>
+<p>The nice thing about the regression framework is that we also get inferential results (standard errors, confidence intervals, p-values…) for free, off-the-shelf. In the frequentist (read, “standard”) regression setting, this is done using analytical asymptotic properties (no resampling and refitting)</p>
+<div id="2d5467e0" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+No. Observations:                1000   F-statistic:                       nan
+Covariance Type:            nonrobust   Prob (F-statistic):                nan
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      2.9520      0.031     95.523      0.000       2.891       3.013
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+</div>
+</section>
+<section id="averaging-individual-level-errors-with-regression" class="level4">
+<h4 class="anchored" data-anchor-id="averaging-individual-level-errors-with-regression">Averaging individual-level errors with regression</h4>
+<p>Tying the two subsections above together, given a ground truth vector <span class="math inline">\(y\)</span> and predictions <span class="math inline">\(\hat{y}\)</span>, we can calculate the mean squared error as an average or with a regression.</p>
+<div id="ed0e3a09" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">3</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> y <span class="op">+</span> rng.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="fl">0.5</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>individual_errors <span class="op">=</span> (y <span class="op">-</span> y_pred)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>ols <span class="op">=</span> smf.ols(</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"li ~ 1"</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>pd.DataFrame({<span class="st">"li"</span>: individual_errors})</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>).fit()</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Taking the mean of the squared errors with sklearn: </span><span class="sc">{</span>mean_squared_error(y, y_pred)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The coefficient of the regression intercept: </span><span class="sc">{</span>ols<span class="sc">.</span>params[<span class="st">'Intercept'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Taking the mean of the squared errors with sklearn: 0.2415
+The coefficient of the regression intercept: 0.2415</code></pre>
+</div>
+</div>
+</section>
+<section id="generalization-and-statistical-inference-of-model-performance" class="level4">
+<h4 class="anchored" data-anchor-id="generalization-and-statistical-inference-of-model-performance">Generalization and statistical inference of model performance</h4>
+<p>Model performance is a characteristic of the model. Evaluating it on a given dataset is not the core interest of the researcher. We often care about generalization errors - figuring out what will be the performance when the model will be deployed publicly on unseen data.</p>
+<p>This notion of generalization carries a very similar meaning to inferential statistics, where the average in a sample is of little importance relative to the mean of the entire underlying population from which the dataset was sampled from<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. And since the leap from sample average to population mean comes with some uncertainty to it, we often bound these estimates with uncertainty intervals around them<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+<p>Like inferential statistics, in generalization we would like to infer what will the average error rate will be on unknown data out there in the world, using the sample of data we do have right now. We don’t really care about the error in any given dataset, even if it is a test set that was not used for training, it is still just a sample from the possible population of data available in the world. The leap from the average error rate in the dataset to the errors out there comes with some uncertainty to it, and we’d like to know the likely range of that average error rate in the actual world.</p>
+</section>
+</section>
+</section>
+<section id="uncertainty-aware-model-comparison-via-regression" class="level2">
+<h2 class="anchored" data-anchor-id="uncertainty-aware-model-comparison-via-regression">Uncertainty-aware model comparison via regression</h2>
+<p>As alluded to above, we’ll use individual-level errors in a regression framework in order to infer the uncertainty around performance measures. Knowing whether all errors tightly clustered around zero or if their variance is high will be useful information when we will take uncertainty-aware differences of performance between models.</p>
+<section id="settings-up-data" class="level3">
+<h3 class="anchored" data-anchor-id="settings-up-data">Settings up data</h3>
+<p>To demonstrate the process, we will need labeled data and we will need prediction models. I’ll use toy data of a regression, rather than classification, task (i.e., a continuous target) for simplicity as squared errors were already introduced, but this can work with any individual-level metric. I will split it train and test, so the comparison will be performed on unseen-data. As for models, I’ll compare a linear (regression) with a nonlinear (boosting trees) one, just so we can see the difference in performance.</p>
+<div id="10fbf039" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman1</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> GradientBoostingRegressor</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_friedman1(n_samples<span class="op">=</span><span class="dv">400</span>, noise<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LinearRegression().fit(X_train, y_train)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>gbt <span class="op">=</span> GradientBoostingRegressor().fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now let’s calculate individual-level squared errors:</p>
+<div id="5da1d894" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lr_res <span class="op">=</span> (y_test <span class="op">-</span> lr.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gbt_res <span class="op">=</span> (y_test <span class="op">-</span> gbt.predict(X_test))<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="comparing-models" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-models">Comparing models</h3>
+<p>To compare the difference in performance between the models, I’ll model it as a regression task setting the individual-level errors as the target and a dummy coding of the models as the feature (together with an intercept). This merely requires concatenating the errors and indicating which model corresponds to them.</p>
+<div id="fc9a1b7b" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat({<span class="st">"lr"</span>: pd.Series(lr_res), <span class="st">"gbt"</span>: pd.Series(gbt_res)}, names<span class="op">=</span>[<span class="st">"model"</span>, <span class="st">"id"</span>]).rename(<span class="st">"li"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>model  id 
+lr     0       0.089986
+       1       1.319738
+       2       6.044722
+       3       6.061478
+       4      13.876234
+                ...    
+gbt    195     0.625408
+       196     0.935833
+       197     0.067468
+       198     3.241952
+       199     3.417277
+Name: li, Length: 400, dtype: float64</code></pre>
+</div>
+</div>
+<p>And putting that data into the regression<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>:</p>
+<div id="bf412cac" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> sqe.reset_index()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ols <span class="op">=</span> smf.ols(<span class="st">"li ~ 1 + C(model)"</span>, data<span class="op">=</span>sqe).fit()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                     li   R-squared:                       0.019
+Model:                            OLS   Adj. R-squared:                  0.017
+No. Observations:                 400   F-statistic:                     7.852
+Covariance Type:            nonrobust   Prob (F-statistic):            0.00533
+==================================================================================
+                     coef    std err          t      P&gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          4.2327      0.605      6.994      0.000       3.043       5.422
+C(model)[T.lr]     2.3981      0.856      2.802      0.005       0.716       4.081
+==================================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+</div>
+<p>We can now follow a standard interpretation of a linear model. The <code>C(model)[T.lr]</code> variable (i.e., setting <code>lr</code> to be encoded as 1 while <code>gbt</code> was encoded as 0) quantifies the average difference in squared errors (variance) between the linear regression and the boosting trees models (2.4). This allows us to directly assess the difference in model performance, but since we get asymptotic inference too, we can further place uncertainty around that difference - enabling us to tell whether it is statistically significant or not (p-value 0.0053), or at least what is a likely range for that error to be in the “population” of data from which the dataset came from (95% confidence intervals (0.7, 4.1)).</p>
+<p>This direct comparison is the proper way to assess difference in performance. When deep learning model do get confidence intervals around them, they are often around the performance metrics itself. But then, translating that to confidence intervals around the difference between two models (and their own confidence intervals) is not necessarily straightforward, and requires extra caution not to misinterpret the significance <span class="citation" data-cites="gelman2006difference">(<a href="#ref-gelman2006difference" role="doc-biblioref">Gelman and Stern 2006</a>)</span>.</p>
+<p>This was relatively cool. If you stop reading here it’s ok. You are now able to compare models relatively simply and with some notion of uncertainty.</p>
+</section>
+</section>
+<section id="going-further" class="level2">
+<h2 class="anchored" data-anchor-id="going-further">Going further</h2>
+<section id="non-inferiority-testing" class="level3">
+<h3 class="anchored" data-anchor-id="non-inferiority-testing">Non-inferiority testing</h3>
+<p>Noninferiority is an interesting, well-established statistical concept, that I believe might benefit the deep-learning evaluation literature. Imagine a clinical setting where you want to test a new therapeutic treatment. This treatment may not reduce mortality more than the standard of care, but it doesn’t mean it’s useless. Maybe it can be taken at home once a month, instead of 3 times a week at the clinic or have much, much fewer side effects? Wouldn’t that improve patients’ life? Well, it will improve their life assuming the mortality rate of the new treatment is not that worse than the current standard of care. If both treatment have <em>similar</em> or <em>comparable</em> mortality rate, but the newer one is cheaper/easier to administer, etc. wouldn’t we prefer it over the existing treatment?</p>
+<p>Our statistical testing perspective has now shifted - we no longer care if the new treatment is <em>superior</em> to the current treatment, only that it is <em>noninferior</em>. In practical terms, it means we no longer compare our interval against 0 (for difference or 1 for ratio), but against some other margin which we’re willing to accept as <em>similar</em> for all practical considerations. Figure <a href="#fig-noninferiority_nejm" class="quarto-xref">Figure&nbsp;1</a> summarizes nicely what we’d like to compare against in a noninferiority setup.</p>
+<div id="fig-noninferiority_nejm" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-noninferiority_nejm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="noninferiority_nejm.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-noninferiority_nejm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Noninferiority hypothesis testing taken from <span class="citation" data-cites="mauri2017challenges">Mauri and D’Agostino Sr (<a href="#ref-mauri2017challenges" role="doc-biblioref">2017</a>)</span>
+</figcaption>
+</figure>
+</div>
+<p>We can apply the same logic translating “treatments” to “models”. Wouldn’t we want to assess whether models have comparable performance and then select the model that is simpler/cheaper to train or has a smaller carbon footprint? Is it really worth spending 100 times more FLOPs for a point improvement of 0.1 in some metric, that we don’t even know how the variance around that 0.1 improvement looks like? We should compare models in a way that will show us the fuller picture and allow us to make a truly informed decision about model selection.</p>
+</section>
+<section id="going-bayesian" class="level3">
+<h3 class="anchored" data-anchor-id="going-bayesian">Going Bayesian</h3>
+<p>Now, I’m positive that the regression framework I presented here is somewhat equivalent to what happens in R when you use <code>anova(mod1, mod2)</code> (ANOVA with two models). In R, you often specify a <code>test</code> parameter to <code>anova</code> (like <code>"Chisq"</code> for a likelihood ratio test), but this requires knowing the degrees of freedom the models have in order to properly set up the null distribution to draw p-values from. Now, go figure what the degrees of freedom of ChatGPT<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. I’m not sure if the Wald test used for the regression p-value (or confidence intervals) sidesteps it, but regardless, adopting a Bayesian framework will save us from asymptotic requirements, as the uncertainty will be directly assessed from the data at hand.</p>
+<p>Adopting a Bayesian framework will come with multiple strengths:</p>
+<ul>
+<li>First, it will allow us to focus on magnitude of difference and estimation instead of null-hypothesis significant testing <span class="citation" data-cites="kruschke2013bayesian">(<a href="#ref-kruschke2013bayesian" role="doc-biblioref">Kruschke 2013</a>)</span>; this will be even more important for non-inferiority tests.</li>
+<li>Second, it will allow us to interpret the uncertainty intervals more naturally and give probabilistic estimates to how likely it is that one model is better than the other (replacing confidence intervals with credible intervals).</li>
+<li>Third, the Bayesian regression framework is more easily expandable to allow for multiple datasets (mixed/multilevel models), multiple models, and more proper modeling (generalized linear models).</li>
+</ul>
+<section id="regression-modeling-in-python-with-bambi" class="level4">
+<h4 class="anchored" data-anchor-id="regression-modeling-in-python-with-bambi">Regression modeling in Python with <code>bambi</code></h4>
+<p><code>bambi</code> is great, our very own <code>brms</code>. It’s a powerful tool to specify regression formulas (like above for <code>statsmodels</code>) but then it will utilize <code>PyMC</code> under the hood to perform an MCMC-based Bayesian estimation, and do lots of additional good stuff like specifying priors automatically etc. Repeating the model comparison from above is as simple as:</p>
+<div id="ecb9593c" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bambi <span class="im">as</span> bmb</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ols = smf.ols("li ~ 1 + C(model)", data=sqe).fit()</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>bols <span class="op">=</span> bmb.Model(<span class="st">"li ~ 1 + model"</span>, data<span class="op">=</span>sqe).fit(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>   cores<span class="op">=</span><span class="dv">1</span>,  <span class="co"># play nice with `quarto render` for some reason</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Auto-assigning NUTS sampler...
+Initializing NUTS using jitter+adapt_diag...
+Sequential sampling (2 chains in 1 job)
+NUTS: [sigma, Intercept, model]
+Sampling 2 chains for 1_000 tune and 1_000 draw iterations (2_000 + 2_000 draws total) took 4 seconds.
+We recommend running at least 4 chains for robust computation of convergence diagnostics</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"5d23af6a43e3419db03ddd4b456e8f32","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"e594ff5a3b7946cfbf6f765f99bf5353","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+</div>
+<p>Ideally, after fitting a Bayesian model you should evaluate the fit using some diagnostics and <code>az.trace_plot()</code>, which I will skip (but I checked, it’s ok).</p>
+</section>
+<section id="bayesian-noninferiority-testing" class="level4">
+<h4 class="anchored" data-anchor-id="bayesian-noninferiority-testing">Bayesian noninferiority testing</h4>
+<p>The Bayesian inference framework, focusing on estimation and providing a full posterior distribution of the difference in performance, makes it really easy to test for noninferiority. We can use the Region of Practical Equivalence (ROPE) to specify an intervals that is equivalent to the null, meaning it has practically no effect of interest and is therefore negligible (e.g., within 1% change in performance between model is good enough <span class="citation" data-cites="kruschke2018rejecting">(<a href="#ref-kruschke2018rejecting" role="doc-biblioref">Kruschke 2018</a>)</span>).</p>
+<div id="792294fa" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>loss_std <span class="op">=</span> sqe[<span class="st">"li"</span>].std()</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>az.plot_posterior(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    bols, var_names<span class="op">=</span><span class="st">"model"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    ref_val<span class="op">=</span><span class="dv">0</span>, </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    rope<span class="op">=</span>[<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span>loss_std, <span class="fl">0.1</span><span class="op">*</span>loss_std],  </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="574" height="461" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- 
+For example, we see the High Density Interval (HDI, the interval equivalent to a confidence interval in some sense) does not overlap with the ROPE at all, 
+although 1% of the entire posterior distribution does overlap with the ROPE, suggesting there's a 1% chance the the difference in performance is actually equivalent. 
+Additionally, 0.3% of the distribution is below 0, suggesting there's a miniscule (but existing) chance that gradient boosting trees are actually worse than linear regression on this prediction task, but that is practically negligible.  
+-->
+<p>For example, we see both the High Density Interval (HDI, the interval equivalent to a confidence interval in some sense) and the entire posterior distribution do overlap some with the ROPE, suggesting there’s a ~3.5% chance the difference in performance is actually equivalent. Additionally, ~0.2% of the distribution is below 0, suggesting there’s a miniscule (but existing) chance that gradient boosting trees are actually worse than linear regression on this prediction task, but that the magnitude in which they are worse is practically negligible. However, the lion share of the evidence suggests the linear regression prediction model has higher errors than the boosting trees.</p>
+</section>
+</section>
+<section id="extensions" class="level3">
+<h3 class="anchored" data-anchor-id="extensions">Extensions</h3>
+<p>This regression framework for comparing models is easily extendable, especially the Bayesian one. Here are some examples:</p>
+<ol type="1">
+<li><strong>Multiple datasets: assess overall performance over multiple datasets</strong>.<br>
+By concatenating the individual-level errors from multiple datasets, but still focusing on the <code>model</code> variable that estimates the difference between models. In such case, however, the response variable (errors) might no longer be individual and identically distributed (IID), because it originates from the same models. Ignoring these correlations between observations and assuming they are IID might make our estimates overly confident, which is the counterproductive to our main goal of assessing uncertainty properly. Luckily, we can apply multilevel modeling (mixed linear models) to regress away these dependencies simply by specifying <code>li ~ 1 + model + (1 | dataset)</code><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</li>
+<li><strong>Multiple models: Compare multiple models</strong>. Extending the dummy encoding of the model to any other contrast encoding between models can be done in a straightforward way, and allow comparing multiple models in multiple ways simultaneously.</li>
+<li><strong>Multiple metrics: simultaneously</strong> If we have several metrics that interest us than we can model the difference between models on all of them simultaneously by stacking the different errors side-by-side and making a multivariate regression model.</li>
+<li><strong>Many types of metrics</strong> So far I’ve discussed the squared error, but this framework can support non-continuous errors (metric) too. For example, a classification model can be evaluated using the log-loss in a similar way to how squared-errors were done above, but we can also use the 0-1 loss instead–which is a much more interpretable loss–and use a logistic-regression instead of a linear regression model.</li>
+<li><strong>Proper modeling of the errors</strong>. I’ve used a linear model so far, but it assumes the response (in our case the individual-level errors) can range between <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>. But errors are almost always strictly positive, and if we want to respect that support, we should, instead, model it with a Gamma regression - a generalized linear model with a Gamma distribution (and a log-link), which operates on the <span class="math inline">\((0, \infty)\)</span> range.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></li>
+<li><strong>Incorporate metadata</strong> Models (and datasets) may come with plenty of metadata (e.g., number of parameters). These metadata can be incorporated into the regression as additional covariates and allow us to make even more interesting conclusions than just comparing models. For example, incorporating model size will enable us to discuss about difference in performance between models <em>while holding model size constant</em>. This will make cross-player comparison (e.g., GPT vs.&nbsp;Gemini vs.&nbsp;Claude) much more juicy.</li>
+</ol>
+<p>I can quickly demonstrate some of these<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>. Let’s generate more data from a different dataset, by repeating the process above:</p>
+<div id="2da2fb35" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman2</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_friedman2(n_samples<span class="op">=</span><span class="dv">400</span>, noise<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LinearRegression().fit(X_train, y_train)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>gbt <span class="op">=</span> GradientBoostingRegressor().fit(X_train, y_train)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>lr_res <span class="op">=</span> (y_test <span class="op">-</span> lr.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>gbt_res <span class="op">=</span> (y_test <span class="op">-</span> gbt.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>friedman2_sqe <span class="op">=</span> pd.concat({<span class="st">"lr"</span>: pd.Series(lr_res), <span class="st">"gbt"</span>: pd.Series(gbt_res)}, names<span class="op">=</span>[<span class="st">"model"</span>, <span class="st">"id"</span>]).rename(<span class="st">"li"</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>friedman2_sqe <span class="op">=</span> friedman2_sqe.reset_index()</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>friedman2_sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">model</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">li</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>lr</td>
+<td>0</td>
+<td>3595.551049</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>lr</td>
+<td>1</td>
+<td>642.439172</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>lr</td>
+<td>2</td>
+<td>96190.142608</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>lr</td>
+<td>3</td>
+<td>896.453152</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>lr</td>
+<td>4</td>
+<td>388.954325</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">395</td>
+<td>gbt</td>
+<td>195</td>
+<td>1053.935114</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">396</td>
+<td>gbt</td>
+<td>196</td>
+<td>115.481420</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">397</td>
+<td>gbt</td>
+<td>197</td>
+<td>3266.020568</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">398</td>
+<td>gbt</td>
+<td>198</td>
+<td>7.002061</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">399</td>
+<td>gbt</td>
+<td>199</td>
+<td>1271.759728</td>
+</tr>
+</tbody>
+</table>
+
+<p>400 rows × 3 columns</p>
+</div>
+</div>
+</div>
+</div>
+<p>Now let’s stack this dataset on top of the previous dataset</p>
+<div id="3505aa29" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"friedman1"</span>: sqe, <span class="st">"friedman2"</span>: friedman2_sqe.reset_index()},</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    names<span class="op">=</span>[<span class="st">"dataset"</span>],</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>).reset_index().drop(columns<span class="op">=</span><span class="st">"level_1"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">dataset</th>
+<th data-quarto-table-cell-role="th">model</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">li</th>
+<th data-quarto-table-cell-role="th">index</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>friedman1</td>
+<td>lr</td>
+<td>0</td>
+<td>0.089986</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>friedman1</td>
+<td>lr</td>
+<td>1</td>
+<td>1.319738</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>friedman1</td>
+<td>lr</td>
+<td>2</td>
+<td>6.044722</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>friedman1</td>
+<td>lr</td>
+<td>3</td>
+<td>6.061478</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>friedman1</td>
+<td>lr</td>
+<td>4</td>
+<td>13.876234</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">795</td>
+<td>friedman2</td>
+<td>gbt</td>
+<td>195</td>
+<td>1053.935114</td>
+<td>395.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">796</td>
+<td>friedman2</td>
+<td>gbt</td>
+<td>196</td>
+<td>115.481420</td>
+<td>396.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">797</td>
+<td>friedman2</td>
+<td>gbt</td>
+<td>197</td>
+<td>3266.020568</td>
+<td>397.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">798</td>
+<td>friedman2</td>
+<td>gbt</td>
+<td>198</td>
+<td>7.002061</td>
+<td>398.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">799</td>
+<td>friedman2</td>
+<td>gbt</td>
+<td>199</td>
+<td>1271.759728</td>
+<td>399.0</td>
+</tr>
+</tbody>
+</table>
+
+<p>800 rows × 5 columns</p>
+</div>
+</div>
+</div>
+</div>
+<p>Now we can fit a multilevel Gamma regression on the combined data:</p>
+<div id="5f9835a9" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>bgamma <span class="op">=</span> bmb.Model(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"li ~ 1 + model + (1 | dataset)"</span>, </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>sqe,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    family<span class="op">=</span><span class="st">"gamma"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="st">"log"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>).fit(</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    tune<span class="op">=</span><span class="dv">2000</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    target_accept<span class="op">=</span><span class="fl">0.94</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    random_seed<span class="op">=</span><span class="dv">11</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    cores<span class="op">=</span><span class="dv">1</span>  <span class="co"># play nice with `quarto render` for some reason</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Auto-assigning NUTS sampler...
+Initializing NUTS using jitter+adapt_diag...
+Sequential sampling (2 chains in 1 job)
+NUTS: [alpha, Intercept, model, 1|dataset_sigma, 1|dataset_offset]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"8a17771f25ec4a1c8b316daeb7b24ff3","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"ec29e8f5b28c440bb0ab9241f9217d05","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+<p>And investigate the posteriors:</p>
+<div id="afb509ce" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>az.plot_posterior(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    bgamma, var_names<span class="op">=</span><span class="st">"model"</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    ref_val<span class="op">=</span><span class="dv">0</span>, </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    rope<span class="op">=</span>[<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span>loss_std, <span class="fl">0.1</span><span class="op">*</span>loss_std], </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-14-output-1.png" width="579" height="461" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>I’ve presented a framework to make model comparison rigorously and meaningfully by incorporating uncertainty measure around performance difference. The framework is super easy because it builds on top of regression models, widely available in every scientific software, taking advantage of them just being fancy extendable averaging machines. This opens up many possibilities of properly comparing multiple models on multiple datasets and multiple metrics. Most importantly, it enables us to perform noninferiority tests and understand whether two models are comparable (have similar performance) even though one of them may be much smaller / easier to train / cheaper to train / have smaller carbon footprint. This may encourage researchers to come up with substantially new approaches, rather than chasing negligible improvements of fraction of a percentage in leaderboards.</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-gelman2006difference" class="csl-entry" role="listitem">
+Gelman, Andrew, and Hal Stern. 2006. <span>“The Difference Between <span>‘Significant’</span> and <span>‘Not Significant’</span> Is Not Itself Statistically Significant.”</span> <em>The American Statistician</em> 60 (4): 328–31.
+</div>
+<div id="ref-kruschke2013bayesian" class="csl-entry" role="listitem">
+Kruschke, John K. 2013. <span>“Bayesian Estimation Supersedes the t Test.”</span> <em>Journal of Experimental Psychology: General</em> 142 (2): 573.
+</div>
+<div id="ref-kruschke2018rejecting" class="csl-entry" role="listitem">
+———. 2018. <span>“Rejecting or Accepting Parameter Values in Bayesian Estimation.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 1 (2): 270–80.
+</div>
+<div id="ref-lindelov2019common" class="csl-entry" role="listitem">
+Lindeløv, Jonas Kristoffer. 2019. <span>“Common Statistical Tests Are Linear Models (or: How to Teach Stats).”</span> <a href="https://lindeloev.github.io/tests-as-linear/">https://lindeloev.github.io/tests-as-linear/</a>.
+</div>
+<div id="ref-mauri2017challenges" class="csl-entry" role="listitem">
+Mauri, Laura, and Ralph B D’Agostino Sr. 2017. <span>“Challenges in the Design and Interpretation of Noninferiority Trials.”</span> <em>New England Journal of Medicine</em> 377 (14): 1357–67.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>and we know the standard error of the difference between means is larger than the standard error of either mean.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>One variant I’ve also seen in some settings is that the sample is kept fixed, and just iterates over different random initializations of the model.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>These are formal, well-defined statistical concepts that I’ll introduce later down the post.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Actually, we’ll need (Bayesian) “generalized linear (mixed) models” to enjoy the full capabilities of the framework, but modern software makes it so easy you don’t have to bother much about it.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>There might be workarounds, but let’s ignore those for the sake of this post, and focus on easily-accessible individual-level errors.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>In the most basic example, say we are interested in the average height of men in a certain country. We sample men from that country and measure their height, but the average height of the sample is of little interest. What’s interesting is what that average tells about the average height of the people in that country, or, in reverse - what can we infer about the population from the sample.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>In this setting, I allude to confidence intervals, of course. Strictly speaking, they are not really uncertainty intervals (more like <a href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-020-01105-9">compatibility intervals</a>), but because I will also introduce Bayesian credible intervals later, I don’t want to be sidetracked by the lingo, so I call them all uncertainty intervals.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>We use the factor transformation <code>C(model)</code> to convert the <code>model</code> column, which contains strings, into 0-1 coding suitable for regression<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Or any deep learning model, for that matter. It seems the classical statistical theory does not always correspond to observed evidence from these types of models.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>There are frequentist mixed models, and these correlation structures might also be accounted for using Generalized Estimating Equations (GEE), but their uncertainties are not always trustworthy. Bayesian mixed models, however, still shine.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Once in the realm of multiple models multiple dataset, it may be interesting to evaluate performance in the item-response framework to also get a gist of what datasets are easier or harder.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Actually, since errors can be truly 0, there might be a need to extend the model to be a hurdle Gamma model.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>no multiple metrics because <code>bambi</code> does not support multivariate gamma models<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+
+{"state":{"5d23af6a43e3419db03ddd4b456e8f32":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_74d2a77354cc4da996e7270274b0e9ef","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Sampling chain 0, 0 divergences <span style=\"color: #008000; text-decoration-color: #008000\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">100%</span> <span style=\"color: #008080; text-decoration-color: #008080\">0:00:00</span> / <span style=\"color: #808000; text-decoration-color: #808000\">0:00:01</span>\n</pre>\n","text/plain":"Sampling chain 0, 0 divergences ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00 / 0:00:01\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"687ce9a37be64da9bebe88fe09aa09d1":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"6d03f78273c64eb78fdc809c401e57df":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"74d2a77354cc4da996e7270274b0e9ef":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"8a17771f25ec4a1c8b316daeb7b24ff3":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_fa70eb18871246ac877460952e48cbfe","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Sampling chain 0, 0 divergences <span style=\"color: #008000; text-decoration-color: #008000\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">100%</span> <span style=\"color: #008080; text-decoration-color: #008080\">0:00:00</span> / <span style=\"color: #808000; text-decoration-color: #808000\">0:05:17</span>\n</pre>\n","text/plain":"Sampling chain 0, 0 divergences ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00 / 0:05:17\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"e594ff5a3b7946cfbf6f765f99bf5353":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_6d03f78273c64eb78fdc809c401e57df","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Sampling chain 1, 0 divergences <span style=\"color: #008000; text-decoration-color: #008000\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">100%</span> <span style=\"color: #008080; text-decoration-color: #008080\">0:00:00</span> / <span style=\"color: #808000; text-decoration-color: #808000\">0:00:02</span>\n</pre>\n","text/plain":"Sampling chain 1, 0 divergences ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00 / 0:00:02\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"ec29e8f5b28c440bb0ab9241f9217d05":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_687ce9a37be64da9bebe88fe09aa09d1","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Sampling chain 1, 0 divergences <span style=\"color: #1764f4; text-decoration-color: #1764f4\">━━━━━━━━━━━━━━━━━━━━━━━━━╸</span>               <span style=\"color: #800080; text-decoration-color: #800080\"> 65%</span> <span style=\"color: #008080; text-decoration-color: #008080\">0:01:42</span> / <span style=\"color: #808000; text-decoration-color: #808000\">0:03:02</span>\n</pre>\n","text/plain":"Sampling chain 1, 0 divergences ━━━━━━━━━━━━━━━━━━━━━━━━━╸                65% 0:01:42 / 0:03:02\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"fa70eb18871246ac877460952e48cbfe":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}},"version_major":2,"version_minor":0}
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ehud\.co");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/blog/2024/02-model-comparison/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/blog/2024/02-model-comparison/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
