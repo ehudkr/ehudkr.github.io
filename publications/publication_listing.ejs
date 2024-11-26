@@ -19,6 +19,14 @@
             </div>
         <% } %> -->
     </div> </a>
+    <% if (item.doi) { %>
+        <div class="altmetric-embed" data-badge-type="altmetric-embed" 
+         data-badge-popover="top" 
+         data-link-target='_blank'
+         data-doi="<%- item.doi.replace('https://doi.org/','') %>" 
+         data-hide-no-mentions="true">
+        </div>
+    <% } %>
     <div style="margin-top: 0.15rem;">
         <a href="<%- item.path %>" class="btn btn-primary rounded" style="background-color: #567dc4;">
           <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
@@ -40,6 +48,15 @@
           PDF
         </a>
         <% } %>
+        <!-- <% if (item.doi) { %>
+            <div class="altmetric-embed" data-badge-type="donut" 
+             data-badge-popover="right" 
+             data-link-target='_blank'
+             data-doi="<%- item.doi.replace('https://doi.org/','') %>" 
+             data-hide-no-mentions="true"
+             style="display: inline; height: 50px;">
+            </div>  Comment: can't make the badge the same height as buttons. 
+        <% } %> -->
     </div>
     <hr>
   </li>

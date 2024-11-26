@@ -18,6 +18,8 @@ listing:
     - "date"
     - "image"
     - "categories"
+include-in-header: 
+  text: <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>  # Altmetric badge
 ---
 
 My current research focus revolves mainly around causal inference.
