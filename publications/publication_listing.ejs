@@ -20,11 +20,16 @@
         <% } %> -->
     </div> </a>
     <% if (item.doi) { %>
+        <span><a href="<%- item.doi %>" target="_blank">
+            <img alt="Jules Kreuer's Citation Badge" 
+                 src="https://api.juleskreuer.eu/citation-badge.php?doi=<%- item.doi.replace('https://doi.org/','') %>">
+        </a></span>
         <div class="altmetric-embed" data-badge-type="altmetric-embed" 
          data-badge-popover="top" 
          data-link-target='_blank'
          data-doi="<%- item.doi.replace('https://doi.org/','') %>" 
-         data-hide-no-mentions="true">
+         data-hide-no-mentions="true"
+         style="display: inline;">
         </div>
     <% } %>
     <div style="margin-top: 0.15rem;">
