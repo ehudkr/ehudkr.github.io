@@ -1,0 +1,128 @@
+---
+title: "Single-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer's disease"
+date: 2024-12-06
+doi: https://doi.org/10.1002/alz.14373
+author:
+  - name: Jielin Xu
+    affiliations:
+      - ref: ccf
+  - name: Wenqiang Song
+    affiliations:
+      - ref: ccf
+  - name: Zhenxing Xu
+    affiliations:
+      - ref: cornell
+  - name: Michael M. Danziger
+    affiliations:
+      - ref: ibmrisrl
+  - name: Ehud Karavani
+    affiliations:
+      - ref: ibmrisrl
+  - name: Chengxi Zang
+    affiliations:
+      - ref: cornell
+  - name: Xin Chen
+    affiliations:
+      - ref: ccf
+  - name: Yichen Li
+    affiliations:
+      - ref: ccf
+  - name: Isabela M Rivera Paz
+    affiliations:
+      - ref: ccf
+  - name: Dhruv Gohel
+    affiliations:
+      - ref: ccf
+  - name: Chang Su
+    affiliations:
+      - ref: cornell
+  - name: Yadi Zhou
+    affiliations:
+      - ref: ccf
+  - name: Yuan Hou
+    affiliations:
+      - ref: ccf
+  - name: Yishai Shimoni
+    affiliations:
+      - ref: ibmrisrl
+  - name: Andrew A. Pieper
+    affiliations:
+      - ref: ccf
+  - name: Jianying Hu
+    affiliations:
+      - ref: ibmrisrl
+  - name: Fei Wang
+    affiliations:
+      - ref: cornell
+  - name: Michal Rosen-Zvi
+    affiliations:
+      - ref: ibmrisrl
+  - name: James B. Leverenz
+    affiliations:
+      - ref: ccf
+  - name: Jeffrey Cummings
+    affiliations:
+      - name: "University of Nevada Las Vegas"
+        country: United States
+  - name: Feixiong Cheng
+    affiliations:
+      - ref: ccf
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Causal Machine Learning for Healthcare and Life Sciences
+  - id: ccf
+    name: Cleveland Clinic
+    country: United States
+  - id: cornell
+    name: Cornell University
+    country: United States
+categories:
+  - causal inference
+  - methods
+# keywords: 
+publication: "Alzheimer's & Dementia "
+journal: 
+  title: "Alzheimer's & Dementia "
+pdf: https://alz-journals.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/alz.14373?download=true
+abstract: >
+  INTRODUCTION
+  High microglial heterogeneities hinder the development of microglia-targeted treatment for Alzheimer's disease (AD).
+  METHODS
+  We integrated 0.7 million single-nuclei RNA-sequencing transcriptomes from human brains using a variational autoencoder. We predicted AD-relevant microglial subtype-specific transition networks for disease-associated microglia (DAM), tau microglia, and neuroinflammation-like microglia (NIM). We prioritized drugs by specifically targeting microglia-specific transition networks and validated drugs using two independent real-world patient databases.
+  RESULTS
+  We identified putative AD molecular drivers (e.g., SYK, CTSB, and INPP5D) in transition networks of DAM and NIM. Via specifically targeting NIM, we identified that usage of ketorolac was associated with reduced AD incidence in both MarketScan (hazard ratio [HR] = 0.89) and INSIGHT (HR = 0.83) Clinical Research Network databases, mechanistically supported by ketorolac-treated transcriptomic data from AD patient induced pluripotent stem cell–derived microglia.
+  DISCUSSION
+  This study offers insights into the pathobiology of AD-relevant microglial subtypes and identifies ketorolac as a potential anti-inflammatory treatment for AD.
+description: >
+  Identifying ketorolac as a repurposable drug candidate potentially delaying Alzheimer's disease onset.
+---
+
+:::{.column-page}
+![](figure1.jpg)
+:::
+
+:::{.column-page layout-ncol="2"}
+
+![](supp-overlap.png)
+
+![](supp-estimators.png)
+
+:::
+
+![](supp-diagnostics.png)
+
+
+
+## Citation
+```bibtex
+@article{xu2024single,
+author = {Xu, Jielin and Song, Wenqiang and Xu, Zhenxing and Danziger, Michael M. and Karavani, Ehud and Zang, Chengxi and Chen, Xin and Li, Yichen and Paz, Isabela M Rivera and Gohel, Dhruv and Su, Chang and Zhou, Yadi and Hou, Yuan and Shimoni, Yishai and Pieper, Andrew A. and Hu, Jianying and Wang, Fei and Rosen-Zvi, Michal and Leverenz, James B. and Cummings, Jeffrey and Cheng, Feixiong},
+title = {Single-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer's disease},
+journal = {Alzheimer's \& Dementia},
+doi = {https://doi.org/10.1002/alz.14373},
+}
+```
+
