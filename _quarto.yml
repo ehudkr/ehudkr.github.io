@@ -11,6 +11,7 @@ website:
   favicon: img/bar-chart-fill.svg
   twitter-card: true
   open-graph: true
+  site-url: https://ehud.co/  # To allow canonical-url
   repo-url: https://github.com/ehudkr/ehudkr.github.io/
   repo-actions: [source, edit, issue]
   google-analytics: "G-66TLP1EVBH"
@@ -94,6 +95,7 @@ format:
     css: styles.css
     toc: true
     link-external-newwindow: true
+    canonical-url: true
   
 resources: 
   - CNAME  # https://github.com/quarto-dev/quarto-cli/discussions/3249
