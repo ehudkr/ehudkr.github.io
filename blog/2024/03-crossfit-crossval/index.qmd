@@ -1,0 +1,59 @@
+---
+title: "Visualizing cross-fitting and cross-validation for causal inference"
+subtitle: > 
+  A visual way to understand cross-fitting, double cross-fitting, and cross-validation and how to differentiate between them.
+author: "Ehud Karavani"
+date: 2024/12/30
+date-modified: last-modified
+# image: 
+categories: 
+  - causal inference
+  - visualization
+---
+
+# Introduction
+The integration of complex machine learning estimators with causal inference estimators is beneficial but not trivial.
+
+It is beneficial because once we have complex high-dimensional data, where we can't just summarize the outcome each "cell" of the data (i.e., every combination of covariate levels), identification of the causal effect no longer solely relies on whether we where able to measure all confounders but also on whether we were able to capture the correct functional form between confounders, treatment and outcome (i.e., correct model specification). 
+Machine learning (ML) techniques can therefore really broaden the range of functional forms, and therefore increase our faith that we were able to correctly specify the model. 
+
+However, applying ML estimators opens a new front of modeling considerations like bias in effect estimations due to overfitting. 
+Therefore, plugging complex ML estimators into causal estimators is not trivial and requires adaptations.
+One such adaptation is the need to model both the treatment and the outcomes separately (like in TMLE or double/debias ML).
+Another adaptation is out-of-sample estimation, which comes in different forms: cross-validation, cross-fitting, and double cross-fitting.
+
+Cross validation, familiar to most ML practitioners is not the same as cross-fitting.
+It is also not sufficient on its own to reduce bias in the estimated effects.
+And yet is still highly beneficial and should be used in tandem with cross-fitting.
+This post will try to make sense of all these out-of-sample techniques visually.
+
+Throughout this post I will use $X$ to denote covariates/confounders, $A$ for a binary treatment assignment, and $Y$ for the outcome. 
+The treatment will be modeled with a function $\pi(X)$, and the outcome with the function $m(X)$ (or $m(X,A)$ in the case of AIPW and TMLE). 
+Both will have a subscript $k$ to specify the fold on which they are fitted on (with $K$ being 2 or 3 in total in this post).
+
+# Cross-validation
+We start with cross validation, known.
+
+not sufficient
+![](crossval.SVG)
+
+# Cross-fitting
+train-test
+
+repeated train-test
+![](crossfit.SVG)
+
+# Double cross-fitting
+Decoupling the propensity
+
+
+![](double_crossfit.SVG)
+
+
+# Combining cross-validation within each cross-fitting
+
+
+![](crossfit-crossval.SVG)
+
+# Summary
+
