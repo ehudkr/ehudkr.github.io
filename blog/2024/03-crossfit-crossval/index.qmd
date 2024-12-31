@@ -133,14 +133,13 @@ However, for small enough data, it might be preferable to simply revert to a sin
 
 
 # Repeated random partitioning
+It is commonly observed that the particular split of the data often changes the estimated effect slightly,
+making the answer dependent on the specific partitioning of the data into folds.
+The solution here is to simply repeat the procedure for many random partitioning of the data into folds. 
+In practical terms, it means simply replacing the Scikit-learn `KFold` object used above with its `RepeatedKFold` variant, which simply repeats K-Fold `n_repeats` times with different shuffle in each repetition[^5]. 
 
-
-
-
-
-TODO: randomly repeating shuffles. the particular split of the data often changes the answer dependence on the particular division of the data into pieces
-
-
+[^5]: The only problem I personally have with `RepeatedKFold` is that it flattens the results and losses the nested (hierarchical) structure of when a repeat starts and ends outside each internal K-fold. 
+Keeping track of this nested structure can be beneficial, especially when the average treatment effect is estimated within each test-fold. Because then within-repetition ATEs should be aggregated differently than between-repetitions ATEs. 
 
 
 # Summary
