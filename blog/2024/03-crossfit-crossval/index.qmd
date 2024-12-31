@@ -53,7 +53,7 @@ y_pred = cross_val_predict(GradientBoostingRegressor, X=X, y=y, cv=kfold)
 # Run DML using `a_pred` and `y_pred` for residualization.
 ```
 
-Figure @fig-fig-crossfit_crossval visualizes this process, in which data is partitioned into 5 folds, each assigned a unique color (left).
+Figure @fig-crossfit_crossval visualizes this process, in which data is partitioned into 5 folds, each assigned a unique color (left).
 The middle two blocks each describe the data for the two models, treatment model $\pi_k$ and outcome model $m_k$. 
 In each fold the test partition is depicted in dark grey, and the train fold are blended colors of the folds used to fit the model on the $k$-th train-test split. 
 The right block depicts the out-of-sample prediction. 
@@ -61,7 +61,7 @@ For example, test-fold 1 (orange) is predicted using the model fitted on folds 2
 Most importantly, the folds between the treatment and outcome models are completely aligned - for each test-partition, the treatment model and the outcome model were trained on the same complementary partitions.
 
 :::{.column-page}
-![A visual scheme for a 5-fold cross-validation/cross-fitting. Each data partition (fold, made of $X,A,Y$) is assigned a unique color. Five treatment models ($\pi_k$) and outcome models ($m_k$) are fitted on 4 folds, with the test-split depicted in dark grey, and the color of the train folds are blended. Finally, the propensity scores and outcome are predicted for the out-of-sample fold using the fitted models on the complementary train splits (depicted by the blended colors). Importantly, for each test-partition, the treatment model and the outcome model were trained on the same complementary partitions.](crossfit-crossval.SVG){#fig-crossfit_crossval}
+![A visual scheme for a 5-fold cross-validation/cross-fitting. Each data partition (fold, made of $X,A,Y$) is assigned a unique color. Five treatment models ($\pi_k$) and outcome models ($m_k$) are fitted on 4 folds, with the test-split depicted in dark grey, and the color of the train folds are blended. Finally, the propensity scores and outcome are predicted for the out-of-sample fold using the fitted models on the complementary train splits (depicted by the blended colors). Importantly, for each test-partition, the treatment model and the outcome model were trained on the same complementary partitions.](crossfit-crossval.png){#fig-crossfit_crossval}
 :::
 
 # Double cross-fitting
@@ -75,9 +75,7 @@ mention figure 1 in zivich
 
 :::{.column-page}
 
-![](double_crossfit-1.SVG){#fig-double_crossfit}
-
-<!-- ![](double_crossfit-2.SVG) -->
+![](double_crossfit-1.png){#fig-double_crossfit}
 
 :::
 
@@ -94,3 +92,12 @@ TODO: randomly repeating shuffles. the particular split of the data often change
 
 # Summary
 
+
+
+# Appendix {.appendix}
+
+:::{.column-page}
+
+![](double_crossfit-2.png){#fig-double_crossfit_compact}
+
+:::
