@@ -5,7 +5,8 @@ subtitle: >
 author: "Ehud Karavani"
 date: 2024/12/30
 date-modified: last-modified
-# image: 
+bibliography: references.bib
+image: ./double_crossfit-2.png
 categories: 
   - causal inference
   - visualization
@@ -31,8 +32,8 @@ Both will have a subscript $-k$ to specify the out-of-fit fold on which they pre
 While often in the causal inference literature, each such test fold will be used for an effect estimation that will later be aggregated across folds,
 the overarching goal for us in this post will be to generate out-of-sample predictions for each observation in the dataset that will later be used estimate an effect once[^1].
 
-[^1]: This is similar to how [CV-TMLE](https://biostats.bepress.com/ucbbiostat/paper273/) estimates an effect using TMLE within each test data partition, 
-while the is [an equivalent version](https://arxiv.org/abs/1811.04573) in which TMLE is simply fed with test-data partition predictions (and the TMLE procedure is ran just once). 
+[^1]: This is similar to how [CV-TMLE](https://biostats.bepress.com/ucbbiostat/paper273/)(@zheng2010asymptotic) estimates an effect using TMLE within each test data partition, 
+while the is [an equivalent version](https://arxiv.org/abs/1811.04573)(@levy2018easy) in which TMLE is simply fed with test-data partition predictions (and the TMLE procedure is ran just once). 
 
 # Cross-validation / cross-fitting
 Cross-validation and cross-fitting apply the same data-partitioning scheme.
@@ -65,6 +66,8 @@ Most importantly, the folds between the treatment and outcome models are complet
 :::
 
 # Double cross-fitting
+Appears
+
 Decoupling the propensity
 TODO: you need independence between folds, which you don't really get because how the training set overlap across folds. 
 cross validation, within each train fold split 50:50 between treatment and outcome models
