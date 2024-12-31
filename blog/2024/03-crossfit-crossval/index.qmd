@@ -10,6 +10,10 @@ image: ./double_crossfit-2.png
 categories: 
   - causal inference
   - visualization
+execute: 
+  echo: true
+  eval: false  # Just behave as a Python pseudo code
+  freeze: auto
 ---
 
 # Introduction
@@ -42,9 +46,6 @@ We split the data into $K$ folds, for each fold $k$ we predict using models that
 This is similar to generating predictions using Scikit-learn's `cross_val_predict`, making sure to align the folds to match for the treatment and outcome models.
 
 ```{python}
-#| echo: true
-#| eval: false
-
 from sklearn.ensemble import GradientBoostingClassifier, GradientBoostingRegressor
 from sklearn.model_selection import cross_val_predict, KFold
 
