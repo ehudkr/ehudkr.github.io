@@ -143,10 +143,15 @@ Keeping track of this nested structure can be beneficial, especially when the av
 
 
 # Summary
+I've presented cross-fitting (which is also cross validation) and double cross-fitting. 
+I visualized how out-of-sample predictions are obtained in hope to clarify the process and better contrast the lesser-known double cross-fitting with the better-known (single) cross-fitting (which again is equivalent to the known-by-all cross-validation).
+I have tried to make these illustrations simple enough but not too simple to be degenerate (e.g., 2-fold cross-fitting or 3-fold double cross-fitting), settling on a very familiar 5-fold partitioning.
 
+The process of making this post really clarified some nuances for me[^6], and I hope other who need will stumble on it benefit from it, too.
+
+[^6]: I, for instance, was under the impression that cross-fitting is not equal to cross-validation because it used independent disjoint sets, rather than the complementary folds. Namely, It predicted on fold $k$ using a model that was fitted only on fold (say) $k+1$ (rather than all the rest of the data other than $k$). Which immediately begged the question why use anything other than 2-fold cross-fitting (and to which I then thought the >2 number of folds in the literature might refer to random repetitions...). So you can see how my understanding could have spiraled, so going back over these materials and formalizing it in sketches really made it sing for me. 
 
 
 # Appendix {.appendix}
-
 
 ![A more compact visual scheme for a 5-fold double cross-fitting presented in Figure @fig-double_crossfit, depicting both treatment ($\pi$) and outcome ($m$) nuisance models in the same block.](double_crossfit-2.png){#fig-double_crossfit_compact}
