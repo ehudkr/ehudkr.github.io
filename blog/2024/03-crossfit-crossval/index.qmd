@@ -67,21 +67,70 @@ Most importantly, the folds between the treatment and outcome models are complet
 :::
 
 # Double cross-fitting
-Appears
+<!-- Cross-fitting with its out-of-sample prediction enables us to use an even broader class of machine learning estimators (non-Donsker class) and still have proper coverage of confidence intervals that is not improperly narrow. 
+This has to do with convergence rate of the estimator... -->
+Cross-fitted doubly robust models are an excellent way to plug complex machine learning into causal estimators.
+But there's an even better, more efficient way that can have better coverage of confidence intervals: double cross-fitted doubly robust models.
 
-Decoupling the propensity
-TODO: you need independence between folds, which you don't really get because how the training set overlap across folds. 
-cross validation, within each train fold split 50:50 between treatment and outcome models
+As emphasized in @fig-crossfit_crossval, for every test-fold, the treatment model and outcome model use the same training data.
+From the causal estimator (AIPW/TMLE/DML) point of view, its inputs -- $\pi_{-k}(X)$ and $m_{-k}(X)$ -- are still dependent 
+because the training set for the nuisance functions overlaps across folds.
+This still creates a "double-dipping"-like phenomenon.
 
-reference newey and robins
+To account for that and regain full independence for predicting fold $k$, we can simply split more.
+An inception of splits.
+In double cross-fitting (@newey2018cross), we use separate subsamples to estimate different nuisance functions.
+This way we can fully decouple the treatment model from the outcome model in every prediction of test-fold $k$.
 
-mention figure 1 in zivich
+The solution is quite simple, though.
+It only means that within each training-fold, we further split the fold 50:50 (two disjoint sets), with one partition for the treatment nuisance model and the other to the outcome nuisance model. 
+Figure @fig-double_crossfit[^3] modifies Figure @fig-crossfit_crossval to demonstrate that now each training fold for $\pi_{-k}$ and $m_{-k}$ is have the size (with the other half reserved to the other nuisance model). 
+Figure @fig-double_crossfit_compact shows the same information in a more compact way, where $\pi$ and $m$ folds are in a single block rather than two separate blocks.
+But most importantly, as seen on the right block, for each test-fold $k$ prediction, there is no color overlap between $\pi_{-k}$ and $m_{-k}$ (and together, they complete all the colors)[^2].
+
+[^2]: This is a benefit of having an odd number of folds. For a 10-fold split, one of the training folds would have had to further split into two, half for the treatment nuisance function and half for the outcome. 
+
+[^3]: This figure is highly inspired by Figure 1 in @zivich2021machine. However, there they depict a 3-fold double cross-fitting, which is a somewhat degenerate case, since there is no non-trivial complementary folds (it is basically the equivalent of a two-fold (single) cross-fitting). 
+In contrast, Figure @fig-double_crossfit shows a 5-fold double cross-fitting, that properly illustrates how to take the complement training-folds and split them into two separate subsamples for the two nuisance functions.
+
 
 :::{.column-page}
 
-![](double_crossfit-1.png){#fig-double_crossfit}
+![A visual scheme for a 5-fold double cross-fitting. This Figure is a modification of @fig-crossfit_crossval, where the first main change is in the middle blocks, where in addition to the test-fold in dark grey, the light-grey folds are reserved to the other nuisance model, hence the actual fitting is done on only two (colored) folds (rather than four as in Figure @fig-crossfit_crossval). This is summarized in the second change in the right block, where the predictions on each test-fold is done using two-folds fitted $\pi$ and two-folds fitted $m$ that together add up to the 4 complementary folds.](double_crossfit-1.png){#fig-double_crossfit}
 
 :::
+
+
+In practice, the implementation is as simple[^4].
+```{python}
+from sklearn.model_selection import KFold, train_test_split
+
+kfold = KFold(n_splits=5, shuffle=True, random_state=0)
+# treatment_models, outcome_models = [], []
+a_pred = np.full_like(a, np.nan)
+y_pred = np.full_like(y, np.nan)
+for fold_id, (train_idx, test_idx) in kfold.split():
+    treatment_model_idx, outcome_model_idx = train_test_split(train_idx, test_size=0.5)
+    treatment_model = GradientBoostingClassifier().fit(
+        X.iloc[treatment_model_idx], a.iloc[treatment_model_idx]
+    )
+    outcome_model = GradientBoostingRegressor().fit(
+        X.iloc[outcome_model_idx], y.iloc[outcome_model_idx]
+    )
+    a_pred[test_idx] = treatment_model.predict_proba(X.iloc[test_idx])
+    y_pred[test_idx] = outcome_model.predict(X.iloc[test_idx])
+# Run DML using `a_pred` and `y_pred` for residualization.
+
+```
+
+[^4]: This implementation does not follow Figure @fig-double_crossfit exactly, because it does not respect the neat separation into the predefined folds, although an exact implementation of the schematics in the Figure is achievable with a bit more coding.
+
+One important concern, however, is that each of the nuisance models now only uses half the data it would have used in a (single) cross-fitting workflow. 
+While it has no effect in theory, it may still affect small-sample efficiency in practice.
+Nonetheless, it is solvable by increasing the number of folds, so each test-fold is smaller and therefore each training-fold is larger. 
+However, for small enough data, it might be preferable to simply revert to a single cross-fitting scheme.
+
+
 
 # Repeated random partitioning
 
@@ -100,8 +149,5 @@ TODO: randomly repeating shuffles. the particular split of the data often change
 
 # Appendix {.appendix}
 
-:::{.column-page}
 
-![](double_crossfit-2.png){#fig-double_crossfit_compact}
-
-:::
+![A more compact visual scheme for a 5-fold double cross-fitting presented in Figure @fig-double_crossfit, depicting both treatment ($\pi$) and outcome ($m$) nuisance models in the same block.](double_crossfit-2.png){#fig-double_crossfit_compact}
