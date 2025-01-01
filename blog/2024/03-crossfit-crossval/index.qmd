@@ -1,7 +1,7 @@
 ---
-title: "Visualizing cross-fitting and cross-validation for causal inference"
+title: "Visualizing (double) cross-fitting for causal inference"
 subtitle: > 
-  A visual way to understand cross-fitting, double cross-fitting, and cross-validation and how to differentiate between them.
+  A visual way to understand cross-validation, cross-fitting, and double cross-fitting, and to differentiate between them.
 author: "Ehud Karavani"
 date: 2024/12/30
 date-modified: last-modified
