@@ -25,6 +25,7 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/2024/03-crossfit-crossval/index.html",
       "/blog/2024/02-model-comparison/index.html",
       "/blog/2024/01-oui-love-plots/index.html",
       "/blog/2023/03-sequential_trial_design/index.html",
