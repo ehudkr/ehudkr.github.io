@@ -14,6 +14,14 @@ execute:
   echo: true
   eval: false  # Just behave as a Python pseudo code
   freeze: auto
+crossref:
+  custom:
+    - kind: float
+      key: suppfig
+      latex-env: suppfig
+      reference-prefix: Figure A
+      space-before-numbering: false
+      latex-list-of-description: Supplementary Figure
 ---
 
 # Introduction
@@ -36,8 +44,8 @@ Both will have a subscript $-k$ to specify the out-of-fit fold on which they pre
 While often in the causal inference literature, each such test fold will be used for an effect estimation that will later be aggregated across folds,
 the overarching goal for us in this post will be to generate out-of-sample predictions for each observation in the dataset that will later be used estimate an effect once[^1].
 
-[^1]: This is similar to how [CV-TMLE](https://biostats.bepress.com/ucbbiostat/paper273/)(@zheng2010asymptotic) estimates an effect using TMLE within each test data partition, 
-while the is [an equivalent version](https://arxiv.org/abs/1811.04573)(@levy2018easy) in which TMLE is simply fed with test-data partition predictions (and the TMLE procedure is ran just once). 
+[^1]: This is similar to how CV-TMLE [@zheng2010asymptotic] estimates an effect using TMLE within each test data partition, 
+while the is an equivalent version [@levy2018easy] in which TMLE is simply fed with test-data partition predictions (and the TMLE procedure is ran just once). 
 
 # Cross-validation / cross-fitting
 Cross-validation and cross-fitting apply the same data-partitioning scheme.
@@ -55,7 +63,7 @@ y_pred = cross_val_predict(GradientBoostingRegressor, X=X, y=y, cv=kfold)
 # Run DML using `a_pred` and `y_pred` for residualization.
 ```
 
-Figure @fig-crossfit_crossval visualizes this process, in which data is partitioned into 5 folds, each assigned a unique color (left).
+@fig-crossfit_crossval visualizes this process, in which data is partitioned into 5 folds, each assigned a unique color (left).
 The middle two blocks each describe the data for the two models, treatment model $\pi_k$ and outcome model $m_k$. 
 In each fold the test partition is depicted in dark grey, and the train fold are blended colors of the folds used to fit the model on the $k$-th train-test split. 
 The right block depicts the out-of-sample prediction. 
@@ -79,24 +87,24 @@ This still creates a "double-dipping"-like phenomenon.
 
 To account for that and regain full independence for predicting fold $k$, we can simply split more.
 An inception of splits.
-In double cross-fitting (@newey2018cross), we use separate subsamples to estimate different nuisance functions.
+In double cross-fitting [@newey2018cross], we use separate subsamples to estimate different nuisance functions.
 This way we can fully decouple the treatment model from the outcome model in every prediction of test-fold $k$.
 
 The solution is quite simple, though.
 It only means that within each training-fold, we further split the fold 50:50 (two disjoint sets), with one partition for the treatment nuisance model and the other to the outcome nuisance model. 
-Figure @fig-double_crossfit[^3] modifies Figure @fig-crossfit_crossval to demonstrate that now each training fold for $\pi_{-k}$ and $m_{-k}$ is have the size (with the other half reserved to the other nuisance model). 
-Figure @fig-double_crossfit_compact shows the same information in a more compact way, where $\pi$ and $m$ folds are in a single block rather than two separate blocks.
+@fig-double_crossfit[^3] modifies @fig-crossfit_crossval to demonstrate that now each training fold for $\pi_{-k}$ and $m_{-k}$ is have the size (with the other half reserved to the other nuisance model). 
+@suppfig-double_crossfit_compact shows the same information in a more compact way, where $\pi$ and $m$ folds are in a single block rather than two separate blocks.
 But most importantly, as seen on the right block, for each test-fold $k$ prediction, there is no color overlap between $\pi_{-k}$ and $m_{-k}$ (and together, they complete all the colors)[^2].
 
 [^2]: This is a benefit of having an odd number of folds. For a 10-fold split, one of the training folds would have had to further split into two, half for the treatment nuisance function and half for the outcome. 
 
 [^3]: This figure is highly inspired by Figure 1 in @zivich2021machine. However, there they depict a 3-fold double cross-fitting, which is a somewhat degenerate case, since there is no non-trivial complementary folds (it is basically the equivalent of a two-fold (single) cross-fitting). 
-In contrast, Figure @fig-double_crossfit shows a 5-fold double cross-fitting, that properly illustrates how to take the complement training-folds and split them into two separate subsamples for the two nuisance functions.
+In contrast, @fig-double_crossfit shows a 5-fold double cross-fitting, that properly illustrates how to take the complement training-folds and split them into two separate subsamples for the two nuisance functions.
 
 
 :::{.column-page}
 
-![A visual scheme for a 5-fold double cross-fitting. This Figure is a modification of @fig-crossfit_crossval, where the first main change is in the middle blocks, where in addition to the test-fold in dark grey, the light-grey folds are reserved to the other nuisance model, hence the actual fitting is done on only two (colored) folds (rather than four as in Figure @fig-crossfit_crossval). This is summarized in the second change in the right block, where the predictions on each test-fold is done using two-folds fitted $\pi$ and two-folds fitted $m$ that together add up to the 4 complementary folds.](double_crossfit-1.png){#fig-double_crossfit}
+![A visual scheme for a 5-fold double cross-fitting. This Figure is a modification of @fig-crossfit_crossval, where the first main change is in the middle blocks, where in addition to the test-fold in dark grey, the light-grey folds are reserved to the other nuisance model, hence the actual fitting is done on only two (colored) folds (rather than four as in @fig-crossfit_crossval). This is summarized in the second change in the right block, where the predictions on each test-fold is done using two-folds fitted $\pi$ and two-folds fitted $m$ that together add up to the 4 complementary folds.](double_crossfit-1.png){#fig-double_crossfit}
 
 :::
 
@@ -123,7 +131,7 @@ for fold_id, (train_idx, test_idx) in kfold.split():
 
 ```
 
-[^4]: This implementation does not follow Figure @fig-double_crossfit exactly, because it does not respect the neat separation into the predefined folds, although an exact implementation of the schematics in the Figure is achievable with a bit more coding.
+[^4]: This implementation does not follow @fig-double_crossfit exactly, because it does not respect the neat separation into the predefined folds, although an exact implementation of the schematics in the Figure is achievable with a bit more coding.
 
 One important concern, however, is that each of the nuisance models now only uses half the data it would have used in a (single) cross-fitting workflow. 
 While it has no effect in theory, it may still affect small-sample efficiency in practice.
@@ -154,4 +162,4 @@ The process of making this post really clarified some nuances for me[^6], and I 
 
 # Appendix {.appendix}
 
-![A more compact visual scheme for a 5-fold double cross-fitting presented in Figure @fig-double_crossfit, depicting both treatment ($\pi$) and outcome ($m$) nuisance models in the same block.](double_crossfit-2.png){#fig-double_crossfit_compact}
+![A more compact visual scheme for a 5-fold double cross-fitting presented in @fig-double_crossfit, depicting both treatment ($\pi$) and outcome ($m$) nuisance models in the same block.](double_crossfit-2.png){#suppfig-double_crossfit_compact}
