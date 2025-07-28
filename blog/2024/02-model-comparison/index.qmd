@@ -16,12 +16,6 @@ execute:
   freeze: true
 ---
 
-
-::: {.callout-note}
-This post is still a work in process.
-:::
-
-
 ## Motivation
 I'm under the impression that deep learning models are not benchmarked properly, making it difficult to draw meaningful conclusions.
 Too often than not, models will be evaluated using a single number, with no uncertainty around that number.
@@ -203,9 +197,36 @@ print(ols.summary(slim=True))
 
 [^8]: We use the factor transformation `C(model)` to convert the `model` column, which contains strings, into 0-1 coding suitable for regression
 
+#### Accounting for repeated measures
+One important detail to notice is that under this "long" data format, we actually have repeated measure.
+The same original datapoint appears twice - once as the residual from the linear regression model and once from the gradient boosting trees. 
+When we stack those residuals, the rows in the dataset are no longer independent (their errors are correlated as the data point could've been easy/hard to predict in the first place) and ignoring this fact can lead us to incorrect inferences.[^14]
+Luckily, we can easily account for this structure by using clustered standard errors accounting for sample `id`s:[^15]
+
+```{python}
+# # If you were to refit the model:
+rols = smf.ols("li ~ 1 + C(model)", data=sqe).fit(
+    cov_type="cluster", cov_kwds={"groups":sqe["id"]},
+)
+# # Or robustify the results of an already fitted model:
+# rols = ols.get_robustcov_results(
+#     cov_type="cluster", groups=sqe["id"],
+# )
+print(rols.summary(slim=True))
+```
+
+You can see the point estimate for `model` is the same as before, but the corresponding standard error has changed.
+
+[^14]: Oftentimes ignoring repeated measure can lead to overly optimistic inferences (unjustifiably narrow confidence intervals), but in our case we'll see that because our repeated measures are of the same data point, the error will shrink. Intuitively, because every observation is its own control, the baseline characteristics are the same and therefore an estimation is less noisy.  
+Another point, is that Note that we could have formulate this task as a wide-data analysis, using one residuals to predict the other residuals and testing whether the slope goes downward or upward. 
+However, one, I'm not sure how to interpret the resulting coefficient other than its direction, and second, stacking will allow to generalize more easily when we have more than two models. 
+
+[^15]: This is equivalent of using a paired t-test, instead of a regular two-sample t-test.  
+It seems code cells cannot be placed in footnotes, but if you were to import `from scipy.stats import ttest_rel` and then run `ttest_rel(lr_res, gbt_res)`, you would get an equivalent result. 
+
 We can now follow a standard interpretation of a linear model.
-The `C(model)[T.lr]` variable (i.e., setting `lr` to be encoded as 1 while `gbt` was encoded as 0) quantifies the average difference in squared errors (variance) between the linear regression and the boosting trees models (`{python} round(ols.params['C(model)[T.lr]'], 2)`).
-This allows us to directly assess the difference in model performance, but since we get asymptotic inference too, we can further place uncertainty around that difference - enabling us to tell whether it is statistically significant or not (p-value `{python} round(ols.pvalues['C(model)[T.lr]'], 4)`), or at least what is a likely range for that error to be in the "population" of data from which the dataset came from (95% confidence intervals `{python} round(ols.conf_int(0.05).loc['C(model)[T.lr]', 0], 1), round(ols.conf_int(0.05).loc['C(model)[T.lr]', 1], 1)`).
+The `C(model)[T.lr]` variable (i.e., setting `lr` to be encoded as 1 while `gbt` was encoded as 0) quantifies the average difference in squared errors (variance) between the linear regression and the boosting trees models (`{python} float(round(rols.params['C(model)[T.lr]'], 2))`).
+This allows us to directly assess the difference in model performance, but since we get asymptotic inference too, we can further place uncertainty around that difference - enabling us to tell whether it is statistically significant or not (p-value `{python} float(round(rols.pvalues['C(model)[T.lr]'], 4))`), or at least what is a likely range for that error to be in the "population" of data from which the dataset came from (95% confidence intervals [`{python} float(round(rols.conf_int(0.05).loc['C(model)[T.lr]', 0], 1)), float(round(rols.conf_int(0.05).loc['C(model)[T.lr]', 1], 1))`]).
 
 This direct comparison is the proper way to assess difference in performance.
 When deep learning model do get confidence intervals around them, they are often around the performance metrics itself. 
@@ -269,11 +290,12 @@ Repeating the model comparison from above is as simple as:
 import bambi as bmb
 
 # ols = smf.ols("li ~ 1 + C(model)", data=sqe).fit()
-bols = bmb.Model("li ~ 1 + model", data=sqe).fit(
-   cores=1,  # play nice with `quarto render` for some reason
+bols = bmb.Model("li ~ 1 + model + (1|id)", data=sqe).fit(
+   cores=1,  # `quarto render` fails for cores>1 for unknown reason
 )
 ``` 
 
+Here we account for the repeated measures by adding an intercept for each , which accounts to the fact that different data points have different characteristics making them easier or harder to adjust, and we want to adjust for that
 Ideally, after fitting a Bayesian model you should evaluate the fit using some diagnostics and `az.trace_plot()`, which I will skip (but I checked, it's ok).
 
 
@@ -314,7 +336,7 @@ Here are some examples:
    In such case, however, the response variable (errors) might no longer be individual and identically distributed (IID), because it originates from the same models.
    Ignoring these correlations between observations and assuming they are IID might make our estimates overly confident, which is the counterproductive to our main goal of assessing uncertainty properly. 
    Luckily, we can apply multilevel modeling (mixed linear models) to regress away these dependencies simply by specifying
-   `li ~ 1 + model + (1 | dataset)`[^10] [^11]. 
+   `li ~ 1 + model + (1 + model | dataset) + (1 | id)`[^10] [^11]. 
 2. **Multiple models: Compare multiple models**. 
    Extending the dummy encoding of the model to any other contrast encoding between models can be done in a straightforward way, and allow comparing multiple models in multiple ways simultaneously. 
 3. **Multiple metrics: simultaneously**
@@ -346,9 +368,9 @@ Let's generate more data from a different dataset, by repeating the process abov
 [^13]: no multiple metrics because `bambi` does not support multivariate gamma models
 
 ```{python}
-from sklearn.datasets import make_friedman2
+from sklearn.datasets import make_friedman3
 
-X, y = make_friedman2(n_samples=400, noise=1, random_state=1)
+X, y = make_friedman3(n_samples=400, noise=1, random_state=2)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=2)
 lr = LinearRegression().fit(X_train, y_train)
 gbt = GradientBoostingRegressor().fit(X_train, y_train)
@@ -356,16 +378,15 @@ gbt = GradientBoostingRegressor().fit(X_train, y_train)
 lr_res = (y_test - lr.predict(X_test))**2
 gbt_res = (y_test - gbt.predict(X_test))**2
 
-friedman2_sqe = pd.concat({"lr": pd.Series(lr_res), "gbt": pd.Series(gbt_res)}, names=["model", "id"]).rename("li")
-friedman2_sqe = friedman2_sqe.reset_index()
-friedman2_sqe
+friedman3_sqe = pd.concat({"lr": pd.Series(lr_res), "gbt": pd.Series(gbt_res)}, names=["model", "id"]).rename("li")
+friedman3_sqe = friedman3_sqe.reset_index()
 ```
 
 Now let's stack this dataset on top of the previous dataset
 
 ```{python}
 sqe = pd.concat(
-    {"friedman1": sqe, "friedman2": friedman2_sqe.reset_index()},
+    {"friedman1": sqe, "friedman3": friedman3_sqe},
     names=["dataset"],
 ).reset_index().drop(columns="level_1")
 sqe
@@ -374,30 +395,34 @@ sqe
 Now we can fit a multilevel Gamma regression on the combined data:
 
 ```{python}
-bgamma = bmb.Model(
-    "li ~ 1 + model + (1 | dataset)", 
+gamma_model = bmb.Model(
+    # "li ~ 1 + model + (1 + model | dataset) + (1 | id)", 
+     "li ~ 1 + model * C(dataset) + (1 | id)", 
     data=sqe,
     family="gamma",
     link="log",
-).fit(
-    tune=2000,
-    target_accept=0.94,
+)
+gamma_idata = gamma_model.fit(
     random_seed=11,
-    cores=1  # play nice with `quarto render` for some reason
+    cores=1  # `quarto render` fails for cores>1 for unknown reason
 )
 ```
 
-And investigate the posteriors:
+Note that I've used an interaction `li ~ 1 + model * C(dataset) + (1 | id)`, which is the no-pooling ("memoryless" a-la McElreath) version of the varying slopes `li ~ 1 + model + (1 + model | dataset) + (1 | id)`.
+They are equivalent, as they both provide an effect per dataset (`C(dataset) -> (1 | dataset)`) as well as allowing the models to perform differently per dataset (`model:C(dataset) -> (model | dataset)`).
+I am not proud of this substitution but I could not get the sampler to properly sample the hierarchical without divergences.
+The `model:dataset` product term also means we can't just look at the `model` parameter to assess the difference (as it depends on `dataset`), so instead I will use a marginal effects approach :
 
 ```{python}
-az.plot_posterior(
-    bgamma, var_names="model",
-    ref_val=0, 
-    rope=[-0.1*loss_std, 0.1*loss_std], 
+bmb.interpret.comparisons(
+    model=gamma_model,
+    idata=gamma_idata,
+    contrast="model",
+    average_by=True,
 )
-
 ```
 
+Which is in line with the results above showing larger residuals for linear regression than for gradient boosting trees.
 
 ## Conclusions
 I've presented a framework to make model comparison rigorously and meaningfully by incorporating uncertainty measure around performance difference.
