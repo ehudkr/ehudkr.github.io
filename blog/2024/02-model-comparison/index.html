@@ -355,7 +355,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 25, 2024</p>
+      <p class="date-modified">July 28, 2025</p>
     </div>
   </div>
     
@@ -411,7 +411,7 @@ Note
 <section id="regression-models-are-fancy-average-machines" class="level4">
 <h4 class="anchored" data-anchor-id="regression-models-are-fancy-average-machines">Regression models are fancy average machines</h4>
 <p>Linear models (those <span class="math inline">\(y_i = \alpha + \beta X_i\)</span>, for example) end up estimating <span class="math inline">\(E[Y|X]\)</span>. Namely, the expected value of <span class="math inline">\(Y\)</span> given some level of <span class="math inline">\(X\)</span>. Basically, the average value of <span class="math inline">\(Y\)</span> in some setting. And if there is no <span class="math inline">\(X\)</span> (i.e., there is only an intercept, so <span class="math inline">\(y_i = \alpha\)</span>), then that’s just the average overall, look:</p>
-<div id="bb7403e5" class="cell" data-execution_count="1">
+<div id="c017d878" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
@@ -431,7 +431,7 @@ The coefficient of the regression intercept: 2.9520</code></pre>
 </div>
 </div>
 <p>The nice thing about the regression framework is that we also get inferential results (standard errors, confidence intervals, p-values…) for free, off-the-shelf. In the frequentist (read, “standard”) regression setting, this is done using analytical asymptotic properties (no resampling and refitting)</p>
-<div id="2d5467e0" class="cell" data-execution_count="2">
+<div id="85bd0c8b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
@@ -454,7 +454,7 @@ Notes:
 <section id="averaging-individual-level-errors-with-regression" class="level4">
 <h4 class="anchored" data-anchor-id="averaging-individual-level-errors-with-regression">Averaging individual-level errors with regression</h4>
 <p>Tying the two subsections above together, given a ground truth vector <span class="math inline">\(y\)</span> and predictions <span class="math inline">\(\hat{y}\)</span>, we can calculate the mean squared error as an average or with a regression.</p>
-<div id="ed0e3a09" class="cell" data-execution_count="3">
+<div id="451a598e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">3</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
@@ -487,7 +487,7 @@ The coefficient of the regression intercept: 0.2415</code></pre>
 <section id="settings-up-data" class="level3">
 <h3 class="anchored" data-anchor-id="settings-up-data">Settings up data</h3>
 <p>To demonstrate the process, we will need labeled data and we will need prediction models. I’ll use toy data of a regression, rather than classification, task (i.e., a continuous target) for simplicity as squared errors were already introduced, but this can work with any individual-level metric. I will split it train and test, so the comparison will be performed on unseen-data. As for models, I’ll compare a linear (regression) with a nonlinear (boosting trees) one, just so we can see the difference in performance.</p>
-<div id="10fbf039" class="cell" data-execution_count="4">
+<div id="deed2171" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman1</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -499,7 +499,7 @@ The coefficient of the regression intercept: 0.2415</code></pre>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>gbt <span class="op">=</span> GradientBoostingRegressor().fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let’s calculate individual-level squared errors:</p>
-<div id="5da1d894" class="cell" data-execution_count="5">
+<div id="c0d9bb37" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lr_res <span class="op">=</span> (y_test <span class="op">-</span> lr.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gbt_res <span class="op">=</span> (y_test <span class="op">-</span> gbt.predict(X_test))<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -507,7 +507,7 @@ The coefficient of the regression intercept: 0.2415</code></pre>
 <section id="comparing-models" class="level3">
 <h3 class="anchored" data-anchor-id="comparing-models">Comparing models</h3>
 <p>To compare the difference in performance between the models, I’ll model it as a regression task setting the individual-level errors as the target and a dummy coding of the models as the feature (together with an intercept). This merely requires concatenating the errors and indicating which model corresponds to them.</p>
-<div id="fc9a1b7b" class="cell" data-execution_count="6">
+<div id="86ec9660" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat({<span class="st">"lr"</span>: pd.Series(lr_res), <span class="st">"gbt"</span>: pd.Series(gbt_res)}, names<span class="op">=</span>[<span class="st">"model"</span>, <span class="st">"id"</span>]).rename(<span class="st">"li"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -518,16 +518,16 @@ lr     0       0.089986
        3       6.061478
        4      13.876234
                 ...    
-gbt    195     0.625408
-       196     0.935833
-       197     0.067468
-       198     3.241952
-       199     3.417277
+gbt    195     0.518832
+       196     1.191123
+       197     0.002167
+       198     2.259212
+       199     3.439729
 Name: li, Length: 400, dtype: float64</code></pre>
 </div>
 </div>
 <p>And putting that data into the regression<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>:</p>
-<div id="bf412cac" class="cell" data-execution_count="7">
+<div id="abd392de" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> sqe.reset_index()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ols <span class="op">=</span> smf.ols(<span class="st">"li ~ 1 + C(model)"</span>, data<span class="op">=</span>sqe).fit()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -536,22 +536,55 @@ Name: li, Length: 400, dtype: float64</code></pre>
 ==============================================================================
 Dep. Variable:                     li   R-squared:                       0.019
 Model:                            OLS   Adj. R-squared:                  0.017
-No. Observations:                 400   F-statistic:                     7.852
-Covariance Type:            nonrobust   Prob (F-statistic):            0.00533
+No. Observations:                 400   F-statistic:                     7.810
+Covariance Type:            nonrobust   Prob (F-statistic):            0.00545
 ==================================================================================
                      coef    std err          t      P&gt;|t|      [0.025      0.975]
 ----------------------------------------------------------------------------------
-Intercept          4.2327      0.605      6.994      0.000       3.043       5.422
-C(model)[T.lr]     2.3981      0.856      2.802      0.005       0.716       4.081
+Intercept          4.2308      0.607      6.967      0.000       3.037       5.425
+C(model)[T.lr]     2.4000      0.859      2.795      0.005       0.712       4.088
 ==================================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
 </div>
-<p>We can now follow a standard interpretation of a linear model. The <code>C(model)[T.lr]</code> variable (i.e., setting <code>lr</code> to be encoded as 1 while <code>gbt</code> was encoded as 0) quantifies the average difference in squared errors (variance) between the linear regression and the boosting trees models (2.4). This allows us to directly assess the difference in model performance, but since we get asymptotic inference too, we can further place uncertainty around that difference - enabling us to tell whether it is statistically significant or not (p-value 0.0053), or at least what is a likely range for that error to be in the “population” of data from which the dataset came from (95% confidence intervals (0.7, 4.1)).</p>
+<section id="accounting-for-repeated-measures" class="level4">
+<h4 class="anchored" data-anchor-id="accounting-for-repeated-measures">Accounting for repeated measures</h4>
+<p>One important detail to notice is that under this “long” data format, we actually have repeated measure. The same original datapoint appears twice - once as the residual from the linear regression model and once from the gradient boosting trees. When we stack those residuals, the rows in the dataset are no longer independent (their errors are correlated as the data point could’ve been easy/hard to predict in the first place) and ignoring this fact can lead us to incorrect inferences.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> Luckily, we can easily account for this structure by using clustered standard errors accounting for sample <code>id</code>s:<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<div id="f92ed38c" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # If you were to refit the model:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>rols <span class="op">=</span> smf.ols(<span class="st">"li ~ 1 + C(model)"</span>, data<span class="op">=</span>sqe).fit(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    cov_type<span class="op">=</span><span class="st">"cluster"</span>, cov_kwds<span class="op">=</span>{<span class="st">"groups"</span>:sqe[<span class="st">"id"</span>]},</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># # Or robustify the results of an already fitted model:</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># rols = ols.get_robustcov_results(</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     cov_type="cluster", groups=sqe["id"],</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># )</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                     li   R-squared:                       0.019
+Model:                            OLS   Adj. R-squared:                  0.017
+No. Observations:                 400   F-statistic:                     15.12
+Covariance Type:              cluster   Prob (F-statistic):           0.000138
+==================================================================================
+                     coef    std err          z      P&gt;|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          4.2308      0.426      9.939      0.000       3.397       5.065
+C(model)[T.lr]     2.4000      0.617      3.888      0.000       1.190       3.610
+==================================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)</code></pre>
+</div>
+</div>
+<p>You can see the point estimate for <code>model</code> is the same as before, but the corresponding standard error has changed.</p>
+<p>We can now follow a standard interpretation of a linear model. The <code>C(model)[T.lr]</code> variable (i.e., setting <code>lr</code> to be encoded as 1 while <code>gbt</code> was encoded as 0) quantifies the average difference in squared errors (variance) between the linear regression and the boosting trees models (2.4). This allows us to directly assess the difference in model performance, but since we get asymptotic inference too, we can further place uncertainty around that difference - enabling us to tell whether it is statistically significant or not (p-value 0.0001), or at least what is a likely range for that error to be in the “population” of data from which the dataset came from (95% confidence intervals [(1.2, 3.6)]).</p>
 <p>This direct comparison is the proper way to assess difference in performance. When deep learning model do get confidence intervals around them, they are often around the performance metrics itself. But then, translating that to confidence intervals around the difference between two models (and their own confidence intervals) is not necessarily straightforward, and requires extra caution not to misinterpret the significance <span class="citation" data-cites="gelman2006difference">(<a href="#ref-gelman2006difference" role="doc-biblioref">Gelman and Stern 2006</a>)</span>.</p>
 <p>This was relatively cool. If you stop reading here it’s ok. You are now able to compare models relatively simply and with some notion of uncertainty.</p>
+</section>
 </section>
 </section>
 <section id="going-further" class="level2">
@@ -574,7 +607,7 @@ Figure&nbsp;1: Noninferiority hypothesis testing taken from <span class="citatio
 </section>
 <section id="going-bayesian" class="level3">
 <h3 class="anchored" data-anchor-id="going-bayesian">Going Bayesian</h3>
-<p>Now, I’m positive that the regression framework I presented here is somewhat equivalent to what happens in R when you use <code>anova(mod1, mod2)</code> (ANOVA with two models). In R, you often specify a <code>test</code> parameter to <code>anova</code> (like <code>"Chisq"</code> for a likelihood ratio test), but this requires knowing the degrees of freedom the models have in order to properly set up the null distribution to draw p-values from. Now, go figure what the degrees of freedom of ChatGPT<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. I’m not sure if the Wald test used for the regression p-value (or confidence intervals) sidesteps it, but regardless, adopting a Bayesian framework will save us from asymptotic requirements, as the uncertainty will be directly assessed from the data at hand.</p>
+<p>Now, I’m positive that the regression framework I presented here is somewhat equivalent to what happens in R when you use <code>anova(mod1, mod2)</code> (ANOVA with two models). In R, you often specify a <code>test</code> parameter to <code>anova</code> (like <code>"Chisq"</code> for a likelihood ratio test), but this requires knowing the degrees of freedom the models have in order to properly set up the null distribution to draw p-values from. Now, go figure what the degrees of freedom of ChatGPT<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. I’m not sure if the Wald test used for the regression p-value (or confidence intervals) sidesteps it, but regardless, adopting a Bayesian framework will save us from asymptotic requirements, as the uncertainty will be directly assessed from the data at hand.</p>
 <p>Adopting a Bayesian framework will come with multiple strengths:</p>
 <ul>
 <li>First, it will allow us to focus on magnitude of difference and estimation instead of null-hypothesis significant testing <span class="citation" data-cites="kruschke2013bayesian">(<a href="#ref-kruschke2013bayesian" role="doc-biblioref">Kruschke 2013</a>)</span>; this will be even more important for non-inferiority tests.</li>
@@ -584,56 +617,50 @@ Figure&nbsp;1: Noninferiority hypothesis testing taken from <span class="citatio
 <section id="regression-modeling-in-python-with-bambi" class="level4">
 <h4 class="anchored" data-anchor-id="regression-modeling-in-python-with-bambi">Regression modeling in Python with <code>bambi</code></h4>
 <p><code>bambi</code> is great, our very own <code>brms</code>. It’s a powerful tool to specify regression formulas (like above for <code>statsmodels</code>) but then it will utilize <code>PyMC</code> under the hood to perform an MCMC-based Bayesian estimation, and do lots of additional good stuff like specifying priors automatically etc. Repeating the model comparison from above is as simple as:</p>
-<div id="ecb9593c" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bambi <span class="im">as</span> bmb</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ols = smf.ols("li ~ 1 + C(model)", data=sqe).fit()</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>bols <span class="op">=</span> bmb.Model(<span class="st">"li ~ 1 + model"</span>, data<span class="op">=</span>sqe).fit(</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>   cores<span class="op">=</span><span class="dv">1</span>,  <span class="co"># play nice with `quarto render` for some reason</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0c75279a" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bambi <span class="im">as</span> bmb</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ols = smf.ols("li ~ 1 + C(model)", data=sqe).fit()</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>bols <span class="op">=</span> bmb.Model(<span class="st">"li ~ 1 + model + (1|id)"</span>, data<span class="op">=</span>sqe).fit(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>   cores<span class="op">=</span><span class="dv">1</span>,  <span class="co"># `quarto render` fails for cores&gt;1 for unknown reason</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Auto-assigning NUTS sampler...
-Initializing NUTS using jitter+adapt_diag...
+<pre><code>Initializing NUTS using jitter+adapt_diag...
 Sequential sampling (2 chains in 1 job)
-NUTS: [sigma, Intercept, model]
-Sampling 2 chains for 1_000 tune and 1_000 draw iterations (2_000 + 2_000 draws total) took 4 seconds.
-We recommend running at least 4 chains for robust computation of convergence diagnostics</code></pre>
+NUTS: [sigma, Intercept, model, 1|id_sigma, 1|id_offset]</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"5d23af6a43e3419db03ddd4b456e8f32","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"d2b270c8f8bf4af5a4076877ecc303fc","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 </div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"e594ff5a3b7946cfbf6f765f99bf5353","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>Sampling 2 chains for 1_000 tune and 1_000 draw iterations (2_000 + 2_000 draws total) took 7 seconds.
+We recommend running at least 4 chains for robust computation of convergence diagnostics
+The rhat statistic is larger than 1.01 for some parameters. This indicates problems during sampling. See https://arxiv.org/abs/1903.08008 for details</code></pre>
 </div>
 </div>
-<p>Ideally, after fitting a Bayesian model you should evaluate the fit using some diagnostics and <code>az.trace_plot()</code>, which I will skip (but I checked, it’s ok).</p>
+<p>Here we account for the repeated measures by adding an intercept for each , which accounts to the fact that different data points have different characteristics making them easier or harder to adjust, and we want to adjust for that Ideally, after fitting a Bayesian model you should evaluate the fit using some diagnostics and <code>az.trace_plot()</code>, which I will skip (but I checked, it’s ok).</p>
 </section>
 <section id="bayesian-noninferiority-testing" class="level4">
 <h4 class="anchored" data-anchor-id="bayesian-noninferiority-testing">Bayesian noninferiority testing</h4>
 <p>The Bayesian inference framework, focusing on estimation and providing a full posterior distribution of the difference in performance, makes it really easy to test for noninferiority. We can use the Region of Practical Equivalence (ROPE) to specify an intervals that is equivalent to the null, meaning it has practically no effect of interest and is therefore negligible (e.g., within 1% change in performance between model is good enough <span class="citation" data-cites="kruschke2018rejecting">(<a href="#ref-kruschke2018rejecting" role="doc-biblioref">Kruschke 2018</a>)</span>).</p>
-<div id="792294fa" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>loss_std <span class="op">=</span> sqe[<span class="st">"li"</span>].std()</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>az.plot_posterior(</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    bols, var_names<span class="op">=</span><span class="st">"model"</span>,</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    ref_val<span class="op">=</span><span class="dv">0</span>, </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    rope<span class="op">=</span>[<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span>loss_std, <span class="fl">0.1</span><span class="op">*</span>loss_std],  </span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="636a3917" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>loss_std <span class="op">=</span> sqe[<span class="st">"li"</span>].std()</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>az.plot_posterior(</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    bols, var_names<span class="op">=</span><span class="st">"model"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    ref_val<span class="op">=</span><span class="dv">0</span>, </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    rope<span class="op">=</span>[<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span>loss_std, <span class="fl">0.1</span><span class="op">*</span>loss_std],  </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-10-output-1.png" width="574" height="461" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -643,7 +670,7 @@ For example, we see the High Density Interval (HDI, the interval equivalent to a
 although 1% of the entire posterior distribution does overlap with the ROPE, suggesting there's a 1% chance the the difference in performance is actually equivalent. 
 Additionally, 0.3% of the distribution is below 0, suggesting there's a miniscule (but existing) chance that gradient boosting trees are actually worse than linear regression on this prediction task, but that is practically negligible.  
 -->
-<p>For example, we see both the High Density Interval (HDI, the interval equivalent to a confidence interval in some sense) and the entire posterior distribution do overlap some with the ROPE, suggesting there’s a ~3.5% chance the difference in performance is actually equivalent. Additionally, ~0.2% of the distribution is below 0, suggesting there’s a miniscule (but existing) chance that gradient boosting trees are actually worse than linear regression on this prediction task, but that the magnitude in which they are worse is practically negligible. However, the lion share of the evidence suggests the linear regression prediction model has higher errors than the boosting trees.</p>
+<p>For example, we see both the High Density Interval (HDI, the interval equivalent to a confidence interval in some sense) and the entire posterior distribution do overlap some with the ROPE, suggesting there’s a ~4% chance the difference in performance is actually equivalent. Additionally, ~0.5% of the distribution is below 0, suggesting there’s a miniscule (but existing) chance that gradient boosting trees are actually worse than linear regression on this prediction task, but that the magnitude in which they are worse is practically negligible. However, the lion share of the evidence suggests the linear regression prediction model has higher errors than the boosting trees.</p>
 </section>
 </section>
 <section id="extensions" class="level3">
@@ -651,123 +678,36 @@ Additionally, 0.3% of the distribution is below 0, suggesting there's a miniscul
 <p>This regression framework for comparing models is easily extendable, especially the Bayesian one. Here are some examples:</p>
 <ol type="1">
 <li><strong>Multiple datasets: assess overall performance over multiple datasets</strong>.<br>
-By concatenating the individual-level errors from multiple datasets, but still focusing on the <code>model</code> variable that estimates the difference between models. In such case, however, the response variable (errors) might no longer be individual and identically distributed (IID), because it originates from the same models. Ignoring these correlations between observations and assuming they are IID might make our estimates overly confident, which is the counterproductive to our main goal of assessing uncertainty properly. Luckily, we can apply multilevel modeling (mixed linear models) to regress away these dependencies simply by specifying <code>li ~ 1 + model + (1 | dataset)</code><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</li>
+By concatenating the individual-level errors from multiple datasets, but still focusing on the <code>model</code> variable that estimates the difference between models. In such case, however, the response variable (errors) might no longer be individual and identically distributed (IID), because it originates from the same models. Ignoring these correlations between observations and assuming they are IID might make our estimates overly confident, which is the counterproductive to our main goal of assessing uncertainty properly. Luckily, we can apply multilevel modeling (mixed linear models) to regress away these dependencies simply by specifying <code>li ~ 1 + model + (1 + model | dataset) + (1 | id)</code><a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>.</li>
 <li><strong>Multiple models: Compare multiple models</strong>. Extending the dummy encoding of the model to any other contrast encoding between models can be done in a straightforward way, and allow comparing multiple models in multiple ways simultaneously.</li>
 <li><strong>Multiple metrics: simultaneously</strong> If we have several metrics that interest us than we can model the difference between models on all of them simultaneously by stacking the different errors side-by-side and making a multivariate regression model.</li>
 <li><strong>Many types of metrics</strong> So far I’ve discussed the squared error, but this framework can support non-continuous errors (metric) too. For example, a classification model can be evaluated using the log-loss in a similar way to how squared-errors were done above, but we can also use the 0-1 loss instead–which is a much more interpretable loss–and use a logistic-regression instead of a linear regression model.</li>
-<li><strong>Proper modeling of the errors</strong>. I’ve used a linear model so far, but it assumes the response (in our case the individual-level errors) can range between <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>. But errors are almost always strictly positive, and if we want to respect that support, we should, instead, model it with a Gamma regression - a generalized linear model with a Gamma distribution (and a log-link), which operates on the <span class="math inline">\((0, \infty)\)</span> range.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></li>
+<li><strong>Proper modeling of the errors</strong>. I’ve used a linear model so far, but it assumes the response (in our case the individual-level errors) can range between <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>. But errors are almost always strictly positive, and if we want to respect that support, we should, instead, model it with a Gamma regression - a generalized linear model with a Gamma distribution (and a log-link), which operates on the <span class="math inline">\((0, \infty)\)</span> range.<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></li>
 <li><strong>Incorporate metadata</strong> Models (and datasets) may come with plenty of metadata (e.g., number of parameters). These metadata can be incorporated into the regression as additional covariates and allow us to make even more interesting conclusions than just comparing models. For example, incorporating model size will enable us to discuss about difference in performance between models <em>while holding model size constant</em>. This will make cross-player comparison (e.g., GPT vs.&nbsp;Gemini vs.&nbsp;Claude) much more juicy.</li>
 </ol>
-<p>I can quickly demonstrate some of these<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>. Let’s generate more data from a different dataset, by repeating the process above:</p>
-<div id="2da2fb35" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman2</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_friedman2(n_samples<span class="op">=</span><span class="dv">400</span>, noise<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LinearRegression().fit(X_train, y_train)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>gbt <span class="op">=</span> GradientBoostingRegressor().fit(X_train, y_train)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>lr_res <span class="op">=</span> (y_test <span class="op">-</span> lr.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>gbt_res <span class="op">=</span> (y_test <span class="op">-</span> gbt.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>friedman2_sqe <span class="op">=</span> pd.concat({<span class="st">"lr"</span>: pd.Series(lr_res), <span class="st">"gbt"</span>: pd.Series(gbt_res)}, names<span class="op">=</span>[<span class="st">"model"</span>, <span class="st">"id"</span>]).rename(<span class="st">"li"</span>)</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>friedman2_sqe <span class="op">=</span> friedman2_sqe.reset_index()</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>friedman2_sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">model</th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">li</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>lr</td>
-<td>0</td>
-<td>3595.551049</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>lr</td>
-<td>1</td>
-<td>642.439172</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>lr</td>
-<td>2</td>
-<td>96190.142608</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>lr</td>
-<td>3</td>
-<td>896.453152</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>lr</td>
-<td>4</td>
-<td>388.954325</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">395</td>
-<td>gbt</td>
-<td>195</td>
-<td>1053.935114</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">396</td>
-<td>gbt</td>
-<td>196</td>
-<td>115.481420</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">397</td>
-<td>gbt</td>
-<td>197</td>
-<td>3266.020568</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">398</td>
-<td>gbt</td>
-<td>198</td>
-<td>7.002061</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">399</td>
-<td>gbt</td>
-<td>199</td>
-<td>1271.759728</td>
-</tr>
-</tbody>
-</table>
-
-<p>400 rows × 3 columns</p>
-</div>
-</div>
+<p>I can quickly demonstrate some of these<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>. Let’s generate more data from a different dataset, by repeating the process above:</p>
+<div id="b158f09c" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman3</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_friedman3(n_samples<span class="op">=</span><span class="dv">400</span>, noise<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LinearRegression().fit(X_train, y_train)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>gbt <span class="op">=</span> GradientBoostingRegressor().fit(X_train, y_train)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>lr_res <span class="op">=</span> (y_test <span class="op">-</span> lr.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>gbt_res <span class="op">=</span> (y_test <span class="op">-</span> gbt.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>friedman3_sqe <span class="op">=</span> pd.concat({<span class="st">"lr"</span>: pd.Series(lr_res), <span class="st">"gbt"</span>: pd.Series(gbt_res)}, names<span class="op">=</span>[<span class="st">"model"</span>, <span class="st">"id"</span>]).rename(<span class="st">"li"</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>friedman3_sqe <span class="op">=</span> friedman3_sqe.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let’s stack this dataset on top of the previous dataset</p>
-<div id="3505aa29" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat(</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"friedman1"</span>: sqe, <span class="st">"friedman2"</span>: friedman2_sqe.reset_index()},</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    names<span class="op">=</span>[<span class="st">"dataset"</span>],</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>).reset_index().drop(columns<span class="op">=</span><span class="st">"level_1"</span>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div id="9a8f2280" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"friedman1"</span>: sqe, <span class="st">"friedman3"</span>: friedman3_sqe},</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    names<span class="op">=</span>[<span class="st">"dataset"</span>],</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>).reset_index().drop(columns<span class="op">=</span><span class="st">"level_1"</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -779,7 +719,6 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <th data-quarto-table-cell-role="th">model</th>
 <th data-quarto-table-cell-role="th">id</th>
 <th data-quarto-table-cell-role="th">li</th>
-<th data-quarto-table-cell-role="th">index</th>
 </tr>
 </thead>
 <tbody>
@@ -789,7 +728,6 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <td>lr</td>
 <td>0</td>
 <td>0.089986</td>
-<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -797,7 +735,6 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <td>lr</td>
 <td>1</td>
 <td>1.319738</td>
-<td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -805,7 +742,6 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <td>lr</td>
 <td>2</td>
 <td>6.044722</td>
-<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -813,7 +749,6 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <td>lr</td>
 <td>3</td>
 <td>6.061478</td>
-<td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -821,7 +756,6 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <td>lr</td>
 <td>4</td>
 <td>13.876234</td>
-<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -829,103 +763,126 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <td>...</td>
 <td>...</td>
 <td>...</td>
-<td>...</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">795</td>
-<td>friedman2</td>
+<td>friedman3</td>
 <td>gbt</td>
 <td>195</td>
-<td>1053.935114</td>
-<td>395.0</td>
+<td>0.277374</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">796</td>
-<td>friedman2</td>
+<td>friedman3</td>
 <td>gbt</td>
 <td>196</td>
-<td>115.481420</td>
-<td>396.0</td>
+<td>0.010730</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">797</td>
-<td>friedman2</td>
+<td>friedman3</td>
 <td>gbt</td>
 <td>197</td>
-<td>3266.020568</td>
-<td>397.0</td>
+<td>0.078106</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">798</td>
-<td>friedman2</td>
+<td>friedman3</td>
 <td>gbt</td>
 <td>198</td>
-<td>7.002061</td>
-<td>398.0</td>
+<td>3.454848</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">799</td>
-<td>friedman2</td>
+<td>friedman3</td>
 <td>gbt</td>
 <td>199</td>
-<td>1271.759728</td>
-<td>399.0</td>
+<td>0.285768</td>
 </tr>
 </tbody>
 </table>
 
-<p>800 rows × 5 columns</p>
+<p>800 rows × 4 columns</p>
 </div>
 </div>
 </div>
 <p>Now we can fit a multilevel Gamma regression on the combined data:</p>
-<div id="5f9835a9" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>bgamma <span class="op">=</span> bmb.Model(</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"li ~ 1 + model + (1 | dataset)"</span>, </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>sqe,</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    family<span class="op">=</span><span class="st">"gamma"</span>,</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="st">"log"</span>,</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>).fit(</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    tune<span class="op">=</span><span class="dv">2000</span>,</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    target_accept<span class="op">=</span><span class="fl">0.94</span>,</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    random_seed<span class="op">=</span><span class="dv">11</span>,</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    cores<span class="op">=</span><span class="dv">1</span>  <span class="co"># play nice with `quarto render` for some reason</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c1207981" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>gamma_model <span class="op">=</span> bmb.Model(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># "li ~ 1 + model + (1 + model | dataset) + (1 | id)", </span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>     <span class="st">"li ~ 1 + model * C(dataset) + (1 | id)"</span>, </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>sqe,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    family<span class="op">=</span><span class="st">"gamma"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="st">"log"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>gamma_idata <span class="op">=</span> gamma_model.fit(</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    random_seed<span class="op">=</span><span class="dv">11</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    cores<span class="op">=</span><span class="dv">1</span>  <span class="co"># `quarto render` fails for cores&gt;1 for unknown reason</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Auto-assigning NUTS sampler...
-Initializing NUTS using jitter+adapt_diag...
+<pre><code>Initializing NUTS using jitter+adapt_diag...
 Sequential sampling (2 chains in 1 job)
-NUTS: [alpha, Intercept, model, 1|dataset_sigma, 1|dataset_offset]</code></pre>
+NUTS: [alpha, Intercept, model, C(dataset), model:C(dataset), 1|id_sigma, 1|id_offset]</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"8a17771f25ec4a1c8b316daeb7b24ff3","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"d85f9335c3e0423bb6ee9894b92c5753","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 </div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"ec29e8f5b28c440bb0ab9241f9217d05","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
+<div class="cell-output cell-output-stderr">
+<pre><code>Sampling 2 chains for 1_000 tune and 1_000 draw iterations (2_000 + 2_000 draws total) took 15 seconds.
+We recommend running at least 4 chains for robust computation of convergence diagnostics</code></pre>
 </div>
 </div>
-<p>And investigate the posteriors:</p>
-<div id="afb509ce" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>az.plot_posterior(</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    bgamma, var_names<span class="op">=</span><span class="st">"model"</span>,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    ref_val<span class="op">=</span><span class="dv">0</span>, </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    rope<span class="op">=</span>[<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span>loss_std, <span class="fl">0.1</span><span class="op">*</span>loss_std], </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<p>Note that I’ve used an interaction <code>li ~ 1 + model * C(dataset) + (1 | id)</code>, which is the no-pooling (“memoryless” a-la McElreath) version of the varying slopes <code>li ~ 1 + model + (1 + model | dataset) + (1 | id)</code>. They are equivalent, as they both provide an effect per dataset (<code>C(dataset) -&gt; (1 | dataset)</code>) as well as allowing the models to perform differently per dataset (<code>model:C(dataset) -&gt; (model | dataset)</code>). I am not proud of this substitution but I could not get the sampler to properly sample the hierarchical without divergences. The <code>model:dataset</code> product term also means we can’t just look at the <code>model</code> parameter to assess the difference (as it depends on <code>dataset</code>), so instead I will use a marginal effects approach :</p>
+<div id="dc866be7" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>bmb.interpret.comparisons(</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span>gamma_model,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    idata<span class="op">=</span>gamma_idata,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    contrast<span class="op">=</span><span class="st">"model"</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    average_by<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\204048756\miniforge3\envs\bambi\Lib\site-packages\arviz\rcparams.py:368: FutureWarning: stats.hdi_prob is deprecated since 0.18.0, use stats.ci_prob instead
+  warnings.warn(
+Default computed for contrast variable: model</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-14-output-1.png" width="579" height="461" class="figure-img"></p>
-</figure>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">term</th>
+<th data-quarto-table-cell-role="th">estimate_type</th>
+<th data-quarto-table-cell-role="th">value</th>
+<th data-quarto-table-cell-role="th">estimate</th>
+<th data-quarto-table-cell-role="th">lower_3.0%</th>
+<th data-quarto-table-cell-role="th">upper_97.0%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>model</td>
+<td>diff</td>
+<td>(gbt, lr)</td>
+<td>1.023786</td>
+<td>-0.21463</td>
+<td>2.500189</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
+<p>Which is in line with the results above showing larger residuals for linear regression than for gradient boosting trees.</p>
 </section>
 </section>
 <section id="conclusions" class="level2">
@@ -964,16 +921,20 @@ Mauri, Laura, and Ralph B D’Agostino Sr. 2017. <span>“Challenges in the Desi
 <li id="fn6"><p>In the most basic example, say we are interested in the average height of men in a certain country. We sample men from that country and measure their height, but the average height of the sample is of little interest. What’s interesting is what that average tells about the average height of the people in that country, or, in reverse - what can we infer about the population from the sample.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn7"><p>In this setting, I allude to confidence intervals, of course. Strictly speaking, they are not really uncertainty intervals (more like <a href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-020-01105-9">compatibility intervals</a>), but because I will also introduce Bayesian credible intervals later, I don’t want to be sidetracked by the lingo, so I call them all uncertainty intervals.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>We use the factor transformation <code>C(model)</code> to convert the <code>model</code> column, which contains strings, into 0-1 coding suitable for regression<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>Or any deep learning model, for that matter. It seems the classical statistical theory does not always correspond to observed evidence from these types of models.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>There are frequentist mixed models, and these correlation structures might also be accounted for using Generalized Estimating Equations (GEE), but their uncertainties are not always trustworthy. Bayesian mixed models, however, still shine.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Once in the realm of multiple models multiple dataset, it may be interesting to evaluate performance in the item-response framework to also get a gist of what datasets are easier or harder.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Actually, since errors can be truly 0, there might be a need to extend the model to be a hurdle Gamma model.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>no multiple metrics because <code>bambi</code> does not support multivariate gamma models<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Oftentimes ignoring repeated measure can lead to overly optimistic inferences (unjustifiably narrow confidence intervals), but in our case we’ll see that because our repeated measures are of the same data point, the error will shrink. Intuitively, because every observation is its own control, the baseline characteristics are the same and therefore an estimation is less noisy.<br>
+Another point, is that Note that we could have formulate this task as a wide-data analysis, using one residuals to predict the other residuals and testing whether the slope goes downward or upward. However, one, I’m not sure how to interpret the resulting coefficient other than its direction, and second, stacking will allow to generalize more easily when we have more than two models.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>This is equivalent of using a paired t-test, instead of a regular two-sample t-test.<br>
+It seems code cells cannot be placed in footnotes, but if you were to import <code>from scipy.stats import ttest_rel</code> and then run <code>ttest_rel(lr_res, gbt_res)</code>, you would get an equivalent result.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Or any deep learning model, for that matter. It seems the classical statistical theory does not always correspond to observed evidence from these types of models.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>There are frequentist mixed models, and these correlation structures might also be accounted for using Generalized Estimating Equations (GEE), but their uncertainties are not always trustworthy. Bayesian mixed models, however, still shine.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Once in the realm of multiple models multiple dataset, it may be interesting to evaluate performance in the item-response framework to also get a gist of what datasets are easier or harder.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Actually, since errors can be truly 0, there might be a need to extend the model to be a hurdle Gamma model.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>no multiple metrics because <code>bambi</code> does not support multivariate gamma models<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script type="application/vnd.jupyter.widget-state+json">
 
-{"state":{"5d23af6a43e3419db03ddd4b456e8f32":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_74d2a77354cc4da996e7270274b0e9ef","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Sampling chain 0, 0 divergences <span style=\"color: #008000; text-decoration-color: #008000\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">100%</span> <span style=\"color: #008080; text-decoration-color: #008080\">0:00:00</span> / <span style=\"color: #808000; text-decoration-color: #808000\">0:00:01</span>\n</pre>\n","text/plain":"Sampling chain 0, 0 divergences ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00 / 0:00:01\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"687ce9a37be64da9bebe88fe09aa09d1":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"6d03f78273c64eb78fdc809c401e57df":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"74d2a77354cc4da996e7270274b0e9ef":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"8a17771f25ec4a1c8b316daeb7b24ff3":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_fa70eb18871246ac877460952e48cbfe","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Sampling chain 0, 0 divergences <span style=\"color: #008000; text-decoration-color: #008000\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">100%</span> <span style=\"color: #008080; text-decoration-color: #008080\">0:00:00</span> / <span style=\"color: #808000; text-decoration-color: #808000\">0:05:17</span>\n</pre>\n","text/plain":"Sampling chain 0, 0 divergences ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00 / 0:05:17\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"e594ff5a3b7946cfbf6f765f99bf5353":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_6d03f78273c64eb78fdc809c401e57df","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Sampling chain 1, 0 divergences <span style=\"color: #008000; text-decoration-color: #008000\">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span style=\"color: #800080; text-decoration-color: #800080\">100%</span> <span style=\"color: #008080; text-decoration-color: #008080\">0:00:00</span> / <span style=\"color: #808000; text-decoration-color: #808000\">0:00:02</span>\n</pre>\n","text/plain":"Sampling chain 1, 0 divergences ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00 / 0:00:02\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"ec29e8f5b28c440bb0ab9241f9217d05":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_687ce9a37be64da9bebe88fe09aa09d1","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Sampling chain 1, 0 divergences <span style=\"color: #1764f4; text-decoration-color: #1764f4\">━━━━━━━━━━━━━━━━━━━━━━━━━╸</span>               <span style=\"color: #800080; text-decoration-color: #800080\"> 65%</span> <span style=\"color: #008080; text-decoration-color: #008080\">0:01:42</span> / <span style=\"color: #808000; text-decoration-color: #808000\">0:03:02</span>\n</pre>\n","text/plain":"Sampling chain 1, 0 divergences ━━━━━━━━━━━━━━━━━━━━━━━━━╸                65% 0:01:42 / 0:03:02\n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"fa70eb18871246ac877460952e48cbfe":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}},"version_major":2,"version_minor":0}
+{"state":{"1a3c8fc60dbd4bb4a0fb5ce581d51483":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"470f89dcc4d44032ba1931cd897e87d7":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"d2b270c8f8bf4af5a4076877ecc303fc":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_1a3c8fc60dbd4bb4a0fb5ce581d51483","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">                                                                                                                   \n <span style=\"font-weight: bold\"> Progress                  </span> <span style=\"font-weight: bold\"> Draws </span> <span style=\"font-weight: bold\"> Divergences </span> <span style=\"font-weight: bold\"> Step size </span> <span style=\"font-weight: bold\"> Grad evals </span> <span style=\"font-weight: bold\"> Sampling Speed </span> <span style=\"font-weight: bold\"> Elapsed </span> <span style=\"font-weight: bold\"> Remaining </span> \n ───────────────────────────────────────────────────────────────────────────────────────────────────────────────── \n  <span style=\"color: #1f77b4; text-decoration-color: #1f77b4\">━━━━━━━━━━━━━━━━━━━━━━━━━</span>   2000    0             0.45        15           524.40 draws/s   0:00:03   0:00:00    \n  <span style=\"color: #1f77b4; text-decoration-color: #1f77b4\">━━━━━━━━━━━━━━━━━━━━━━━━━</span>   2000    0             0.44        15           273.39 draws/s   0:00:07   0:00:00    \n                                                                                                                   \n</pre>\n","text/plain":"                                                                                                                   \n \u001b[1m \u001b[0m\u001b[1mProgress                 \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mDraws\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mDivergences\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mStep size\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mGrad evals\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mSampling Speed\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mElapsed\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mRemaining\u001b[0m\u001b[1m \u001b[0m \n ───────────────────────────────────────────────────────────────────────────────────────────────────────────────── \n  ━━━━━━━━━━━━━━━━━━━━━━━━━   2000    0             0.45        15           524.40 draws/s   0:00:03   0:00:00    \n  ━━━━━━━━━━━━━━━━━━━━━━━━━   2000    0             0.44        15           273.39 draws/s   0:00:07   0:00:00    \n                                                                                                                   \n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}},"d85f9335c3e0423bb6ee9894b92c5753":{"model_module":"@jupyter-widgets/output","model_module_version":"1.0.0","model_name":"OutputModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/output","_model_module_version":"1.0.0","_model_name":"OutputModel","_view_count":null,"_view_module":"@jupyter-widgets/output","_view_module_version":"1.0.0","_view_name":"OutputView","layout":"IPY_MODEL_470f89dcc4d44032ba1931cd897e87d7","msg_id":"","outputs":[{"data":{"text/html":"<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">                                                                                                                   \n <span style=\"font-weight: bold\"> Progress                  </span> <span style=\"font-weight: bold\"> Draws </span> <span style=\"font-weight: bold\"> Divergences </span> <span style=\"font-weight: bold\"> Step size </span> <span style=\"font-weight: bold\"> Grad evals </span> <span style=\"font-weight: bold\"> Sampling Speed </span> <span style=\"font-weight: bold\"> Elapsed </span> <span style=\"font-weight: bold\"> Remaining </span> \n ───────────────────────────────────────────────────────────────────────────────────────────────────────────────── \n  <span style=\"color: #1f77b4; text-decoration-color: #1f77b4\">━━━━━━━━━━━━━━━━━━━━━━━━━</span>   2000    0             0.39        15           278.72 draws/s   0:00:07   0:00:00    \n  <span style=\"color: #1f77b4; text-decoration-color: #1f77b4\">━━━━━━━━━━━━━━━━━━━━━━━━━</span>   2000    0             0.45        15           129.89 draws/s   0:00:15   0:00:00    \n                                                                                                                   \n</pre>\n","text/plain":"                                                                                                                   \n \u001b[1m \u001b[0m\u001b[1mProgress                 \u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mDraws\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mDivergences\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mStep size\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mGrad evals\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mSampling Speed\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mElapsed\u001b[0m\u001b[1m \u001b[0m \u001b[1m \u001b[0m\u001b[1mRemaining\u001b[0m\u001b[1m \u001b[0m \n ───────────────────────────────────────────────────────────────────────────────────────────────────────────────── \n  ━━━━━━━━━━━━━━━━━━━━━━━━━   2000    0             0.39        15           278.72 draws/s   0:00:07   0:00:00    \n  ━━━━━━━━━━━━━━━━━━━━━━━━━   2000    0             0.45        15           129.89 draws/s   0:00:15   0:00:00    \n                                                                                                                   \n"},"metadata":{},"output_type":"display_data"}],"tabbable":null,"tooltip":null}}},"version_major":2,"version_minor":0}
 
 </script>
 
