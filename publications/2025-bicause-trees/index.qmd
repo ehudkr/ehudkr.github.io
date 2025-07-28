@@ -1,7 +1,7 @@
 ---
 title: "Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation"
-date: 2024-01-31
-doi: https://doi.org/10.48550/arXiv.2401.17737
+date: 2025-05-03
+doi: https://proceedings.mlr.press/v258/ter-minassian25a.html
 author:
   - name: Lucile Tar-Minassian
     affiliations:
@@ -27,16 +27,16 @@ affiliations:
     department: Causal Machine Learning for Healthcare and Life Sciences
   - id: oxfordstats
     name: University of Oxford
-    counter: UK
+    country: UK
     department: Department of Statistics
 categories:
   - causal inference
   - methods
 # keywords: 
-publication: "Arxiv"
+publication: "AISTATS"
 journal: 
-  title: "Arxiv"
-pdf: https://arxiv.org/pdf/2401.17737
+  title: "AISTATS"
+pdf: https://raw.githubusercontent.com/mlresearch/v258/main/assets/ter-minassian25a/ter-minassian25a.pdf
 abstract: >
   Interpretability and transparency are essential for incorporating causal effect models from observational data into policy decision-making. 
   They can provide trust for the model in the absence of ground truth labels to evaluate the accuracy of such models. 
@@ -46,7 +46,7 @@ abstract: >
   Consequently, it can additionally detect subgroups presenting positivity violations, exclude them, and provide a covariate-based definition of the target population we can infer from and generalize to. 
   We evaluate the method's performance using synthetic and realistic datasets, explore its bias-interpretability tradeoff, and show that it is comparable with existing approaches
 description: >
-  A tree-based method for stratifying data while optimizing for balancing in order to obtain interpretable effect estimation and abstention in non-overlapping regions.
+  A tree-based method for stratifying data while optimizing for balancing in order to obtain interpretable effect estimations and abstention in non-overlapping regions.
 ---
 
 :::{.column-page layout-ncol=2}
@@ -57,15 +57,24 @@ description: >
 
 :::
 
+| PMLR: [https://proceedings.mlr.press/v258/ter-minassian25a.html](https://proceedings.mlr.press/v258/ter-minassian25a.html)  
+| OpenReview: [https://openreview.net/forum?id=WdcA7v7uzc](https://openreview.net/forum?id=WdcA7v7uzc)  
+| PDF: [https://raw.githubusercontent.com/mlresearch/v258/main/assets/ter-minassian25a/ter-minassian25a.pdf](https://raw.githubusercontent.com/mlresearch/v258/main/assets/ter-minassian25a/ter-minassian25a.pdf)
+
 
 
 ## Citation
 ```bibtex
-@article{ter2024hierarchical,
+@inproceedings{ter-minassian2025hierarchical,
   title={Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation},
-  author={Ter-Minassian, Lucile and Szlak, Liran and Karavani, Ehud and Holmes, Chris and Shimoni, Yishai},
-  journal={arXiv preprint arXiv:2401.17737},
-  year={2024}
+  author={Ter-Minassian, Lucile and Szlak, Liran and Karavani, Ehud and Holmes, Christopher C. and Shimoni, Yishai},
+  booktitle={The 28th International Conference on Artificial Intelligence and Statistics},
+  year={2025},
+  series={Proceedings of Machine Learning Research},
+  publisher={PMLR},
+  pdf={https://raw.githubusercontent.com/mlresearch/v258/main/assets/ter-minassian25a/ter-minassian25a.pdf},
+  url={https://proceedings.mlr.press/v258/ter-minassian25a.html},
 }
 ```
+ <!-- url={https://openreview.net/forum?id=WdcA7v7uzc} -->
 
