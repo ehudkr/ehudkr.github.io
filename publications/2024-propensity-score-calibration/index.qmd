@@ -26,7 +26,7 @@ categories:
 publication: "Epidemiology"
 journal: 
   title: "Epidemiology"
-pdf: https://cdn-links.lww.com/permalink/ede/c/ede_1_1_2024_04_04_karavani_ede23-0107_sdc1.pdf
+pdf: 2024-propensity-score-calibration/propensity_calibration.pdf
 abstract: >
   Theoretical guarantees for causal inference using propensity scores are partially based on the scores behaving like conditional probabilities. 
   However, scores between zero and one do not necessarily behave like probabilities, especially when output by flexible statistical estimators. 
