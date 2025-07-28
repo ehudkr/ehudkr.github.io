@@ -68,7 +68,7 @@ categories:
 publication: "Radiology"
 journal: 
   title: "Radiology"
-pdf: https://pubs.rsna.org/doi/pdf/10.1148/radiol.2019182622
+pdf: 2019-mammograms-plus-ehrs/bc_ehr_mammo.pdf
 abstract: |
   **Background**: Computational models on the basis of deep neural networks are increasingly used to analyze health care data. 
   However, the efficacy of traditional computational models in radiology is a matter of debate. \n
