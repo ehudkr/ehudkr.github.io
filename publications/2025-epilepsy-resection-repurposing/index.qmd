@@ -1,0 +1,78 @@
+---
+title: "Peri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation"
+date: 2025-04-18
+doi: https://doi.org/10.1016/j.isci.2025.112124
+author:
+  - name: Liran Szlak
+    affiliations:
+      - ref: ibmrisrl
+  - name: Jingdi Shen
+    affiliations:
+      - ref: ccf
+  - name: Eden Zohar 
+    affiliations:
+      - ref: ibmrisrl
+  - name: Ehud Karavani 
+    affiliations:
+      - ref: ibmrisrl
+  - name: Daniel Rotroff
+    affiliations:
+      - ref: ccf
+  - name: Deborah Vegh
+    affiliations:
+      - ref: ccf
+  - name: Vineet Punia
+    affiliations:
+      - ref: ccf
+  - name: Michal Rosen-Zvi
+    affiliations: 
+      - ref: ibmrisrl
+  - name: Yishai Shimoni
+    affiliations: 
+      - ref: ibmrisrl
+  - name: Lara Jehi
+    affiliations:
+      - ref: ccf
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Causal Machine Learning for Healthcare and Life Sciences
+  - id: ccf
+    name: Cleveland Clinic
+    department: Center for Computational Life Sciences
+categories:
+  - causal inference
+  - healthcare
+# keywords: 
+publication: "iScience"
+journal: 
+  title: "iScience"
+pdf: https://www.cell.com/action/showPdf?pii=S2589-0042%2825%2900384-0
+abstract: >
+  We conducted a retrospective observational study to examine whether anti-inflammatory medications prescribed peri-operatively of resective brain surgery can reduce long-term seizure recurrence for individuals with drug-resistant focal epilepsy. We used insurance-claims data from across the United States to screen medications prescribed to 1,993 individuals undergoing epilepsy. We then validated the results in a well-characterized cohort of 671 epilepsy patients from a major surgical center. Twelve medications met the screening criteria and were evaluated, identifying dexamethasone and zonisamide as potentially beneficial. Dexamethasone reduced seizure recurrence by 42% over 9 years of follow-up (hazard-ratio = 0.742; 95% CI = 0.662, 0.831), and zonisamide reduced recurrence by 33% (HR = 0.782; 95% CI = 0.667, 0.917). While dexamethasone could not be validated, analysis of zonisamide in the clinical cohort corroborated the beneficial effect (HR = 0.828; 95% CI = 0.706, 0.971). If prospectively validated, this study suggests surgeons could improve long-term outcomes of epilepsy surgery by medically reducing neuro-inflammation in the surgical bed.
+description: >
+  Assessing the effect of different antiinflammatory drugs taken during brain surgery (focal resections) on long-term recurrence of epileptic seizures.
+---
+
+:::{.column-page}
+
+![](graphical_abstract-2.jpg)
+
+:::
+
+
+## Citation
+```bibtex
+@article{szlak2025peri,
+  title={Peri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation},
+  author={Szlak, Liran and Shen, Jingdi and Zohar, Eden and Karavani, Ehud and Rotroff, Daniel and Vegh, Deborah and Punia, Vineet and Rosen-Zvi, Michal and Shimoni, Yishai and Jehi, Lara},
+  journal={iScience},
+  volume={28},
+  number={4},
+  year={2025},
+  publisher={Elsevier}
+}
+```
+
