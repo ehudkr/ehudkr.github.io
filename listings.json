@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/publications/index.html",
+    "listing": "/cv/index.html",
     "items": [
       "/publications/2025-bicause-trees/index.html",
       "/publications/2025-epilepsy-resection-repurposing/index.html",
@@ -29,7 +29,7 @@
     ]
   },
   {
-    "listing": "/cv/index.html",
+    "listing": "/publications/index.html",
     "items": [
       "/publications/2025-bicause-trees/index.html",
       "/publications/2025-epilepsy-resection-repurposing/index.html",
@@ -49,6 +49,10 @@
     ]
   },
   {
+    "listing": "/index.html",
+    "items": []
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2024/03-crossfit-crossval/index.html",
@@ -65,9 +69,5 @@
       "/blog/2020/01-simpsons-paradox-ipw/index.html",
       "/blog/2018/01-deep-learning-genetic-prediction/index.html"
     ]
-  },
-  {
-    "listing": "/index.html",
-    "items": []
   }
 ]

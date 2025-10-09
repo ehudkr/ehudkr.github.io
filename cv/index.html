@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,17 +34,20 @@ ul.task-list li input[type="checkbox"] {
 <link href="../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-79034b1e27378638a789cba618ecac53.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d4078a7599073a69d3135f1d04250de1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -153,7 +156,169 @@ window.Quarto = {
 <link rel="canonical" href="https://ehud.co/cv/">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -274,6 +439,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Ehud Karavani</h1>
@@ -288,7 +454,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 23, 2024</p>
+      <p class="date-modified">October 9, 2025</p>
     </div>
   </div>
     
@@ -304,12 +470,13 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="highlights"><iconify-icon inline="" icon="material-symbols:format-ink-highlighter"></iconify-icon> Highlights</h2>
 <ul>
 <li><p>Healthcare machine learning researcher with 8+ years of experience</p></li>
+<li><p>EB1-A visa approved (US)</p></li>
 <li><p>1st author Cell paper, 2019</p></li>
 <li><p>Creator of <a href="https://github.com/IBM/causallib"><code>causallib</code></a> - an open-source Python package for causal inference.<br>
-700+ stars and 100+ forks on Github.</p></li>
+750+ stars and 100+ forks on Github.</p></li>
 <li><p>Received an <em>IBM Research Accomplishment</em> award (2023)</p></li>
 <li><p>Co-inventor on 3 US patents</p></li>
-<li><p>PyData conference speaker and podcast interviewee</p></li>
+<li><p>PyData conference speaker, lecturer, and podcast interviewee</p></li>
 <li><p>Causal inference, machine learning, deep learning, statistics, data viz, Python</p></li>
 </ul>
 </section>
@@ -332,29 +499,46 @@ window.Quarto = {
 <ul>
 <li><em>Received an IBM Research Accomplishment award (2023)</em></li>
 </ul></li>
-<li><p>Individual Contributor (IC)<br>
-Causal inference consultant for Research labs globally</p></li>
-<li><p>Project leader: drug repurposing by applying high-throughput causal inference to observational healthcare data</p>
+<li><p>Client project leader from start to finish: translating vague clinicians’ questions into concrete statistical hypotheses, answering them, and communicating the findings</p></li>
+<li><p>Led and designed a drug repurposing software asset, applying high-throughput causal inference to observational healthcare data</p>
 <ul>
 <li><p>Managing a team of 5 researchers.<br>
 Leading the scientific pipeline, system design, and visualization app</p></li>
 <li><p>Generating 100s of hypotheses in minutes</p></li>
-<li><p>Served several external engagements with pharma clients, bringing millions in revenue</p></li>
+<li><p>Serving 4 external engagements with top pharma clients, bringing millions in revenue</p></li>
 </ul></li>
-<li><p>Organized the 2018 Atlantic Causal Inference Conference Data Challenge</p></li>
+<li><p>Individual Contributor (IC)<br>
+Causal inference consultant for projects in the US, UK, France, Japan, Kenya, South Africa, and Switzerland</p></li>
+<li><p>Led global strategy at IBM Research for causality in drug discovery</p>
+<ul>
+<li>Oversaw research of adaptive experimentation using Bayesian inference</li>
+</ul></li>
 <li><p>Mentored 10+ students and interns<br>
 Onboarding lead, onboarding 10+ researchers</p></li>
-<li><p>Published 10+ papers and issued 3 patents</p></li>
+<li><p>Published 10+ papers and issued 3 US patents</p></li>
+</ul>
+<p>2024:</p>
+<ul>
+<li><p>Deconfounding transformer-based large language models for biological sequence, overcoming batch effects across and within diverse data sources</p></li>
+<li><p>GLM-ification of deep learning models, bringing established biostatistics concepts into transformer-based deep learning models</p></li>
+</ul>
+<p>2025:</p>
+<ul>
+<li>Quantum Advantage task force member [2025]: developing and testing quantum algorithms for combinatorial optimization problems</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>2022</td>
 <td><div class="cell_title">
-<p><strong>Applied Statistician</strong><br>
+<p><strong>Principle Statistician</strong><br>
 <em>Laboratory for Gait &amp; Neurodynamics, Ichilov Hospital</em></p>
 </div>
 <ul>
-<li>Bayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients</li>
+<li>Bayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients
+<ul>
+<li>Bayesian multilevel models for hurdle models of repeated patients’ measurements</li>
+<li>Formal causal inference with DAGs for minimizing inessential tests, saving over 3 hours of unnecessary tests by clinicians per patient.</li>
+</ul></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -372,10 +556,10 @@ Onboarding lead, onboarding 10+ researchers</p></li>
 <td>2015 – 2016</td>
 <td><div class="cell_title">
 <p><strong>Research Associate / Computational Biologist<br>
-</strong><em>Institue for Medical Research Israel-Canada, Hebrew University, Faculty of Medicine</em></p>
+</strong><em>Institue for Medical Research Israel-Canada, Hadassah Hospital</em></p>
 </div>
 <ul>
-<li>Large-scale RNA analysis for finding high-resolution protein-RNA interactions</li>
+<li>Developing novel methodologies for finding high-resolution protein-RNA interactions using high-volume data</li>
 </ul></td>
 </tr>
 </tbody>
@@ -392,7 +576,11 @@ Onboarding lead, onboarding 10+ researchers</p></li>
 <em>Faculty of Science, the Hebrew University of Jerusalem, Israel</em></p>
 </div>
 <p>Thesis: <em>quantifying the utility of embryo selection using genomic prediction of traits</em><br>
-<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3">published in Cell</a></p></td>
+<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)31210-3">published in Cell</a></p>
+<ul>
+<li><p>Predicting physical traits from DNA (GWAS) using classical, machine learning, and deep learning methods</p></li>
+<li><p>Pioneering the effects of prediction-based embryo selection in IVF</p></li>
+</ul></td>
 </tr>
 <tr class="even">
 <td>2013 – 2016</td>
@@ -402,6 +590,7 @@ Onboarding lead, onboarding 10+ researchers</p></li>
 </div>
 <ul>
 <li><em>Dean’s List of Academic Excellence (2016)</em></li>
+<li>Research scholarship from IMRIC (2016)</li>
 </ul>
 <p>Bachelor’s thesis published in <a href="https://academic.oup.com/nar/article/46/19/10380/5064785">Nucleic Acids Research</a></p></td>
 </tr>
@@ -415,14 +604,15 @@ Onboarding lead, onboarding 10+ researchers</p></li>
 <li><p><a href="https://youtu.be/Q7sinHrknC8?si=9dH5kqIfNGhvjuB8">Causal Bandits podcast interviewee</a></p></li>
 <li><p>DataNights causality series lecturer</p></li>
 <li><p>Recurring <a href="https://www.datahack.org.il/">DataHack</a> mentor and judge</p></li>
+<li><p>Co-Organized the 2018 Atlantic Causal Inference Conference Data Challenge</p></li>
 </ul>
 </section>
 <section id="skills" class="level2">
 <h2 class="anchored" data-anchor-id="skills"><iconify-icon inline="" icon="bi:code-slash"></iconify-icon> Skills</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 86%">
+<col style="width: 11%">
+<col style="width: 88%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -430,11 +620,11 @@ Onboarding lead, onboarding 10+ researchers</p></li>
 <td><ul>
 <li><p>Python scientific stack (fluent)</p>
 <ul>
-<li>Scikit-Learn, Pandas, Statsmodels, Seaborn (objects), Matplotlib, Altair, Streamlit, Pytorch, Keras, cvxpy, PyMC, Bambi, Arviz…</li>
+<li>Pandas, Numpy, Scikit-Learn, Statsmodels, PyTorch (lightning), Bambi, PyMC, Arviz, Matplotlib, Seaborn (objects). Altair, Streamlit, cvxpy, Pydantic, Hydra,</li>
 </ul></li>
 <li><p>R (when needed)</p></li>
 <li><p>Git + GitHub</p></li>
-<li><p>Continuous integration (Travis, GitHub Actions)</p></li>
+<li><p>Continuous development (Travis, GitHub Actions)</p></li>
 <li><p>Linux and remote development (Cloud/AWS + Jupyter lab / VS Code)</p></li>
 </ul></td>
 </tr>
@@ -449,7 +639,7 @@ Onboarding lead, onboarding 10+ researchers</p></li>
 <td>General</td>
 <td><ul>
 <li><p>Data enthusiast</p></li>
-<li><p>Musician 🎸, hiker / backpacker 🏔️ | | | | | |</p></li>
+<li><p>Musician 🎸, hiker / backpacker 🏔️ | |</p></li>
 <li><p>Friendly 🙂</p></li>
 </ul></td>
 </tr>
@@ -467,22 +657,22 @@ Onboarding lead, onboarding 10+ researchers</p></li>
 <tr class="odd">
 <td>2023</td>
 <td><p>IBM-Research Accomplishment</p>
-<p>For my work on causallib and research engagement with the Cleveland Clinic Foundation.</p></td>
+<p>For my work on causallib and research engagement with the Cleveland Clinic Foundation</p></td>
 </tr>
 <tr class="even">
 <td>2019</td>
 <td><p>Best of RSNA</p>
-<p>For the paper <em>Predicting Breast Cancer by Applying Deep Learning to Linked Health Records and Mammograms</em>, published in Radiology.</p></td>
+<p>For the paper <em>Predicting Breast Cancer by Applying Deep Learning to Linked Health Records and Mammograms</em>, published in Radiology</p></td>
 </tr>
 <tr class="odd">
 <td>2019</td>
 <td><p>Best Talk: Israeli Population Genetics Meeting</p>
-<p>For the paper <em>Screening Human Embryos for Polygenic Traits has Limited Utility</em>.</p></td>
+<p>For the paper <em>Screening Human Embryos for Polygenic Traits has Limited Utility</em></p></td>
 </tr>
 <tr class="even">
 <td>2019</td>
 <td><p>Featured Theory of the issue (Cell)</p>
-<p>For the paper <em>Screening Human Embryos for Polygenic Traits has Limited Utility</em>.</p></td>
+<p>For the paper <em>Screening Human Embryos for Polygenic Traits has Limited Utility</em></p></td>
 </tr>
 <tr class="odd">
 <td>2016</td>
@@ -497,22 +687,28 @@ Onboarding lead, onboarding 10+ researchers</p></li>
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+
 <th>
 Date
 </th>
+
 <th>
 Title
 </th>
+
 <th>
 Venue
 </th>
+
 <th>
 DOI
 </th>
+
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDbWV0aG9kcw==" data-listing-date-sort="1746219600000" data-listing-file-modified-sort="1753707686079" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64" data-listing-title-sort="Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation" data-listing-filename-sort="index.qmd">
+
+<tr data-index="0" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDbWV0aG9kcw==" data-listing-date-sort="1746219600000" data-listing-file-modified-sort="1760004314381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64" data-listing-title-sort="Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2025</span>
 </td>
@@ -525,8 +721,10 @@ DOI
 <td>
 <span class="listing-doi">https://proceedings.mlr.press/v258/ter-minassian25a.html</span>
 </td>
+
 </tr>
-<tr data-index="1" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDaGVhbHRoY2FyZQ==" data-listing-date-sort="1744923600000" data-listing-file-modified-sort="1753708735111" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="56" data-listing-title-sort="Peri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation" data-listing-filename-sort="index.qmd">
+
+<tr data-index="1" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDaGVhbHRoY2FyZQ==" data-listing-date-sort="1744923600000" data-listing-file-modified-sort="1760004314381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="56" data-listing-title-sort="Peri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2025</span>
 </td>
@@ -539,8 +737,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1016/j.isci.2025.112124</span>
 </td>
+
 </tr>
-<tr data-index="2" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDbWV0aG9kcw==" data-listing-date-sort="1733436000000" data-listing-file-modified-sort="1733492691815" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96" data-listing-title-sort="Single-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer's disease" data-listing-filename-sort="index.qmd">
+
+<tr data-index="2" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDbWV0aG9kcw==" data-listing-date-sort="1733436000000" data-listing-file-modified-sort="1760004314381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96" data-listing-title-sort="Single-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer's disease" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024</span>
 </td>
@@ -553,8 +753,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1002/alz.14373</span>
 </td>
+
 </tr>
-<tr data-index="3" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDaGVhbHRoY2FyZQ==" data-listing-date-sort="1722632400000" data-listing-file-modified-sort="1732309557061" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="49" data-listing-title-sort="Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa" data-listing-filename-sort="index.qmd">
+
+<tr data-index="3" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDaGVhbHRoY2FyZQ==" data-listing-date-sort="1722632400000" data-listing-file-modified-sort="1760004314380" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="49" data-listing-title-sort="Using Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024</span>
 </td>
@@ -567,8 +769,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.24963/ijcai.2024/792</span>
 </td>
+
 </tr>
-<tr data-index="4" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDbWV0aG9kcw==" data-listing-date-sort="1713128400000" data-listing-file-modified-sort="1753709261298" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41" data-listing-title-sort="Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores" data-listing-filename-sort="index.qmd">
+
+<tr data-index="4" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDbWV0aG9kcw==" data-listing-date-sort="1713128400000" data-listing-file-modified-sort="1760004314381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41" data-listing-title-sort="Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2024</span>
 </td>
@@ -581,8 +785,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1097/ede.0000000000001733</span>
 </td>
+
 </tr>
-<tr data-index="5" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDdmlzdWFsaXphdGlvbiUyQ2V2YWx1YXRpb25z" data-listing-date-sort="1681851600000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Causalvis: Visualizations for Causal Inference" data-listing-filename-sort="index.qmd">
+
+<tr data-index="5" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDdmlzdWFsaXphdGlvbiUyQ2V2YWx1YXRpb25z" data-listing-date-sort="1681851600000" data-listing-file-modified-sort="1760004314380" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Causalvis: Visualizations for Causal Inference" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2023</span>
 </td>
@@ -595,8 +801,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1145/3544548.3581236</span>
 </td>
+
 </tr>
-<tr data-index="6" data-categories="ZGVlcCUyMGxlYXJuaW5nJTJDZ2VuZXRpY3MlMkNzdGF0aXN0aWNz" data-listing-date-sort="1672696800000" data-listing-file-modified-sort="1695362370564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization" data-listing-filename-sort="index.qmd">
+
+<tr data-index="6" data-categories="ZGVlcCUyMGxlYXJuaW5nJTJDZ2VuZXRpY3MlMkNzdGF0aXN0aWNz" data-listing-date-sort="1672696800000" data-listing-file-modified-sort="1760004314380" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2023</span>
 </td>
@@ -609,8 +817,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1142/9789811270611_0019</span>
 </td>
+
 </tr>
-<tr data-index="7" data-categories="c3RhdGlzdGljcyUyQ2hlYWx0aGNhcmU=" data-listing-date-sort="1616709600000" data-listing-file-modified-sort="1695362370497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="68" data-listing-title-sort="Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2" data-listing-filename-sort="index.qmd">
+
+<tr data-index="7" data-categories="c3RhdGlzdGljcyUyQ2hlYWx0aGNhcmU=" data-listing-date-sort="1616709600000" data-listing-file-modified-sort="1760004314380" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="68" data-listing-title-sort="Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2021</span>
 </td>
@@ -623,8 +833,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1101/2021.03.24.21251900</span>
 </td>
+
 </tr>
-<tr data-index="8" data-categories="bWFjaGluZSUyMGxlYXJuaW5nJTJDc3RhdGlzdGljcyUyQ2dlbmV0aWNz" data-listing-date-sort="1574287200000" data-listing-file-modified-sort="1695362370481" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="56" data-listing-title-sort="Screening human embryos for polygenic traits has limited utility" data-listing-filename-sort="index.qmd">
+
+<tr data-index="8" data-categories="bWFjaGluZSUyMGxlYXJuaW5nJTJDc3RhdGlzdGljcyUyQ2dlbmV0aWNz" data-listing-date-sort="1574287200000" data-listing-file-modified-sort="1760004314380" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="56" data-listing-title-sort="Screening human embryos for polygenic traits has limited utility" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -637,8 +849,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1016/j.cell.2019.10.033</span>
 </td>
+
 </tr>
-<tr data-index="9" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDbWV0aG9kcw==" data-listing-date-sort="1563397200000" data-listing-file-modified-sort="1695362370446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="A discriminative approach for finding and characterizing positivity violations using decision trees" data-listing-filename-sort="index.qmd">
+
+<tr data-index="9" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDbWV0aG9kcw==" data-listing-date-sort="1563397200000" data-listing-file-modified-sort="1760004314379" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="A discriminative approach for finding and characterizing positivity violations using decision trees" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -651,8 +865,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.48550/arXiv.1907.08127</span>
 </td>
+
 </tr>
-<tr data-index="10" data-categories="bWFjaGluZSUyMGxlYXJuaW5nJTJDZGVlcCUyMGxlYXJuaW5nJTJDaGVhbHRoY2FyZQ==" data-listing-date-sort="1560805200000" data-listing-file-modified-sort="1753709498292" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63" data-listing-title-sort="Predicting breast cancer by applying deep learning to linked health records and mammograms" data-listing-filename-sort="index.qmd">
+
+<tr data-index="10" data-categories="bWFjaGluZSUyMGxlYXJuaW5nJTJDZGVlcCUyMGxlYXJuaW5nJTJDaGVhbHRoY2FyZQ==" data-listing-date-sort="1560805200000" data-listing-file-modified-sort="1760004314379" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="63" data-listing-title-sort="Predicting breast cancer by applying deep learning to linked health records and mammograms" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -665,8 +881,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1148/radiol.2019182622</span>
 </td>
+
 </tr>
-<tr data-index="11" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDZXZhbHVhdGlvbnMlMkNoZWFsdGhjYXJl" data-listing-date-sort="1559422800000" data-listing-file-modified-sort="1704222706597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72" data-listing-title-sort="An evaluation toolkit to guide model selection and cohort definition in causal inference" data-listing-filename-sort="index.qmd">
+
+<tr data-index="11" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDZXZhbHVhdGlvbnMlMkNoZWFsdGhjYXJl" data-listing-date-sort="1559422800000" data-listing-file-modified-sort="1760004314379" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72" data-listing-title-sort="An evaluation toolkit to guide model selection and cohort definition in causal inference" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -679,8 +897,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.48550/arXiv.1906.00442</span>
 </td>
+
 </tr>
-<tr data-index="12" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDZXZhbHVhdGlvbnM=" data-listing-date-sort="1548972000000" data-listing-file-modified-sort="1695362370411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="53" data-listing-title-sort="Comment: causal inference competitions: where should we aim?" data-listing-filename-sort="index.qmd">
+
+<tr data-index="12" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDZXZhbHVhdGlvbnM=" data-listing-date-sort="1548972000000" data-listing-file-modified-sort="1760004314379" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="53" data-listing-title-sort="Comment: causal inference competitions: where should we aim?" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2019</span>
 </td>
@@ -693,8 +913,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1214/18-STS679</span>
 </td>
+
 </tr>
-<tr data-index="13" data-categories="Y29tcHV0YXRpb25hbCUyMGJpb2xvZ3k=" data-listing-date-sort="1533243600000" data-listing-file-modified-sort="1732309758927" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="51" data-listing-title-sort="*In vivo* cleavage rules and target repertoire of RNase III in *Escherichia coli*" data-listing-filename-sort="index.qmd">
+
+<tr data-index="13" data-categories="Y29tcHV0YXRpb25hbCUyMGJpb2xvZ3k=" data-listing-date-sort="1533243600000" data-listing-file-modified-sort="1760004314378" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="51" data-listing-title-sort="*In vivo* cleavage rules and target repertoire of RNase III in *Escherichia coli*" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2018</span>
 </td>
@@ -707,8 +929,10 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.1093/nar/gky684</span>
 </td>
+
 </tr>
-<tr data-index="14" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDZXZhbHVhdGlvbnM=" data-listing-date-sort="1518559200000" data-listing-file-modified-sort="1695362370403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis" data-listing-filename-sort="index.qmd">
+
+<tr data-index="14" data-categories="Y2F1c2FsJTIwaW5mZXJlbmNlJTJDZXZhbHVhdGlvbnM=" data-listing-date-sort="1518559200000" data-listing-file-modified-sort="1760004314378" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-date">2018</span>
 </td>
@@ -721,12 +945,12 @@ DOI
 <td>
 <span class="listing-doi">https://doi.org/10.48550/arXiv.1802.05046</span>
 </td>
+
 </tr>
+
 </tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 <p><span style="color: gray;"><em>May go out of date. Please see my <a href="https://scholar.google.com/citations?user=KAzt_pYAAAAJ&amp;hl=en">Google Scholar page</a> for the most up-to-date information.</em></span></p>
 
@@ -736,385 +960,260 @@ No matching items
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ehud\.co\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
         }
       }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
         } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/ehud\.co\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
           }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
+          return note.innerHTML;
+        }
       } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
         }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1122,185 +1221,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 
