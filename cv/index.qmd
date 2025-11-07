@@ -114,7 +114,7 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 |                | ***Institue for Medical Research Israel-Canada, Hadassah Hospital*                                                                                                           |
 |                | :::                                                                                                                                                                          |
 |                |                                                                                                                                                                              |
-|                | -   Developing novel methodologies for finding high-resolution protein-RNA interactions using high-volume data                                                               |
+|                | -   Developing novel methodologies for finding high-resolution protein-RNA interactions using high-volume RNAseq data                                                        |
 +----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## {{< iconify bi mortarboard-fill >}} Education
@@ -157,29 +157,31 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 
 ## {{< iconify bi code-slash >}} Skills
 
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Programming skills | -   Python scientific stack (fluent)                                                                                                                                 |
-|                    |                                                                                                                                                                      |
-|                    |     -   Pandas, Numpy, Scikit-Learn, Statsmodels, PyTorch (lightning), Bambi, PyMC, Arviz, Matplotlib, Seaborn (objects). Altair, Streamlit, cvxpy, Pydantic, Hydra, |
-|                    |                                                                                                                                                                      |
-|                    | -   R (when needed)                                                                                                                                                  |
-|                    |                                                                                                                                                                      |
-|                    | -   Git + GitHub                                                                                                                                                     |
-|                    |                                                                                                                                                                      |
-|                    | -   Continuous development (Travis, GitHub Actions)                                                                                                                  |
-|                    |                                                                                                                                                                      |
-|                    | -   Linux and remote development (Cloud/AWS + Jupyter lab / VS Code)                                                                                                 |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Languages          | -   Fluent English                                                                                                                                                   |
-|                    |                                                                                                                                                                      |
-|                    | -   Native Hebrew                                                                                                                                                    |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| General            | -   Data enthusiast                                                                                                                                                  |
-|                    |                                                                                                                                                                      |
-|                    | -   Musician 🎸, hiker / backpacker 🏔️ \|                                                                                                                            |
-|                    |                                                                                                                                                                      |
-|                    | -   Friendly 🙂                                                                                                                                                      |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Programming skills | -   Python & its scientific stack (fluent)                                                                                                                                             |
+|                    |                                                                                                                                                                                        |
+|                    |     -   Pandas, Polars, DuckDB, Numpy, Scikit-Learn, PyTorch (lightning), Statsmodels, Bambi, PyMC, Arviz, Seaborn (objects), Matplotlib, Altair, Streamlit, cvxpy, Pydantic, Hydra... |
+|                    |                                                                                                                                                                                        |
+|                    | -   R (when needed)                                                                                                                                                                    |
+|                    |                                                                                                                                                                                        |
+|                    | -   SQL (basic)                                                                                                                                                                        |
+|                    |                                                                                                                                                                                        |
+|                    | -   Git + GitHub                                                                                                                                                                       |
+|                    |                                                                                                                                                                                        |
+|                    | -   Continuous development (Travis, GitHub Actions)                                                                                                                                    |
+|                    |                                                                                                                                                                                        |
+|                    | -   Linux and remote development (Cloud/AWS + Jupyter lab / VS Code)                                                                                                                   |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Languages          | -   Fluent English                                                                                                                                                                     |
+|                    |                                                                                                                                                                                        |
+|                    | -   Native Hebrew                                                                                                                                                                      |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| General            | -   Data enthusiast                                                                                                                                                                    |
+|                    |                                                                                                                                                                                        |
+|                    | -   Musician 🎸, hiker / backpacker 🏔️                                                                                                                                                 |
+|                    |                                                                                                                                                                                        |
+|                    | -   Friendly 🙂                                                                                                                                                                        |
++--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## {{< iconify bi trophy-fill >}} Awards
 
