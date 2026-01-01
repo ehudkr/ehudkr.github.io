@@ -81,7 +81,8 @@ affiliations:
     country: United States
 categories:
   - causal inference
-  - methods
+  - healthcare
+  - genetics
 # keywords: 
 publication: "Alzheimer's & Dementia "
 journal: 
