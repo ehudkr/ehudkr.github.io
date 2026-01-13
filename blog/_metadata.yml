@@ -5,3 +5,7 @@ format:
   html: 
     template-partials: 
       - title-metadata.html
+    # css: title-metadata.scss
+    theme: 
+      light: "title-metadata.scss" 
+      dark: "title-metadata.scss"
