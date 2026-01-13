@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,18 +70,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-d4078a7599073a69d3135f1d04250de1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-17f80f328bc67a2457efb2a2b0c75d89.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -134,7 +135,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -463,7 +464,9 @@ window.Quarto = {
 
 <!-- Adjusted from: https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html -->
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); grid-column-gap: 0.1em;">
+<!-- This style="" would ideally be a s/css file and added in the _metadata.yml theme / css. but for some reason it is keep being overridden by the default style because quarto renders it with #ID selector that has higher css specificity and which can only be overcome by inline style specification -->
+
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -544,24 +547,24 @@ window.Quarto = {
 <section id="vanilla-roc-curve" class="level4">
 <h4 class="anchored" data-anchor-id="vanilla-roc-curve">Vanilla ROC curve</h4>
 <p><strong>How</strong>: This is the regular ROC curve simply obtained by taking the propensity scores against the binary treatment assignment.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>roc_auc_score(t, p_hat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>roc_auc_score(t, p_hat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Interpretation</strong>: We already discussed the issue that the AUC should not be too high as it suggests good discrimination, which is bad for causal inference. The ROC curve allows us to detect such regions of perfect discrimination. <strong>Ideally, there should not be long vertical or horizontal segments in the curve</strong>. A sharp long vertical contour suggests there’s a bunch of data points for which we only get true positives (upward movement) without paying any false negatives (rightward movement). That is, the treated units are very separable from the untreated — they are not well-mixed. Reiterating the above: this can hint that we have a positivity violation in the feature subspace that is mapped into this region of scores (thresholds) causing the vertical line.</p>
 </section>
 <section id="ip-weighted-roc-curve" class="level4">
 <h4 class="anchored" data-anchor-id="ip-weighted-roc-curve">IP-weighted ROC curve</h4>
 <p><strong>How</strong>: in this curve we weight the contribution of each unit’s propensity score to the ROC curve by the corresponding inverse-probability weight of that unit.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ip_weights <span class="op">=</span> (t <span class="op">/</span> p_hat) <span class="op">+</span> ((<span class="dv">1</span> <span class="op">-</span> t)) <span class="op">/</span> ((<span class="dv">1</span> <span class="op">-</span> p_hat))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>roc_auc_score(t, p_hat, sample_weight<span class="op">=</span>ip_weights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ip_weights <span class="op">=</span> (t <span class="op">/</span> p_hat) <span class="op">+</span> ((<span class="dv">1</span> <span class="op">-</span> t)) <span class="op">/</span> ((<span class="dv">1</span> <span class="op">-</span> p_hat))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>roc_auc_score(t, p_hat, sample_weight<span class="op">=</span>ip_weights)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Interpretation</strong>: <strong>Ideally,</strong> <strong>like every post-weight discrimination metric, we should expect a random-like performance</strong>. Namely, a ROC curve that aligns with the diagonal and an AUC around 0.5.</p>
 <p><strong>Intuition</strong>: This curve shows how well the weights balance the groups. <a href="https://towardsdatascience.com/solving-simpsons-paradox-with-inverse-probability-weighting-79dbb1395597">IPW creates a pseudo-population in which the treated and control have similar characteristics</a> — it weighs the sample so that in each region in the feature-space we should have similar amount of (weighted) units. If we were to apply a classifier in this weighted population, it would be difficult to discriminate the treated from the controls. For example, if we have the same amount of males and females we can’t use sex as a predictive feature, and if we have the same amount of young and adults we can’t use age, etc. Therefore, <em>poor discrimination post-weighting is welcomed</em>.</p>
 </section>
 <section id="expected-roc-curve" class="level4">
 <h4 class="anchored" data-anchor-id="expected-roc-curve">Expected ROC curve</h4>
 <p><strong>How</strong>: We obtain this curve by weighing the scores such that each unit contributes its propensity score to the positive label (treatment group) and its complementary score (1 minus propensity) to the negative label (control group)</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> concatenate([p_hat, <span class="dv">1</span> <span class="op">-</span> p_hat])</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> concatenate([p_hat, <span class="dv">1</span> <span class="op">-</span> p_hat])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> concatenate([ones_like(p_hat), zeros_like(p_hat)])</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>p_hat <span class="op">=</span> concatenate([p_hat, p_hat])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>roc_auc_score(t, p_hat, sample_weight<span class="op">=</span>weights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>roc_auc_score(t, p_hat, sample_weight<span class="op">=</span>weights)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Interpretation</strong>: Ideally, we would want the expected propensity to align with the vanilla (unweighted) propensity curve (and have same AUC).</p>
 <p><strong>Intuition</strong>: <em>The propensity-to-be-treated is never observed, we only see one instantiation of it in the form of treatment assignment</em>. However, we can model the average propensity of units with similar features. If we assume the statistical model represents the true propensity, then we move from a binary classification task to a smoother calibration-like task where units with high confidence (extreme propensity) contribute almost like they would in the vanilla ROC curve, and low-confidence units (propensity around 0.5) contribute a segment parallel to the diagonal.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -685,13 +688,14 @@ Here are three take-aways for three curves:</p>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

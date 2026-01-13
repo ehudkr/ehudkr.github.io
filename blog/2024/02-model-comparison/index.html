@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../../../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-d4078a7599073a69d3135f1d04250de1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-17f80f328bc67a2457efb2a2b0c75d89.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -158,7 +159,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -497,7 +498,9 @@ window.Quarto = {
 
 <!-- Adjusted from: https://github.com/quarto-dev/quarto-cli/blob/482a3cf7e9a9b42f62d351416a1e8234a4c6cd56/src/resources/formats/html/templates/title-metadata.html -->
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); grid-column-gap: 0.1em;">
+<!-- This style="" would ideally be a s/css file and added in the _metadata.yml theme / css. but for some reason it is keep being overridden by the default style because quarto renders it with #ID selector that has higher css specificity and which can only be overcome by inline style specification -->
+
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -575,7 +578,7 @@ Note
 <h4 class="anchored" data-anchor-id="regression-models-are-fancy-average-machines">Regression models are fancy average machines</h4>
 <p>Linear models (those <span class="math inline">\(y_i = \alpha + \beta X_i\)</span>, for example) end up estimating <span class="math inline">\(E[Y|X]\)</span>. Namely, the expected value of <span class="math inline">\(Y\)</span> given some level of <span class="math inline">\(X\)</span>. Basically, the average value of <span class="math inline">\(Y\)</span> in some setting. And if there is no <span class="math inline">\(X\)</span> (i.e., there is only an intercept, so <span class="math inline">\(y_i = \alpha\)</span>), then that’s just the average overall, look:</p>
 <div id="c017d878" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -587,7 +590,7 @@ Note
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>pd.DataFrame({<span class="st">"y"</span>: y})</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>).fit()</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Taking the mean of `y`: </span><span class="sc">{</span>y<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The coefficient of the regression intercept: </span><span class="sc">{</span>ols<span class="sc">.</span>params[<span class="st">'Intercept'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The coefficient of the regression intercept: </span><span class="sc">{</span>ols<span class="sc">.</span>params[<span class="st">'Intercept'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Taking the mean of `y`: 2.9520
 The coefficient of the regression intercept: 2.9520</code></pre>
@@ -595,7 +598,7 @@ The coefficient of the regression intercept: 2.9520</code></pre>
 </div>
 <p>The nice thing about the regression framework is that we also get inferential results (standard errors, confidence intervals, p-values…) for free, off-the-shelf. In the frequentist (read, “standard”) regression setting, this is done using analytical asymptotic properties (no resampling and refitting)</p>
 <div id="85bd0c8b" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
@@ -618,7 +621,7 @@ Notes:
 <h4 class="anchored" data-anchor-id="averaging-individual-level-errors-with-regression">Averaging individual-level errors with regression</h4>
 <p>Tying the two subsections above together, given a ground truth vector <span class="math inline">\(y\)</span> and predictions <span class="math inline">\(\hat{y}\)</span>, we can calculate the mean squared error as an average or with a regression.</p>
 <div id="451a598e" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> rng.normal(loc<span class="op">=</span><span class="dv">3</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> y <span class="op">+</span> rng.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="fl">0.5</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
@@ -629,7 +632,7 @@ Notes:
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>pd.DataFrame({<span class="st">"li"</span>: individual_errors})</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>).fit()</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Taking the mean of the squared errors with sklearn: </span><span class="sc">{</span>mean_squared_error(y, y_pred)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The coefficient of the regression intercept: </span><span class="sc">{</span>ols<span class="sc">.</span>params[<span class="st">'Intercept'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The coefficient of the regression intercept: </span><span class="sc">{</span>ols<span class="sc">.</span>params[<span class="st">'Intercept'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Taking the mean of the squared errors with sklearn: 0.2415
 The coefficient of the regression intercept: 0.2415</code></pre>
@@ -651,7 +654,7 @@ The coefficient of the regression intercept: 0.2415</code></pre>
 <h3 class="anchored" data-anchor-id="settings-up-data">Settings up data</h3>
 <p>To demonstrate the process, we will need labeled data and we will need prediction models. I’ll use toy data of a regression, rather than classification, task (i.e., a continuous target) for simplicity as squared errors were already introduced, but this can work with any individual-level metric. I will split it train and test, so the comparison will be performed on unseen-data. As for models, I’ll compare a linear (regression) with a nonlinear (boosting trees) one, just so we can see the difference in performance.</p>
 <div id="deed2171" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman1</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman1</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> GradientBoostingRegressor</span>
@@ -659,20 +662,20 @@ The coefficient of the regression intercept: 0.2415</code></pre>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_friedman1(n_samples<span class="op">=</span><span class="dv">400</span>, noise<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LinearRegression().fit(X_train, y_train)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>gbt <span class="op">=</span> GradientBoostingRegressor().fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>gbt <span class="op">=</span> GradientBoostingRegressor().fit(X_train, y_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now let’s calculate individual-level squared errors:</p>
 <div id="c0d9bb37" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lr_res <span class="op">=</span> (y_test <span class="op">-</span> lr.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gbt_res <span class="op">=</span> (y_test <span class="op">-</span> gbt.predict(X_test))<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lr_res <span class="op">=</span> (y_test <span class="op">-</span> lr.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gbt_res <span class="op">=</span> (y_test <span class="op">-</span> gbt.predict(X_test))<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="comparing-models" class="level3">
 <h3 class="anchored" data-anchor-id="comparing-models">Comparing models</h3>
 <p>To compare the difference in performance between the models, I’ll model it as a regression task setting the individual-level errors as the target and a dummy coding of the models as the feature (together with an intercept). This merely requires concatenating the errors and indicating which model corresponds to them.</p>
 <div id="86ec9660" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat({<span class="st">"lr"</span>: pd.Series(lr_res), <span class="st">"gbt"</span>: pd.Series(gbt_res)}, names<span class="op">=</span>[<span class="st">"model"</span>, <span class="st">"id"</span>]).rename(<span class="st">"li"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat({<span class="st">"lr"</span>: pd.Series(lr_res), <span class="st">"gbt"</span>: pd.Series(gbt_res)}, names<span class="op">=</span>[<span class="st">"model"</span>, <span class="st">"id"</span>]).rename(<span class="st">"li"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sqe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>model  id 
 lr     0       0.089986
@@ -691,9 +694,9 @@ Name: li, Length: 400, dtype: float64</code></pre>
 </div>
 <p>And putting that data into the regression<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>:</p>
 <div id="abd392de" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> sqe.reset_index()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> sqe.reset_index()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ols <span class="op">=</span> smf.ols(<span class="st">"li ~ 1 + C(model)"</span>, data<span class="op">=</span>sqe).fit()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
@@ -716,7 +719,7 @@ Notes:
 <h4 class="anchored" data-anchor-id="accounting-for-repeated-measures">Accounting for repeated measures</h4>
 <p>One important detail to notice is that under this “long” data format, we actually have repeated measure. The same original datapoint appears twice - once as the residual from the linear regression model and once from the gradient boosting trees. When we stack those residuals, the rows in the dataset are no longer independent (their errors are correlated as the data point could’ve been easy/hard to predict in the first place) and ignoring this fact can lead us to incorrect inferences.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> Luckily, we can easily account for this structure by using clustered standard errors accounting for sample <code>id</code>s:<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
 <div id="f92ed38c" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # If you were to refit the model:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # If you were to refit the model:</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>rols <span class="op">=</span> smf.ols(<span class="st">"li ~ 1 + C(model)"</span>, data<span class="op">=</span>sqe).fit(</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    cov_type<span class="op">=</span><span class="st">"cluster"</span>, cov_kwds<span class="op">=</span>{<span class="st">"groups"</span>:sqe[<span class="st">"id"</span>]},</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -724,7 +727,7 @@ Notes:
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># rols = ols.get_robustcov_results(</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     cov_type="cluster", groups=sqe["id"],</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># )</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rols.summary(slim<span class="op">=</span><span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
@@ -781,12 +784,12 @@ Figure&nbsp;1: Noninferiority hypothesis testing taken from <span class="citatio
 <h4 class="anchored" data-anchor-id="regression-modeling-in-python-with-bambi">Regression modeling in Python with <code>bambi</code></h4>
 <p><code>bambi</code> is great, our very own <code>brms</code>. It’s a powerful tool to specify regression formulas (like above for <code>statsmodels</code>) but then it will utilize <code>PyMC</code> under the hood to perform an MCMC-based Bayesian estimation, and do lots of additional good stuff like specifying priors automatically etc. Repeating the model comparison from above is as simple as:</p>
 <div id="0c75279a" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bambi <span class="im">as</span> bmb</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bambi <span class="im">as</span> bmb</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ols = smf.ols("li ~ 1 + C(model)", data=sqe).fit()</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>bols <span class="op">=</span> bmb.Model(<span class="st">"li ~ 1 + model + (1|id)"</span>, data<span class="op">=</span>sqe).fit(</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>   cores<span class="op">=</span><span class="dv">1</span>,  <span class="co"># `quarto render` fails for cores&gt;1 for unknown reason</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Initializing NUTS using jitter+adapt_diag...
 Sequential sampling (2 chains in 1 job)
@@ -812,14 +815,14 @@ The rhat statistic is larger than 1.01 for some parameters. This indicates probl
 <h4 class="anchored" data-anchor-id="bayesian-noninferiority-testing">Bayesian noninferiority testing</h4>
 <p>The Bayesian inference framework, focusing on estimation and providing a full posterior distribution of the difference in performance, makes it really easy to test for noninferiority. We can use the Region of Practical Equivalence (ROPE) to specify an intervals that is equivalent to the null, meaning it has practically no effect of interest and is therefore negligible (e.g., within 1% change in performance between model is good enough <span class="citation" data-cites="kruschke2018rejecting">(<a href="#ref-kruschke2018rejecting" role="doc-biblioref">Kruschke 2018</a>)</span>).</p>
 <div id="636a3917" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>loss_std <span class="op">=</span> sqe[<span class="st">"li"</span>].std()</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>az.plot_posterior(</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    bols, var_names<span class="op">=</span><span class="st">"model"</span>,</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    ref_val<span class="op">=</span><span class="dv">0</span>, </span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    rope<span class="op">=</span>[<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span>loss_std, <span class="fl">0.1</span><span class="op">*</span>loss_std],  </span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -850,7 +853,7 @@ By concatenating the individual-level errors from multiple datasets, but still f
 </ol>
 <p>I can quickly demonstrate some of these<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>. Let’s generate more data from a different dataset, by repeating the process above:</p>
 <div id="b158f09c" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman3</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_friedman3</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_friedman3(n_samples<span class="op">=</span><span class="dv">400</span>, noise<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span>
@@ -861,20 +864,20 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>gbt_res <span class="op">=</span> (y_test <span class="op">-</span> gbt.predict(X_test))<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>friedman3_sqe <span class="op">=</span> pd.concat({<span class="st">"lr"</span>: pd.Series(lr_res), <span class="st">"gbt"</span>: pd.Series(gbt_res)}, names<span class="op">=</span>[<span class="st">"model"</span>, <span class="st">"id"</span>]).rename(<span class="st">"li"</span>)</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>friedman3_sqe <span class="op">=</span> friedman3_sqe.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>friedman3_sqe <span class="op">=</span> friedman3_sqe.reset_index()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now let’s stack this dataset on top of the previous dataset</p>
 <div id="9a8f2280" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sqe <span class="op">=</span> pd.concat(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"friedman1"</span>: sqe, <span class="st">"friedman3"</span>: friedman3_sqe},</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    names<span class="op">=</span>[<span class="st">"dataset"</span>],</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>).reset_index().drop(columns<span class="op">=</span><span class="st">"level_1"</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>sqe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>sqe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -886,77 +889,77 @@ By concatenating the individual-level errors from multiple datasets, but still f
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>friedman1</td>
 <td>lr</td>
 <td>0</td>
 <td>0.089986</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>friedman1</td>
 <td>lr</td>
 <td>1</td>
 <td>1.319738</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>friedman1</td>
 <td>lr</td>
 <td>2</td>
 <td>6.044722</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>friedman1</td>
 <td>lr</td>
 <td>3</td>
 <td>6.061478</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>friedman1</td>
 <td>lr</td>
 <td>4</td>
 <td>13.876234</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">795</td>
+<th data-quarto-table-cell-role="th">795</th>
 <td>friedman3</td>
 <td>gbt</td>
 <td>195</td>
 <td>0.277374</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">796</td>
+<th data-quarto-table-cell-role="th">796</th>
 <td>friedman3</td>
 <td>gbt</td>
 <td>196</td>
 <td>0.010730</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">797</td>
+<th data-quarto-table-cell-role="th">797</th>
 <td>friedman3</td>
 <td>gbt</td>
 <td>197</td>
 <td>0.078106</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">798</td>
+<th data-quarto-table-cell-role="th">798</th>
 <td>friedman3</td>
 <td>gbt</td>
 <td>198</td>
 <td>3.454848</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">799</td>
+<th data-quarto-table-cell-role="th">799</th>
 <td>friedman3</td>
 <td>gbt</td>
 <td>199</td>
@@ -971,7 +974,7 @@ By concatenating the individual-level errors from multiple datasets, but still f
 </div>
 <p>Now we can fit a multilevel Gamma regression on the combined data:</p>
 <div id="c1207981" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>gamma_model <span class="op">=</span> bmb.Model(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>gamma_model <span class="op">=</span> bmb.Model(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># "li ~ 1 + model + (1 + model | dataset) + (1 | id)", </span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>     <span class="st">"li ~ 1 + model * C(dataset) + (1 | id)"</span>, </span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>sqe,</span>
@@ -981,7 +984,7 @@ By concatenating the individual-level errors from multiple datasets, but still f
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>gamma_idata <span class="op">=</span> gamma_model.fit(</span>
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    random_seed<span class="op">=</span><span class="dv">11</span>,</span>
 <span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    cores<span class="op">=</span><span class="dv">1</span>  <span class="co"># `quarto render` fails for cores&gt;1 for unknown reason</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Initializing NUTS using jitter+adapt_diag...
 Sequential sampling (2 chains in 1 job)
@@ -1002,12 +1005,12 @@ We recommend running at least 4 chains for robust computation of convergence dia
 </div>
 <p>Note that I’ve used an interaction <code>li ~ 1 + model * C(dataset) + (1 | id)</code>, which is the no-pooling (“memoryless” a-la McElreath) version of the varying slopes <code>li ~ 1 + model + (1 + model | dataset) + (1 | id)</code>. They are equivalent, as they both provide an effect per dataset (<code>C(dataset) -&gt; (1 | dataset)</code>) as well as allowing the models to perform differently per dataset (<code>model:C(dataset) -&gt; (model | dataset)</code>). I am not proud of this substitution but I could not get the sampler to properly sample the hierarchical without divergences. The <code>model:dataset</code> product term also means we can’t just look at the <code>model</code> parameter to assess the difference (as it depends on <code>dataset</code>), so instead I will use a marginal effects approach :</p>
 <div id="dc866be7" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>bmb.interpret.comparisons(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>bmb.interpret.comparisons(</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span>gamma_model,</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    idata<span class="op">=</span>gamma_idata,</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    contrast<span class="op">=</span><span class="st">"model"</span>,</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    average_by<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\204048756\miniforge3\envs\bambi\Lib\site-packages\arviz\rcparams.py:368: FutureWarning: stats.hdi_prob is deprecated since 0.18.0, use stats.ci_prob instead
   warnings.warn(
@@ -1017,7 +1020,7 @@ Default computed for contrast variable: model</code></pre>
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1031,7 +1034,7 @@ Default computed for contrast variable: model</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>model</td>
 <td>diff</td>
 <td>(gbt, lr)</td>
@@ -1162,13 +1165,14 @@ It seems code cells cannot be placed in footnotes, but if you were to import <co
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
