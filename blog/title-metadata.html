@@ -27,7 +27,9 @@ $if(by-affiliation/first)$
 </div>
 $endif$
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); grid-column-gap: 0.1em;">
+<!-- This style="" would ideally be a s/css file and added in the _metadata.yml theme / css. but for some reason it is keep being overridden by the default style because quarto renders it with #ID selector that has higher css specificity and which can only be overcome by inline style specification -->
+
 
   $if(by-affiliation)$
   $elseif(by-author)$

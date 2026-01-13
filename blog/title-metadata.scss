@@ -1,8 +1,0 @@
-/*-- scss:defaults --*/
-
-/* Better column distribution of author, date-created, and date-modified metadata in title header */
-.quarto-title-meta{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  grid-column-gap: 0.3em;
-}
