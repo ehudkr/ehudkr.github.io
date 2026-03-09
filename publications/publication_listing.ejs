@@ -1,66 +1,40 @@
-
-<!-- Adjusted from https://github.com/jmgirard/affcomlab/blob/378a6e4167af5ed462e06ad4a39206e85fad9ff6/ejs/article.ejs  -->
-<!-- TODO: N`ote that Markdown formatting is not yet properly parsed: https://github.com/quarto-dev/quarto-cli/issues/3468 -->
-```{=html}
+<!-- Adjusted from https://github.com/jmgirard/affcomlab/blob/378a6e4167af5ed462e06ad4a39206e85fad9ff6/ejs/article.ejs  
+ and from HTML to markdown -->
 <ul class="pub-list list" style="list-style:none">
 <% for (const item of items) { %>
-  <li <%= metadataAttrs(item) %>>
-    <a href="<%- item.path %>" style="text-decoration:none; color:inherit;"> 
-    <div id="pub-<%= item.title.toLowerCase().split(' ').join('_') %>">
-        <span class="listing-title lead"><b><%= item.title %></b></span><br />
-        <span class="listing-author"><%= item.author %></span><br />
-        <span class="listing-publication fst-italic "><%= item.publication %></span>
-        <span class="listing-year">(<%= item.date.split(" ").slice(-1) %>)</span><br />
-        <!-- <% if(item.categories) { %>
-            <div class="project-categories">
-                <% for (const cat of item.categories) { %>
-                    <span class="project-category" style="color: #e07e2d;"><%= cat %></span>
-                <% } %>
-            </div>
-        <% } %> -->
-    </div> </a>
-    <% if (item.doi) { %>
-        <div class="altmetric-embed" data-badge-type="altmetric-embed" 
-         data-badge-popover="top" 
-         data-link-target='_blank'
-         data-doi="<%- item.doi.replace('https://doi.org/','') %>" 
-         data-hide-no-mentions="true">
-        </div>
-    <% } %>
-    <div style="margin-top: 0.15rem;">
-        <a href="<%- item.path %>" class="btn btn-primary rounded" style="background-color: #567dc4;">
-          <i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> 
-          Details
-        </a>
-        <% if (item.doi) { %>
-        <a href="<%- item.doi %>" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88">
-            <% if (['arxiv', 'medrxiv'].includes(item.journal.title.toLowerCase())) { %>
-                <iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon>
-            <% } else { %>
-                <i class="bi bi-file-earmark-text"></i> 
-            <% } %>
-            DOI
-        </a>
-        <% } %>
-        <% if (item.pdf) { %>
-        <a href="<%- item.pdf %>" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656">
-            <i class="bi bi-file-earmark-pdf-fill"></i>
-          PDF
-        </a>
-        <% } %>
-        <!-- <% if (item.doi) { %>
-            <div class="altmetric-embed" data-badge-type="donut" 
-             data-badge-popover="right" 
-             data-link-target='_blank'
-             data-doi="<%- item.doi.replace('https://doi.org/','') %>" 
-             data-hide-no-mentions="true"
-             style="display: inline; height: 50px;">
-            </div>  Comment: can't make the badge the same height as buttons. 
-        <% } %> -->
-    </div>
-    <hr>
-  </li>
+<li <%= metadataAttrs(item) %> id="pub-<%= item.title.toLowerCase().split(' ').join('_') %>">
+<a href="<%- item.path %>" style="text-decoration:none; color:inherit;">
+[<%= item.title %>]{.listing-title .lead style="font-weight:400;"}<br>
+[<%= item.author %>]{.listing-author}<br>
+[<%= item.publication %>]{.listing-publication .fst-italic} ([<%= item.date.split(" ").slice(-1) %>]{.listing-year})
+</a>
+<% if (item.doi) { %><div class="altmetric-embed" data-badge-type="altmetric-embed"
+ data-badge-popover="top"
+ data-link-target='_blank'
+ data-doi="<%- item.doi.replace('https://doi.org/','') %>"
+ data-hide-no-mentions="true"
+ style="margin-top: 0.25rem;">
+</div><% } %>
+
+<div style="margin-top: 0.15rem;">
+<a href="<%- item.path %>" class="btn btn-primary rounded" style="background-color: #567dc4;"
+  ><i class="bi bi-info-circle-fill" style="margin-bottom: -0.14rem; margin-right: 0.1rem;"></i> Details</a><%
+if (item.doi) { %>
+<a href="<%- item.doi %>" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #b84f88"
+  ><% if (['arxiv', 'medrxiv'].includes(item.journal.title.toLowerCase())) {
+    %><iconify-icon icon="academicons:arxiv" style="margin-bottom: -0.15rem;"></iconify-icon><%
+  } else {
+    %><i class="bi bi-file-earmark-text"></i><%
+  } %> DOI</a><%
+} %><%
+if (item.pdf) { %>
+<a href="<%- item.pdf %>" class="btn btn-secondary rounded" target="_blank" rel="noopener noreferrer" style="background-color: #c45656"
+  ><i class="bi bi-file-earmark-pdf-fill"></i> PDF</a><%
+} %>
+</div>
+
+---
+
+</li>
 <% } %>
 </ul>
-
-```
