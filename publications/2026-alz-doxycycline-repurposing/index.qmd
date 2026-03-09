@@ -1,0 +1,89 @@
+---
+title: "Network-based prediction and real-world patient data observation identify doxycycline as a repurposable drug in Alzheimer's disease"
+date: 2026-02-13
+doi: https://doi.org/10.1016/j.neurot.2026.e00836
+author:
+  - name: Marina Bykova
+    affiliations:
+      - ref: ccf
+  - name: Ehud Karavani
+    affiliations:
+      - ref: ibmrisrl
+  - name: Michael M. Danziger
+    affiliations:
+      - ref: ibmrisrl
+  - name: Reina Tonegawa-Kuji
+    affiliations:
+      - ref: ccf
+  - name: William Martin
+    affiliations:
+      - ref: ccf
+  - name: Zhendong Sha
+    affiliations:
+      - ref: ccf
+  - name: Andrew A. Pieper
+    affiliations:
+      - ref: ccf
+  - name: Michal Rosen-Zvi
+    affiliations:
+      - ref: ibmrisrl
+  - name: Jeffrey Cummings
+    affiliations:
+      - name: "University of Nevada Las Vegas"
+        country: United States
+  - name: Feixiong Cheng
+    affiliations:
+      - ref: ccf
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Causal Machine Learning for Healthcare and Life Sciences
+  - id: ccf
+    name: Cleveland Clinic
+    country: United States
+categories:
+  - causal inference
+  - healthcare
+# keywords: 
+publication: "Neurotherapeutics"
+journal: 
+  title: "Neurotherapeutics"
+pdf: https://www.sciencedirect.com/science/article/pii/S1878747926000061/pdfft?md5=8e903faf7179a57aafff6e6684edb54c&pid=1-s2.0-S1878747926000061-main.pdf
+abstract: >
+  Alzheimer's disease (AD), a leading global cause of dementia, disability, and mortality, represents a critical unmet need for effective therapeutic interventions. 
+  Drug repurposing offers an expedited pathway to address this challenge compared to traditional drug development. 
+  Here, we leveraged network-based prediction and real-world patient data validation, a comprehensive strategy to identify unanticipated therapeutic applications for existing medications. 
+  Traumatic brain injury (TBI), a major risk factor for earlier and more severe AD, exhibits heterogenous clinical outcomes influenced by genetic susceptibility, 
+  suggesting that TBI-diagnosed populations represent a cohort enriched for neurodegeneration vulnerability. 
+  Building on this premise, we integrated network-based multi-omics and endophenotypic disease modules from individuals with TBI and AD histories with large real-world patient data analysis from insurance claims to prioritize repurposable drugs. 
+  A network proximity algorithm applied to TBI- and AD-associated gene sets identified statistically ranked candidates, including doxycycline and irbesartan. 
+  We then assessed all candidates' AD risk reduction potential using a nationwide Medicare database encompassing nearly 9 million individuals. 
+  In a retrospective observational study of AD-free elderly individuals monitored for up to 3 years, 
+  propensity-score adjusted survival analyses demonstrated a significantly reduced cumulative incidence of AD in doxycycline and irbesartan-prescribed individuals, 
+  with risk ratios of 0.92 and 0.83, respectively, at a 95% confidence level. 
+  These findings nominate doxycycline and irbesartan as potential repurposable drugs for AD and demonstrate the translational potential of synergizing network-based prediction with real-world patient evidence in drug repurposing for neurodegenerative disease if broadly applied.
+description: >
+  High-throughput target-trial emulations to corroborate repurposing candidates from multi-omics network analysis for Alzheimer's disease.
+---
+
+![](figure1.jpg)
+
+<!-- :::{.column-page} -->
+![](figure2.jpg)
+<!-- ::: -->
+
+
+
+## Citation
+```bibtex
+@article{bykova2026network,
+  title={Network-based prediction and real-world patient data observation identify doxycycline as a repurposable drug in Alzheimer's disease},
+  author={Bykova, Marina and Karavani, Ehud and Danziger, Michael and Tonegawa-Kuji, Reina and Martin, William and Sha, Zhendong and Pieper, Andrew A and Rosen-Zvi, Michal and Cheng, Feixiong},
+  journal={Neurotherapeutics},
+  year={2026},
+  publisher={Elsevier}
+}
+```
+
