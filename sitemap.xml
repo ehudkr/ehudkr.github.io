@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://ehud.co/publications/index.html</loc>
-    <lastmod>2025-10-09T10:05:14.382Z</lastmod>
+    <lastmod>2026-03-09T09:16:24.634Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2019-causal-inference-competitions/index.html</loc>
@@ -65,19 +65,11 @@
     <lastmod>2025-10-09T10:05:14.381Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/publications/2021-non-respiratory-covid19/index.html</loc>
-    <lastmod>2025-10-09T10:05:14.380Z</lastmod>
+    <loc>https://ehud.co/publications/2026-alz-doxycycline-repurposing/index.html</loc>
+    <lastmod>2026-03-09T11:11:41.305Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/materials/causal-inference/concepts/index.html</loc>
-    <lastmod>2025-10-09T10:05:14.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ehud.co/materials/causal-inference/methods/index.html</loc>
-    <lastmod>2025-10-09T10:05:14.376Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ehud.co/materials/index.html</loc>
+    <loc>https://ehud.co/materials/causal-inference/motivation/index.html</loc>
     <lastmod>2025-10-09T10:05:14.377Z</lastmod>
   </url>
   <url>
@@ -85,8 +77,20 @@
     <lastmod>2025-10-09T10:05:14.376Z</lastmod>
   </url>
   <url>
-    <loc>https://ehud.co/materials/causal-inference/motivation/index.html</loc>
+    <loc>https://ehud.co/materials/index.html</loc>
     <lastmod>2025-10-09T10:05:14.377Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/materials/causal-inference/methods/index.html</loc>
+    <lastmod>2025-10-09T10:05:14.376Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/materials/causal-inference/concepts/index.html</loc>
+    <lastmod>2025-10-09T10:05:14.376Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ehud.co/publications/2021-non-respiratory-covid19/index.html</loc>
+    <lastmod>2025-10-09T10:05:14.380Z</lastmod>
   </url>
   <url>
     <loc>https://ehud.co/publications/2025-epilepsy-resection-repurposing/index.html</loc>
