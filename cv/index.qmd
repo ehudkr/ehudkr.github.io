@@ -27,7 +27,7 @@ listing:
 
 -   Machine learning researcher and causality expert with 9 years of experience in healthcare
 
-    -   Applied researcher and data science working solo, as tech-lead, or as squad leader,
+    -   Applied researcher and data science working solo, as tech-lead, or as squad leader
 
 -   EB1-A visa approved (US)
 
@@ -49,9 +49,11 @@ Causal inference, machine learning, deep learning, statistics, data viz, communi
 
 ## {{< iconify bi person-fill >}} About me
 
-Highly skilled in causal inference, machine learning, (Bayesian) statistics, and data visualization. An applied researcher and data scientist with strong software engineering fundamentals. I can both run rigorous analyses or build reusable tools and frameworks that automate them, closing the full-stack loop from engineering backends of statistical engines to frontend visualization-heavy dashboards, reports, and presentations. As project leader I can elicit information from domain experts; collaborate with peers, manage them and delegate work; I can plan, break down tasks, set milestones based on agile principles; I can translate vague questions into concrete statistical hypotheses, answer them through advanced and rigor modeling, and report back to technical and non-technical stakeholders.
+An applied quantitative researcher and data scientist, I bridge the gap between rigorous statistical learning and robust software engineering. I specialize in automating analyses into scalable frameworks. Whether it’s architecting the backend of a statistical engine or designing visualization-heavy dashboards, I close the loop between complex modeling, reusable tools and actionable stakeholder insights.
 
-A T-shaped integrative thinker. I implemented biostatistics concepts into modern transformer-based deep-learning architectures to tailor NLP models for biological data, applied machine learning theories of invariance to promote fairness in genetic predictors, and used formal causal graphs to deconfound learning from multiple sources drastically improving model generalization. I'm also a passionate advocate of synthesizing engineering practices into research practices: academic workflows as git workflows, test-driven modeling, and Clean Code for research code.
+As a project leader, I translate vague business/research questions into concrete hypotheses, manage agile milestones, collaborate with international peers, and navigate the nuances between technical and non-technical communication.
+
+A T-shaped integrative thinker. I thrive on cross-pollinating fields: I have adapted biostatistics concepts to tailor modern transformer-based deep-learning architectures for biological data, applied machine learning theories of invariance to promote fairness in genetic risk scores, and used formal causal graphs to deconfound learning from multiple sources and drastically improving model generalization. I'm also a passionate advocate of synthesizing engineering practices into research practices: academic workflows as git workflows, test-driven modeling, and Clean Code for research code.
 
 ## {{< iconify bi briefcase-fill >}} Experience
 
@@ -81,13 +83,13 @@ A T-shaped integrative thinker. I implemented biostatistics concepts into modern
 |                |                                                                                                                                                                                                                         |
 |                | -   Led global strategy at IBM Research for causality in drug discovery                                                                                                                                                 |
 |                |                                                                                                                                                                                                                         |
-|                |     -   Steered research agenda and technical focus areas                                                                                                                                                               |
+|                |     -   Steered research agenda and technical focus areas, reporting directly to Research VPs                                                                                                                           |
 |                |     -   Oversaw research of subgroup discovery for adaptive experimentation using Bayesian inference                                                                                                                    |
 |                |                                                                                                                                                                                                                         |
 |                | -   Mentored 10+ students and interns\                                                                                                                                                                                  |
 |                |     Onboarding lead, onboarding 10+ researchers                                                                                                                                                                         |
 |                |                                                                                                                                                                                                                         |
-|                |     -   Teaching academics how to apply software development fundamentals to research                                                                                                                                   |
+|                |     -   Teaching academics how to apply software development fundamentals to research, delivering maintainable production-grade research code                                                                           |
 |                |                                                                                                                                                                                                                         |
 |                | -   Published 10+ papers and issued 3 US patents                                                                                                                                                                        |
 |                |                                                                                                                                                                                                                         |
@@ -95,7 +97,7 @@ A T-shaped integrative thinker. I implemented biostatistics concepts into modern
 |                |                                                                                                                                                                                                                         |
 |                | -   "GLM-ification" of deep learning models, bringing established concepts from biostatistics into transformer-based deep-learning LLM-like models, tailoring them for biology.                                         |
 |                |                                                                                                                                                                                                                         |
-|                |     -   Implementing concepts from generalized linear (mixed) models (e.g., zero-inflated negative-binomial regression or random effects) in PyTorch                                                                    |
+|                |     -   Implemented concepts from generalized linear (mixed) models (e.g., zero-inflated negative-binomial regression or random effects) in PyTorch                                                                     |
 |                |                                                                                                                                                                                                                         |
 |                | -   Deconfounded learning from multiple fragmented sources improving model generalization                                                                                                                               |
 |                |                                                                                                                                                                                                                         |
@@ -132,7 +134,7 @@ A T-shaped integrative thinker. I implemented biostatistics concepts into modern
 |                | ***Institue for Medical Research Israel-Canada, Hadassah Hospital*                                                                                                                                                      |
 |                | :::                                                                                                                                                                                                                     |
 |                |                                                                                                                                                                                                                         |
-|                | -   Developing novel methodologies for finding high-resolution protein-RNA interactions using high-volume RNAseq data                                                                                                   |
+|                | -   Developed novel methodologies for finding high-resolution protein-RNA interactions using high-volume RNAseq data                                                                                                    |
 +----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## {{< iconify bi mortarboard-fill >}} Education
@@ -196,13 +198,9 @@ A T-shaped integrative thinker. I implemented biostatistics concepts into modern
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Technical skills   | -   Causal Inference                                                                                                                                                                                       |
 |                    |                                                                                                                                                                                                            |
-|                    | -   Machine Learning                                                                                                                                                                                       |
+|                    | -   Machine Learning and Deep Learning                                                                                                                                                                     |
 |                    |                                                                                                                                                                                                            |
-|                    | -   Deep Learning                                                                                                                                                                                          |
-|                    |                                                                                                                                                                                                            |
-|                    | -   Statistics                                                                                                                                                                                             |
-|                    |                                                                                                                                                                                                            |
-|                    | -   Bayesian Inference                                                                                                                                                                                     |
+|                    | -   Statistics and Bayesian Inference                                                                                                                                                                      |
 |                    |                                                                                                                                                                                                            |
 |                    | -   Data Visualization                                                                                                                                                                                     |
 |                    |                                                                                                                                                                                                            |
@@ -216,7 +214,7 @@ A T-shaped integrative thinker. I implemented biostatistics concepts into modern
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | General            | -   Data enthusiast                                                                                                                                                                                        |
 |                    |                                                                                                                                                                                                            |
-|                    | -   Musician 🎸, hiker / backpacker 🏔️ \| \| \| \| \|                                                                                                                                                      |
+|                    | -   Musician 🎸, hiker / backpacker 🏔️                                                                                                                                                                     |
 |                    |                                                                                                                                                                                                            |
 |                    | -   Friendly 🙂                                                                                                                                                                                            |
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
