@@ -25,97 +25,115 @@ listing:
 
 ## {{< iconify material-symbols format-ink-highlighter >}} Highlights
 
--   Healthcare machine learning researcher with 8+ years of experience
+-   Machine learning researcher and causality expert with 9 years of experience in healthcare
+
+    -   Applied researcher and data science working solo, as tech-lead, or as squad leader,
 
 -   EB1-A visa approved (US)
 
--   1st author Cell paper, 2019
+-   1st author Cell paper and co-inventor on 3 US patents
 
--   Creator of [`causallib`](https://github.com/IBM/causallib) - an open-source Python package for causal inference.\
-    750+ stars and 100+ forks on Github.
+-   Excellent Python coder
+
+    -   Creator of [`causallib`](https://github.com/IBM/causallib) - an open-source Python package for causal inference.\
+        800+ stars and 100+ forks on Github.
+
+    -   Developed high-throughput frameworks for quasi-experiments\
+        from statistical engines to dashboards exploring results and supporting decisions
 
 -   Received an *IBM Research Accomplishment* award (2023)
 
--   Co-inventor on 3 US patents
+-   Communicator: PyData conference speaker, lecturer, and podcast interviewee
 
--   PyData conference speaker, lecturer, and podcast interviewee
-
--   Causal inference, machine learning, deep learning, statistics, data viz, Python
+Causal inference, machine learning, deep learning, statistics, data viz, communication, Python
 
 ## {{< iconify bi person-fill >}} About me
 
-Highly skilled in causal inference, machine learning, (Bayesian) statistics, and data visualization. An applied researcher and data scientist, I spend my time between building reusable tools for research and putting them into use. Advocating Clean Code for research code. Strong preference for eclectic, collaborative environments.
+Highly skilled in causal inference, machine learning, (Bayesian) statistics, and data visualization. An applied researcher and data scientist with strong software engineering fundamentals. I can both run rigorous analyses or build reusable tools and frameworks that automate them, closing the full-stack loop from engineering backends of statistical engines to frontend visualization-heavy dashboards, reports, and presentations. As project leader I can elicit information from domain experts; collaborate with peers, manage them and delegate work; I can plan, break down tasks, set milestones based on agile principles; I can translate vague questions into concrete statistical hypotheses, answer them through advanced and rigor modeling, and report back to technical and non-technical stakeholders.
+
+A T-shaped integrative thinker. I implemented biostatistics concepts into modern transformer-based deep-learning architectures to tailor NLP models for biological data, applied machine learning theories of invariance to promote fairness in genetic predictors, and used formal causal graphs to deconfound learning from multiple sources drastically improving model generalization. I'm also a passionate advocate of synthesizing engineering practices into research practices: academic workflows as git workflows, test-driven modeling, and Clean Code for research code.
 
 ## {{< iconify bi briefcase-fill >}} Experience
 
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| 2017 – present | ::: cell_title                                                                                                                                                               |
-|                | **Research Staff Member**\                                                                                                                                                   |
-|                | *Causal Machine Learning for Healthcare and Life Science, IBM-Research, Israel*                                                                                              |
-|                | :::                                                                                                                                                                          |
-|                |                                                                                                                                                                              |
-|                | -   Creator of [**`causallib`**](https://github.com/IBM/causallib) – a one-stop-shop open-source Python package for flexible causal inference modeling.                      |
-|                |                                                                                                                                                                              |
-|                |     -   *Received an IBM Research Accomplishment award (2023)*                                                                                                               |
-|                |                                                                                                                                                                              |
-|                | -   Client project leader from start to finish: translating vague clinicians' questions into concrete statistical hypotheses, answering them, and communicating the findings |
-|                |                                                                                                                                                                              |
-|                | -   Led and designed a drug repurposing software asset, applying high-throughput causal inference to observational healthcare data                                           |
-|                |                                                                                                                                                                              |
-|                |     -   Managing a team of 5 researchers.\                                                                                                                                   |
-|                |         Leading the scientific pipeline, system design, and visualization app                                                                                                |
-|                |                                                                                                                                                                              |
-|                |     -   Generating 100s of hypotheses in minutes                                                                                                                             |
-|                |                                                                                                                                                                              |
-|                |     -   Serving 4 external engagements with top pharma clients, bringing millions in revenue                                                                                 |
-|                |                                                                                                                                                                              |
-|                | -   Individual Contributor (IC)\                                                                                                                                             |
-|                |     Causal inference consultant for projects in the US, UK, France, Japan, Kenya, South Africa, and Switzerland                                                              |
-|                |                                                                                                                                                                              |
-|                | -   Led global strategy at IBM Research for causality in drug discovery                                                                                                      |
-|                |                                                                                                                                                                              |
-|                |     -   Oversaw research of adaptive experimentation using Bayesian inference                                                                                                |
-|                |                                                                                                                                                                              |
-|                | -   Mentored 10+ students and interns\                                                                                                                                       |
-|                |     Onboarding lead, onboarding 10+ researchers                                                                                                                              |
-|                |                                                                                                                                                                              |
-|                | -   Published 10+ papers and issued 3 US patents                                                                                                                             |
-|                |                                                                                                                                                                              |
-|                | 2024:                                                                                                                                                                        |
-|                |                                                                                                                                                                              |
-|                | -   Deconfounding transformer-based large language models for biological sequence, overcoming batch effects across and within diverse data sources                           |
-|                |                                                                                                                                                                              |
-|                | -   GLM-ification of deep learning models, bringing established biostatistics concepts into transformer-based deep learning models                                           |
-|                |                                                                                                                                                                              |
-|                | 2025:                                                                                                                                                                        |
-|                |                                                                                                                                                                              |
-|                | -   Quantum Advantage task force member \[2025\]: developing and testing quantum algorithms for combinatorial optimization problems                                          |
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| 2022           | ::: cell_title                                                                                                                                                               |
-|                | **Principle Statistician**\                                                                                                                                                  |
-|                | *Laboratory for Gait & Neurodynamics, Ichilov Hospital*                                                                                                                      |
-|                | :::                                                                                                                                                                          |
-|                |                                                                                                                                                                              |
-|                | -   Bayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients                                                            |
-|                |     -   Bayesian multilevel models for hurdle models of repeated patients’ measurements                                                                                      |
-|                |     -   Formal causal inference with DAGs for minimizing inessential tests, saving over 3 hours of unnecessary tests by clinicians per patient.                              |
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| 2016 – 2017    | ::: cell_title                                                                                                                                                               |
-|                | **Teaching Assitant**\                                                                                                                                                       |
-|                | *The School of Computer Science, Hebrew University*                                                                                                                          |
-|                | :::                                                                                                                                                                          |
-|                |                                                                                                                                                                              |
-|                | -   Introduction to Data Science                                                                                                                                             |
-|                |                                                                                                                                                                              |
-|                | -   Workshop in Computational Bioskills                                                                                                                                      |
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| 2015 – 2016    | ::: cell_title                                                                                                                                                               |
-|                | **Research Associate / Computational Biologist\                                                                                                                              |
-|                | ***Institue for Medical Research Israel-Canada, Hadassah Hospital*                                                                                                           |
-|                | :::                                                                                                                                                                          |
-|                |                                                                                                                                                                              |
-|                | -   Developing novel methodologies for finding high-resolution protein-RNA interactions using high-volume RNAseq data                                                        |
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2017 – present | ::: cell_title                                                                                                                                                                                                          |
+|                | **Staff Machine Learning Researcher**\                                                                                                                                                                                  |
+|                | *Causal Machine Learning for Healthcare and Life Science, IBM-Research*                                                                                                                                                 |
+|                | :::                                                                                                                                                                                                                     |
+|                |                                                                                                                                                                                                                         |
+|                | -   Creator of [**`causallib`**](https://github.com/IBM/causallib) – a one-stop-shop open-source Python package for flexible causal inference modeling.                                                                 |
+|                |                                                                                                                                                                                                                         |
+|                |     -   *Received an IBM Research Accomplishment award (2023)*                                                                                                                                                          |
+|                |                                                                                                                                                                                                                         |
+|                | -   Client project leader from start to finish: eliciting information from domain experts, translating vague clinicians' questions into concrete statistical hypotheses, answering them, and communicating the findings |
+|                |                                                                                                                                                                                                                         |
+|                | -   Led, designed, and engineered a reusable framework for drug discovery, applying high-throughput causal inference to observational healthcare data                                                                   |
+|                |                                                                                                                                                                                                                         |
+|                |     -   Managing a team of 5 researchers.\                                                                                                                                                                              |
+|                |         Leading the scientific pipeline, system design, and visualization app                                                                                                                                           |
+|                |                                                                                                                                                                                                                         |
+|                |     -   Generating 100s of hypotheses in minutes                                                                                                                                                                        |
+|                |                                                                                                                                                                                                                         |
+|                |     -   Serving 4 external engagements with top pharma clients, bringing millions in revenue                                                                                                                            |
+|                |                                                                                                                                                                                                                         |
+|                | -   Individual Contributor (IC)\                                                                                                                                                                                        |
+|                |     Causal inference consultant for projects in the US, UK, France, Japan, Kenya, South Africa, and Switzerland                                                                                                         |
+|                |                                                                                                                                                                                                                         |
+|                | -   Led global strategy at IBM Research for causality in drug discovery                                                                                                                                                 |
+|                |                                                                                                                                                                                                                         |
+|                |     -   Steered research agenda and technical focus areas                                                                                                                                                               |
+|                |     -   Oversaw research of subgroup discovery for adaptive experimentation using Bayesian inference                                                                                                                    |
+|                |                                                                                                                                                                                                                         |
+|                | -   Mentored 10+ students and interns\                                                                                                                                                                                  |
+|                |     Onboarding lead, onboarding 10+ researchers                                                                                                                                                                         |
+|                |                                                                                                                                                                                                                         |
+|                |     -   Teaching academics how to apply software development fundamentals to research                                                                                                                                   |
+|                |                                                                                                                                                                                                                         |
+|                | -   Published 10+ papers and issued 3 US patents                                                                                                                                                                        |
+|                |                                                                                                                                                                                                                         |
+|                | 2024:                                                                                                                                                                                                                   |
+|                |                                                                                                                                                                                                                         |
+|                | -   "GLM-ification" of deep learning models, bringing established concepts from biostatistics into transformer-based deep-learning LLM-like models, tailoring them for biology.                                         |
+|                |                                                                                                                                                                                                                         |
+|                |     -   Implementing concepts from generalized linear (mixed) models (e.g., zero-inflated negative-binomial regression or random effects) in PyTorch                                                                    |
+|                |                                                                                                                                                                                                                         |
+|                | -   Deconfounded learning from multiple fragmented sources improving model generalization                                                                                                                               |
+|                |                                                                                                                                                                                                                         |
+|                |     -   Identified and quantified data confounding bias (batch-like effects) leading to poor generalization in clients                                                                                                  |
+|                |                                                                                                                                                                                                                         |
+|                |     -   Deconfounded learning using approaches from domain adaptation, invariant risk minimization, and conditional autoencoders, drastically improving model generalization                                            |
+|                |                                                                                                                                                                                                                         |
+|                | 2025:                                                                                                                                                                                                                   |
+|                |                                                                                                                                                                                                                         |
+|                | -   Quantum Advantage task force member: developing and testing quantum algorithms for combinatorial optimization problems                                                                                              |
+|                |     -   Applied AI and analytical approaches to improve quantum algorithms, like finding better initial parameters, reducing variational optimization rounds hardware usage and saving costs                            |
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2022           | ::: cell_title                                                                                                                                                                                                          |
+|                | **Principle Statistician**\                                                                                                                                                                                             |
+|                | *Laboratory for Gait & Neurodynamics, Ichilov Hospital*                                                                                                                                                                 |
+|                | :::                                                                                                                                                                                                                     |
+|                |                                                                                                                                                                                                                         |
+|                | -   Lead statistician in a clinical study                                                                                                                                                                               |
+|                | -   Bayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients                                                                                                       |
+|                |     -   Bayesian multilevel models for hurdle models of repeated patients’ measurements                                                                                                                                 |
+|                |     -   Formal causal inference with DAGs for minimizing inessential tests, saving over 3 hours of unnecessary tests by clinicians per patient.                                                                         |
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2016 – 2017    | ::: cell_title                                                                                                                                                                                                          |
+|                | **Teaching Assitant**\                                                                                                                                                                                                  |
+|                | *The School of Computer Science, Hebrew University of Jerusalem*                                                                                                                                                        |
+|                | :::                                                                                                                                                                                                                     |
+|                |                                                                                                                                                                                                                         |
+|                | -   Introduction to Data Science                                                                                                                                                                                        |
+|                |                                                                                                                                                                                                                         |
+|                | -   Workshop in Computational Bioskills                                                                                                                                                                                 |
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2015 – 2016    | ::: cell_title                                                                                                                                                                                                          |
+|                | **Research Associate / Computational Biologist\                                                                                                                                                                         |
+|                | ***Institue for Medical Research Israel-Canada, Hadassah Hospital*                                                                                                                                                      |
+|                | :::                                                                                                                                                                                                                     |
+|                |                                                                                                                                                                                                                         |
+|                | -   Developing novel methodologies for finding high-resolution protein-RNA interactions using high-volume RNAseq data                                                                                                   |
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## {{< iconify bi mortarboard-fill >}} Education
 
@@ -143,7 +161,7 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 |             | Bachelor's thesis published in [Nucleic Acids Research](https://academic.oup.com/nar/article/46/19/10380/5064785) |
 +-------------+-------------------------------------------------------------------------------------------------------------------+
 
-## {{< iconify fluent people-community-24-filled >}} Community
+## {{< iconify fluent people-community-24-filled >}} Outreach
 
 -   [PyData speaker](https://youtu.be/7RUkcZEyhQM?si=gR84iGnuIez5WXGj)
 
@@ -155,33 +173,53 @@ Highly skilled in causal inference, machine learning, (Bayesian) statistics, and
 
 -   Co-Organized the 2018 Atlantic Causal Inference Conference Data Challenge
 
+-   TDS [Editor’s Pick](#0) on Medium
+
 ## {{< iconify bi code-slash >}} Skills
 
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Programming skills | -   Python & its scientific stack (fluent)                                                                                                                                             |
-|                    |                                                                                                                                                                                        |
-|                    |     -   Pandas, Polars, DuckDB, Numpy, Scikit-Learn, PyTorch (lightning), Statsmodels, Bambi, PyMC, Arviz, Seaborn (objects), Matplotlib, Altair, Streamlit, cvxpy, Pydantic, Hydra... |
-|                    |                                                                                                                                                                                        |
-|                    | -   R (when needed)                                                                                                                                                                    |
-|                    |                                                                                                                                                                                        |
-|                    | -   SQL (basic)                                                                                                                                                                        |
-|                    |                                                                                                                                                                                        |
-|                    | -   Git + GitHub                                                                                                                                                                       |
-|                    |                                                                                                                                                                                        |
-|                    | -   Continuous development (Travis, GitHub Actions)                                                                                                                                    |
-|                    |                                                                                                                                                                                        |
-|                    | -   Linux and remote development (Cloud/AWS + Jupyter lab / VS Code)                                                                                                                   |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Languages          | -   Fluent English                                                                                                                                                                     |
-|                    |                                                                                                                                                                                        |
-|                    | -   Native Hebrew                                                                                                                                                                      |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| General            | -   Data enthusiast                                                                                                                                                                    |
-|                    |                                                                                                                                                                                        |
-|                    | -   Musician 🎸, hiker / backpacker 🏔️                                                                                                                                                 |
-|                    |                                                                                                                                                                                        |
-|                    | -   Friendly 🙂                                                                                                                                                                        |
-+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Programming skills | -   Python & its scientific and ML stack (fluent)                                                                                                                                                          |
+|                    |                                                                                                                                                                                                            |
+|                    |     -   Pandas, Polars, DuckDB, Ibis, Numpy, Scikit-Learn, PyGAM, Statsmodels, PyTorch (lightning), PyMC, Bambi, Arviz, Matplotlib, , Seaborn (objects), Altair, Streamlit, cvxpy, Pydantic, Hydra, Ray... |
+|                    |                                                                                                                                                                                                            |
+|                    | -   R (when needed)                                                                                                                                                                                        |
+|                    |                                                                                                                                                                                                            |
+|                    | -   SQL (but Ibis when possible)                                                                                                                                                                           |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Git + GitHub                                                                                                                                                                                           |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Continuous development (Travis, GitHub Actions)                                                                                                                                                        |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Linux and remote development (Cloud/AWS + Jupyter lab / VS Code)                                                                                                                                       |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Jupyter, Quarto, Latex, Typst                                                                                                                                                                          |
++--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Technical skills   | -   Causal Inference                                                                                                                                                                                       |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Machine Learning                                                                                                                                                                                       |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Deep Learning                                                                                                                                                                                          |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Statistics                                                                                                                                                                                             |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Bayesian Inference                                                                                                                                                                                     |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Data Visualization                                                                                                                                                                                     |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Verbal & written communication                                                                                                                                                                         |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Programming, software engineering and development                                                                                                                                                      |
++--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Languages          | -   Fluent English                                                                                                                                                                                         |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Native Hebrew                                                                                                                                                                                          |
++--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| General            | -   Data enthusiast                                                                                                                                                                                        |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Musician 🎸, hiker / backpacker 🏔️ \| \| \| \| \|                                                                                                                                                      |
+|                    |                                                                                                                                                                                                            |
+|                    | -   Friendly 🙂                                                                                                                                                                                            |
++--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## {{< iconify bi trophy-fill >}} Awards
 
