@@ -49,7 +49,7 @@ Causal inference, machine learning, deep learning, statistics, data viz, communi
 
 ## {{< iconify bi person-fill >}} About me
 
-An applied quantitative researcher and data scientist, I bridge the gap between rigorous statistical learning and robust software engineering. I specialize in automating analyses into scalable frameworks. Whether it’s architecting the backend of a statistical engine or designing visualization-heavy dashboards, I close the loop between complex modeling, reusable tools and actionable stakeholder insights.
+I bridge the gap between rigorous statistical learning and robust software engineering. I specialize in automating analyses into scalable frameworks. Whether it’s architecting the backend of a statistical engine or designing visualization-heavy dashboards, I close the loop between complex modeling, reusable tools and actionable stakeholder insights.
 
 As a project leader, I translate vague business/research questions into concrete hypotheses, manage agile milestones, collaborate with international peers, and navigate the nuances between technical and non-technical communication.
 
