@@ -22,6 +22,38 @@
     ]
   },
   {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/2026/01-swe-for-research/index.html",
+      "/blog/2024/03-crossfit-crossval/index.html",
+      "/blog/2024/02-model-comparison/index.html",
+      "/blog/2024/01-oui-love-plots/index.html",
+      "/blog/2023/03-sequential_trial_design/index.html",
+      "/blog/2023/02-hello_world/index.html",
+      "/blog/2023/01-causal-inference-is-a-mindset/index.html",
+      "/blog/2022/01-continuous-treatment-causal-inference/index.html",
+      "/blog/2021/02-why-balance-covariates/index.html",
+      "/blog/2021/01-visualizing-micro-macro-averages/index.html",
+      "/blog/2020/03-ml-metrics-for-causal-inference/index.html",
+      "/blog/2020/02-against-agile-research/index.html",
+      "/blog/2020/01-simpsons-paradox-ipw/index.html",
+      "/blog/2018/01-deep-learning-genetic-prediction/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": []
+  },
+  {
+    "listing": "/materials/index.html",
+    "items": [
+      "/materials/causal-inference/causalitea/index.html",
+      "/materials/causal-inference/motivation/index.html",
+      "/materials/causal-inference/concepts/index.html",
+      "/materials/causal-inference/methods/index.html"
+    ]
+  },
+  {
     "listing": "/publications/index.html",
     "items": [
       "/publications/2026-alz-doxycycline-repurposing/index.html",
@@ -41,37 +73,6 @@
       "/publications/2019-causal-inference-competitions/index.html",
       "/publications/2018-rnase3-cleavage-rules/index.html",
       "/publications/2018-causal-inference-benchmarking-framework/index.html"
-    ]
-  },
-  {
-    "listing": "/materials/index.html",
-    "items": [
-      "/materials/causal-inference/causalitea/index.html",
-      "/materials/causal-inference/motivation/index.html",
-      "/materials/causal-inference/concepts/index.html",
-      "/materials/causal-inference/methods/index.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": []
-  },
-  {
-    "listing": "/blog/index.html",
-    "items": [
-      "/blog/2024/03-crossfit-crossval/index.html",
-      "/blog/2024/02-model-comparison/index.html",
-      "/blog/2024/01-oui-love-plots/index.html",
-      "/blog/2023/03-sequential_trial_design/index.html",
-      "/blog/2023/02-hello_world/index.html",
-      "/blog/2023/01-causal-inference-is-a-mindset/index.html",
-      "/blog/2022/01-continuous-treatment-causal-inference/index.html",
-      "/blog/2021/02-why-balance-covariates/index.html",
-      "/blog/2021/01-visualizing-micro-macro-averages/index.html",
-      "/blog/2020/03-ml-metrics-for-causal-inference/index.html",
-      "/blog/2020/02-against-agile-research/index.html",
-      "/blog/2020/01-simpsons-paradox-ipw/index.html",
-      "/blog/2018/01-deep-learning-genetic-prediction/index.html"
     ]
   }
 ]
