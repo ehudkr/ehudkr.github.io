@@ -7,60 +7,60 @@
     "text": "Email  LinkedIn  Scholar  Medium  GitHub"
   },
   {
-    "objectID": "cv/index.html#highlights",
-    "href": "cv/index.html#highlights",
+    "objectID": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206d6174657269616c2d73796d626f6c7320666f726d61742d696e6b2d686967686c696768746572203e7d7d-highlights",
+    "href": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206d6174657269616c2d73796d626f6c7320666f726d61742d696e6b2d686967686c696768746572203e7d7d-highlights",
     "title": "Ehud Karavani",
     "section": " Highlights",
     "text": "Highlights\n\nMachine learning researcher and causality expert with 9 years of experience in healthcare\n\nApplied researcher and data science working solo, as tech-lead, or as squad leader\n\nEB1-A visa approved (US)\n1st author Cell paper and co-inventor on 3 US patents\nExcellent Python coder\n\nCreator of causallib - an open-source Python package for causal inference.\n800+ stars and 100+ forks on Github.\nDeveloped high-throughput frameworks for quasi-experiments\nfrom statistical engines to dashboards exploring results and supporting decisions\n\nReceived an IBM Research Accomplishment award (2023)\nCommunicator: PyData conference speaker, lecturer, and podcast interviewee\n\nCausal inference, machine learning, deep learning, statistics, data viz, communication, Python"
   },
   {
-    "objectID": "cv/index.html#about-me",
-    "href": "cv/index.html#about-me",
+    "objectID": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e69667920626920706572736f6e2d66696c6c203e7d7d-about-me",
+    "href": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e69667920626920706572736f6e2d66696c6c203e7d7d-about-me",
     "title": "Ehud Karavani",
     "section": " About me",
     "text": "About me\nI bridge the gap between rigorous statistical learning and robust software engineering. I specialize in automating analyses into scalable frameworks. Whether it’s architecting the backend of a statistical engine or designing visualization-heavy dashboards, I close the loop between complex modeling, reusable tools and actionable stakeholder insights.\nAs a project leader, I translate vague business/research questions into concrete hypotheses, manage agile milestones, collaborate with international peers, and navigate the nuances between technical and non-technical communication.\nA T-shaped integrative thinker. I thrive on cross-pollinating fields: I have adapted biostatistics concepts to tailor modern transformer-based deep-learning architectures for biological data, applied machine learning theories of invariance to promote fairness in genetic risk scores, and used formal causal graphs to deconfound learning from multiple sources and drastically improving model generalization. I’m also a passionate advocate of synthesizing engineering practices into research practices: academic workflows as git workflows, test-driven modeling, and Clean Code for research code."
   },
   {
-    "objectID": "cv/index.html#experience",
-    "href": "cv/index.html#experience",
+    "objectID": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206269206272696566636173652d66696c6c203e7d7d-experience",
+    "href": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206269206272696566636173652d66696c6c203e7d7d-experience",
     "title": "Ehud Karavani",
     "section": " Experience",
     "text": "Experience\n\n\n\n2017 – present\n\nStaff Machine Learning Researcher\nCausal Machine Learning for Healthcare and Life Science, IBM-Research\n\n\nCreator of causallib – a one-stop-shop open-source Python package for flexible causal inference modeling.\n\nReceived an IBM Research Accomplishment award (2023)\n\nClient project leader from start to finish: eliciting information from domain experts, translating vague clinicians’ questions into concrete statistical hypotheses, answering them, and communicating the findings\nLed, designed, and engineered a reusable framework for drug discovery, applying high-throughput causal inference to observational healthcare data\n\nManaging a team of 5 researchers.\nLeading the scientific pipeline, system design, and visualization app\nGenerating 100s of hypotheses in minutes\nServing 4 external engagements with top pharma clients, bringing millions in revenue\n\nIndividual Contributor (IC)\nCausal inference consultant for projects in the US, UK, France, Japan, Kenya, South Africa, and Switzerland\nLed global strategy at IBM Research for causality in drug discovery\n\nSteered research agenda and technical focus areas, reporting directly to Research VPs\nOversaw research of subgroup discovery for adaptive experimentation using Bayesian inference\n\nMentored 10+ students and interns\nOnboarding lead, onboarding 10+ researchers\n\nTeaching academics how to apply software development fundamentals to research, delivering maintainable production-grade research code\n\nPublished 10+ papers and issued 3 US patents\n\n2024:\n\n“GLM-ification” of deep learning models, bringing established concepts from biostatistics into transformer-based deep-learning LLM-like models, tailoring them for biology.\n\nImplemented concepts from generalized linear (mixed) models (e.g., zero-inflated negative-binomial regression or random effects) in PyTorch\n\nDeconfounded learning from multiple fragmented sources improving model generalization\n\nIdentified and quantified data confounding bias (batch-like effects) leading to poor generalization in clients\nDeconfounded learning using approaches from domain adaptation, invariant risk minimization, and conditional autoencoders, drastically improving model generalization\n\n\n2025:\n\nQuantum Advantage task force member: developing and testing quantum algorithms for combinatorial optimization problems\n\nApplied AI and analytical approaches to improve quantum algorithms, like finding better initial parameters, reducing variational optimization rounds hardware usage and saving costs\n\n\n\n\n2022\n\nPrinciple Statistician\nLaboratory for Gait & Neurodynamics, Ichilov Hospital\n\n\nLead statistician in a clinical study\nBayesian hierarchical/multilevel models and causal inference for gait analysis in multiple sclerosis patients\n\nBayesian multilevel models for hurdle models of repeated patients’ measurements\nFormal causal inference with DAGs for minimizing inessential tests, saving over 3 hours of unnecessary tests by clinicians per patient.\n\n\n\n\n2016 – 2017\n\nTeaching Assitant\nThe School of Computer Science, Hebrew University of Jerusalem\n\n\nIntroduction to Data Science\nWorkshop in Computational Bioskills\n\n\n\n2015 – 2016\n\nResearch Associate / Computational Biologist\nInstitue for Medical Research Israel-Canada, Hadassah Hospital\n\n\nDeveloped novel methodologies for finding high-resolution protein-RNA interactions using high-volume RNAseq data"
   },
   {
-    "objectID": "cv/index.html#education",
-    "href": "cv/index.html#education",
+    "objectID": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206269206d6f72746172626f6172642d66696c6c203e7d7d-education",
+    "href": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e696679206269206d6f72746172626f6172642d66696c6c203e7d7d-education",
     "title": "Ehud Karavani",
     "section": " Education",
     "text": "Education\n\n\n\n2016 – 2019\n\nM.Sc. in Computer Science and Computational Biology\nFaculty of Science, the Hebrew University of Jerusalem, Israel\n\nThesis: quantifying the utility of embryo selection using genomic prediction of traits\npublished in Cell\n\nPredicting physical traits from DNA (GWAS) using classical, machine learning, and deep learning methods\nPioneering the effects of prediction-based embryo selection in IVF\n\n\n\n2013 – 2016\n\nB.Sc. in Computer Science and Computational Biology\nFaculty of Science, the Hebrew University of Jerusalem, Israel\n\n\nDean’s List of Academic Excellence (2016)\nResearch scholarship from IMRIC (2016)\n\nBachelor’s thesis published in Nucleic Acids Research"
   },
   {
-    "objectID": "cv/index.html#outreach",
-    "href": "cv/index.html#outreach",
+    "objectID": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e69667920666c75656e742070656f706c652d636f6d6d756e6974792d32342d66696c6c6564203e7d7d-outreach",
+    "href": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e69667920666c75656e742070656f706c652d636f6d6d756e6974792d32342d66696c6c6564203e7d7d-outreach",
     "title": "Ehud Karavani",
     "section": " Outreach",
     "text": "Outreach\n\nPyData speaker\nCausal Bandits podcast interviewee\nDataNights causality series lecturer\nRecurring DataHack mentor and judge\nCo-Organized the 2018 Atlantic Causal Inference Conference Data Challenge\nTDS Editor’s Pick on Medium"
   },
   {
-    "objectID": "cv/index.html#skills",
-    "href": "cv/index.html#skills",
+    "objectID": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e69667920626920636f64652d736c617368203e7d7d-skills",
+    "href": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e69667920626920636f64652d736c617368203e7d7d-skills",
     "title": "Ehud Karavani",
     "section": " Skills",
     "text": "Skills\n\n\n\n\n\n\n\nProgramming skills\n\nPython & its scientific and ML stack (fluent)\n\nPandas, Polars, DuckDB, Ibis, Numpy, Scikit-Learn, PyGAM, Statsmodels, PyTorch (lightning), PyMC, Bambi, Arviz, Matplotlib, , Seaborn (objects), Altair, Streamlit, cvxpy, Pydantic, Hydra, Ray…\n\nR (when needed)\nSQL (but Ibis when possible)\nGit + GitHub\nContinuous development (Travis, GitHub Actions)\nLinux and remote development (Cloud/AWS + Jupyter lab / VS Code)\nJupyter, Quarto, Latex, Typst\n\n\n\nTechnical skills\n\nCausal Inference\nMachine Learning and Deep Learning\nStatistics and Bayesian Inference\nData Visualization\nVerbal & written communication\nProgramming, software engineering and development\n\n\n\nLanguages\n\nFluent English\nNative Hebrew\n\n\n\nGeneral\n\nData enthusiast\nMusician 🎸, hiker / backpacker 🏔️ |\nFriendly 🙂"
   },
   {
-    "objectID": "cv/index.html#awards",
-    "href": "cv/index.html#awards",
+    "objectID": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692074726f7068792d66696c6c203e7d7d-awards",
+    "href": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692074726f7068792d66696c6c203e7d7d-awards",
     "title": "Ehud Karavani",
     "section": " Awards",
     "text": "Awards\n\n\n\n\n\n\n\n2023\nIBM-Research Accomplishment\nFor my work on causallib and research engagement with the Cleveland Clinic Foundation\n\n\n2019\nBest of RSNA\nFor the paper Predicting Breast Cancer by Applying Deep Learning to Linked Health Records and Mammograms, published in Radiology\n\n\n2019\nBest Talk: Israeli Population Genetics Meeting\nFor the paper Screening Human Embryos for Polygenic Traits has Limited Utility\n\n\n2019\nFeatured Theory of the issue (Cell)\nFor the paper Screening Human Embryos for Polygenic Traits has Limited Utility\n\n\n2016\nDean’s list of academic excellence"
   },
   {
-    "objectID": "cv/index.html#publications",
-    "href": "cv/index.html#publications",
+    "objectID": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c652d6561726d61726b2d746578742d66696c6c203e7d7d-publications",
+    "href": "cv/index.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c652d6561726d61726b2d746578742d66696c6c203e7d7d-publications",
     "title": "Ehud Karavani",
     "section": " Publications",
-    "text": "Publications\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nVenue\n\n\n\nDOI\n\n\n\n\n\n\n\n\n2026\n\n\nNetwork-based prediction and real-world patient data observation identify doxycycline as a repurposable drug in Alzheimer’s disease\n\n\nNeurotherapeutics\n\n\nhttps://doi.org/10.1016/j.neurot.2026.e00836\n\n\n\n\n\n\n2026\n\n\nCritical evaluation of real-world evidence of repurposable medicines in the Alzheimer’s disease drug development pipeline using a target trial emulation\n\n\nAlzheimer’s & Dementia \n\n\nhttps://doi.org/10.1002/trc2.70193\n\n\n\n\n\n\n2025\n\n\nHierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation\n\n\nAISTATS\n\n\nhttps://proceedings.mlr.press/v258/ter-minassian25a.html\n\n\n\n\n\n\n2025\n\n\nPeri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation\n\n\niScience\n\n\nhttps://doi.org/10.1016/j.isci.2025.112124\n\n\n\n\n\n\n2024\n\n\nSingle-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer’s disease\n\n\nAlzheimer’s & Dementia \n\n\nhttps://doi.org/10.1002/alz.14373\n\n\n\n\n\n\n2024\n\n\nUsing Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa\n\n\nInternational Joint Conference on Artificial Intelligence (IJCAI)\n\n\nhttps://doi.org/10.24963/ijcai.2024/792\n\n\n\n\n\n\n2024\n\n\nImproving Inverse Probability Weighting by Post-calibrating Its Propensity Scores\n\n\nEpidemiology\n\n\nhttps://doi.org/10.1097/ede.0000000000001733\n\n\n\n\n\n\n2023\n\n\nCausalvis: Visualizations for Causal Inference\n\n\nCHI: Conference on Human Factors in Computing Systems\n\n\nhttps://doi.org/10.1145/3544548.3581236\n\n\n\n\n\n\n2023\n\n\nFairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization\n\n\nPacific Symposium on Biocomputing\n\n\nhttps://doi.org/10.1142/9789811270611_0019\n\n\n\n\n\n\n2021\n\n\nTrends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2\n\n\nMedRxiv\n\n\nhttps://doi.org/10.1101/2021.03.24.21251900\n\n\n\n\n\n\n2019\n\n\nScreening human embryos for polygenic traits has limited utility\n\n\nCell\n\n\nhttps://doi.org/10.1016/j.cell.2019.10.033\n\n\n\n\n\n\n2019\n\n\nA discriminative approach for finding and characterizing positivity violations using decision trees\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1907.08127\n\n\n\n\n\n\n2019\n\n\nPredicting breast cancer by applying deep learning to linked health records and mammograms\n\n\nRadiology\n\n\nhttps://doi.org/10.1148/radiol.2019182622\n\n\n\n\n\n\n2019\n\n\nAn evaluation toolkit to guide model selection and cohort definition in causal inference\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1906.00442\n\n\n\n\n\n\n2019\n\n\nComment: causal inference competitions: where should we aim?\n\n\nStatistical Science\n\n\nhttps://doi.org/10.1214/18-STS679\n\n\n\n\n\n\n2018\n\n\nIn vivo cleavage rules and target repertoire of RNase III in Escherichia coli\n\n\nNucleic Acids Research\n\n\nhttps://doi.org/10.1093/nar/gky684\n\n\n\n\n\n\n2018\n\n\nBenchmarking Framework for Performance-Evaluation of Causal Inference Analysis\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1802.05046\n\n\n\n\n\n\nNo matching items\n\nMay go out of date. Please see my Google Scholar page for the most up-to-date information."
+    "text": "Publications\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nVenue\n\n\n\nDOI\n\n\n\n\n\n\n\n\n2026\n\n\nAlzheimer’s disease target and drug discovery by leveraging multiomics and electronic health data\n\n\nNature Neuroscience\n\n\nhttps://doi.org/10.1038/s41593-026-02472-0\n\n\n\n\n\n\n2026\n\n\nNetwork-based prediction and real-world patient data observation identify doxycycline as a repurposable drug in Alzheimer’s disease\n\n\nNeurotherapeutics\n\n\nhttps://doi.org/10.1016/j.neurot.2026.e00836\n\n\n\n\n\n\n2026\n\n\nCritical evaluation of real-world evidence of repurposable medicines in the Alzheimer’s disease drug development pipeline using a target trial emulation\n\n\nAlzheimer’s & Dementia \n\n\nhttps://doi.org/10.1002/trc2.70193\n\n\n\n\n\n\n2025\n\n\nHierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation\n\n\nAISTATS\n\n\nhttps://proceedings.mlr.press/v258/ter-minassian25a.html\n\n\n\n\n\n\n2025\n\n\nPeri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation\n\n\niScience\n\n\nhttps://doi.org/10.1016/j.isci.2025.112124\n\n\n\n\n\n\n2024\n\n\nSingle-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer’s disease\n\n\nAlzheimer’s & Dementia \n\n\nhttps://doi.org/10.1002/alz.14373\n\n\n\n\n\n\n2024\n\n\nUsing Causal Inference to Investigate Contraceptive Discontinuation in Sub-Saharan Africa\n\n\nInternational Joint Conference on Artificial Intelligence (IJCAI)\n\n\nhttps://doi.org/10.24963/ijcai.2024/792\n\n\n\n\n\n\n2024\n\n\nImproving Inverse Probability Weighting by Post-calibrating Its Propensity Scores\n\n\nEpidemiology\n\n\nhttps://doi.org/10.1097/ede.0000000000001733\n\n\n\n\n\n\n2023\n\n\nCausalvis: Visualizations for Causal Inference\n\n\nCHI: Conference on Human Factors in Computing Systems\n\n\nhttps://doi.org/10.1145/3544548.3581236\n\n\n\n\n\n\n2023\n\n\nFairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization\n\n\nPacific Symposium on Biocomputing\n\n\nhttps://doi.org/10.1142/9789811270611_0019\n\n\n\n\n\n\n2021\n\n\nTrends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2\n\n\nMedRxiv\n\n\nhttps://doi.org/10.1101/2021.03.24.21251900\n\n\n\n\n\n\n2019\n\n\nScreening human embryos for polygenic traits has limited utility\n\n\nCell\n\n\nhttps://doi.org/10.1016/j.cell.2019.10.033\n\n\n\n\n\n\n2019\n\n\nA discriminative approach for finding and characterizing positivity violations using decision trees\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1907.08127\n\n\n\n\n\n\n2019\n\n\nPredicting breast cancer by applying deep learning to linked health records and mammograms\n\n\nRadiology\n\n\nhttps://doi.org/10.1148/radiol.2019182622\n\n\n\n\n\n\n2019\n\n\nAn evaluation toolkit to guide model selection and cohort definition in causal inference\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1906.00442\n\n\n\n\n\n\n2019\n\n\nComment: causal inference competitions: where should we aim?\n\n\nStatistical Science\n\n\nhttps://doi.org/10.1214/18-STS679\n\n\n\n\n\n\n2018\n\n\nIn vivo cleavage rules and target repertoire of RNase III in Escherichia coli\n\n\nNucleic Acids Research\n\n\nhttps://doi.org/10.1093/nar/gky684\n\n\n\n\n\n\n2018\n\n\nBenchmarking Framework for Performance-Evaluation of Causal Inference Analysis\n\n\nArxiv\n\n\nhttps://doi.org/10.48550/arXiv.1802.05046\n\n\n\n\n\n\nNo matching items\n\nMay go out of date. Please see my Google Scholar page for the most up-to-date information."
   },
   {
     "objectID": "blog/2020/01-simpsons-paradox-ipw/index.html",
@@ -231,263 +231,32 @@
     "text": "Hi there!\nI’m a researcher and data scientist, specializing in causal inference, machine learning, (Bayesian) statistics, and data visualization.\nI’m currently a Research Staff Member at IBM Research, Israel in the Causal Machine Learning for Healthcare & Life Sciences group. There, I focus on high-throughput causal inference for finding new indications for existing drugs using electronic health records and insurance claims data. I’m also the creator and maintainer of causallib, a one-stop shop open-source Python package for flexible causal inference modeling.\n\nEducation\nI have a BSc and MSc in Computer Science and Computational Biology from the Hebrew University. I did my Master’s thesis with Dr. Shai Carmi studying prediction of traits using DNA and its potential effect on selecting embryos for implantation in IVF (aka “designer babies”) .\nPrevious to that I was an undergraduate research associate in Prof. Hanah Marglit’s lab, developing methods for finding novel protein-RNA interactions using RNAseq data .\n\n\nElsewhere on the Internet\n\n\n    \n        \n            \n            LinkedIn\n        \n    \n    \n        \n            \n            Google Scholar\n        \n    \n    \n        \n            \n            GitHub\n        \n    \n    \n        \n            \n            Medium\n        \n    \n\nNo matching items\n\n\nQ&A\n\n\n    \n        \n            \n            Stack Overflow\n        \n    \n    \n        \n            \n            Cross Validated\n        \n    \n    \n        \n            \n            Datamethods\n        \n    \n\nNo matching items\n\n\n\nSocial\n\n\n    \n        \n            \n            Twitter\n        \n    \n    \n        \n            \n            Bluesky\n        \n    \n    \n        \n            \n            Mastodon\n        \n    \n\nNo matching items"
   },
   {
-    "objectID": "publications/2019-mammograms-plus-ehrs/index.html#citation",
-    "href": "publications/2019-mammograms-plus-ehrs/index.html#citation",
-    "title": "Predicting breast cancer by applying deep learning to linked health records and mammograms",
+    "objectID": "publications/2026-alz-trazodone-repurposing/index.html#citation",
+    "href": "publications/2026-alz-trazodone-repurposing/index.html#citation",
+    "title": "Alzheimer’s disease target and drug discovery by leveraging multiomics and electronic health data",
     "section": "Citation",
-    "text": "Citation\n@article{akselrod2019predicting,\n  title={Predicting breast cancer by applying deep learning to linked health records and mammograms},\n  author={Akselrod-Ballin, Ayelet and Chorev, Michal and Shoshan, Yoel and Spiro, Adam and Hazan, Alon and Melamed, Roie and Barkan, Ella and Herzel, Esma and Naor, Shaked and Karavani, Ehud and others},\n  journal={Radiology},\n  volume={292},\n  number={2},\n  pages={331--342},\n  year={2019},\n  publisher={Radiological Society of North America}\n}"
+    "text": "Citation\n@article{hou2026alzheimer,\nauthor={Hou, Yuan and Li, Yichen and Zhang, Pengyue and Lorincz-Comi, Noah and Gohel, Dhruv and Fan, Fan and Qiu, Yunguang and Yang, Jun and Chen, Xin and Song, Wenqiang and Yang, Xiaoyu and Tan, Zhibing and Liu, Zhigang and Fang, Xing and Rivera Paz, Isabela and Martin, William and Feng, Yayan and Zhou, Yadi and Xu, Jielin and Dou, Lijun and Border, Jane and Zhang, Huawei and Mazique, Jena' N. and Hwang, Sung Hee and Roman, Richard J. and Babak, Tousi and Bekris, Lynn and Karavani, Ehud and Danziger, Michael and Rosen-Zvi, Michal and Haines, Jonathan L. and Yu, Haiyuan and Hammock, Bruce D. and Leverenz, James B. and Pieper, Andrew A. and Cummings, Jeffrey and Cheng, Feixiong},\ntitle={Alzheimer's disease target and drug discovery by leveraging multiomics and electronic health data},\njournal={Nature Neuroscience},\nyear={2026},\nmonth={Oct},\nday={08},\npublisher={Nature Publishing Group US New York},\nissn={1546-1726},\ndoi={10.1038/s41593-026-02472-0},\nurl={https://doi.org/10.1038/s41593-026-02472-0}\n}"
   },
   {
-    "objectID": "publications/2026-alz-100-drugs-tte/index.html#citation",
-    "href": "publications/2026-alz-100-drugs-tte/index.html#citation",
-    "title": "Critical evaluation of real-world evidence of repurposable medicines in the Alzheimer’s disease drug development pipeline using a target trial emulation",
+    "objectID": "publications/2023-causalvis/index.html",
+    "href": "publications/2023-causalvis/index.html",
+    "title": "Causalvis: Visualizations for Causal Inference",
+    "section": "",
+    "text": "Workflow summary"
+  },
+  {
+    "objectID": "publications/2023-causalvis/index.html#citation",
+    "href": "publications/2023-causalvis/index.html#citation",
+    "title": "Causalvis: Visualizations for Causal Inference",
     "section": "Citation",
-    "text": "Citation\n@article{kuji2026critical,\n  author={Tonegawa-Kuji, Reina and Karavani, Ehud and Danziger, Michael and Zhang, Pengyue and Hou, Yuan and Zhou, Yadi and Bykova, Marina and Pieper, Andrew A. and Rosen-Zvi, Michal and Cummings, Jeffrey and Cheng, Feixiong},\n  title={Critical evaluation of real-world evidence of repurposable medicines in the Alzheimer's disease drug development pipeline using a target trial emulation},\n  journal={Alzheimer's \\& Dementia: Translational Research \\& Clinical Interventions},\n  doi={https://doi.org/10.1002/trc2.70193},\n  year={2026}\n}"
+    "text": "Citation\n@inproceedings{guo2023causalvis,\n  title={Causalvis: Visualizations for Causal Inference},\n  author={Guo, Grace and Karavani, Ehud and Endert, Alex and Kwon, Bum Chul},\n  booktitle={Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems},\n  pages={1--20},\n  year={2023}\n}"
   },
   {
-    "objectID": "publications/2019-prs-embryo-selection/index.html#citation",
-    "href": "publications/2019-prs-embryo-selection/index.html#citation",
-    "title": "Screening human embryos for polygenic traits has limited utility",
+    "objectID": "publications/2024-ketorolac-repurposing/index.html#citation",
+    "href": "publications/2024-ketorolac-repurposing/index.html#citation",
+    "title": "Single-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer’s disease",
     "section": "Citation",
-    "text": "Citation\n@article{karavani2019screening,\n  title={Screening human embryos for polygenic traits has limited utility},\n  author={Karavani, Ehud and Zuk, Or and Zeevi, Danny and Barzilai, Nir and Stefanis, Nikos C and Hatzimanolis, Alex and Smyrnis, Nikolaos and Avramopoulos, Dimitrios and Kruglyak, Leonid and Atzmon, Gil and others},\n  journal={Cell},\n  volume={179},\n  number={6},\n  pages={1424--1435},\n  year={2019},\n  publisher={Elsevier}\n}"
-  },
-  {
-    "objectID": "publications/2018-rnase3-cleavage-rules/index.html",
-    "href": "publications/2018-rnase3-cleavage-rules/index.html",
-    "title": "In vivo cleavage rules and target repertoire of RNase III in Escherichia coli",
-    "section": "",
-    "text": "@article{altuvia2018vivo,\n  title={In vivo cleavage rules and target repertoire of RNase III in Escherichia coli},\n  author={Altuvia, Yael and Bar, Amir and Reiss, Niv and Karavani, Ehud and Argaman, Liron and Margalit, Hanah},\n  journal={Nucleic acids research},\n  volume={46},\n  number={19},\n  pages={10380--10394},\n  year={2018},\n  publisher={Oxford University Press}\n}"
-  },
-  {
-    "objectID": "publications/2018-rnase3-cleavage-rules/index.html#citation",
-    "href": "publications/2018-rnase3-cleavage-rules/index.html#citation",
-    "title": "In vivo cleavage rules and target repertoire of RNase III in Escherichia coli",
-    "section": "",
-    "text": "@article{altuvia2018vivo,\n  title={In vivo cleavage rules and target repertoire of RNase III in Escherichia coli},\n  author={Altuvia, Yael and Bar, Amir and Reiss, Niv and Karavani, Ehud and Argaman, Liron and Margalit, Hanah},\n  journal={Nucleic acids research},\n  volume={46},\n  number={19},\n  pages={10380--10394},\n  year={2018},\n  publisher={Oxford University Press}\n}"
-  },
-  {
-    "objectID": "publications/2019-positivitree/index.html",
-    "href": "publications/2019-positivitree/index.html",
-    "title": "A discriminative approach for finding and characterizing positivity violations using decision trees",
-    "section": "",
-    "text": "A tree-based approach for finding easily-characterizable positivity violations, commonly referred to as PositiviTree."
-  },
-  {
-    "objectID": "publications/2019-positivitree/index.html#citation",
-    "href": "publications/2019-positivitree/index.html#citation",
-    "title": "A discriminative approach for finding and characterizing positivity violations using decision trees",
-    "section": "Citation",
-    "text": "Citation\n@article{karavani2019discriminative,\n  title={A discriminative approach for finding and characterizing positivity violations using decision trees},\n  author={Karavani, Ehud and Bak, Peter and Shimoni, Yishai},\n  journal={arXiv preprint arXiv:1907.08127},\n  year={2019}\n}"
-  },
-  {
-    "objectID": "publications/2018-causal-inference-benchmarking-framework/index.html",
-    "href": "publications/2018-causal-inference-benchmarking-framework/index.html",
-    "title": "Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis",
-    "section": "",
-    "text": "@article{shimoni2018benchmarking,\n  title={Benchmarking framework for performance-evaluation of causal inference analysis},\n  author={Shimoni, Yishai and Yanover, Chen and Karavani, Ehud and Goldschmnidt, Yaara},\n  journal={arXiv preprint arXiv:1802.05046},\n  year={2018}\n}"
-  },
-  {
-    "objectID": "publications/2018-causal-inference-benchmarking-framework/index.html#citation",
-    "href": "publications/2018-causal-inference-benchmarking-framework/index.html#citation",
-    "title": "Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis",
-    "section": "",
-    "text": "@article{shimoni2018benchmarking,\n  title={Benchmarking framework for performance-evaluation of causal inference analysis},\n  author={Shimoni, Yishai and Yanover, Chen and Karavani, Ehud and Goldschmnidt, Yaara},\n  journal={arXiv preprint arXiv:1802.05046},\n  year={2018}\n}"
-  },
-  {
-    "objectID": "publications/2019-causal-inference-evaluation-toolkit/index.html",
-    "href": "publications/2019-causal-inference-evaluation-toolkit/index.html",
-    "title": "An evaluation toolkit to guide model selection and cohort definition in causal inference",
-    "section": "",
-    "text": "This manuscript combines the evaluation suite with a specific use-case. A readers-digest version focusing on ROC curves for propensity score models is also available here"
-  },
-  {
-    "objectID": "publications/2019-causal-inference-evaluation-toolkit/index.html#citation",
-    "href": "publications/2019-causal-inference-evaluation-toolkit/index.html#citation",
-    "title": "An evaluation toolkit to guide model selection and cohort definition in causal inference",
-    "section": "Citation",
-    "text": "Citation\n@article{shimoni2019evaluation,\n  title={An evaluation toolkit to guide model selection and cohort definition in causal inference},\n  author={Shimoni, Yishai and Karavani, Ehud and Ravid, Sivan and Bak, Peter and Ng, Tan Hung and Alford, Sharon Hensley and Meade, Denise and Goldschmidt, Yaara},\n  journal={arXiv preprint arXiv:1906.00442},\n  year={2019}\n}"
-  },
-  {
-    "objectID": "publications/2025-epilepsy-resection-repurposing/index.html#citation",
-    "href": "publications/2025-epilepsy-resection-repurposing/index.html#citation",
-    "title": "Peri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation",
-    "section": "Citation",
-    "text": "Citation\n@article{szlak2025peri,\n  title={Peri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation},\n  author={Szlak, Liran and Shen, Jingdi and Zohar, Eden and Karavani, Ehud and Rotroff, Daniel and Vegh, Deborah and Punia, Vineet and Rosen-Zvi, Michal and Shimoni, Yishai and Jehi, Lara},\n  journal={iScience},\n  volume={28},\n  number={4},\n  year={2025},\n  publisher={Elsevier}\n}"
-  },
-  {
-    "objectID": "publications/2021-non-respiratory-covid19/index.html",
-    "href": "publications/2021-non-respiratory-covid19/index.html",
-    "title": "Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2",
-    "section": "",
-    "text": "Association of SARS-CoV-2 infection with several severe outcomes from 425,988 admitted individuals."
-  },
-  {
-    "objectID": "publications/2021-non-respiratory-covid19/index.html#citation",
-    "href": "publications/2021-non-respiratory-covid19/index.html#citation",
-    "title": "Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2",
-    "section": "Citation",
-    "text": "Citation\n@article{el2021trends,\n  title={Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2},\n  author={El-Hay, Tal and Karavani, Ehud and Peretz, Asaf and Ninio, Matan and Ravid, Sivan and Chorev, Michal and Rosen-Zvi, Michal and Patalon, Tal and Shimoni, Yishai and Jain, Anil},\n  journal={medRxiv},\n  pages={2021--03},\n  year={2021},\n  publisher={Cold Spring Harbor Laboratory Press}\n}"
-  },
-  {
-    "objectID": "materials/causal-inference/concepts/index.html",
-    "href": "materials/causal-inference/concepts/index.html",
-    "title": "Causal Inference - Concepts",
-    "section": "",
-    "text": "With an emphasis on counterfactual prediction differing from risk prediction."
-  },
-  {
-    "objectID": "materials/causal-inference/concepts/index.html#the-basis-of-causal-inference",
-    "href": "materials/causal-inference/concepts/index.html#the-basis-of-causal-inference",
-    "title": "Causal Inference - Concepts",
-    "section": "",
-    "text": "With an emphasis on counterfactual prediction differing from risk prediction."
-  },
-  {
-    "objectID": "materials/causal-inference/concepts/index.html#observational-studies-and-rcts",
-    "href": "materials/causal-inference/concepts/index.html#observational-studies-and-rcts",
-    "title": "Causal Inference - Concepts",
-    "section": "Observational studies and RCTs ",
-    "text": "Observational studies and RCTs"
-  },
-  {
-    "objectID": "materials/causal-inference/concepts/index.html#the-goldilocks-principle-of-covariate-adjustment",
-    "href": "materials/causal-inference/concepts/index.html#the-goldilocks-principle-of-covariate-adjustment",
-    "title": "Causal Inference - Concepts",
-    "section": "The Goldilocks principle of covariate adjustment ",
-    "text": "The Goldilocks principle of covariate adjustment \nThe Goldilocks principle of covariate adjustment in causal inference."
-  },
-  {
-    "objectID": "materials/causal-inference/concepts/index.html#how-causation-causes-correlations",
-    "href": "materials/causal-inference/concepts/index.html#how-causation-causes-correlations",
-    "title": "Causal Inference - Concepts",
-    "section": "How causation causes correlations ",
-    "text": "How causation causes correlations \nStructural causal view of statistical associations."
-  },
-  {
-    "objectID": "materials/causal-inference/concepts/index.html#a-tour-of-causal-assumptions",
-    "href": "materials/causal-inference/concepts/index.html#a-tour-of-causal-assumptions",
-    "title": "Causal Inference - Concepts",
-    "section": "A tour of causal assumptions ",
-    "text": "A tour of causal assumptions \nCausal inference is a mindset. Therefore, it takes thought, not data, to translate data-based associations into causal claims."
-  },
-  {
-    "objectID": "materials/causal-inference/concepts/index.html#my-first-ever-lecture-on-causal-inference",
-    "href": "materials/causal-inference/concepts/index.html#my-first-ever-lecture-on-causal-inference",
-    "title": "Causal Inference - Concepts",
-    "section": "My first ever lecture on causal inference ",
-    "text": "My first ever lecture on causal inference \nAn introduction to causal inference talk gave at a student seminar on November 18, 2018, named Causal Inference 101."
-  },
-  {
-    "objectID": "materials/causal-inference/methods/index.html",
-    "href": "materials/causal-inference/methods/index.html",
-    "title": "Causal Inference - Methods",
-    "section": "",
-    "text": "An overview of many causal inference methods."
-  },
-  {
-    "objectID": "materials/causal-inference/methods/index.html#zoo-of-causal-methods",
-    "href": "materials/causal-inference/methods/index.html#zoo-of-causal-methods",
-    "title": "Causal Inference - Methods",
-    "section": "",
-    "text": "An overview of many causal inference methods."
-  },
-  {
-    "objectID": "materials/causal-inference/methods/index.html#the-simpsons",
-    "href": "materials/causal-inference/methods/index.html#the-simpsons",
-    "title": "Causal Inference - Methods",
-    "section": "The Simpsons ",
-    "text": "The Simpsons \n Matching and Inverse Probability Weighting with The Simpsons.\n(This is before the time of Powerpoint morph; this was painstaking.)"
-  },
-  {
-    "objectID": "materials/causal-inference/methods/index.html#causal-inference-with-deep-learning",
-    "href": "materials/causal-inference/methods/index.html#causal-inference-with-deep-learning",
-    "title": "Causal Inference - Methods",
-    "section": "Causal inference with deep learning ",
-    "text": "Causal inference with deep learning \nRelevant up to ~2020"
-  },
-  {
-    "objectID": "materials/causal-inference/methods/index.html#interrupted-time-series",
-    "href": "materials/causal-inference/methods/index.html#interrupted-time-series",
-    "title": "Causal Inference - Methods",
-    "section": "Interrupted time series ",
-    "text": "Interrupted time series \nFrom difference-in-differences to synthetic controls."
-  },
-  {
-    "objectID": "materials/index.html",
-    "href": "materials/index.html",
-    "title": "Materials",
-    "section": "",
-    "text": "Please properly attribute if using.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCausaliTea\n\n\n\ncausal inference\n\n\n\nA casual reading club on causality.\n\n\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference - Motivation\n\n\n\ncausal inference\n\n\n\nMotivating causal inference\n\n\n\n\n\nMay 16, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference - Concepts\n\n\n\ncausal inference\n\n\n\nBroad overview of causal inference concepts\n\n\n\n\n\nFeb 20, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference - Methods\n\n\n\ncausal inference\n\n\n\nStatistical methods for causal inference\n\n\n\n\n\nNov 18, 2018\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "materials/causal-inference/causalitea/index.html",
-    "href": "materials/causal-inference/causalitea/index.html",
-    "title": "CausaliTea",
-    "section": "",
-    "text": "CausaliTea is a reading club on causality [source ]\n\n\n\nCausaliTea’s logo"
-  },
-  {
-    "objectID": "materials/causal-inference/motivation/index.html#predicting-risk-is-not-enough",
-    "href": "materials/causal-inference/motivation/index.html#predicting-risk-is-not-enough",
-    "title": "Causal Inference - Motivation",
-    "section": "Predicting risk is not enough ",
-    "text": "Predicting risk is not enough"
-  },
-  {
-    "objectID": "publications/2026-alz-doxycycline-repurposing/index.html#citation",
-    "href": "publications/2026-alz-doxycycline-repurposing/index.html#citation",
-    "title": "Network-based prediction and real-world patient data observation identify doxycycline as a repurposable drug in Alzheimer’s disease",
-    "section": "Citation",
-    "text": "Citation\n@article{bykova2026network,\n  title={Network-based prediction and real-world patient data observation identify doxycycline as a repurposable drug in Alzheimer's disease},\n  author={Bykova, Marina and Karavani, Ehud and Danziger, Michael and Tonegawa-Kuji, Reina and Martin, William and Sha, Zhendong and Pieper, Andrew A and Rosen-Zvi, Michal and Cheng, Feixiong},\n  journal={Neurotherapeutics},\n  year={2026},\n  publisher={Elsevier}\n}"
-  },
-  {
-    "objectID": "publications/2025-bicause-trees/index.html#citation",
-    "href": "publications/2025-bicause-trees/index.html#citation",
-    "title": "Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation",
-    "section": "Citation",
-    "text": "Citation\n@inproceedings{ter-minassian2025hierarchical,\n  title={Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation},\n  author={Ter-Minassian, Lucile and Szlak, Liran and Karavani, Ehud and Holmes, Christopher C. and Shimoni, Yishai},\n  booktitle={The 28th International Conference on Artificial Intelligence and Statistics},\n  year={2025},\n  series={Proceedings of Machine Learning Research},\n  publisher={PMLR},\n  pdf={https://raw.githubusercontent.com/mlresearch/v258/main/assets/ter-minassian25a/ter-minassian25a.pdf},\n  url={https://proceedings.mlr.press/v258/ter-minassian25a.html},\n}"
-  },
-  {
-    "objectID": "publications/2019-causal-inference-competitions/index.html",
-    "href": "publications/2019-causal-inference-competitions/index.html",
-    "title": "Comment: causal inference competitions: where should we aim?",
-    "section": "",
-    "text": "Can causal inference methodologists use soon-to-be-published experiments (randomized control trials) to benchmark causal inference methods similar to how computational biologists use soon-to-be-published solved protein structures to benchmark their protein folding algorithms."
-  },
-  {
-    "objectID": "publications/2019-causal-inference-competitions/index.html#citation",
-    "href": "publications/2019-causal-inference-competitions/index.html#citation",
-    "title": "Comment: causal inference competitions: where should we aim?",
-    "section": "Citation",
-    "text": "Citation\n@article{karavani2019comment,\n  title={Comment: causal inference competitions: where should we aim?},\n  author={Karavani, Ehud and El-Hay, Tal and Shimoni, Yishai and Yanover, Chen},\n  year={2019}\n}"
-  },
-  {
-    "objectID": "publications/index.html",
-    "href": "publications/index.html",
-    "title": "Publications ",
-    "section": "",
-    "text": "My current research focus revolves mainly around causal inference. Both applications (mainly around healthcare) and methodology (including usability). I also dabble in information visualization and genetic-based risk models (polygenic risk scores). Prior to that, I worked on computational methods in molecular biology (genomics and transcriptomics). In addition to academic publications, I also issued several patents in the US.\nI will do my best to keep this listing updated, but in the plausible case I won’t, please see my Google Scholar page for the latest version."
-  },
-  {
-    "objectID": "publications/index.html#publications",
-    "href": "publications/index.html#publications",
-    "title": "Publications ",
-    "section": "Publications",
-    "text": "Publications"
-  },
-  {
-    "objectID": "publications/2023-prs-plus-irm/index.html",
-    "href": "publications/2023-prs-plus-irm/index.html",
-    "title": "FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization",
-    "section": "",
-    "text": "Model overview"
-  },
-  {
-    "objectID": "publications/2023-prs-plus-irm/index.html#citation",
-    "href": "publications/2023-prs-plus-irm/index.html#citation",
-    "title": "FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization",
-    "section": "Citation",
-    "text": "Citation\n@inproceedings{reyes2023fairprs,\n  title={FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization},\n  author={Reyes, Diego Machado and Bose, Aritra and Karavani, Ehud and Parida, Laxmi},\n  booktitle={Pacific Symposium on Biocomputing},\n  year={2023}\n}"
+    "text": "Citation\n@article{xu2024single,\nauthor = {Xu, Jielin and Song, Wenqiang and Xu, Zhenxing and Danziger, Michael M. and Karavani, Ehud and Zang, Chengxi and Chen, Xin and Li, Yichen and Paz, Isabela M Rivera and Gohel, Dhruv and Su, Chang and Zhou, Yadi and Hou, Yuan and Shimoni, Yishai and Pieper, Andrew A. and Hu, Jianying and Wang, Fei and Rosen-Zvi, Michal and Leverenz, James B. and Cummings, Jeffrey and Cheng, Feixiong},\ntitle = {Single-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer's disease},\njournal = {Alzheimer's \\& Dementia},\ndoi = {https://doi.org/10.1002/alz.14373},\n}"
   },
   {
     "objectID": "publications/2024-propensity-score-calibration/index.html",
@@ -504,25 +273,263 @@
     "text": "Citation\n@article{gutman2024improving,\n  title={Improving Inverse Probability Weighting by Post-calibrating Its Propensity Scores},\n  author={Gutman, Rom and Karavani, Ehud and Shimoni, Yishai},\n  journal={Epidemiology},\n  pages={10--1097},\n  year={2024},\n  publisher={LWW}\n}"
   },
   {
-    "objectID": "publications/2024-ketorolac-repurposing/index.html#citation",
-    "href": "publications/2024-ketorolac-repurposing/index.html#citation",
-    "title": "Single-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer’s disease",
-    "section": "Citation",
-    "text": "Citation\n@article{xu2024single,\nauthor = {Xu, Jielin and Song, Wenqiang and Xu, Zhenxing and Danziger, Michael M. and Karavani, Ehud and Zang, Chengxi and Chen, Xin and Li, Yichen and Paz, Isabela M Rivera and Gohel, Dhruv and Su, Chang and Zhou, Yadi and Hou, Yuan and Shimoni, Yishai and Pieper, Andrew A. and Hu, Jianying and Wang, Fei and Rosen-Zvi, Michal and Leverenz, James B. and Cummings, Jeffrey and Cheng, Feixiong},\ntitle = {Single-microglia transcriptomic transition network-based prediction and real-world patient data validation identifies ketorolac as a repurposable drug for Alzheimer's disease},\njournal = {Alzheimer's \\& Dementia},\ndoi = {https://doi.org/10.1002/alz.14373},\n}"
-  },
-  {
-    "objectID": "publications/2023-causalvis/index.html",
-    "href": "publications/2023-causalvis/index.html",
-    "title": "Causalvis: Visualizations for Causal Inference",
+    "objectID": "publications/2023-prs-plus-irm/index.html",
+    "href": "publications/2023-prs-plus-irm/index.html",
+    "title": "FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization",
     "section": "",
-    "text": "Workflow summary"
+    "text": "Model overview"
   },
   {
-    "objectID": "publications/2023-causalvis/index.html#citation",
-    "href": "publications/2023-causalvis/index.html#citation",
-    "title": "Causalvis: Visualizations for Causal Inference",
+    "objectID": "publications/2023-prs-plus-irm/index.html#citation",
+    "href": "publications/2023-prs-plus-irm/index.html#citation",
+    "title": "FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization",
     "section": "Citation",
-    "text": "Citation\n@inproceedings{guo2023causalvis,\n  title={Causalvis: Visualizations for Causal Inference},\n  author={Guo, Grace and Karavani, Ehud and Endert, Alex and Kwon, Bum Chul},\n  booktitle={Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems},\n  pages={1--20},\n  year={2023}\n}"
+    "text": "Citation\n@inproceedings{reyes2023fairprs,\n  title={FairPRS: adjusting for admixed populations in polygenic risk scores using invariant risk minimization},\n  author={Reyes, Diego Machado and Bose, Aritra and Karavani, Ehud and Parida, Laxmi},\n  booktitle={Pacific Symposium on Biocomputing},\n  year={2023}\n}"
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications ",
+    "section": "",
+    "text": "My current research focus revolves mainly around causal inference. Both applications (mainly around healthcare) and methodology (including usability). I also dabble in information visualization and genetic-based risk models (polygenic risk scores). Prior to that, I worked on computational methods in molecular biology (genomics and transcriptomics). In addition to academic publications, I also issued several patents in the US.\nI will do my best to keep this listing updated, but in the plausible case I won’t, please see my Google Scholar page for the latest version."
+  },
+  {
+    "objectID": "publications/index.html#publications",
+    "href": "publications/index.html#publications",
+    "title": "Publications ",
+    "section": "Publications",
+    "text": "Publications"
+  },
+  {
+    "objectID": "publications/2019-causal-inference-competitions/index.html",
+    "href": "publications/2019-causal-inference-competitions/index.html",
+    "title": "Comment: causal inference competitions: where should we aim?",
+    "section": "",
+    "text": "Can causal inference methodologists use soon-to-be-published experiments (randomized control trials) to benchmark causal inference methods similar to how computational biologists use soon-to-be-published solved protein structures to benchmark their protein folding algorithms."
+  },
+  {
+    "objectID": "publications/2019-causal-inference-competitions/index.html#citation",
+    "href": "publications/2019-causal-inference-competitions/index.html#citation",
+    "title": "Comment: causal inference competitions: where should we aim?",
+    "section": "Citation",
+    "text": "Citation\n@article{karavani2019comment,\n  title={Comment: causal inference competitions: where should we aim?},\n  author={Karavani, Ehud and El-Hay, Tal and Shimoni, Yishai and Yanover, Chen},\n  year={2019}\n}"
+  },
+  {
+    "objectID": "publications/2025-bicause-trees/index.html#citation",
+    "href": "publications/2025-bicause-trees/index.html#citation",
+    "title": "Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation",
+    "section": "Citation",
+    "text": "Citation\n@inproceedings{ter-minassian2025hierarchical,\n  title={Hierarchical Bias-Driven Stratification for Interpretable Causal Effect Estimation},\n  author={Ter-Minassian, Lucile and Szlak, Liran and Karavani, Ehud and Holmes, Christopher C. and Shimoni, Yishai},\n  booktitle={The 28th International Conference on Artificial Intelligence and Statistics},\n  year={2025},\n  series={Proceedings of Machine Learning Research},\n  publisher={PMLR},\n  pdf={https://raw.githubusercontent.com/mlresearch/v258/main/assets/ter-minassian25a/ter-minassian25a.pdf},\n  url={https://proceedings.mlr.press/v258/ter-minassian25a.html},\n}"
+  },
+  {
+    "objectID": "publications/2026-alz-doxycycline-repurposing/index.html#citation",
+    "href": "publications/2026-alz-doxycycline-repurposing/index.html#citation",
+    "title": "Network-based prediction and real-world patient data observation identify doxycycline as a repurposable drug in Alzheimer’s disease",
+    "section": "Citation",
+    "text": "Citation\n@article{bykova2026network,\n  title={Network-based prediction and real-world patient data observation identify doxycycline as a repurposable drug in Alzheimer's disease},\n  author={Bykova, Marina and Karavani, Ehud and Danziger, Michael and Tonegawa-Kuji, Reina and Martin, William and Sha, Zhendong and Pieper, Andrew A and Rosen-Zvi, Michal and Cheng, Feixiong},\n  journal={Neurotherapeutics},\n  year={2026},\n  publisher={Elsevier}\n}"
+  },
+  {
+    "objectID": "materials/causal-inference/motivation/index.html#predicting-risk-is-not-enough-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/motivation/index.html#predicting-risk-is-not-enough-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Motivation",
+    "section": "Predicting risk is not enough ",
+    "text": "Predicting risk is not enough"
+  },
+  {
+    "objectID": "materials/causal-inference/causalitea/index.html",
+    "href": "materials/causal-inference/causalitea/index.html",
+    "title": "CausaliTea",
+    "section": "",
+    "text": "CausaliTea is a reading club on causality [source ]\n\n\n\nCausaliTea’s logo"
+  },
+  {
+    "objectID": "materials/index.html",
+    "href": "materials/index.html",
+    "title": "Materials",
+    "section": "",
+    "text": "Please properly attribute if using.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCausaliTea\n\n\n\ncausal inference\n\n\n\nA casual reading club on causality.\n\n\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference - Motivation\n\n\n\ncausal inference\n\n\n\nMotivating causal inference\n\n\n\n\n\nMay 16, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference - Concepts\n\n\n\ncausal inference\n\n\n\nBroad overview of causal inference concepts\n\n\n\n\n\nFeb 20, 2020\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference - Methods\n\n\n\ncausal inference\n\n\n\nStatistical methods for causal inference\n\n\n\n\n\nNov 18, 2018\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html",
+    "href": "materials/causal-inference/methods/index.html",
+    "title": "Causal Inference - Methods",
+    "section": "",
+    "text": "An overview of many causal inference methods."
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html#zoo-of-causal-methods-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/methods/index.html#zoo-of-causal-methods-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Methods",
+    "section": "",
+    "text": "An overview of many causal inference methods."
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html#the-simpsons-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/methods/index.html#the-simpsons-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Methods",
+    "section": "The Simpsons ",
+    "text": "The Simpsons \n Matching and Inverse Probability Weighting with The Simpsons.\n(This is before the time of Powerpoint morph; this was painstaking.)"
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html#causal-inference-with-deep-learning-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/methods/index.html#causal-inference-with-deep-learning-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Methods",
+    "section": "Causal inference with deep learning ",
+    "text": "Causal inference with deep learning \nRelevant up to ~2020"
+  },
+  {
+    "objectID": "materials/causal-inference/methods/index.html#interrupted-time-series-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/methods/index.html#interrupted-time-series-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Methods",
+    "section": "Interrupted time series ",
+    "text": "Interrupted time series \nFrom difference-in-differences to synthetic controls."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html",
+    "href": "materials/causal-inference/concepts/index.html",
+    "title": "Causal Inference - Concepts",
+    "section": "",
+    "text": "With an emphasis on counterfactual prediction differing from risk prediction."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#the-basis-of-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/concepts/index.html#the-basis-of-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Concepts",
+    "section": "",
+    "text": "With an emphasis on counterfactual prediction differing from risk prediction."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#observational-studies-and-rcts-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/concepts/index.html#observational-studies-and-rcts-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Concepts",
+    "section": "Observational studies and RCTs ",
+    "text": "Observational studies and RCTs"
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#the-goldilocks-principle-of-covariate-adjustment-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/concepts/index.html#the-goldilocks-principle-of-covariate-adjustment-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Concepts",
+    "section": "The Goldilocks principle of covariate adjustment ",
+    "text": "The Goldilocks principle of covariate adjustment \nThe Goldilocks principle of covariate adjustment in causal inference."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#how-causation-causes-correlations-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/concepts/index.html#how-causation-causes-correlations-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Concepts",
+    "section": "How causation causes correlations ",
+    "text": "How causation causes correlations \nStructural causal view of statistical associations."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#a-tour-of-causal-assumptions-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/concepts/index.html#a-tour-of-causal-assumptions-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Concepts",
+    "section": "A tour of causal assumptions ",
+    "text": "A tour of causal assumptions \nCausal inference is a mindset. Therefore, it takes thought, not data, to translate data-based associations into causal claims."
+  },
+  {
+    "objectID": "materials/causal-inference/concepts/index.html#my-first-ever-lecture-on-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "href": "materials/causal-inference/concepts/index.html#my-first-ever-lecture-on-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d",
+    "title": "Causal Inference - Concepts",
+    "section": "My first ever lecture on causal inference ",
+    "text": "My first ever lecture on causal inference \nAn introduction to causal inference talk gave at a student seminar on November 18, 2018, named Causal Inference 101."
+  },
+  {
+    "objectID": "publications/2021-non-respiratory-covid19/index.html",
+    "href": "publications/2021-non-respiratory-covid19/index.html",
+    "title": "Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2",
+    "section": "",
+    "text": "Association of SARS-CoV-2 infection with several severe outcomes from 425,988 admitted individuals."
+  },
+  {
+    "objectID": "publications/2021-non-respiratory-covid19/index.html#citation",
+    "href": "publications/2021-non-respiratory-covid19/index.html#citation",
+    "title": "Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2",
+    "section": "Citation",
+    "text": "Citation\n@article{el2021trends,\n  title={Trends in clinical characteristics and associations of severe non-respiratory events related to SARS-CoV-2},\n  author={El-Hay, Tal and Karavani, Ehud and Peretz, Asaf and Ninio, Matan and Ravid, Sivan and Chorev, Michal and Rosen-Zvi, Michal and Patalon, Tal and Shimoni, Yishai and Jain, Anil},\n  journal={medRxiv},\n  pages={2021--03},\n  year={2021},\n  publisher={Cold Spring Harbor Laboratory Press}\n}"
+  },
+  {
+    "objectID": "publications/2025-epilepsy-resection-repurposing/index.html#citation",
+    "href": "publications/2025-epilepsy-resection-repurposing/index.html#citation",
+    "title": "Peri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation",
+    "section": "Citation",
+    "text": "Citation\n@article{szlak2025peri,\n  title={Peri-operative anti-inflammatory drug use and seizure recurrence after resective epilepsy surgery: Target trials emulation},\n  author={Szlak, Liran and Shen, Jingdi and Zohar, Eden and Karavani, Ehud and Rotroff, Daniel and Vegh, Deborah and Punia, Vineet and Rosen-Zvi, Michal and Shimoni, Yishai and Jehi, Lara},\n  journal={iScience},\n  volume={28},\n  number={4},\n  year={2025},\n  publisher={Elsevier}\n}"
+  },
+  {
+    "objectID": "publications/2019-causal-inference-evaluation-toolkit/index.html",
+    "href": "publications/2019-causal-inference-evaluation-toolkit/index.html",
+    "title": "An evaluation toolkit to guide model selection and cohort definition in causal inference",
+    "section": "",
+    "text": "This manuscript combines the evaluation suite with a specific use-case. A readers-digest version focusing on ROC curves for propensity score models is also available here"
+  },
+  {
+    "objectID": "publications/2019-causal-inference-evaluation-toolkit/index.html#citation",
+    "href": "publications/2019-causal-inference-evaluation-toolkit/index.html#citation",
+    "title": "An evaluation toolkit to guide model selection and cohort definition in causal inference",
+    "section": "Citation",
+    "text": "Citation\n@article{shimoni2019evaluation,\n  title={An evaluation toolkit to guide model selection and cohort definition in causal inference},\n  author={Shimoni, Yishai and Karavani, Ehud and Ravid, Sivan and Bak, Peter and Ng, Tan Hung and Alford, Sharon Hensley and Meade, Denise and Goldschmidt, Yaara},\n  journal={arXiv preprint arXiv:1906.00442},\n  year={2019}\n}"
+  },
+  {
+    "objectID": "publications/2018-causal-inference-benchmarking-framework/index.html",
+    "href": "publications/2018-causal-inference-benchmarking-framework/index.html",
+    "title": "Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis",
+    "section": "",
+    "text": "@article{shimoni2018benchmarking,\n  title={Benchmarking framework for performance-evaluation of causal inference analysis},\n  author={Shimoni, Yishai and Yanover, Chen and Karavani, Ehud and Goldschmnidt, Yaara},\n  journal={arXiv preprint arXiv:1802.05046},\n  year={2018}\n}"
+  },
+  {
+    "objectID": "publications/2018-causal-inference-benchmarking-framework/index.html#citation",
+    "href": "publications/2018-causal-inference-benchmarking-framework/index.html#citation",
+    "title": "Benchmarking Framework for Performance-Evaluation of Causal Inference Analysis",
+    "section": "",
+    "text": "@article{shimoni2018benchmarking,\n  title={Benchmarking framework for performance-evaluation of causal inference analysis},\n  author={Shimoni, Yishai and Yanover, Chen and Karavani, Ehud and Goldschmnidt, Yaara},\n  journal={arXiv preprint arXiv:1802.05046},\n  year={2018}\n}"
+  },
+  {
+    "objectID": "publications/2019-positivitree/index.html",
+    "href": "publications/2019-positivitree/index.html",
+    "title": "A discriminative approach for finding and characterizing positivity violations using decision trees",
+    "section": "",
+    "text": "A tree-based approach for finding easily-characterizable positivity violations, commonly referred to as PositiviTree."
+  },
+  {
+    "objectID": "publications/2019-positivitree/index.html#citation",
+    "href": "publications/2019-positivitree/index.html#citation",
+    "title": "A discriminative approach for finding and characterizing positivity violations using decision trees",
+    "section": "Citation",
+    "text": "Citation\n@article{karavani2019discriminative,\n  title={A discriminative approach for finding and characterizing positivity violations using decision trees},\n  author={Karavani, Ehud and Bak, Peter and Shimoni, Yishai},\n  journal={arXiv preprint arXiv:1907.08127},\n  year={2019}\n}"
+  },
+  {
+    "objectID": "publications/2018-rnase3-cleavage-rules/index.html",
+    "href": "publications/2018-rnase3-cleavage-rules/index.html",
+    "title": "In vivo cleavage rules and target repertoire of RNase III in Escherichia coli",
+    "section": "",
+    "text": "@article{altuvia2018vivo,\n  title={In vivo cleavage rules and target repertoire of RNase III in Escherichia coli},\n  author={Altuvia, Yael and Bar, Amir and Reiss, Niv and Karavani, Ehud and Argaman, Liron and Margalit, Hanah},\n  journal={Nucleic acids research},\n  volume={46},\n  number={19},\n  pages={10380--10394},\n  year={2018},\n  publisher={Oxford University Press}\n}"
+  },
+  {
+    "objectID": "publications/2018-rnase3-cleavage-rules/index.html#citation",
+    "href": "publications/2018-rnase3-cleavage-rules/index.html#citation",
+    "title": "In vivo cleavage rules and target repertoire of RNase III in Escherichia coli",
+    "section": "",
+    "text": "@article{altuvia2018vivo,\n  title={In vivo cleavage rules and target repertoire of RNase III in Escherichia coli},\n  author={Altuvia, Yael and Bar, Amir and Reiss, Niv and Karavani, Ehud and Argaman, Liron and Margalit, Hanah},\n  journal={Nucleic acids research},\n  volume={46},\n  number={19},\n  pages={10380--10394},\n  year={2018},\n  publisher={Oxford University Press}\n}"
+  },
+  {
+    "objectID": "publications/2019-prs-embryo-selection/index.html#citation",
+    "href": "publications/2019-prs-embryo-selection/index.html#citation",
+    "title": "Screening human embryos for polygenic traits has limited utility",
+    "section": "Citation",
+    "text": "Citation\n@article{karavani2019screening,\n  title={Screening human embryos for polygenic traits has limited utility},\n  author={Karavani, Ehud and Zuk, Or and Zeevi, Danny and Barzilai, Nir and Stefanis, Nikos C and Hatzimanolis, Alex and Smyrnis, Nikolaos and Avramopoulos, Dimitrios and Kruglyak, Leonid and Atzmon, Gil and others},\n  journal={Cell},\n  volume={179},\n  number={6},\n  pages={1424--1435},\n  year={2019},\n  publisher={Elsevier}\n}"
+  },
+  {
+    "objectID": "publications/2026-alz-100-drugs-tte/index.html#citation",
+    "href": "publications/2026-alz-100-drugs-tte/index.html#citation",
+    "title": "Critical evaluation of real-world evidence of repurposable medicines in the Alzheimer’s disease drug development pipeline using a target trial emulation",
+    "section": "Citation",
+    "text": "Citation\n@article{kuji2026critical,\n  author={Tonegawa-Kuji, Reina and Karavani, Ehud and Danziger, Michael and Zhang, Pengyue and Hou, Yuan and Zhou, Yadi and Bykova, Marina and Pieper, Andrew A. and Rosen-Zvi, Michal and Cummings, Jeffrey and Cheng, Feixiong},\n  title={Critical evaluation of real-world evidence of repurposable medicines in the Alzheimer's disease drug development pipeline using a target trial emulation},\n  journal={Alzheimer's \\& Dementia: Translational Research \\& Clinical Interventions},\n  doi={https://doi.org/10.1002/trc2.70193},\n  year={2026}\n}"
+  },
+  {
+    "objectID": "publications/2019-mammograms-plus-ehrs/index.html#citation",
+    "href": "publications/2019-mammograms-plus-ehrs/index.html#citation",
+    "title": "Predicting breast cancer by applying deep learning to linked health records and mammograms",
+    "section": "Citation",
+    "text": "Citation\n@article{akselrod2019predicting,\n  title={Predicting breast cancer by applying deep learning to linked health records and mammograms},\n  author={Akselrod-Ballin, Ayelet and Chorev, Michal and Shoshan, Yoel and Spiro, Adam and Hazan, Alon and Melamed, Roie and Barkan, Ella and Herzel, Esma and Naor, Shaked and Karavani, Ehud and others},\n  journal={Radiology},\n  volume={292},\n  number={2},\n  pages={331--342},\n  year={2019},\n  publisher={Radiological Society of North America}\n}"
   },
   {
     "objectID": "publications/2024-contraceptives-discontinuation/index.html",
@@ -599,28 +606,28 @@
     "href": "blog/2023/03-sequential_trial_design/index.html",
     "title": "Sequential trial design for causal inference",
     "section": "",
-    "text": "I’m not special, so I’ve spent a lot of time addressing confounding bias in causal inference. I even created and still maintain an open-source Python package whose main focus is flexible causal inference modeling (pip install causallib). There’s a place to discuss why confounding bias is the most popular bias, but this blog post is not it.  I have a different bias I want to focus on.\nThere’s actually some compelling evidence (well, at least anecdotal) that confounding bias has less of a biasing effect than what one would expect. One example is Garcı́a-Albéniz, Hsu, and Hernán (2017) examining the effect of colorectal cancer screening on colorectal cancer incidence. It showed the same survival curves for treatment and control units when adjusting and not adjusting for confounding factors. This, in and of itself, is a poor evidence, but the exact same shape of survival curves also appeared in Bretthauer et al. (2022), an RCT examing the exact same question. This suggests that confounding bias did not affect the observational study.1\n\n\nThis bias originates from improperly setting the time-zero. Time zero (or “index date”) is the point in time which splits the baseline period from the follow-up period. History from future, retrospectively speaking. It usually the time in which treatment is initiated, and therefore the point in time from which we look backwards to obtain historical data (baseline covariates) and look forward to gather follow-up data (outcomes).\nAs such, to properly set up time zero, three things must align:\n\nThe subject must meet the eligibility criteria\n“Treatment” must be assigned\nOutcomes are beginning to be counted.\n\nLearning causal inference, we are used to getting datasets with nice and precise binary treatment variables and covariates. But where did these come from? People’s lives are not cross sectional, they are a trajectory through time. So there are lots of design decisions to be made in order to squeeze all of it into tabular form. Having longitudinal data makes it more possible, but not more easy. How do we decide how to assign a person into either treatment groups (or not at all if not eligible).\nGiven this presentation, you might see why active-comparator designs are so appealing. It is more straightforward to compare to active treatments, head-to-head, since we just define the first treatment initiation of each drug (the two groups) as our time zero.\nThe trickier part is when we want to design a study to compare treatment initators with non-users. This is often of interest in pragmatic trials. What is the index date for someone who just lived their life never getting treated? Non-initators have no point in time where they start treatment, making it harder to align this non-existing “treatment assignment” to the follow-up and eligibilty.\nThis often leads to comparing either persistent users or those who taken the drug at some time (i.e., all or any), to those who never used it. This study design does very little to inform physicians how to act on the patient they are currently facing. “Take this drug and if you survive the next 5 years (i.e., become a persistent user), then you will reduce your risk by x percent” does not inspire much confidence and is not very helpful for the patient who is living now in the present and not five years into the future.2"
+    "text": "I’m not special, so I’ve spent a lot of time addressing confounding bias in causal inference. I even created and still maintain an open-source Python package whose main focus is flexible causal inference modeling (pip install causallib). There’s a place to discuss why confounding bias is the most popular bias, but this blog post is not it.  I have a different bias I want to focus on.\nThere’s actually some compelling evidence (well, at least anecdotal) that confounding bias has less of a biasing effect than what one would expect. One example is Garcı́a-Albéniz et al. (2017) examining the effect of colorectal cancer screening on colorectal cancer incidence. It showed the same survival curves for treatment and control units when adjusting and not adjusting for confounding factors. This, in and of itself, is a poor evidence, but the exact same shape of survival curves also appeared in Bretthauer et al. (2022), an RCT examing the exact same question. This suggests that confounding bias did not affect the observational study.1\n\n\nThis bias originates from improperly setting the time-zero. Time zero (or “index date”) is the point in time which splits the baseline period from the follow-up period. History from future, retrospectively speaking. It usually the time in which treatment is initiated, and therefore the point in time from which we look backwards to obtain historical data (baseline covariates) and look forward to gather follow-up data (outcomes).\nAs such, to properly set up time zero, three things must align:\n\nThe subject must meet the eligibility criteria\n“Treatment” must be assigned\nOutcomes are beginning to be counted.\n\nLearning causal inference, we are used to getting datasets with nice and precise binary treatment variables and covariates. But where did these come from? People’s lives are not cross sectional, they are a trajectory through time. So there are lots of design decisions to be made in order to squeeze all of it into tabular form. Having longitudinal data makes it more possible, but not more easy. How do we decide how to assign a person into either treatment groups (or not at all if not eligible).\nGiven this presentation, you might see why active-comparator designs are so appealing. It is more straightforward to compare to active treatments, head-to-head, since we just define the first treatment initiation of each drug (the two groups) as our time zero.\nThe trickier part is when we want to design a study to compare treatment initators with non-users. This is often of interest in pragmatic trials. What is the index date for someone who just lived their life never getting treated? Non-initators have no point in time where they start treatment, making it harder to align this non-existing “treatment assignment” to the follow-up and eligibilty.\nThis often leads to comparing either persistent users or those who taken the drug at some time (i.e., all or any), to those who never used it. This study design does very little to inform physicians how to act on the patient they are currently facing. “Take this drug and if you survive the next 5 years (i.e., become a persistent user), then you will reduce your risk by x percent” does not inspire much confidence and is not very helpful for the patient who is living now in the present and not five years into the future.2"
   },
   {
     "objectID": "blog/2023/03-sequential_trial_design/index.html#introduction",
     "href": "blog/2023/03-sequential_trial_design/index.html#introduction",
     "title": "Sequential trial design for causal inference",
     "section": "",
-    "text": "I’m not special, so I’ve spent a lot of time addressing confounding bias in causal inference. I even created and still maintain an open-source Python package whose main focus is flexible causal inference modeling (pip install causallib). There’s a place to discuss why confounding bias is the most popular bias, but this blog post is not it.  I have a different bias I want to focus on.\nThere’s actually some compelling evidence (well, at least anecdotal) that confounding bias has less of a biasing effect than what one would expect. One example is Garcı́a-Albéniz, Hsu, and Hernán (2017) examining the effect of colorectal cancer screening on colorectal cancer incidence. It showed the same survival curves for treatment and control units when adjusting and not adjusting for confounding factors. This, in and of itself, is a poor evidence, but the exact same shape of survival curves also appeared in Bretthauer et al. (2022), an RCT examing the exact same question. This suggests that confounding bias did not affect the observational study.1\n\n\nThis bias originates from improperly setting the time-zero. Time zero (or “index date”) is the point in time which splits the baseline period from the follow-up period. History from future, retrospectively speaking. It usually the time in which treatment is initiated, and therefore the point in time from which we look backwards to obtain historical data (baseline covariates) and look forward to gather follow-up data (outcomes).\nAs such, to properly set up time zero, three things must align:\n\nThe subject must meet the eligibility criteria\n“Treatment” must be assigned\nOutcomes are beginning to be counted.\n\nLearning causal inference, we are used to getting datasets with nice and precise binary treatment variables and covariates. But where did these come from? People’s lives are not cross sectional, they are a trajectory through time. So there are lots of design decisions to be made in order to squeeze all of it into tabular form. Having longitudinal data makes it more possible, but not more easy. How do we decide how to assign a person into either treatment groups (or not at all if not eligible).\nGiven this presentation, you might see why active-comparator designs are so appealing. It is more straightforward to compare to active treatments, head-to-head, since we just define the first treatment initiation of each drug (the two groups) as our time zero.\nThe trickier part is when we want to design a study to compare treatment initators with non-users. This is often of interest in pragmatic trials. What is the index date for someone who just lived their life never getting treated? Non-initators have no point in time where they start treatment, making it harder to align this non-existing “treatment assignment” to the follow-up and eligibilty.\nThis often leads to comparing either persistent users or those who taken the drug at some time (i.e., all or any), to those who never used it. This study design does very little to inform physicians how to act on the patient they are currently facing. “Take this drug and if you survive the next 5 years (i.e., become a persistent user), then you will reduce your risk by x percent” does not inspire much confidence and is not very helpful for the patient who is living now in the present and not five years into the future.2"
+    "text": "I’m not special, so I’ve spent a lot of time addressing confounding bias in causal inference. I even created and still maintain an open-source Python package whose main focus is flexible causal inference modeling (pip install causallib). There’s a place to discuss why confounding bias is the most popular bias, but this blog post is not it.  I have a different bias I want to focus on.\nThere’s actually some compelling evidence (well, at least anecdotal) that confounding bias has less of a biasing effect than what one would expect. One example is Garcı́a-Albéniz et al. (2017) examining the effect of colorectal cancer screening on colorectal cancer incidence. It showed the same survival curves for treatment and control units when adjusting and not adjusting for confounding factors. This, in and of itself, is a poor evidence, but the exact same shape of survival curves also appeared in Bretthauer et al. (2022), an RCT examing the exact same question. This suggests that confounding bias did not affect the observational study.1\n\n\nThis bias originates from improperly setting the time-zero. Time zero (or “index date”) is the point in time which splits the baseline period from the follow-up period. History from future, retrospectively speaking. It usually the time in which treatment is initiated, and therefore the point in time from which we look backwards to obtain historical data (baseline covariates) and look forward to gather follow-up data (outcomes).\nAs such, to properly set up time zero, three things must align:\n\nThe subject must meet the eligibility criteria\n“Treatment” must be assigned\nOutcomes are beginning to be counted.\n\nLearning causal inference, we are used to getting datasets with nice and precise binary treatment variables and covariates. But where did these come from? People’s lives are not cross sectional, they are a trajectory through time. So there are lots of design decisions to be made in order to squeeze all of it into tabular form. Having longitudinal data makes it more possible, but not more easy. How do we decide how to assign a person into either treatment groups (or not at all if not eligible).\nGiven this presentation, you might see why active-comparator designs are so appealing. It is more straightforward to compare to active treatments, head-to-head, since we just define the first treatment initiation of each drug (the two groups) as our time zero.\nThe trickier part is when we want to design a study to compare treatment initators with non-users. This is often of interest in pragmatic trials. What is the index date for someone who just lived their life never getting treated? Non-initators have no point in time where they start treatment, making it harder to align this non-existing “treatment assignment” to the follow-up and eligibilty.\nThis often leads to comparing either persistent users or those who taken the drug at some time (i.e., all or any), to those who never used it. This study design does very little to inform physicians how to act on the patient they are currently facing. “Take this drug and if you survive the next 5 years (i.e., become a persistent user), then you will reduce your risk by x percent” does not inspire much confidence and is not very helpful for the patient who is living now in the present and not five years into the future.2"
   },
   {
     "objectID": "blog/2023/03-sequential_trial_design/index.html#sequential-trial-design",
     "href": "blog/2023/03-sequential_trial_design/index.html#sequential-trial-design",
     "title": "Sequential trial design for causal inference",
     "section": "Sequential trial design",
-    "text": "Sequential trial design\nSo how can we force the alignment of eligibility, treatment initiation, and follow-up into a proper time zero?\n\nA single “sequential” trial\nOne simple approach is to use calendar time. Set the time-zero to a specific date. Say, for instance, January 1st, 2020. This will be the point in time splitting history from future. Keep whoever is eligibile to participate at this date, discard the rest; data from before this date are the baseline covariates; data from this date forward is the follow-up; and whoever got treated on this date is considered in the treatment group, the rest are controls.\nIndividuals treated before January 1st are probably ineligible (most study designs might enforce participants to be treatment naive). Individuals treated after January 1st are considered controls, because time-zero is set at January 1st, not in the future. Though a per-protocol analysis might decide to censor them from follow-up because they deviated from their original (control) assignment. This creates a design that answers a question of treat now vs. don’t treat now (but possible treat later).\nHowever, this single trial is too naive and not very efficient. We miss all the treated individuals in the past and in the future. There might even not be anyone treated on January 1st. We throw away a lot of information. That’s a big blow to statistical power.\n\n\nA sequence of sequential trials\nTherefore, a natural extension would be to just repeat the process. Repeat it for January 2nd, 2020, for January 3rd, 2020, for January 4th, and so forth. For each time point we:\n\nConsider whoever meets the eligibility criteria and discard the rest,\nSet the treatment indicator based on who got treated,\nExtract baseline covariates prior to that time point,\nExtract outcome information from that time onwards.\n\n\n\n\nAn illustration of the sequential trial process at a data-set level3. At each time \\(t\\) (starting with \\(t=0\\), like Jan 1st), we check whoever is eligible and assign them to their appropriate treatment group according to their treatmeent status at that time. At the next time step (\\(t=1\\) or Jan 2nd), the pool of eligible individuals can change in several ways: 1) treated individuals from the past are probably no longer eligible, at least not before some washout period passes; 2) eligible people can become ineligible regardless of their past treatment status (e.g., they can turn 65 and no longer fit the inclusion criteria). 3) Likewise, ineligible people from the past can become eligible if they suddenly fit the criteria (e.g., an individual can turn 18 at this time and become eligible). At each time we collect baseline and follow-up data according to the study design relative to this index date. This process repeates for all available time steps.\n\n\nThe way I imagine this process is that we have stencil-like mold, defined by our eligibility criteria, from which we funnel observations like a strainer. We go to January 1st, put the stencil-strainer, shake the database and filter only eligible individuals at the time. We then go to January 2nd, filter; and so on and so forth, rinse and repeat. A moving window through time, only that window is specially shaped by the eligibilty criteria.\nThis means a single person can have multiple records (entries, or rows) in the dataset. One for each trial (time-zero).\nWe can see this illustrated below with a person’s timeline and its corresponding person-time tabular form. In this study design, baseline covariates are taken 4 time-steps relative to time-zero (e.g., 2 years prior to time-zero), and follow-up is taken 4 time steps starting time-zero (e.g., outcome within 2 years). Thus, the covariate profile changes as time-zero progresses. At times 4-7, 🏊‍♂️ is included as it is within the baseline period dictated by the study design, but it is no longer counted in time 8. Similarly, the outcome 🚑 is not observed at time 4, only starting at time 5.4 To make things more explicitly, I also indicate eligibility; in this example, the study design requires participant to no been treated in the last 4 time-steps (treatment-naive), and so at times 7 and 8 the person is no longer eligibile as they were treated in time 6.5\n\n\n\nAn illustration of a person timeline and how its corrsponding person-time tabular form. It shows multiple time-zeros set from time 4 throughout time 8 (think Jan 1st to Jan 4th from above). Different time-zeros have different covariate (🏊‍♂️) profile, different outcome (🚑) based on the moving follow-up window, and - although that person is treated (💊) - they are not always considered as such.\n\n\n\n\nAn uncontrolled control explosion\nOften, getting treatment is rarer than not getting treated. This imbalance is not inherently important, but can lead to some difficulties in practice. Looking at the resulting dataset above, we see that sequential trials exacerbate this even further since even treated individuals contribute (at-least more) non-treated rows, all the while never-treated individuals just multiply throughout time.\nThis control group inflation can be undesireable in practice. It increases demand of compute resources, both in terms of memory and runtime, while not necessarily contributing enough information to justify it. Statistical power is determined by the smallest group, anyway; and, while I don’t know how to formally extend this argument into a repetaed-measurement setting, I have an intuition that dozens and dozens of duplicate (and near-duplicate) records hit the diminishing returns curve somewhat quickly.\nThere are several valid strategies to deal with settings where eligibility criteria is met multiple times per person and lead to this cambrian-like explosion of controls records.\nFirst, we can just randomly subsample a fixed sample (e.g., 10%) from all the controls records from our dataset (Dickerman et al. (2019)). Since this blindly regards person and time information, it can have some unintended consequences like discarding entire time steps or individuals by some unfortunate random chance. This can reduce variability in the dataset and hurt the infromation content of it.\nFortunately, this can be easily solvable by forcing some structure on the discarding, like stratified sampling by time-steps and/or person IDs.\nWe can take this structural subsampling a step forward and force a single entry per-person, i.e., reduce it to a single eligibile record per person. When doing so, it is important to reduce it without taking strict advantage of “future infromation”, namely by the treatment and outcome status of people’s timeline. Two common ways are taking the first eligibility record per-person, or taking one randomly (Hernán and Robins (2016)). Both are valid, non-biasing approaches, but they suffer from similar disadvantages presented above when randomly subsampling controls. Namely, they can discard more useful infromation and keep more redundant infromation instead. Specifically, they can blindly discard treatment records, which can be very precious. In reasonable cases where a treated person-time is not treated at first eligibile time, or in cases where it simply been randomly discarded. As said above, treated person-time records are few to begin with, and discarding them reduces the size of the treatment group, which decrease precious statistical power unnecessarily.\nA forth option that maximizes the size of the (smaller) treatment group is a combined approach: first, gather all the treated person-time records; and second, take first (or random) eligibility time per-person (Garcı́a-Albéniz, Hsu, and Hernán (2017)). This is basically a different view on the first approach. Both first fix (or take) all the treated person-times and then subsample just the control person-times. Only here, the subsampling is further structured to keep one record per person (including individuals who are at some point treated) by determinstic subsampling (taking records at first eligibilty time) or random subsampling (taking a random record from all eligible times of an individual).\n\n\n\nIllustration of the four strategies for dealing with the inflation of control person-times in multiple eligibility settings. It describes 3 people: A, B, and C and their treatment status over 5 time steps. First, using all person-times6 from which we can derive the rest. Second, first eligibilty only, where B1, A1, and C2 participate (note C1 is ineligible in this example). Third, a random eligibility time per person. Note that in both cases we lose A3 as a treated unit. Forth, a mixed approach where we take all treated person-times and 1st eligibilty time. Lastly, a fifth strategy taking all treated person-times and randomly sampling a fixed proportions from the controls is not showed.\n\n\nIn the mixed approaches, it is important to choose control person-times while ignoring treatment indication in a person’s timeline. For instance, in the example above, it might be tempting to discard control trials of person A, because person A is eventually treated. Or, put differently, after selecting all the treated person-times, select a subsample of person-times controls while excluding people chosen in the treated person-times. However, this can bias the analysis as it will create a control group that is, by construction, never-treated; and never-treated might not be a comparable control for incidence users we care about (Garcı́a-Albéniz, Hsu, and Hernán (2017)).\n\nContemporary controls vs. self controls\nAs mention above, using all person-times can create computational strains and inefficiencies. All while in single-eligibility designs we might discard precious information. Mixed approaches where we first select all treated person-times is a good middle ground solution, but there is no free lunch.\nWe originally perform a trial at each time step. Looking at each trial independently, we adjust for time confounding as each treated person at that time has corresponding contemporary controls. However, when we dillute the controls (and the mixed approach of all-treated plus 1st eligibilty time is the most extreme approach), we reduce the weight of those contemporary controls.\nInstead, vieweing the dataset as a whole, we increase the weight of self controls. This is because for each person treated not at first eligibilty time we will have, by construction, two instances - one as treated and one as a control. When we discard records of other people from that time step, because this is not their first eligibility time, we reduce the relative weight (number) of contemporary controls and, by definition, increase the relative weight of the first eligible control person-times of those later treated.\nTo simplify with the example above, in the all-person-time approach, A3 is controlled by both its past self (A1) and a contemporary record (C3). When we go to the mixed approach, we drop C3, making A1 the sole control for A3. Therefore, we reduced the relative weight of contemrporary controls (at time 3) and increased the relative weight of self-controls.\nThis can create bias if person \\(i\\) at time \\(t\\) is not exchangeable with itself (person \\(i\\)) at time \\(t^*\\).\nThis is quite reasonable to assume, as people’s condition might trend over time, like disease progression status. Furthermore, if this progression is not captured by the covariates, it can create confounding bias (time confounding). Therefore, another cosideration should be to check for such cases, and, following footnote 7, keep trial ID in mind when adjusting and make sure every time-step can act as a quasi-independent trial."
+    "text": "Sequential trial design\nSo how can we force the alignment of eligibility, treatment initiation, and follow-up into a proper time zero?\n\nA single “sequential” trial\nOne simple approach is to use calendar time. Set the time-zero to a specific date. Say, for instance, January 1st, 2020. This will be the point in time splitting history from future. Keep whoever is eligibile to participate at this date, discard the rest; data from before this date are the baseline covariates; data from this date forward is the follow-up; and whoever got treated on this date is considered in the treatment group, the rest are controls.\nIndividuals treated before January 1st are probably ineligible (most study designs might enforce participants to be treatment naive). Individuals treated after January 1st are considered controls, because time-zero is set at January 1st, not in the future. Though a per-protocol analysis might decide to censor them from follow-up because they deviated from their original (control) assignment. This creates a design that answers a question of treat now vs. don’t treat now (but possible treat later).\nHowever, this single trial is too naive and not very efficient. We miss all the treated individuals in the past and in the future. There might even not be anyone treated on January 1st. We throw away a lot of information. That’s a big blow to statistical power.\n\n\nA sequence of sequential trials\nTherefore, a natural extension would be to just repeat the process. Repeat it for January 2nd, 2020, for January 3rd, 2020, for January 4th, and so forth. For each time point we:\n\nConsider whoever meets the eligibility criteria and discard the rest,\nSet the treatment indicator based on who got treated,\nExtract baseline covariates prior to that time point,\nExtract outcome information from that time onwards.\n\n\n\n\nAn illustration of the sequential trial process at a data-set level3. At each time \\(t\\) (starting with \\(t=0\\), like Jan 1st), we check whoever is eligible and assign them to their appropriate treatment group according to their treatmeent status at that time. At the next time step (\\(t=1\\) or Jan 2nd), the pool of eligible individuals can change in several ways: 1) treated individuals from the past are probably no longer eligible, at least not before some washout period passes; 2) eligible people can become ineligible regardless of their past treatment status (e.g., they can turn 65 and no longer fit the inclusion criteria). 3) Likewise, ineligible people from the past can become eligible if they suddenly fit the criteria (e.g., an individual can turn 18 at this time and become eligible). At each time we collect baseline and follow-up data according to the study design relative to this index date. This process repeates for all available time steps.\n\n\nThe way I imagine this process is that we have stencil-like mold, defined by our eligibility criteria, from which we funnel observations like a strainer. We go to January 1st, put the stencil-strainer, shake the database and filter only eligible individuals at the time. We then go to January 2nd, filter; and so on and so forth, rinse and repeat. A moving window through time, only that window is specially shaped by the eligibilty criteria.\nThis means a single person can have multiple records (entries, or rows) in the dataset. One for each trial (time-zero).\nWe can see this illustrated below with a person’s timeline and its corresponding person-time tabular form. In this study design, baseline covariates are taken 4 time-steps relative to time-zero (e.g., 2 years prior to time-zero), and follow-up is taken 4 time steps starting time-zero (e.g., outcome within 2 years). Thus, the covariate profile changes as time-zero progresses. At times 4-7, 🏊‍♂️ is included as it is within the baseline period dictated by the study design, but it is no longer counted in time 8. Similarly, the outcome 🚑 is not observed at time 4, only starting at time 5.4 To make things more explicitly, I also indicate eligibility; in this example, the study design requires participant to no been treated in the last 4 time-steps (treatment-naive), and so at times 7 and 8 the person is no longer eligibile as they were treated in time 6.5\n\n\n\nAn illustration of a person timeline and how its corrsponding person-time tabular form. It shows multiple time-zeros set from time 4 throughout time 8 (think Jan 1st to Jan 4th from above). Different time-zeros have different covariate (🏊‍♂️) profile, different outcome (🚑) based on the moving follow-up window, and - although that person is treated (💊) - they are not always considered as such.\n\n\n\n\nAn uncontrolled control explosion\nOften, getting treatment is rarer than not getting treated. This imbalance is not inherently important, but can lead to some difficulties in practice. Looking at the resulting dataset above, we see that sequential trials exacerbate this even further since even treated individuals contribute (at-least more) non-treated rows, all the while never-treated individuals just multiply throughout time.\nThis control group inflation can be undesireable in practice. It increases demand of compute resources, both in terms of memory and runtime, while not necessarily contributing enough information to justify it. Statistical power is determined by the smallest group, anyway; and, while I don’t know how to formally extend this argument into a repetaed-measurement setting, I have an intuition that dozens and dozens of duplicate (and near-duplicate) records hit the diminishing returns curve somewhat quickly.\nThere are several valid strategies to deal with settings where eligibility criteria is met multiple times per person and lead to this cambrian-like explosion of controls records.\nFirst, we can just randomly subsample a fixed sample (e.g., 10%) from all the controls records from our dataset (Dickerman et al. (2019)). Since this blindly regards person and time information, it can have some unintended consequences like discarding entire time steps or individuals by some unfortunate random chance. This can reduce variability in the dataset and hurt the infromation content of it.\nFortunately, this can be easily solvable by forcing some structure on the discarding, like stratified sampling by time-steps and/or person IDs.\nWe can take this structural subsampling a step forward and force a single entry per-person, i.e., reduce it to a single eligibile record per person. When doing so, it is important to reduce it without taking strict advantage of “future infromation”, namely by the treatment and outcome status of people’s timeline. Two common ways are taking the first eligibility record per-person, or taking one randomly (Hernán and Robins (2016)). Both are valid, non-biasing approaches, but they suffer from similar disadvantages presented above when randomly subsampling controls. Namely, they can discard more useful infromation and keep more redundant infromation instead. Specifically, they can blindly discard treatment records, which can be very precious. In reasonable cases where a treated person-time is not treated at first eligibile time, or in cases where it simply been randomly discarded. As said above, treated person-time records are few to begin with, and discarding them reduces the size of the treatment group, which decrease precious statistical power unnecessarily.\nA forth option that maximizes the size of the (smaller) treatment group is a combined approach: first, gather all the treated person-time records; and second, take first (or random) eligibility time per-person (Garcı́a-Albéniz et al. (2017)). This is basically a different view on the first approach. Both first fix (or take) all the treated person-times and then subsample just the control person-times. Only here, the subsampling is further structured to keep one record per person (including individuals who are at some point treated) by determinstic subsampling (taking records at first eligibilty time) or random subsampling (taking a random record from all eligible times of an individual).\n\n\n\nIllustration of the four strategies for dealing with the inflation of control person-times in multiple eligibility settings. It describes 3 people: A, B, and C and their treatment status over 5 time steps. First, using all person-times6 from which we can derive the rest. Second, first eligibilty only, where B1, A1, and C2 participate (note C1 is ineligible in this example). Third, a random eligibility time per person. Note that in both cases we lose A3 as a treated unit. Forth, a mixed approach where we take all treated person-times and 1st eligibilty time. Lastly, a fifth strategy taking all treated person-times and randomly sampling a fixed proportions from the controls is not showed.\n\n\nIn the mixed approaches, it is important to choose control person-times while ignoring treatment indication in a person’s timeline. For instance, in the example above, it might be tempting to discard control trials of person A, because person A is eventually treated. Or, put differently, after selecting all the treated person-times, select a subsample of person-times controls while excluding people chosen in the treated person-times. However, this can bias the analysis as it will create a control group that is, by construction, never-treated; and never-treated might not be a comparable control for incidence users we care about (Garcı́a-Albéniz et al. (2017)).\n\nContemporary controls vs. self controls\nAs mention above, using all person-times can create computational strains and inefficiencies. All while in single-eligibility designs we might discard precious information. Mixed approaches where we first select all treated person-times is a good middle ground solution, but there is no free lunch.\nWe originally perform a trial at each time step. Looking at each trial independently, we adjust for time confounding as each treated person at that time has corresponding contemporary controls. However, when we dillute the controls (and the mixed approach of all-treated plus 1st eligibilty time is the most extreme approach), we reduce the weight of those contemporary controls.\nInstead, vieweing the dataset as a whole, we increase the weight of self controls. This is because for each person treated not at first eligibilty time we will have, by construction, two instances - one as treated and one as a control. When we discard records of other people from that time step, because this is not their first eligibility time, we reduce the relative weight (number) of contemporary controls and, by definition, increase the relative weight of the first eligible control person-times of those later treated.\nTo simplify with the example above, in the all-person-time approach, A3 is controlled by both its past self (A1) and a contemporary record (C3). When we go to the mixed approach, we drop C3, making A1 the sole control for A3. Therefore, we reduced the relative weight of contemrporary controls (at time 3) and increased the relative weight of self-controls.\nThis can create bias if person \\(i\\) at time \\(t\\) is not exchangeable with itself (person \\(i\\)) at time \\(t^*\\).\nThis is quite reasonable to assume, as people’s condition might trend over time, like disease progression status. Furthermore, if this progression is not captured by the covariates, it can create confounding bias (time confounding). Therefore, another cosideration should be to check for such cases, and, following footnote 7, keep trial ID in mind when adjusting and make sure every time-step can act as a quasi-independent trial."
   },
   {
     "objectID": "blog/2023/03-sequential_trial_design/index.html#discussion",
     "href": "blog/2023/03-sequential_trial_design/index.html#discussion",
     "title": "Sequential trial design for causal inference",
     "section": "Discussion",
-    "text": "Discussion\n\nImmortal (bias) Combat\nImmortal time bias is when participants of a cohort cannot, by construction, experience the outcome during some period of the follow-up time8. It usually happens when the researcher fails to align the cohort entry time (eligibility time) with the time of getting the treatment (time zero). If the researcher classifies that individual as treated, and start counting the outcome from cohort entry - even though they are not treated at the start of eligibility - it necessarily means that that person did not (and couldn’t have) experience the outcome in the time period between eligibility and time of actual being treated. If you are not familiar with immortal time bias, I suggest going over its entry in the Catalog of Bias website.\nOne approach to overcome immortal time bias is to do a time-dependent analysis. Namely, we need to somehow associate the time between eligibility and treatment with the control group, and only the time between treatment and outcome (or end of follow-up) with the treatment group. It can be done in several ways, depending on the analytical approach, like using an offset in a Poisson risk-rate regression. But one generic solution is to work in person-time data. Basically, allow the person-time records between eligibility and treatment to be classified to the control group, and the person-time records between treatment onwards to hte treatment group.\nThis general solution is essentially what happens in the sequential trials design. Although the proposed solution is person-centric – assigning the person’s time to separate treatment groups – and sequential trial is cohort-centric – assigning a person to its appropriate group at each time-step. However, the resulting view is basically the same, as the end product is a table where that same person is classified to the control group in the period starting at its eligibility time until they are assigned a treatement and move to the treatment group.\nThe only nuance is in how we construct the outcome in the follow-up time. For sequential trials to be absolutely equivalent to the person-time analysis, the control person-times should be censored at the time that person receive treatment. This ensures the outcome contributed to the control group is solely for the period that person is considered untreated. This censor-at-change is also known as a per-protocol analysis, where we censor individuals who deviate from their originally assigned protocol (controls who eventually get teated).\n\n\nMeta-analysis: pooling estimates vs. pooling records\nIn the sequential trial approach we essentially create multiple studies. Meta-analysis is the science of synthesizing evidence across multiple similar studies. There are two main approaches for doing meta analyses. The classic approach would use aggregate summaries from different studies, like the estimated effect and confidence interval, and combine them into a single estimate. However, advances in data management and digital communication made it increasingly feasible to share the original data on individual participants and give rise to a second type of meta analysis: one that combines individual-level data, basically consolidating datasets (Riley, Lambert, and Abo-Zaid (2010), Lin and Zeng (2010)).\nSequential trial design results in a bunch of trials, and, therefore, these two approaches are applicable to analyzing sequential trials. Either estimate the effect from each trial separately and then synthesize the estimated effects. Or just consolidate the extracted person-time records over the separate trials to obtain one big dataset.\nThere seems to be some benefits for doing individual-level meta-analysis (Riley, Lambert, and Abo-Zaid (2010)), but I’m not expert enough to judge. However, since we extract all the trials from the same database, using the same study design with the same covariates, treatment and outcome defintions, it seems even more appropriate (or natural) to consolidate the raw data. This post even hints to this approach, as this, to the best of my knowledge, the only way sequential trials have been analyzied in the epidemiological literature. However, it is also worth putting the finger on the fact that this is essentially becomes a meta-analysis, and as such, other approaches are applicable.\nThe individual-level analysis should respect the person-time structure of the combined trials. They might apply a multilevel (hierarchical) model, partially pooling estimates across time (trials). They should defintely use robust variance estimation, either by sandwich (HC) estimates or bootstrap, to estimate standard errors since the records in the consolidated dataset are no longer independent but are repeated measures of the same pool of individuals.\n\n\nLimitations\nI have already mentioned the additional computational strain caused by the inflation of the dataset moving from person to person-time format; how control-dilution can hurt exchangeability; and the additional considerations that are required in computing standard errors as the rows of this dataset are no longer independent.\nHowever, in my opinion the biggest limitation of this method is that it requires the analysts to discretize time from the get go. The granularity of the time-steps is not just predefined, but is baked into the earliest point in the analytic pipeline - the data extraction from the database. As such, it means a sensitivity analysis on this time-step parameter is laborious as it requires applying the entire pipeline from data extraction to effect estimation.\nThis is problematic as the time granularity has both computational and practicical implications. Ideally, the time-step size should not be too small to avoid creating too redundant repeatitions. Too small and the size of the expanded person-time dataset will be too large and incur heavy computational costs (but may also cause floating-point issues as some survival models multiply probabilities [fractions] over time-steps, so too many time-steps may become numerically unstable). On the other hand, too large time-steps can bunch together too much information (like treatment assignment and outcome) and reduce information content of real treatment-outcome associations. The size of the time-step should be clinically (or practically) meaningful, but it’s ok to find a more proper value around it that also optimizes computational aspects. This is computationally harder in sequential trials since the size of the time-steps is baked deep into the construction of the analytical datasets.\n\n\nSummary\nSequential trials design is a generic approach that can solve many time-related biases (Hernán et al. (2016)). This was a high-level introduction, which I think is missing from the methodological literature, but I also hope it entails some interesting point of views."
+    "text": "Discussion\n\nImmortal (bias) Combat\nImmortal time bias is when participants of a cohort cannot, by construction, experience the outcome during some period of the follow-up time8. It usually happens when the researcher fails to align the cohort entry time (eligibility time) with the time of getting the treatment (time zero). If the researcher classifies that individual as treated, and start counting the outcome from cohort entry - even though they are not treated at the start of eligibility - it necessarily means that that person did not (and couldn’t have) experience the outcome in the time period between eligibility and time of actual being treated. If you are not familiar with immortal time bias, I suggest going over its entry in the Catalog of Bias website.\nOne approach to overcome immortal time bias is to do a time-dependent analysis. Namely, we need to somehow associate the time between eligibility and treatment with the control group, and only the time between treatment and outcome (or end of follow-up) with the treatment group. It can be done in several ways, depending on the analytical approach, like using an offset in a Poisson risk-rate regression. But one generic solution is to work in person-time data. Basically, allow the person-time records between eligibility and treatment to be classified to the control group, and the person-time records between treatment onwards to hte treatment group.\nThis general solution is essentially what happens in the sequential trials design. Although the proposed solution is person-centric – assigning the person’s time to separate treatment groups – and sequential trial is cohort-centric – assigning a person to its appropriate group at each time-step. However, the resulting view is basically the same, as the end product is a table where that same person is classified to the control group in the period starting at its eligibility time until they are assigned a treatement and move to the treatment group.\nThe only nuance is in how we construct the outcome in the follow-up time. For sequential trials to be absolutely equivalent to the person-time analysis, the control person-times should be censored at the time that person receive treatment. This ensures the outcome contributed to the control group is solely for the period that person is considered untreated. This censor-at-change is also known as a per-protocol analysis, where we censor individuals who deviate from their originally assigned protocol (controls who eventually get teated).\n\n\nMeta-analysis: pooling estimates vs. pooling records\nIn the sequential trial approach we essentially create multiple studies. Meta-analysis is the science of synthesizing evidence across multiple similar studies. There are two main approaches for doing meta analyses. The classic approach would use aggregate summaries from different studies, like the estimated effect and confidence interval, and combine them into a single estimate. However, advances in data management and digital communication made it increasingly feasible to share the original data on individual participants and give rise to a second type of meta analysis: one that combines individual-level data, basically consolidating datasets (Riley et al. (2010), Lin and Zeng (2010)).\nSequential trial design results in a bunch of trials, and, therefore, these two approaches are applicable to analyzing sequential trials. Either estimate the effect from each trial separately and then synthesize the estimated effects. Or just consolidate the extracted person-time records over the separate trials to obtain one big dataset.\nThere seems to be some benefits for doing individual-level meta-analysis (Riley et al. (2010)), but I’m not expert enough to judge. However, since we extract all the trials from the same database, using the same study design with the same covariates, treatment and outcome defintions, it seems even more appropriate (or natural) to consolidate the raw data. This post even hints to this approach, as this, to the best of my knowledge, the only way sequential trials have been analyzied in the epidemiological literature. However, it is also worth putting the finger on the fact that this is essentially becomes a meta-analysis, and as such, other approaches are applicable.\nThe individual-level analysis should respect the person-time structure of the combined trials. They might apply a multilevel (hierarchical) model, partially pooling estimates across time (trials). They should defintely use robust variance estimation, either by sandwich (HC) estimates or bootstrap, to estimate standard errors since the records in the consolidated dataset are no longer independent but are repeated measures of the same pool of individuals.\n\n\nLimitations\nI have already mentioned the additional computational strain caused by the inflation of the dataset moving from person to person-time format; how control-dilution can hurt exchangeability; and the additional considerations that are required in computing standard errors as the rows of this dataset are no longer independent.\nHowever, in my opinion the biggest limitation of this method is that it requires the analysts to discretize time from the get go. The granularity of the time-steps is not just predefined, but is baked into the earliest point in the analytic pipeline - the data extraction from the database. As such, it means a sensitivity analysis on this time-step parameter is laborious as it requires applying the entire pipeline from data extraction to effect estimation.\nThis is problematic as the time granularity has both computational and practicical implications. Ideally, the time-step size should not be too small to avoid creating too redundant repeatitions. Too small and the size of the expanded person-time dataset will be too large and incur heavy computational costs (but may also cause floating-point issues as some survival models multiply probabilities [fractions] over time-steps, so too many time-steps may become numerically unstable). On the other hand, too large time-steps can bunch together too much information (like treatment assignment and outcome) and reduce information content of real treatment-outcome associations. The size of the time-step should be clinically (or practically) meaningful, but it’s ok to find a more proper value around it that also optimizes computational aspects. This is computationally harder in sequential trials since the size of the time-steps is baked deep into the construction of the analytical datasets.\n\n\nSummary\nSequential trials design is a generic approach that can solve many time-related biases (Hernán et al. (2016)). This was a high-level introduction, which I think is missing from the methodological literature, but I also hope it entails some interesting point of views."
   },
   {
     "objectID": "blog/2023/03-sequential_trial_design/index.html#footnotes",

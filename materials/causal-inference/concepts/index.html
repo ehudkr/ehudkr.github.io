@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>Causal Inference - Concepts | Ehud Karavani – Ehud Karavani</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -36,19 +39,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-0ed1478b310a7677eec4cd670784b311.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-ed5884411481ac2fe988af7129dfe46e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-0ed1478b310a7677eec4cd670784b311.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-e38129be69ca2464946f961e34c76ea6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-33949a25858187804016a711ded841cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-e38129be69ca2464946f961e34c76ea6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -373,12 +375,12 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-basis-of-causal-inference" id="toc-the-basis-of-causal-inference" class="nav-link active" data-scroll-target="#the-basis-of-causal-inference">The basis of causal inference <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
-  <li><a href="#observational-studies-and-rcts" id="toc-observational-studies-and-rcts" class="nav-link" data-scroll-target="#observational-studies-and-rcts">Observational studies and RCTs <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
-  <li><a href="#the-goldilocks-principle-of-covariate-adjustment" id="toc-the-goldilocks-principle-of-covariate-adjustment" class="nav-link" data-scroll-target="#the-goldilocks-principle-of-covariate-adjustment">The Goldilocks principle of covariate adjustment <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
-  <li><a href="#how-causation-causes-correlations" id="toc-how-causation-causes-correlations" class="nav-link" data-scroll-target="#how-causation-causes-correlations">How causation causes correlations <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
-  <li><a href="#a-tour-of-causal-assumptions" id="toc-a-tour-of-causal-assumptions" class="nav-link" data-scroll-target="#a-tour-of-causal-assumptions">A tour of causal assumptions <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
-  <li><a href="#my-first-ever-lecture-on-causal-inference" id="toc-my-first-ever-lecture-on-causal-inference" class="nav-link" data-scroll-target="#my-first-ever-lecture-on-causal-inference">My first ever lecture on causal inference <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#the-basis-of-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-the-basis-of-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link active" data-scroll-target="#the-basis-of-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">The basis of causal inference <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#observational-studies-and-rcts-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-observational-studies-and-rcts-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link" data-scroll-target="#observational-studies-and-rcts-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">Observational studies and RCTs <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#the-goldilocks-principle-of-covariate-adjustment-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-the-goldilocks-principle-of-covariate-adjustment-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link" data-scroll-target="#the-goldilocks-principle-of-covariate-adjustment-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">The Goldilocks principle of covariate adjustment <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#how-causation-causes-correlations-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-how-causation-causes-correlations-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link" data-scroll-target="#how-causation-causes-correlations-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">How causation causes correlations <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#a-tour-of-causal-assumptions-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-a-tour-of-causal-assumptions-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link" data-scroll-target="#a-tour-of-causal-assumptions-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">A tour of causal assumptions <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#my-first-ever-lecture-on-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-my-first-ever-lecture-on-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link" data-scroll-target="#my-first-ever-lecture-on-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">My first ever lecture on causal inference <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/materials/causal-inference/concepts/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/materials/causal-inference/concepts/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -431,48 +433,48 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </header>
 
 
-<section id="the-basis-of-causal-inference" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="the-basis-of-causal-inference">The basis of causal inference <a href="counterfactual-prediction.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="the-basis-of-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-basis-of-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">The basis of causal inference <a href="counterfactual-prediction.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p>With an emphasis on counterfactual prediction differing from risk prediction. <img src="counterfactual-prediction.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/counterfactual-prediction.pptx" width="300em" height="200em" frameborder="0">
  </iframe>
 </div></div></section>
-<section id="observational-studies-and-rcts" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="observational-studies-and-rcts">Observational studies and RCTs <a href="os-vs-rct.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="observational-studies-and-rcts-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="observational-studies-and-rcts-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">Observational studies and RCTs <a href="os-vs-rct.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p><img src="os-vs-rct.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/os-vs-rct.pptx" width="300em" height="200em" frameborder="0">
  </iframe>
 </div></div></section>
-<section id="the-goldilocks-principle-of-covariate-adjustment" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="the-goldilocks-principle-of-covariate-adjustment">The Goldilocks principle of covariate adjustment <a href="goldilocks-covariate-adjustment.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="the-goldilocks-principle-of-covariate-adjustment-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-goldilocks-principle-of-covariate-adjustment-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">The Goldilocks principle of covariate adjustment <a href="goldilocks-covariate-adjustment.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p>The Goldilocks principle of covariate adjustment in causal inference. <img src="goldilocks-covariate-adjustment.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/goldilocks-covariate-adjustment.pptx" width="300em" height="200em" frameborder="0">
  </iframe>
 </div></div></section>
-<section id="how-causation-causes-correlations" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="how-causation-causes-correlations">How causation causes correlations <a href="causal-based-correlations.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="how-causation-causes-correlations-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="how-causation-causes-correlations-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">How causation causes correlations <a href="causal-based-correlations.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p>Structural causal view of statistical associations. <img src="causal-based-correlations.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/causal-based-correlations.pptx" width="300em" height="200em" frameborder="0">
  </iframe>
 </div></div></section>
-<section id="a-tour-of-causal-assumptions" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="a-tour-of-causal-assumptions">A tour of causal assumptions <a href="causal-assumptions.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="a-tour-of-causal-assumptions-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="a-tour-of-causal-assumptions-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">A tour of causal assumptions <a href="causal-assumptions.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p><a href="../../../blog/2023/01-causal-inference-is-a-mindset/index.html">Causal inference is a mindset</a>. Therefore, it takes thought, not data, to translate data-based associations into causal claims. <img src="causal-assumptions.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/concepts/causal-assumptions.pptx" width="300em" height="200em" frameborder="0">
  </iframe>
 </div></div></section>
-<section id="my-first-ever-lecture-on-causal-inference" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="my-first-ever-lecture-on-causal-inference">My first ever lecture on causal inference <a href="causal-inference-101.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="my-first-ever-lecture-on-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="my-first-ever-lecture-on-causal-inference-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">My first ever lecture on causal inference <a href="causal-inference-101.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p>An introduction to causal inference talk gave at a student seminar on November 18, 2018, named Causal Inference 101. <img src="causal-inference-101.png" class="img-fluid"></p>
 
 

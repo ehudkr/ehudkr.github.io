@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,6 +12,9 @@
 
 <title>Causal Inference - Methods | Ehud Karavani – Ehud Karavani</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -36,19 +39,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../img/bar-chart-fill.svg" rel="icon" type="image/svg+xml">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-0ed1478b310a7677eec4cd670784b311.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-ed5884411481ac2fe988af7129dfe46e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-0ed1478b310a7677eec4cd670784b311.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-e38129be69ca2464946f961e34c76ea6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-33949a25858187804016a711ded841cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-e38129be69ca2464946f961e34c76ea6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/iconify-1.0.0-beta.2/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -369,10 +371,10 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zoo-of-causal-methods" id="toc-zoo-of-causal-methods" class="nav-link active" data-scroll-target="#zoo-of-causal-methods">Zoo of causal methods <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
-  <li><a href="#the-simpsons" id="toc-the-simpsons" class="nav-link" data-scroll-target="#the-simpsons">The Simpsons <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
-  <li><a href="#causal-inference-with-deep-learning" id="toc-causal-inference-with-deep-learning" class="nav-link" data-scroll-target="#causal-inference-with-deep-learning">Causal inference with deep learning <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
-  <li><a href="#interrupted-time-series" id="toc-interrupted-time-series" class="nav-link" data-scroll-target="#interrupted-time-series">Interrupted time series <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#zoo-of-causal-methods-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-zoo-of-causal-methods-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link active" data-scroll-target="#zoo-of-causal-methods-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">Zoo of causal methods <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#the-simpsons-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-the-simpsons-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link" data-scroll-target="#the-simpsons-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">The Simpsons <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#causal-inference-with-deep-learning-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-causal-inference-with-deep-learning-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link" data-scroll-target="#causal-inference-with-deep-learning-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">Causal inference with deep learning <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
+  <li><a href="#interrupted-time-series-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" id="toc-interrupted-time-series-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="nav-link" data-scroll-target="#interrupted-time-series-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">Interrupted time series <iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ehudkr/ehudkr.github.io/blob/main/materials/causal-inference/methods/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/edit/main/materials/causal-inference/methods/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/ehudkr/ehudkr.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -425,14 +427,14 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 </header>
 
 
-<section id="zoo-of-causal-methods" class="level2">
-<h2 class="anchored" data-anchor-id="zoo-of-causal-methods">Zoo of causal methods <a href="causal-zoo.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="zoo-of-causal-methods-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2">
+<h2 class="anchored" data-anchor-id="zoo-of-causal-methods-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">Zoo of causal methods <a href="causal-zoo.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p>An overview of many causal inference methods.</p>
 <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/methods/causal-zoo.pptx" width="300em" height="200em" frameborder="0">
  </iframe>
 </section>
-<section id="the-simpsons" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="the-simpsons">The Simpsons <a href="simpsons.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="the-simpsons-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-simpsons-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">The Simpsons <a href="simpsons.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p><img src="simpsons-matching.gif" class="img-fluid"> Matching and Inverse Probability Weighting with The Simpsons.<br>
 (This is before the time of Powerpoint morph; this was painstaking.)</p>
 
@@ -440,16 +442,16 @@ gtag('config', 'G-66TLP1EVBH', { 'anonymize_ip': true});
 <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/methods/simpsons.pptx" width="300em" height="200em" frameborder="0">
  </iframe>
 </div></div></section>
-<section id="causal-inference-with-deep-learning" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="causal-inference-with-deep-learning">Causal inference with deep learning <a href="deep-learning-causal-inference.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="causal-inference-with-deep-learning-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="causal-inference-with-deep-learning-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">Causal inference with deep learning <a href="deep-learning-causal-inference.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p>Relevant up to ~2020 <img src="deep-learning-causal-inference.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/ehudkr/ehudkr.github.io/raw/main/materials/causal-inference/methods/deep-learning-causal-inference.pptx" width="300em" height="200em" frameborder="0">
  </iframe>
 </div></div></section>
-<section id="interrupted-time-series" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="interrupted-time-series">Interrupted time series <a href="did-to-sc.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
+<section id="interrupted-time-series-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="interrupted-time-series-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2069636f6e6966792062692066696c65747970652d70707478203e7d7d">Interrupted time series <a href="did-to-sc.pptx"><iconify-icon inline="" icon="bi:filetype-pptx"></iconify-icon></a></h2>
 <p>From difference-in-differences to synthetic controls. <img src="did-to-sc.gif" class="img-fluid"></p>
 
 

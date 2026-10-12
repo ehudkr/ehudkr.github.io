@@ -2,6 +2,7 @@
   {
     "listing": "/cv/index.html",
     "items": [
+      "/publications/2026-alz-trazodone-repurposing/index.html",
       "/publications/2026-alz-doxycycline-repurposing/index.html",
       "/publications/2026-alz-100-drugs-tte/index.html",
       "/publications/2025-bicause-trees/index.html",
@@ -45,17 +46,9 @@
     "items": []
   },
   {
-    "listing": "/materials/index.html",
-    "items": [
-      "/materials/causal-inference/causalitea/index.html",
-      "/materials/causal-inference/motivation/index.html",
-      "/materials/causal-inference/concepts/index.html",
-      "/materials/causal-inference/methods/index.html"
-    ]
-  },
-  {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/2026-alz-trazodone-repurposing/index.html",
       "/publications/2026-alz-doxycycline-repurposing/index.html",
       "/publications/2026-alz-100-drugs-tte/index.html",
       "/publications/2025-bicause-trees/index.html",
@@ -73,6 +66,15 @@
       "/publications/2019-causal-inference-competitions/index.html",
       "/publications/2018-rnase3-cleavage-rules/index.html",
       "/publications/2018-causal-inference-benchmarking-framework/index.html"
+    ]
+  },
+  {
+    "listing": "/materials/index.html",
+    "items": [
+      "/materials/causal-inference/causalitea/index.html",
+      "/materials/causal-inference/motivation/index.html",
+      "/materials/causal-inference/concepts/index.html",
+      "/materials/causal-inference/methods/index.html"
     ]
   }
 ]
