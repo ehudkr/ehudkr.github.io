@@ -1,0 +1,176 @@
+---
+title: "Alzheimer’s disease target and drug discovery by leveraging multiomics and electronic health data"
+date: 2026-10-08
+doi: https://doi.org/10.1038/s41593-026-02472-0
+author:
+  - name: Yuan Hou
+    affiliations:
+      - ref: ccf
+  - name: Yichen Li
+    affiliations:
+      - ref: ccf
+  - name: Pengyue Zhang
+    affiliations:
+      - name: "Indiana University"
+        country: United States
+  - name: Noah Lorincz-Comi
+    affiliations:
+      - ref: ccf
+  - name: Dhruv Gohel
+    affiliations:
+      - ref: ccf
+  - name: Fan Fan
+    affiliations:
+      - ref: ummc
+  - name: Yunguang Qiu
+    affiliations:
+      - ref: ccf
+  - name: Jun Yang
+    affiliations:
+      - ref: ucdavis
+  - name: Xin Chen
+    affiliations:
+      - ref: ccf
+  - name: Wenqiang Song
+    affiliations:
+      - ref: ccf
+  - name: Xiaoyu Yang
+    affiliations:
+      - ref: ccf
+  - name: Zhibing Tan
+    affiliations:
+      - ref: ccf
+  - name: Zhigang Liu
+    affiliations:
+      - ref: ccf
+  - name: Xing Fang
+    affiliations:
+      - ref: ummc
+  - name: Isabela Rivera Paz
+    affiliations:
+      - ref: ccf
+  - name: William Martin
+    affiliations:
+      - ref: ccf
+  - name: Yayan Feng
+    affiliations:
+      - ref: ccf
+  - name: Yadi Zhou
+    affiliations:
+      - ref: ccf
+  - name: Jielin Xu
+    affiliations:
+      - ref: ccf
+  - name: Lijun Dou
+    affiliations:
+      - ref: ccf
+  - name: Jane Border
+    affiliations:
+      - ref: ummc
+  - name: Huawei Zhang
+    affiliations:
+      - ref: ummc
+  - name: Jena’ N. Mazique
+    affiliations:
+      - ref: ummc
+  - name: Sung Hee Hwang
+    affiliations:
+      - ref: ucdavis
+  - name: Richard J. Roman
+    affiliations:
+      - ref: ummc
+  - name: Babak Tousi
+    affiliations:
+      - ref: ccf
+  - name: Lynn Bekris
+    affiliations:
+      - ref: ccf
+  - name: Ehud Karavani
+    affiliations:
+      - ref: ibmrisrl
+  - name: Michael M. Danziger
+    affiliations:
+      - ref: ibmrisrl
+  - name: Michal Rosen-Zvi
+    affiliations:
+      - ref: ibmrisrl
+  - name: Jonathan L. Haines
+    affiliations:
+      - name: "Case Western Reserve University"
+        country: United States
+  - name: Haiyuan Yu
+    affiliations:
+      - name: "Cornell University"
+        country: United States
+  - name: Bruce D. Hammock
+    affiliations:
+      - ref: ucdavis
+  - name: James B. Leverenz
+    affiliations:
+      - ref: ccf
+  - name: Andrew A. Pieper
+    affiliations:
+      - name: "Case Western Reserve University"
+        country: United States
+  - name: Jeffrey Cummings
+    affiliations:
+      - name: "University of Nevada Las Vegas"
+        country: United States
+  - name: Feixiong Cheng
+    affiliations:
+      - ref: ccf
+affiliations: 
+  - id: ibmrisrl
+    name: IBM Research
+    # organization: IBM Research
+    country: Israel
+    department: Causal Machine Learning for Healthcare and Life Sciences
+  - id: ccf
+    name: Cleveland Clinic
+    country: United States
+  - id: ummc
+    name: University of Mississippi Medical Center
+    country: United States
+  - id: ucdavis
+    name: University of California, Davis
+    country: United States
+categories:
+  - causal inference
+  - healthcare
+# keywords: 
+publication: "Nature Neuroscience"
+journal: 
+  title: "Nature Neuroscience"
+pdf: https://www.nature.com/articles/s41593-026-02472-0.pdf
+abstract: >
+  Despite prolific genomic data from individuals with Alzheimer’s disease (AD), translation into treatments has lagged. 
+  Here we applied Mendelian randomization to multiple AD genome-wide association studies and functional multiomics datasets to nominate druggable targets, identifying 19 targets for individuals of European ancestry and 7 for African ancestry. 
+  This included epoxide hydrolase 2 (EPHX2), for which we identified a protective missense variant (p.Arg287Gln). 
+  Experiments in induced pluripotent stem cell-derived neurons and cerebral organoids from patients with AD validated the protective role of p.Arg287Gln via reduced levels of EPHX2 and phosphorylated tau (pTau-181). 
+  Pharmacological inhibition of EPHX2 improved cognitive performance in the 5xFAD mouse model of AD. 
+  Finally, by leveraging electronic health data from 111,680 patients with mild cognitive impairment, we identified 12 drugs associated with reduced AD incidence, including trazodone (targeting ADRA1A) and baclofen (targeting GABBR1). 
+  Thus, integrating multiomics data, functional validation and electronic health data identifies new approaches for treating AD.
+description: >
+  Observational causal inference on healthcare data to support a GWAS-based Mendelian Randomization nominating potential drug targets for Alzheimer's disease.
+---
+
+![](figure1.webp)
+
+
+
+## Citation
+```bibtex
+@article{hou2026alzheimer,
+author={Hou, Yuan and Li, Yichen and Zhang, Pengyue and Lorincz-Comi, Noah and Gohel, Dhruv and Fan, Fan and Qiu, Yunguang and Yang, Jun and Chen, Xin and Song, Wenqiang and Yang, Xiaoyu and Tan, Zhibing and Liu, Zhigang and Fang, Xing and Rivera Paz, Isabela and Martin, William and Feng, Yayan and Zhou, Yadi and Xu, Jielin and Dou, Lijun and Border, Jane and Zhang, Huawei and Mazique, Jena' N. and Hwang, Sung Hee and Roman, Richard J. and Babak, Tousi and Bekris, Lynn and Karavani, Ehud and Danziger, Michael and Rosen-Zvi, Michal and Haines, Jonathan L. and Yu, Haiyuan and Hammock, Bruce D. and Leverenz, James B. and Pieper, Andrew A. and Cummings, Jeffrey and Cheng, Feixiong},
+title={Alzheimer's disease target and drug discovery by leveraging multiomics and electronic health data},
+journal={Nature Neuroscience},
+year={2026},
+month={Oct},
+day={08},
+publisher={Nature Publishing Group US New York},
+issn={1546-1726},
+doi={10.1038/s41593-026-02472-0},
+url={https://doi.org/10.1038/s41593-026-02472-0}
+}
+```
+
